@@ -1,7 +1,5 @@
 # Invoking SCORE Functions
 
-
-
 In the previous document, [Deploying your SCORE](doc:deploying-your-score), we deployed the SampleToken. Now we will invoke functions of SampleToken using T-Bears.
 
 ### Prerequisite

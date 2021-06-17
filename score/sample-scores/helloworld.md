@@ -1,7 +1,5 @@
 # HelloWorld
 
-
-
 The simplest yet completely legitimate SCORE that returns "Hello" in the response message.
 
 ```python

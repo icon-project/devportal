@@ -1,7 +1,5 @@
 # Mainnet
 
-
-
 |  |  |
 | :--- | :--- |
 | Name | ICON Mainnet |

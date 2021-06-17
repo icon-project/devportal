@@ -1,7 +1,5 @@
 # Emulated Node Environment
 
-
-
 T-Bears Server default configuration - in terms of transaction fees, network id, SCORE audit, and embedded services - is set same as Yeouido \(여의도\) testnet. The purpose is to provide the same test environment as the testnet. You can change some of the characteristics of T-Bears Server by updating `tbears_server_config.json` file. To modify the configuration file, please read [T-Bears : Configuration](doc:tbears-configuration).
 
 Below listed is the default configuration of the T-Bears Server.

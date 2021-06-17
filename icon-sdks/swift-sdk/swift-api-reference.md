@@ -1,7 +1,5 @@
 # Swift API Reference
 
-
-
 ICON supports SDK for 3rd party or user services development. You can integrate ICON SDK for your project and utilize the ICON’s functionality. This document provides you with information about API specification.
 
 ### `class` ICONService

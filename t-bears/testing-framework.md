@@ -1,7 +1,5 @@
 # Testing Framework
 
-
-
 ### Functions Provided by **ScoreTestCase**
 
 SCORE unit test class must inherit `ScoreTestCase`. Deploying SCORE after every code modification is a hassle. `ScoreTestCase` helps you test SCORE logic itself in an isolated environment without network deployment. `ScoreTestCase` provides following functions.

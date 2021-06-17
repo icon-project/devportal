@@ -1,7 +1,5 @@
 # Multisig Wallet
 
-
-
 This document describes the inner workings of a Multi Signature Wallet SCORE and provides guidelines and APIs about how to use this service.
 
 ### Intended Audience

@@ -1,7 +1,5 @@
 # Part 1. HelloWorld on local emulated environment
 
-
-
 ### Install T-Bears \(Docker\)
 
 * Install Docker \[[Get Started with Docker](https://www.docker.com/get-started)\]

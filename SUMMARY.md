@@ -60,3 +60,40 @@
 * [Swift SDK](icon-sdks/swift-sdk/README.md)
   * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)
 
+## ICONex Connect
+
+* [Chrome Extension](iconex-connect/chrome-extension.md)
+* [iOS](iconex-connect/ios.md)
+* [Android](iconex-connect/android.md)
+
+## ICON Node
+
+* [Quickstart](icon-node/quickstart.md)
+* [P-Rep Tools](icon-node/p-rep-tools.md)
+* [Maintenance](icon-node/maintenance.md)
+* [Node operation and configuration](icon-node/node-operation-and-configuration.md)
+* [Understanding log files](icon-node/understanding-log-files.md)
+* [How to collect centralized logging](icon-node/how-to-collect-centralized-logging.md)
+* [Backup and restore DB guide](icon-node/backup-and-restore-db-guide.md)
+
+## Oracles
+
+* [Band Protocol](oracles/band-protocol.md)
+
+## References
+
+* [How-to](references/how-to/README.md)
+  * [Set up a Keystore file on a P-Rep Node](references/how-to/set-up-a-keystore-file-on-a-p-rep-node.md)
+  * [Create an account](references/how-to/create-an-account.md)
+  * [Change network in ICONex](references/how-to/change-network-in-iconex.md)
+  * [Deploy a SCORE](references/how-to/deploy-a-score.md)
+  * [Estimate required step](references/how-to/estimate-required-step.md)
+  * [Write SCORE unit test](references/how-to/write-score-unit-test.md)
+  * [Write SCORE integration test](references/how-to/write-score-integration-test.md)
+  * [Generate a transaction signature](references/how-to/generate-a-transaction-signature.md)
+  * [Create own blockchain network from AWS marketplace](references/how-to/create-own-blockchain-network-from-aws-marketplace.md)
+* [Reference Manuals](references/reference-manuals/README.md)
+  * [ICON JSON-RPC API v3 Specification](references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+  * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
+  * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
+

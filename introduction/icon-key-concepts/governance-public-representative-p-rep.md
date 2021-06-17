@@ -1,7 +1,5 @@
 # Governance - Public Representative \(P-Rep\)
 
-
-
 ### What is a Public Representative?
 
 * A Public Representative \(P-Rep\) is a full node on the ICON Network that participates in consensus and governance.

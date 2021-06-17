@@ -1,7 +1,5 @@
 # Governance - IISS
 
-
-
 ### Basic IISS Overview
 
 * ICON Incentives Scoring System \(hereinafter referred to as "IISS"\) is an evaluation system for accurately measuring and compensating the contributions of ICONists within the ICON Network. 

@@ -1,7 +1,5 @@
 # Part 2. HelloWorld on testnet
 
-
-
 In this part 2, we will deploy the HelloWorld SCORE onto the testnet. You will learn how to configure your tools to interact with the testnet.
 
 ### Configure ICONex to connect to the testnet

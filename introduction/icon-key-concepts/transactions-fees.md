@@ -1,7 +1,5 @@
 # Transactions Fees
 
-
-
 * ICON network offers a reasonable yet sophisticated fee system taking the complexity of each transaction into consideration.
 * Fees are incurred when executing a smart contract on the ICON network, and the fees are determined based on the total amount of resources used to execute the transaction. **Step** is the unit of the resource-usage measurement.
 * The SCORE transaction fee on the ICON mainnet is governed by three principles: Transaction fee policy, Virtual Step, and SCORE termination policy. 

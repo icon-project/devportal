@@ -1,7 +1,5 @@
 # Python API Reference
 
-
-
 ### Querying API Methods
 
 #### Examples

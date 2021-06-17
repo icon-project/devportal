@@ -1,7 +1,5 @@
 # Deploying your SCORE
 
-
-
 ### Purpose
 
 This document illustrates the steps of SCORE deployment to the local T-Bears server. To learn more about deploying a SCORE to the Mainnet along with the audit process, please read the [Deployment Process](doc:deploy-guideline)

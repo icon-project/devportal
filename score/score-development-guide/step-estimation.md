@@ -1,7 +1,5 @@
 # Step Estimation
 
-
-
 In your transaction request, you must specify the `stepLimit`, the maximum amount of steps you are willing to pay for the transaction. `stepLimit` must be greater than the actual `steps` required and less than the maximum value, `0x9502f900`.  
 In this document, we will explain how you choose the right `stepLimit` for your transaction.
 
