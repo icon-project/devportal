@@ -12,8 +12,8 @@
 
 Before you submit your SCORE to the ICON mainnet, you should test thoroughly on T-Bears and testnet. Note that SCORE audit is not enabled in testnet. Please make sure you understand the ICON audit policy and follow the guidelines.
 
-* [Audit Checklist](audit-checklist)
-* [Deploy Guideline](deploy-guideline)
+* [Audit Checklist](../../score/score-audit/audit-checklist.md)
+* [Deploy Guideline](../../score/score-audit/deployment-process.md)
 
 If you have any questions about the audit process, please send email to `audit@icon.foundation`.
 

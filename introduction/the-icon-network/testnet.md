@@ -88,5 +88,5 @@ Pagoda network is for testing P-Rep node
 
 ### Want to use the ICONex chrome wallet to send ICX on the testnet?
 
-To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](doc:how-to-change-network-in-iconex-chrome)
+To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](../../references/how-to/change-network-in-iconex.md)
 

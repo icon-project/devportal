@@ -12,11 +12,11 @@ ICON Chrome wallet is connected to the mainnet. You can switch to other networks
 * Add a new key/value pair, **isDev/true**, by clicking on the empty row at the bottom of the table.
 * Reload your wallet, then you will see the menu in the bottom. Click the **ICX \(SERVER\)** button to open the dropup list of the available networks. Select **YEOUIDO** network, this is a testnet for DApp developers. 
 
-Please refer to the [network guide](the-icon-network) for more information.
+Please refer to the [network guide](../../introduction/the-icon-network/) for more information.
 
 ### Create an account in ICONex
 
-Let's create an account in ICONex, and download the keystore file. Full guideline of creating a keyfile is [here](account-management).
+Let's create an account in ICONex, and download the keystore file. Full guideline of creating a keyfile is [here](../../references/how-to/create-an-account.md).
 
 We will use this keystore file on testnet. The keystore file downloaded from ICONex will look something like `UTC--2018-10-06T06_00_02.195Z--hxbac99ffea54749ca1c86ab4e6bfe0b630bf7a7a0`. As you may have noticed, the latter part of the filename is your address, `hxbac99ffea54749ca1c86ab4e6bfe0b630bf7a7a0` in this example. Let's rename the file to `keystore_test2` for human readability.
 
@@ -35,7 +35,7 @@ Check your balance from CLI, or in the ICONex.
 
 ### Transaction fees
 
-[Transaction fees explained](transaction-fees).
+[Transaction fees explained](../../introduction/icon-key-concepts/transactions-fees.md).
 
 * `stepLimit` in transaction request message
 
