@@ -10,15 +10,15 @@ The intended audience is the developers who have basic Python programming knowle
 
 ### Purpose
 
-After reading this document, you will understand the structure of SCORE and learn the basic syntax of writing SCORE. It is highly recommended to look up the reference [Token & Crowdsale](doc:token-crowdsale) implementation along with this document to grasp the SCORE programming syntax.
+After reading this document, you will understand the structure of SCORE and learn the basic syntax of writing SCORE. It is highly recommended to look up the reference [Token & Crowdsale](../sample-scores/token-and-crowdsale.md) implementation along with this document to grasp the SCORE programming syntax.
 
 ### Prerequisite
 
-We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](doc:score-quickstart) or [T-Bears Installation](doc:tbears-installation) first.
+We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](../quickstart/) or [T-Bears Installation](../../tbears/installation.md) first.
 
-* [SCORE Overview](doc:score-overview) 
-* [SCORE Quickstart](doc:score-quickstart)
-* [Token & Crowdsale](doc:token-crowdsale) - Reference implementation
+* [SCORE Overview](../overview.md) 
+* [SCORE Quickstart](../quickstart/)
+* [Token & Crowdsale](../sample-scores/token-and-crowdsale.md) - Reference implementation
 
 ### Creating a Workspace
 
@@ -359,7 +359,7 @@ When you handle exceptions in your contract, it is recommended to use `revert` f
 
 ### Restrictions
 
-There are certain SCORE functions that ICON Tracker calls to display the SCORE information - `name`, `symbol`, and `decimals`. ICON Tracker loads this information once on the initial SCORE deploy, and will never update. This is to prevent any attempt to fraud, and not to confuse end-users. Therefore, ICON prevents changing `name`, `symbol`, and `decimals` of SCORE. Please read the [Audit Checklist](audit-checklist#section-fixed-score-infomation) for detailed coding guideline.
+There are certain SCORE functions that ICON Tracker calls to display the SCORE information - `name`, `symbol`, and `decimals`. ICON Tracker loads this information once on the initial SCORE deploy, and will never update. This is to prevent any attempt to fraud, and not to confuse end-users. Therefore, ICON prevents changing `name`, `symbol`, and `decimals` of SCORE. Please read the [Audit Checklist](../score-audit/audit-checklist.md) for detailed coding guideline.
 
 {% hint style="danger" %}
 name, symbol, decimals

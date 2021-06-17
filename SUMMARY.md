@@ -26,6 +26,7 @@
 * [SCORE Development Guide](score/score-development-guide/README.md)
   * [Development Tools](score/score-development-guide/development-tools.md)
   * [Writing SCORE](score/score-development-guide/writing-score.md)
+  * [Iconservice API References](https://iconservice.readthedocs.io/en/latest)
   * [Deploying your SCORE](score/score-development-guide/deploying-your-score.md)
   * [Invoking SCORE Functions](score/score-development-guide/invoking-score-functions.md)
   * [Step Estimation](score/score-development-guide/step-estimation.md)
