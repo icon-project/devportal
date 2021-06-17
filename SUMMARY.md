@@ -40,14 +40,14 @@
   * [Multisig Wallet](score/sample-scores/multisig-wallet.md)
   * [DEX](score/sample-scores/dex.md)
 
-## T-Bears
+## T-Bears <a id="tbears"></a>
 
-* [Overview](t-bears/overview.md)
-* [Installation](t-bears/installation.md)
-* [CLI Commands](t-bears/cli-commands.md)
-* [Testing Framework](t-bears/testing-framework.md)
-* [Emulated Node Environment](t-bears/emulated-node-environment.md)
-* [Configuration](t-bears/configuration.md)
+* [Overview](tbears/overview.md)
+* [Installation](tbears/installation.md)
+* [CLI Commands](tbears/cli-commands.md)
+* [Testing Framework](tbears/testing-framework.md)
+* [Emulated Node Environment](tbears/emulated-node-environment.md)
+* [Configuration](tbears/configuration.md)
 
 ## ICON SDKs
 
