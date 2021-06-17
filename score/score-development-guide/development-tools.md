@@ -9,9 +9,9 @@ Before you start writing a SCORE, you need to install the T-Bears. T-Bears provi
 * CLI commands for deploying a SCORE and invoking the SCORE functions, `T-Bears CLI`
 * SCORE test framework
 
-For the details of T-Bears, please go to [T-Bears Overview](doc:tbears-overview)
+For the details of T-Bears, please go to [T-Bears Overview](../../tbears/overview.md)
 
-If you have finished the [SCORE Quickstart](doc:score-quickstart), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](doc:tbears-installation) instruction.
+If you have finished the [SCORE Quickstart](doc:score-quickstart), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../quickstart/) instruction.
 
 ### IDE - PyCharm
 
