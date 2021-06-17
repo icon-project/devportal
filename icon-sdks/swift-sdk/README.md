@@ -559,9 +559,9 @@ let response: Result<String, ICError> = request.execute()
 
 ### References
 
-* [API Reference](swift-api-reference)
-* [ICON JSON-RPC API v3](icon-json-rpc-v3)
-* [ICON Network](the-icon-network)
+* [API Reference](swift-api-reference.md)
+* [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [ICON Network](../../introduction/the-icon-network/)
 
 ### Licenses
 

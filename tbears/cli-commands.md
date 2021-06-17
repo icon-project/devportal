@@ -1212,13 +1212,13 @@ SCORE API: [
 
 ### References
 
-* [ICON JSON-RPC API v3](icon-json-rpc-v3)
+* [ICON JSON-RPC API v3](../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
 * [earlgrey](https://github.com/icon-project/earlgrey)
 * [ICON Commons](https://github.com/icon-project/icon-commons)
 * [ICON RPC Server](https://github.com/icon-project/icon-rpc-server)
 * [ICON Service](https://github.com/icon-project/icon-service)
-* [Write SCORE unit test](doc:how-to-write-score-unit-test)
-* [Write SCORE integration test](doc:how-to-write-score-integration-test)
+* [Write SCORE unit test](../references/how-to/write-score-unit-test.md)
+* [Write SCORE integration test](../references/how-to/write-score-integration-test.md)
 
 ### License
 

@@ -2094,7 +2094,7 @@ There are 6 types of error cases. Details are as below:
 
 ### References
 
-* [ICON JSON-RPC API v3](icon-json-rpc-v3) 
+* [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md) 
 * [IRC2 Specification](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-2.md)
 
 \[References\]: \#section-references

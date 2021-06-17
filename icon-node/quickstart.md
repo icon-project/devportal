@@ -22,7 +22,7 @@ $ source venv/bin/activate        # Enter the virtual environment.
 
 ### **Manual Install**
 
-For manual installation and P-Rep tool commands, see [full documentation](https://www.icondev.io/docs/p-rep-tools-preptools-tutorial)
+For manual installation and P-Rep tool commands, see [full documentation](p-rep-tools.md)
 
 ### **2. Register via P-Rep Tools**
 
@@ -78,7 +78,7 @@ There are three ways supply P-Rep registration info to P-Rep Tools; using a json
 }
 ```
 
-See [registerPRep command details](https://www.icondev.io/docs/p-rep-tools-preptools-tutorial#section-register-p-rep)
+See [registerPRep command details](p-rep-tools.md#command-line-interfaces-clis)
 
 The "details" parameter is an external json file that holds additional information about the P-Rep. We strongly recommend that you register this information. Example,
 

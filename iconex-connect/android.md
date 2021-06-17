@@ -64,7 +64,7 @@ try {
 
 ### JSON Speicifications
 
-* [Value Types](json-rpc-specification#section-value-types)
+* [Value Types](../references/reference-manuals/icon-json-rpc-api-v3-specification.md#value-types)
 
 ### API Convention
 

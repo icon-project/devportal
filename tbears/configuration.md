@@ -1,7 +1,7 @@
 # Configuration
 
 `tbears genconf` command will generate the default configuration files and a test keystore file.  
-If the configurations files do not exist, T-Bears follows the default config values which are presented below. If the default config files \(`tbears_server_config.json` or `tbears_cli_config.json`\) exist in the same folder where `tbears` is executed, `tbears` loads the values from the file. You can override the default behavior by updating the values in the config file or specifying a custom config file path with `-c` option. For the details of T-Bears commands, please read [CLI Commands](doc:how-to-use-t-bears).
+If the configurations files do not exist, T-Bears follows the default config values which are presented below. If the default config files \(`tbears_server_config.json` or `tbears_cli_config.json`\) exist in the same folder where `tbears` is executed, `tbears` loads the values from the file. You can override the default behavior by updating the values in the config file or specifying a custom config file path with `-c` option. For the details of T-Bears commands, please read [CLI Commands](cli-commands.md).
 
 ### tbears\_server\_config.json
 
@@ -177,8 +177,8 @@ Keystore file for a test account. The password of this keystore file is `test1_A
 
 ### Reference
 
-* [CLI Commands](doc:how-to-use-t-bears) 
-* [ICON JSON-RPC API v3](icon-json-rpc-v3)
+* [CLI Commands](cli-commands.md) 
+* [ICON JSON-RPC API v3](../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
 * [earlgrey](https://github.com/icon-project/earlgrey)
 * [ICON Commons](https://github.com/icon-project/icon-commons)
 * [ICON RPC Server](https://github.com/icon-project/icon-rpc-server)

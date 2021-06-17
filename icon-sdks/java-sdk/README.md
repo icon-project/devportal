@@ -815,8 +815,8 @@ tokenSymbol:ST
 ### References
 
 * [API Reference](http://www.javadoc.io/doc/foundation.icon/icon-sdk)
-* [ICON JSON-RPC API v3](icon-json-rpc-v3)
-* [ICON Network](the-icon-network)
+* [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [ICON Network](../../introduction/the-icon-network/)
 
 ### Licenses
 

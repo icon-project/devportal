@@ -69,13 +69,14 @@
 
 ## ICON Node
 
+* [Overview](icon-node/overview.md)
 * [Quickstart](icon-node/quickstart.md)
 * [P-Rep Tools](icon-node/p-rep-tools.md)
-* [Maintenance](icon-node/maintenance.md)
-* [Node operation and configuration](icon-node/node-operation-and-configuration.md)
-* [Understanding log files](icon-node/understanding-log-files.md)
-* [How to collect centralized logging](icon-node/how-to-collect-centralized-logging.md)
-* [Backup and restore DB guide](icon-node/backup-and-restore-db-guide.md)
+* [Maintenance](icon-node/maintenance/README.md)
+  * [Node operation and configuration](icon-node/maintenance/node-operation-and-configuration.md)
+  * [Understanding log files](icon-node/maintenance/understanding-log-files.md)
+  * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
+  * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
 
 ## Oracles
 
