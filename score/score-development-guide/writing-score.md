@@ -361,3 +361,16 @@ When you handle exceptions in your contract, it is recommended to use `revert` f
 
 There are certain SCORE functions that ICON Tracker calls to display the SCORE information - `name`, `symbol`, and `decimals`. ICON Tracker loads this information once on the initial SCORE deploy, and will never update. This is to prevent any attempt to fraud, and not to confuse end-users. Therefore, ICON prevents changing `name`, `symbol`, and `decimals` of SCORE. Please read the [Audit Checklist](audit-checklist#section-fixed-score-infomation) for detailed coding guideline.
 
+{% hint style="danger" %}
+name, symbol, decimals
+
+For IRC-2 token contract, you should not change `name`, `symbol`, and `decimals` of the token once deployed. For every other SCORE, you should not change `name` once deployed. Note that unlike IRC tokens, `name` is not a mandatory function to implement. If you didn't implement `name` function in your first deploy, you cannot add `name` function on a subsequent update, because it is considered as changing the name.
+{% endhint %}
+
+### Reference
+
+* [iconservice API references](https://iconservice.readthedocs.io/en/latest)
+* [Token & Crowdsale](../sample-scores/token-and-crowdsale.md)
+* [T-Bears CLI Reference](../../tbears/cli-commands.md)
+* [Audit Checklist](../score-audit/audit-checklist.md)
+
