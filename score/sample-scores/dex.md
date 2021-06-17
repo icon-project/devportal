@@ -6,3 +6,17 @@ This reference implementation is deployed on ICON Euljiro \(을지로\) testnet 
 
 ### How token conversion works
 
+![](../../.gitbook/assets/fbfbef0-1.png)
+
+![](../../.gitbook/assets/a921b71-2.png)
+
+![](../../.gitbook/assets/6491b01-3.png)
+
+### Reference
+
+This project refers to the Bancor Protocol™ [Whitepaper](https://www.bancor.network/whitepaper)
+
+### License
+
+This project follows the Apache 2.0 License. Please refer to [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
+

@@ -19,9 +19,9 @@ This page covers several things about the multi-signature wallet. Below is avail
 Below is the list of links that helps you understand multi-signature wallet and proceed with the tutorial.
 
 * [Definition of multi-signature wallet](https://en.bitcoin.it/wiki/Multisignature)
-* [SCORE Overview](score-overview)
-* [Token & Crowdsale](doc:token-crowdsale) 
-* [Writing SCORE](doc:writing-score)
+* [SCORE Overview](../overview.md)
+* [Token & Crowdsale](token-and-crowdsale.md) 
+* [Writing SCORE](../score-development-guide/writing-score.md)
 
 ### What is a Multi-Signature Wallet
 
