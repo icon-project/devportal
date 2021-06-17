@@ -11,7 +11,7 @@ Before you start writing a SCORE, you need to install the T-Bears. T-Bears provi
 
 For the details of T-Bears, please go to [T-Bears Overview](../../tbears/overview.md)
 
-If you have finished the [SCORE Quickstart](doc:score-quickstart), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../quickstart/) instruction.
+If you have finished the [SCORE Quickstart](doc:score-quickstart), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../../tbears/installation.md) instruction.
 
 ### IDE - PyCharm
 
@@ -20,4 +20,6 @@ Because SCORE is written in Python, any IDE that supports python can be used for
 #### Install PyCharm CE, if you don't have it yet.
 
 #### Create a Python project
+
+![](../../.gitbook/assets/cf93d28-createproject.png)
 
