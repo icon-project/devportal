@@ -56,7 +56,7 @@
   * [javadoc](http://www.javadoc.io/doc/foundation.icon/icon-sdk)
 * [Python SDK](icon-sdks/python-sdk/README.md)
   * [Python API Reference](icon-sdks/python-sdk/python-api-reference.md)
-* [Javascript](icon-sdks/javascript/README.md)
+* [Javascript SDK](icon-sdks/javascript/README.md)
   * [Javascript API Reference](icon-sdks/javascript/javascript-api-reference.md)
 * [Swift SDK](icon-sdks/swift-sdk/README.md)
   * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)

@@ -1,5 +1,7 @@
 # ICON JSON-RPC API v3 Specification
 
+
+
 ICON JSON-RPC APIs \(version 3\) are interfaces to interact with ICON nodes. This document explains ICON JSON-RPC API \(version 3\) data structures, rules and the list of methods.
 
 ### ICON JSON-RPC API v3 Specification
@@ -1041,50 +1043,63 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **Responses**
 
-  \`\`\`javascript
-
-  // Response - success
-
-  {
-
+```javascript
+// Response - success
+{
     "jsonrpc": "2.0",
-
     "id": 1234,
-
     "result": "0x4bf74e6aeeb43bde5dc8d5b62537a33ac8eb7605ebbdb51b015c1881b45b3aed" // transaction hash
+}
 
-  }
+// Response - error
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "error": {
+        "code": -32600,
+        "message": "Invalid signature"
+    }
+}
 
-// Response - error { "jsonrpc": "2.0", "id": 1234, "error": { "code": -32600, "message": "Invalid signature" } }
+// Response - error
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "error": {
+        "code": -32601,
+        "message": "Method not found"
+    }
+}
 
-// Response - error { "jsonrpc": "2.0", "id": 1234, "error": { "code": -32601, "message": "Method not found" } }
+```
 
-```text
-### debug_estimateStep
 
-- Generates and returns an estimated step of how much step is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimation can be larger than the actual amount of step to be used by the transaction for several reasons such as node performance.
 
-#### Parameters
+#### debug\_estimateStep
 
-- The transaction information without stepLimit and signature
+* Generates and returns an estimated step of how much step is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimation can be larger than the actual amount of step to be used by the transaction for several reasons such as node performance.
 
-| KEY       | VALUE type                                                 | Required | Description                                                  |
-| :-------- | :--------------------------------------------------------- | :------: | :----------------------------------------------------------- |
-| version   | [T_INT](#T_INT)                                            | required | Protocol version (`0x3` for V3)                              |
-| from      | [T_ADDR_EOA](#T_ADDR_EOA)                                  | required | EOA address that created the transaction                     |
-| to        | [T_ADDR_EOA](#T_ADDR_EOA) or [T_ADDR_SCORE](#T_ADDR_SCORE) | required | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value     | [T_INT](#T_INT)                                            | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. (1 icx = 1 ^ 18 loop) |
-| timestamp | [T_INT](#T_INT)                                            | required | Transaction creation time. timestamp is in microsecond.      |
-| nid       | [T_INT](#T_INT)                                            | required | Network ID (`0x1` for Mainnet, `0x2` for Testnet, etc)       |
-| nonce     | [T_INT](#T_INT)                                            | optional | An arbitrary number used to prevent transaction hash collision. |
-| dataType  | [T_DATA_TYPE](#T_DATA_TYPE)                                | optional | Type of data. (call, deploy, or message)                     |
-| data      | T_DICT or String                                           | optional | The content of data varies depending on the dataType. See [Parameters - data](#sendtxparameterdata). |
+**Parameters**
 
-#### Returns
+* The transaction information without stepLimit and signature
 
-- The amount of an estimated step
+| KEY | VALUE type | Required | Description |
+| :--- | :--- | :---: | :--- |
+| version | T\_INT | required | Protocol version \(`0x3` for V3\) |
+| from | T\_ADDR\_EOA | required | EOA address that created the transaction |
+| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | required | EOA address to receive coins, or SCORE address to execute the transaction. |
+| value | T\_INT | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
+| timestamp | T\_INT | required | Transaction creation time. timestamp is in microsecond. |
+| nid | T\_INT | required | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
+| nonce | T\_INT | optional | An arbitrary number used to prevent transaction hash collision. |
+| dataType | T\_DATA\_TYPE | optional | Type of data. \(call, deploy, or message\) |
+| data | T\_DICT or String | optional | The content of data varies depending on the dataType. See Parameters - data. |
 
-#### Example
+**Returns**
+
+* The amount of an estimated step
+
+**Example**
 
 ```javascript
 // Request

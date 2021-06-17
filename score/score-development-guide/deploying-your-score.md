@@ -2,15 +2,15 @@
 
 ### Purpose
 
-This document illustrates the steps of SCORE deployment to the local T-Bears server. To learn more about deploying a SCORE to the Mainnet along with the audit process, please read the [Deployment Process](doc:deploy-guideline)
+This document illustrates the steps of SCORE deployment to the local T-Bears server. To learn more about deploying a SCORE to the Mainnet along with the audit process, please read the [Deployment Process](../score-audit/deployment-process.md)
 
 ### Prerequisite
 
-We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](doc:score-quickstart) or [T-Bears Installation](doc:tbears-installation) first.
+We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](../quickstart/) or [T-Bears Installation](../../tbears/installation.md) first.
 
-* [SCORE Overview](doc:score-overview) 
-* [SCORE Quickstart](doc:score-quickstart)
-* [Token & Crowdsale](doc:token-crowdsale)
+* [SCORE Overview](../overview.md) 
+* [SCORE Quickstart](../quickstart/)
+* [Token & Crowdsale](../sample-scores/token-and-crowdsale.md)
 
 ### Deploying SCOREs
 
@@ -44,7 +44,7 @@ If you want to make `main_module` point to a submodule, you can specify the modu
 
 Here is an example of deploying a SCORE onto the local T-Bears emulator. If you want to deploy on Mainnet or Testnet, you need to edit `uri`, `nid`, and `keyStore` fields in `tbears_cli_config.json`.
 
-The [SampleToken](token-crowdsale) contract is used in this example.
+The [SampleToken](../sample-scores/token-and-crowdsale.md) contract is used in this example.
 
 **Deploy SampleToken on Local T-Bears Emulator**
 
@@ -124,5 +124,5 @@ The [SampleToken](token-crowdsale) contract is used in this example.
 
 ### Reference
 
-* [T-Bears CLI Reference](doc:t-bears-cli-reference)
+* [T-Bears CLI Reference](../../tbears/cli-commands.md)
 

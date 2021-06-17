@@ -2,7 +2,7 @@
 
 This document explains ICON audit criteria and suggests secure SCORE implementation practices. Audit checklist consists of 2 severity levels of items, Critical and Warning. Audit results will come as Pass/Fail/NA for each Critical items, and Pass/Warning/NA for each Warning items. If any Critical item is determined to be Fail, the SCORE deployment will be rejected.
 
-Listed below are the checklist grouped by severity. We assume that you have read [Token & Crowdsale](/docs/token-crowdsale) and [Writing SCORE](/docs/syntax), and understand the basics of SCORE development.
+Listed below are the checklist grouped by severity. We assume that you have read [Token & Crowdsale](../sample-scores/token-and-crowdsale.md) and [Writing SCORE](../score-development-guide/writing-score.md), and understand the basics of SCORE development.
 
 ### Severity level
 

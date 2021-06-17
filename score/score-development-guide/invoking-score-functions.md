@@ -1,15 +1,15 @@
 # Invoking SCORE Functions
 
-In the previous document, [Deploying your SCORE](doc:deploying-your-score), we deployed the SampleToken. Now we will invoke functions of SampleToken using T-Bears.
+In the previous document, [Deploying your SCORE](deploying-your-score.md), we deployed the SampleToken. Now we will invoke functions of SampleToken using T-Bears.
 
 ### Prerequisite
 
-We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](doc:score-quickstart) or [T-Bears Installation](doc:tbears-installation) first.
+We assume that you already have installed T-Bears. If you have not yet installed it, please read [SCORE Quickstart](../quickstart/) or [T-Bears Installation](../../tbears/installation.md) first.
 
-* [SCORE Quickstart](doc:score-quickstart)
-* [Token & Crowdsale](doc:token-crowdsale)
-* [Deploying your SCORE](doc:deploying-your-score) 
-* [T-Bears CLI Commands](doc:how-to-use-t-bears) 
+* [SCORE Quickstart](../quickstart/)
+* [Token & Crowdsale](../sample-scores/token-and-crowdsale.md)
+* [Deploying your SCORE](deploying-your-score.md) 
+* [T-Bears CLI Commands](../../tbears/cli-commands.md) 
 
 ### Purpose
 
@@ -19,10 +19,10 @@ Understand how to invoke SCORE functions.
 
 #### Invoking read-only methods
 
-SCORE methods can be executed by calling [JSON RPC APIs](icon-json-rpc-v3) to ICON nodes. You need to generate a JSON file which contains information about the calling method and its parameters. `icx_call` JSON-RPC API will be used to invoke a read-only method of SCORE.
+SCORE methods can be executed by calling [JSON RPC APIs](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md) to ICON nodes. You need to generate a JSON file which contains information about the calling method and its parameters. `icx_call` JSON-RPC API will be used to invoke a read-only method of SCORE.
 
 * Read-only method does not make state transition, therefore, the request message does not need to be signed. 
-* You can send the request using curl, T-Bears CLI, or SDKs \([Java SDK](doc:java-sdk), [JavaScript SDK](doc:javascript-sdk), [Python SDK](doc:python-sdk), [Swift SDK](doc:swift-sdk)\)
+* You can send the request using curl, T-Bears CLI, or SDKs \([Java SDK](../../icon-sdks/java-sdk/), [JavaScript SDK](../../icon-sdks/javascript/), [Python SDK](../../icon-sdks/python-sdk/), [Swift SDK](../../icon-sdks/swift-sdk/)\)
 
 **Getting total supply**
 
@@ -98,7 +98,7 @@ The JSON RPC method, `icx_sendTransaction`, is used for invoking writable SCORE 
 The writable methods can change the state of the smart contract. So the signature should be presented in the JSON RPC request to prove the transaction was originated by the `from` account. `to` is the address of the smart contract.
 
 * Writable methods cause state transition, therefore, the request message must be signed.
-* It is very difficult to invoke the writable function without using T-Bears CLI or SDK, because you need to sign the message. T-Bears CLI and SDKs will sign the message using your keystore file.  Use the SDK you are familiar with to send the transaction. \([Java SDK](doc:java-sdk), [JavaScript SDK](doc:javascript-sdk), [Python SDK](doc:python-sdk), [Swift SDK](doc:swift-sdk), [T-Bears CLI](doc:cli-t-bears)\)
+* It is very difficult to invoke the writable function without using T-Bears CLI or SDK, because you need to sign the message. T-Bears CLI and SDKs will sign the message using your keystore file.  Use the SDK you are familiar with to send the transaction. \([Java SDK](../../icon-sdks/java-sdk/), [JavaScript SDK](../../icon-sdks/javascript/), [Python SDK](../../icon-sdks/python-sdk/), [Swift SDK](../../icon-sdks/swift-sdk/), [T-Bears CLI](../../tbears/cli-commands.md)\)
 
 The following example request is transferring 1 token to `hxef73db5d0ad02eb1fadb37d0041be96bfa56d4e6` from `hxe7af5fcfd8dfc67530a01a0e403882687528dfcb`.
 
@@ -241,25 +241,25 @@ Following the above examples, you should be able to successfully invoke SampleTo
 
 **JSON format**
 
-| KEY | VALUE type | Required | Description |
+| KEY | [VALUE type](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#value-types) | Required | Description |
 | :--- | :--- | :---: | :--- |
-| version | [T\_INT](icon-json-rpc-v3#T_INT) | required | Protocol version \(`0x3` for V3\) |
-| from | [T\_ADDR\_EOA](icon-json-rpc-v3#T_ADDR_EOA) | required | EOA address that created the transaction |
-| to | [T\_ADDR\_EOA](icon-json-rpc-v3#T_ADDR_EOA) or [T\_ADDR\_SCORE](icon-json-rpc-v3#T_ADDR_SCORE) | required | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value | [T\_INT](icon-json-rpc-v3#T_INT) | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
-| stepLimit | [T\_INT](icon-json-rpc-v3#T_INT) | required | Maximum step allowance that can be used by the transaction. |
-| timestamp | [T\_INT](icon-json-rpc-v3#T_INT) | required | Transaction creation time. timestamp is in microsecond. |
-| nid | [T\_INT](icon-json-rpc-v3#T_INT) | required | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
-| nonce | [T\_INT](icon-json-rpc-v3#T_INT) | optional | An arbitrary number used to prevent transaction hash collision. |
-| signature | [T\_SIG](icon-json-rpc-v3#T_SIG) | required | Signature of the transaction. |
-| dataType | [T\_DATA\_TYPE](icon-json-rpc-v3#T_DATA_TYPE) | optional | Type of data. \(call, deploy, or message\) |
+| version | T\_INT | required | Protocol version \(`0x3` for V3\) |
+| from | T\_ADDR\_EOA | required | EOA address that created the transaction |
+| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | required | EOA address to receive coins, or SCORE address to execute the transaction. |
+| value | T\_INT | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
+| stepLimit | T\_INT | required | Maximum step allowance that can be used by the transaction. |
+| timestamp | T\_INT | required | Transaction creation time. timestamp is in microsecond. |
+| nid | T\_INT | required | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
+| nonce | T\_INT | optional | An arbitrary number used to prevent transaction hash collision. |
+| signature | T\_SIG | required | Signature of the transaction. |
+| dataType | T\_DATA\_TYPE | optional | Type of data. \(call, deploy, or message\) |
 | data | T\_DICT or String | optional | The content of data varies depending on the dataType. |
 | data.method | String | required | Name of the functions to invoke in SCORE |
 | data.params | T\_DICT | optional | Function parameters |
 
 **Returns**
 
-* Transaction hash \([T\_HASH](icon-json-rpc-v3#T_HASH)\) on success
+* Transaction hash \(T\_HASH\) on success
 * Error code and message on failure
 
 **Example**
@@ -326,10 +326,10 @@ Following the above examples, you should be able to successfully invoke SampleTo
 
 ### References
 
-* [ICON JSON-RPC v3 Specification](doc:icon-json-rpc-v3)
-* [T-Bears CLI Reference](doc:t-bears-cli-reference)
-* [Java SDK](doc:java-sdk) 
-* [JavaScript SDK](doc:javascript-sdk) 
-* [Python SDK](doc:python-sdk) 
-* [Swift SDK](doc:swift-sdk)
+* [ICON JSON-RPC v3 Specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [T-Bears CLI Reference](../../tbears/cli-commands.md)
+* [Java SDK](../../icon-sdks/java-sdk/) 
+* [JavaScript SDK](../../icon-sdks/javascript/) 
+* [Python SDK](../../icon-sdks/python-sdk/) 
+* [Swift SDK](../../icon-sdks/swift-sdk/)
 

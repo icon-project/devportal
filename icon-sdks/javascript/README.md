@@ -4,7 +4,7 @@ description: >-
   https://github.com/icon-project/icon-sdk-js
 ---
 
-# Javascript
+# Javascript SDK
 
 This document describes how to interact with `ICON Network` using JavaScript SDK. This document contains SDK installation, API usage guide, and code examples.
 

@@ -5,7 +5,7 @@ In this document, we will explain how you choose the right `stepLimit` for your 
 
 ### Pre-reading
 
-* [ICON Key Concepts: Transaction Fees](doc:transaction-fees) 
+* [ICON Key Concepts: Transaction Fees](../../introduction/icon-key-concepts/transactions-fees.md) 
 
 ### Transaction Fee
 
@@ -111,7 +111,7 @@ $ curl -H "Content-Type: application/json" -d @stepprice.json https://bicon.net.
 
 ### Step Estimation using the JSON RPC API
 
-[debug\_estimateStep](icon-json-rpc-v3#section-debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
+[debug\_estimateStep](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
 
 ```javascript
 // transaction request - send ICX
@@ -149,7 +149,7 @@ $ curl -H "Content-Type: application/json" -d @stepprice.json https://bicon.net.
 }
 ```
 
-Request debug\_estimateStep using curl from CLI
+Request [debug\_estimateStep](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) using curl from CLI
 
 ```text
 $ curl -H "Content-Type: application/json" -d @debug.json https://bicon.net.solidwallet.io/api/debug/v3
@@ -158,6 +158,6 @@ $ curl -H "Content-Type: application/json" -d @debug.json https://bicon.net.soli
 
 ### Reference
 
-* [How to estimate required step](doc:how-to-estimate-required-step) 
-* [ICON JSON-RPC v3 Specification](doc:icon-json-rpc-v3)
+* [How to estimate required step](../../references/how-to/estimate-required-step.md) 
+* [ICON JSON-RPC v3 Specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
 

@@ -17,9 +17,9 @@ Service operators will be able to set the policy for the transaction fees after 
 
 ### Prerequisites
 
-* Basic concept of the [transaction fees and Step on ICON Network](https://www.icondev.io/docs/transaction-fees)
-* Knowledge of the ICON [JSON-RPC API](icon-json-rpc-v3)
-* [Writing SCORE](https://www.icondev.io/docs/writing-score)
+* Basic concept of the [transaction fees and Step on ICON Network](fee-sharing-and-virtual-step.md)
+* Knowledge of the ICON [JSON-RPC API](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [Writing SCORE](writing-score.md)
 
 ### Make your SCORE support Fee Sharing
 
@@ -101,7 +101,7 @@ Also the transaction sender must have a minimum ICX balance to send the transact
 
 ### Add deposit to the SCORE
 
-After deploying the example SCORE above to the ICON Network, you need to deposit ICX to the SCORE for the Fee Sharing and this deposit action will generate Virtual Steps. Currently, only the SCORE owner \(who deployed the SCORE\) can deposit ICX to the SCORE. To add a deposit to the SCORE, use the following [JSON-RPC API](icon-json-rpc-v3) or the equivalent in ICON SDKs. See [Java SDK](java-sdk) and \[Python SDK\].
+After deploying the example SCORE above to the ICON Network, you need to deposit ICX to the SCORE for the Fee Sharing and this deposit action will generate Virtual Steps. Currently, only the SCORE owner \(who deployed the SCORE\) can deposit ICX to the SCORE. To add a deposit to the SCORE, use the following [JSON-RPC API](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md) or the equivalent in ICON SDKs. See [Java SDK](../../icon-sdks/java-sdk/) and [Python SDK](../../icon-sdks/python-sdk/).
 
 ```javascript
 {
@@ -366,10 +366,8 @@ def DepositWithdrawn(self, id: bytes, from_: Address, returnAmount: int, penalty
 
 ### References
 
-* [JSON-RPC API](icon-json-rpc-v3)
-* [T-Bears](t-bears-overview)
-* [Java SDK](java-sdk)
-* \[Python SDK\]
-
-\[Python SDK\]: python-sdk
+* [JSON-RPC API](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [T-Bears](../../tbears/overview.md)
+* [Java SDK](../../icon-sdks/java-sdk/)
+* [Python SDK](../../icon-sdks/python-sdk/)
 
