@@ -60,7 +60,7 @@ The [SampleToken](../sample-scores/token-and-crowdsale.md) contract is used in t
     $ tbears start
    ```
 
-3. Open `tbears_cli_config.json` and edit it as follows. Parameters for `on_install()` method \(`_initialSupply` and `_decimals`\) should be set under `scoreParams` field. Note that every value in the json file must be a **string** type as defined in the [ICON JSON-RPC v3 Specification](doc:icon-json-rpc-v3#section-value-types), and integer value must be represented as a **lowercase** HEX string.
+3. Open `tbears_cli_config.json` and edit it as follows. Parameters for `on_install()` method \(`_initialSupply` and `_decimals`\) should be set under `scoreParams` field. Note that every value in the json file must be a **string** type as defined in the [ICON JSON-RPC v3 Specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md), and integer value must be represented as a **lowercase** HEX string.
 
    ```javascript
     {

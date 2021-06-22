@@ -1,8 +1,12 @@
+---
+description: 'The source code is found on GitHub at https://github.com/icon-project/t-bears'
+---
+
 # Overview
 
 T-Bears is a suite of development tools for SCORE. T-Bears provides a project template for SCORE to help you start right away. You can code and test your smart contract locally in an emulated environment, and when ready, deploy SCORE onto the ICON network from the command-line interface. Below is the runtime view of the T-Bears.
 
-![](../.gitbook/assets/6dd46ba-tbears_-v.png)
+![](../.gitbook/assets/d5ebfe7-tbears.png)
 
 ### Components
 

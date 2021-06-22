@@ -11,7 +11,7 @@ Before you start writing a SCORE, you need to install the T-Bears. T-Bears provi
 
 For the details of T-Bears, please go to [T-Bears Overview](../../tbears/overview.md)
 
-If you have finished the [SCORE Quickstart](doc:score-quickstart), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../../tbears/installation.md) instruction.
+If you have finished the [SCORE Quickstart](../quickstart/), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../../tbears/installation.md) instruction.
 
 ### IDE - PyCharm
 
@@ -88,4 +88,6 @@ tbears init score_w_pycharm ScoreWithPycharm
 New SCORE project has been successfully created. Select the main class file and start writing code on PyCharm.
 
 ![](../../.gitbook/assets/cbd60b5-endgame.png)
+
+![Enjoy the IDE features such as autocompletion and code reference information.](../../.gitbook/assets/6bbfef7-thelast.png)
 

@@ -12,10 +12,10 @@ Get different types of examples as follows.
 
 | Example | Description |
 | :--- | :--- |
-| Wallet | An example of creating and loading a keywallet. |
-| ICX Transfer | An example of transferring ICX and confirming the result. |
-| Token Transfer | An example of deploying an IRC token, transferring the token and confirming the result. |
-| Sync Block | An example of checking block confirmation and printing the ICX and token transfer information. |
+| [Wallet](./#wallet) | An example of creating and loading a keywallet. |
+| [ICX Transfer](./#icx-transfer) | An example of transferring ICX and confirming the result. |
+| [Token Transfer](./#token-transfer) | An example of deploying an IRC token, transferring the token and confirming the result. |
+| [Sync Block](./#sync-block) | An example of checking block confirmation and printing the ICX and token transfer information. |
 
 ### Prerequisite
 
@@ -123,15 +123,15 @@ iconService.getLastBlock().async { (result) in
 
 The querying APIs are as follows.
 
-* getLastBlock
-* getBlock\(height\)
-* getBlock\(hash\)
-* call
-* getBalance
-* getScoreAPI
-* getTotalSupply
-* getTransaction
-* getTransactionResult
+* [getLastBlock](swift-api-reference.md#func-getlastblock)
+* [getBlock\(height\)](swift-api-reference.md#func-getblock)
+* [getBlock\(hash\)](swift-api-reference.md#func-getblock)
+* [call](swift-api-reference.md#func-call)
+* [getBalance](swift-api-reference.md#func-getbalance)
+* [getScoreAPI](swift-api-reference.md#func-getscoreapi)
+* [getTotalSupply](swift-api-reference.md#func-gettotalsupply)
+* [getTransaction](swift-api-reference.md#func-gettransaction)
+* [getTransactionResult](swift-api-reference.md#func-gettransactionresult)
 
 **getLastBlock**
 

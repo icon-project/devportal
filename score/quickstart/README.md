@@ -4,7 +4,7 @@ The intended audience is the developers who are new to ICON, but are familiar wi
 
 This tutorial is in two parts. In part 1, you will get familiar with the development tools, and the local testing environment. You will write a simple SCORE, and execute it on your PC. In part 2, you will learn how to deploy the SCORE onto the testnet, and write a python client code to interact with it.
 
-**Part 1. HelloWorld on local emulated environment**
+**Part 1.** [**HelloWorld on local emulated environment**](part-1.-helloworld-on-local-emulated-environment.md)\*\*\*\*
 
 * Install T-Bears \(Docker\)
 * Test account
@@ -12,7 +12,7 @@ This tutorial is in two parts. In part 1, you will get familiar with the develop
 * Create HelloWorld contract and deploy it
 * Modify HelloWorld contract to greet you
 
-**Part 2. HelloWorld on testnet**
+**Part 2.** [**HelloWorld on testnet**](part-2.-helloworld-on-testnet.md)\*\*\*\*
 
 * Configure ICONex to connect to the testnet
 * Create an account in ICONex

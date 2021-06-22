@@ -1,3 +1,9 @@
+---
+description: >-
+  The source code is found on GitHub at
+  https://github.com/icon-project/icon-sdk-python
+---
+
 # Python API Reference
 
 ### Querying API Methods
@@ -923,6 +929,6 @@ estimate_step = icon_service.estimate_step(transaction)
 
 #### Reference
 
-* [ICON JSON-RPC API v3](icon-json-rpc-v3)
+* [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
 * [ICON SDK for Python \(Previous version\)](https://github.com/icon-project/icon_sdk_for_python) - Reference to [ICON JSON-RPC API **v2**](https://github.com/icon-project/icx_JSON_RPC)
 

@@ -14,16 +14,6 @@
 | Transaction fee | on |
 | SCORE audit | off |
 
-|  |  |
-| :--- | :--- |
-| Name | Hannam |
-| Node | [https://hannam.net.solidwallet.io/](https://hannam.net.solidwallet.io/) |
-| API endpoint | [https://hannam.net.solidwallet.io/api/v3](https://hannam.net.solidwallet.io/api/v3) |
-| Network ID \(nid\) | 3 |
-| Tracker | [https://hannam.tracker.solidwallet.io](https://hannam.tracker.solidwallet.io) |
-| Transaction fee | on |
-| SCORE audit | off |
-
 ### Testnet for Exchanges
 
 Euljiro network is exclusively open to the exchange developers.
@@ -54,19 +44,7 @@ Pagoda network is for testing P-Rep node
 
 ## ICON 2.0
 
-### Testnet for SCORE testing
-
-|  |  |
-| :--- | :--- |
-| Name | Gangnam |
-| Node | [https://gicon.net.solidwallet.io](https://gicon.net.solidwallet.io) |
-| API endpoint | [https://gicon.net.solidwallet.io/api/v3](https://gicon.net.solidwallet.io/api/v3) |
-| Network ID \(nid\) | 0x7 |
-| Tracker | [https://gicon.tracker.solidwallet.io](https://gicon.tracker.solidwallet.io) |
-| Transaction fee | on |
-| SCORE audit | off |
-
-### Testnet for Core Technologies
+### Testnet
 
 |  |  |
 | :--- | :--- |

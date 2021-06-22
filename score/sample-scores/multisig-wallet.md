@@ -1,3 +1,9 @@
+---
+description: >-
+  The source code is found on GitHub at
+  https://github.com/icon-project/multisig-wallet
+---
+
 # Multisig Wallet
 
 This document describes the inner workings of a Multi Signature Wallet SCORE and provides guidelines and APIs about how to use this service.

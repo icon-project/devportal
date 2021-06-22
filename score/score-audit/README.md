@@ -1,3 +1,9 @@
+---
+description: >-
+  List of pending audit requests -
+  https://audit.icon.foundation/guest/pendingList
+---
+
 # SCORE Audit
 
 For every SCOREs requested to deploy to the ICON mainnet, we perform a security audit in an effort to verify they do not break the mainnet. The audit process may take several days. Before you plan to build your DApp, please take the time to look at these guidelines.

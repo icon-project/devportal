@@ -23,3 +23,5 @@ SCORE must follow sandbox policy, i.e. some operations like file system access o
 
 This slide was presented by Jaechang Namgoong, a senior engineer of ICONLOOP. In this video, you will learn how to create smart contracts in ICON. The voiceover was added later by Doyun Hwang.
 
+{% embed url="https://www.youtube.com/watch?v=0xX28qNRHbA" %}
+

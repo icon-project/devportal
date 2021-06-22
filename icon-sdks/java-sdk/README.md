@@ -12,10 +12,10 @@ Get different types of examples as follows.
 
 | Code Example | Description |
 | :--- | :--- |
-| Wallet | An example of creating and loading a keywallet. |
-| ICX Transfer | An example of transferring ICX and confirming the result. |
-| Token Deploy and Transfer | An example of deploying an IRC token, transferring the token and confirming the result. |
-| Sync Block | An example of checking block confirmation and printing the ICX and token transfer information. |
+| [Wallet](./#wallet) | An example of creating and loading a keywallet. |
+| [ICX Transfer](./#icx-transfer) | An example of transferring ICX and confirming the result. |
+| [Token Deploy and Transfer](./#token-deploy-and-transfer) | An example of deploying an IRC token, transferring the token and confirming the result. |
+| [Sync Block](./#sync-block) | An example of checking block confirmation and printing the ICX and token transfer information. |
 
 This document is focused on how to use the SDK properly. For the detailed API specification, see the API reference documentation.
 

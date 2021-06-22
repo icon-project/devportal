@@ -1,8 +1,14 @@
+---
+description: >-
+  Yellow paper:
+  https://www.slideshare.net/helloiconworld/yellowpaper-icon-transaction-fee-and-score-operation-policyenv10
+---
+
 # Transactions Fees
 
 * ICON network offers a reasonable yet sophisticated fee system taking the complexity of each transaction into consideration.
 * Fees are incurred when executing a smart contract on the ICON network, and the fees are determined based on the total amount of resources used to execute the transaction. **Step** is the unit of the resource-usage measurement.
-* The SCORE transaction fee on the ICON mainnet is governed by three principles: Transaction fee policy, Virtual Step, and SCORE termination policy. 
+* The SCORE transaction fee on the ICON mainnet is governed by three principles: [Transaction fee policy](transactions-fees.md#transaction-fee-policy), [Virtual Step,](transactions-fees.md#virtual-step) and [SCORE termination policy](transactions-fees.md#score-termination-policy). 
 * Blockchain transaction fee hindered the mass service adoption. ICON proposes a new Transaction fee payment policy to alleviate the usability issue. 
 
 ### Transaction Fee Policy
@@ -75,7 +81,7 @@ There are certain applications that are awkward to charge end-users the fees for
   * By default, the user \(EOA who initiates the transaction\) pays the transaction fees. However, transaction fees can be partly paid by the SCORE owner \(the service provider\) if the SCORE owner decides to do so to attract more users.
 * Fee Sharing Ratio
   * The fee sharing ratio allows SCORE owners to attract more customers by paying some or all of the customers' transaction fees. The owner can set the fee payment ratio between the owner and the customer at the time of smart contract registration. 
-  * The ratio can be set from 0% to 100%. If the owner's paying ratio is more than 0%, the owner must deposit a certain amount of ICX in the corresponding SCORE, and when a transaction occurs, the fee will be deducted from the Virtual Step associated to the SCORE or from the ICX deposited to the SCORE. 
+  * The ratio can be set from 0% to 100%. If the owner's paying ratio is more than 0%, the owner must deposit a certain amount of ICX in the corresponding SCORE, and when a transaction occurs, the fee will be deducted from the [Virtual Step](transactions-fees.md#virtual-step) associated to the SCORE or from the ICX deposited to the SCORE. 
 
 \[Table 4\] Transaction Fee sharing Ratio Example
 

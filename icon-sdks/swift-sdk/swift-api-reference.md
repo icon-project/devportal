@@ -1,10 +1,14 @@
+---
+description: 'The source code is found on GitHub at https://github.com/icon-project/ICONKit'
+---
+
 # Swift API Reference
 
 ICON supports SDK for 3rd party or user services development. You can integrate ICON SDK for your project and utilize the ICON’s functionality. This document provides you with information about API specification.
 
 ### `class` ICONService
 
-`ICONService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use [ICON JSON-RPC APIs](icon-json-rpc-v3) \(version 3\). All methods of `IconService` returns a `Request<T, ICError>` instance.
+`ICONService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use [ICON JSON-RPC APIs](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md) \(version 3\). All methods of `IconService` returns a `Request<T, ICError>` instance.
 
 #### Query Execution
 
@@ -68,9 +72,9 @@ iconService.getLastBlock().async { (result) in
 
 | Class | Description |
 | :--- | :--- |
-| Transaction | A class for Transaction instance which is for sending ICX. |
-| CallTransaction | A class for CallTransaction instance which is for SCORE function call. CallTransaction extends `Transaction` class. |
-| MessageTransaction | A class for MessageTransaction instance which is for transfer message. Extends `Transaction` class. |
+| [Transaction](swift-api-reference.md#class-transaction) | A class for Transaction instance which is for sending ICX. |
+| [CallTransaction](swift-api-reference.md#class-calltransaction) | A class for CallTransaction instance which is for SCORE function call. CallTransaction extends `Transaction` class. |
+| [MessageTransaction](swift-api-reference.md#class-messagetransaction) | A class for MessageTransaction instance which is for transfer message. Extends `Transaction` class. |
 
 Request is executed as **Synchronized** or **Asynchronized** like a querying request.
 
@@ -112,7 +116,7 @@ init(provider: String, nid: String)
 | provider | `String` | ICON node url. |
 | nid | `String` | Network ID. |
 
-For more details of node URL and network id, see [ICON Network](the-icon-network) document.
+For more details of node URL and network id, see [ICON Network](../../introduction/the-icon-network/) document.
 
 **Example**
 
@@ -436,7 +440,7 @@ func sendTransaction(signedTransaction: SignedTransaction) -> Request<String>
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| signedTransaction | `SignedTransaction` | an instance of SignedTransaction class. |
+| signedTransaction | `SignedTransaction` | an instance of [SignedTransaction](swift-api-reference.md#class-signedtransaction) class. |
 
 **Returns**
 
@@ -766,7 +770,7 @@ class CallTransaction: Transaction
 | method | The method name of SCORE API. |
 | params | The input params for method. |
 
-For details of extended parameters and methods, see Transaction section.
+For details of extended parameters and methods, see [Transaction](swift-api-reference.md#class-transaction) section.
 
 #### `func` method
 
@@ -834,7 +838,7 @@ class MessageTransaction: Transaction
 | :--- | :--- |
 | message | A message to send. |
 
-For details of extended parameters and methods, see Transaction section.
+For details of extended parameters and methods, see [Transaction](swift-api-reference.md#class-transaction) section.
 
 #### `func` message
 
@@ -908,7 +912,7 @@ There are 5 types of errors.
   * decrypt - Failed to decrypt.
   * convert - Failed to convert to URL or data.
 * **error\(error: Error\)**
-* **message\(error: String**\) - [JSON RPC Error Messages](icon-json-rpc-v3#section-json-rpc-error-codes)
+* **message\(error: String**\) - [JSON RPC Error Messages](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#json-rpc-error-codes)
 
 ### Converter Functions
 

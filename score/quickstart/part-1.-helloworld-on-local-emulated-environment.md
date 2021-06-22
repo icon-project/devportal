@@ -119,3 +119,82 @@ Transaction result: {
 }
 ```
 
+{% hint style="warning" %}
+#### Out of step: contractCreate
+
+If you receive "Out of step" error message, open `tbears_cli_config.json` and increase the `stepLimit` value to `0x50000000`.
+
+```text
+    "deploy": {
+        "stepLimit": "0x50000000",
+        "mode": "install",
+        "scoreParams": {}
+    },
+```
+{% endhint %}
+
+SCORE has been successfully deployed. We will invoke `hello` method from CLI and see the result. You need to create a `call.json` file that contains the request message. `to` is the SCORE address, `from` is the message sender's address. Don't forget to provide the actual SCORE address, the one you got after deploy. For the complete json message format, please refer to [ICON JSON-RPC API v3 specification](https://www.icondev.io/docs/icon-json-rpc-v3).
+
+```text
+root@07dfee84208e:/tbears# tbears call call.json
+response : {
+    "jsonrpc": "2.0",
+    "result": "Hello",
+    "id": 1
+}
+root@07dfee84208e:/tbears# cat call.json 
+{
+    "jsonrpc": "2.0",
+    "method": "icx_call",
+    "id": 1,
+    "params": {
+        "from": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb",
+        "to": "cx3176b5d6cae66a1abbc3ca9070423a5c708834a9",
+        "dataType": "call", 
+        "data": {
+            "method": "hello" 
+        }
+    }
+}
+```
+
+### Modify HelloWorld contract to greet you
+
+It would be a pleasure to have a more agreeable HelloWorld SCORE. Let's give it a name, and greet you in a nicer way. One method will be added, `hello` method will be modified.
+
+* `name` is a read-only function and returns the SCORE name.
+* `hello` method is slightly modified to recognize you. `msg` is a built-in property that holds information of the message sender, and the amount of ICX the sender attempts to transfer. They can be referenced by `msg.sender` and `msg.value` respectively.
+
+```text
+    @external(readonly=True)
+    def name(self) -> str:
+        return "HelloWorld"
+    
+    @external(readonly=True)
+    def hello(self) -> str:
+        return f'Hello, {self.msg.sender}. My name is {self.name()}'
+```
+
+We need to deploy the SCORE again to reflect the change. `deploy` command with `-m update` and `-o [score_address]` options will update the SCORE. Updating is a unique feature of ICON. SCORE address is not changed after the update.
+
+```text
+root@07dfee84208e:/tbears# tbears deploy -m update -o cx3176b5d6cae66a1abbc3ca9070423a5c708834a9 hello_world
+Send deploy request successfully.
+If you want to check SCORE deployed successfully, execute txresult command
+transaction hash: 0xc412dc9c6685701c8837eddea091283244303d322aa1fba36bc0782e1b483763
+...
+```
+
+Invoke the `hello` method with the same request message, and see the changes.
+
+```text
+root@07dfee84208e:/tbears# tbears call call.json
+response : {
+    "jsonrpc": "2.0",
+    "result": "Hello, hxe7af5fcfd8dfc67530a01a0e403882687528dfcb. My name is HelloWorld",
+    "id": 1
+}
+```
+
+![](https://cdn.readme.io/img/book-icon.svg?1624292826826)
+

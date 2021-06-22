@@ -1,3 +1,7 @@
+---
+description: 'The source code is found on GitHub at https://github.com/icon-project/t-bears'
+---
+
 # Installation
 
 This guide will walk you through the steps of T-Bears installation. There are three ways of installing T-Bears - Docker, PyPi, and building from source.
@@ -6,7 +10,7 @@ This guide will walk you through the steps of T-Bears installation. There are th
 
 [https://hub.docker.com/r/iconloop/tbears](https://hub.docker.com/r/iconloop/tbears)
 
-You can run T-Bears on your machine using Docker. The below command will download T-Bears Docker image and run T-Bears Docker container.
+You can run T-Bears on your machine using Docker. The below command will download T-Bears Docker image and run [T-Bears Docker container](installation.md#t-bears-docker-quick-and-easy).
 
 ```bash
 docker run -it --name tbears-container -p 9000:9000 iconloop/tbears:mainnet

@@ -8,36 +8,36 @@ Listed below are the checklist grouped by severity. We assume that you have read
 
 #### Critical
 
-* Timeout
-* Unfinishing Loop
-* Package import
-* System Call
-* Outbound Network Call
-* iconservice Internal API
-* Randomness
-* Fixed SCORE Infomation
-* IRC2 Token Standard Compliance
-* IRC2 Token Parameter Name
-* Eventlog on Token Transfer
-* Eventlog without Token Transfer
-* ICXTransfer Eventlog
-* Super Class
-* Keyword Arguments
-* Big Number Operation
-* Instance Variable
-* StateDB Operation
-* StateDB Write Operation
-* Temporary Limitation
+* [Timeout](audit-checklist.md#timeout)
+* [Unfinishing Loop](audit-checklist.md#unfinishing-loop)
+* [Package import](audit-checklist.md#package-import)
+* [System Call](audit-checklist.md#system-call)
+* [Outbound Network Call](audit-checklist.md#outbound-network-call)
+* [iconservice Internal API](audit-checklist.md#iconservice-internal-api)
+* [Randomness](audit-checklist.md#randomness)
+* [Fixed SCORE Infomation](audit-checklist.md#fixed-score-infomation)
+* [IRC2 Token Standard Compliance](audit-checklist.md#irc2-token-standard-compliance)
+* [IRC2 Token Parameter Name](audit-checklist.md#irc2-token-parameter-name)
+* [Eventlog on Token Transfer](audit-checklist.md#eventlog-on-token-transfer)
+* [Eventlog without Token Transfer](audit-checklist.md#eventlog-without-token-transfer)
+* [ICXTransfer Eventlog](audit-checklist.md#icxtransfer-eventlog)
+* [Super Class](audit-checklist.md#super-class)
+* [Keyword Arguments](audit-checklist.md#keyword-arguments)
+* [Big Number Operation](audit-checklist.md#big-number-operation)
+* [Instance Variable](audit-checklist.md#instance-variable)
+* [StateDB Operation](audit-checklist.md#statedb-operation)
+* [StateDB Write Operation](audit-checklist.md#statedb-write-operation)
+* [Temporary Limitation](audit-checklist.md#temporary-limitation)
 
 #### Warning
 
-* External Function Parameter Check
-* Internal Function Parameter Check
-* Predictable Arbitrarity
-* Unchecked Low Level Calls
-* Underflow/Overflow
-* Vault
-* Reentrancy
+* [External Function Parameter Check](audit-checklist.md#external-function-parameter-check)
+* [Internal Function Parameter Check](audit-checklist.md#internal-function-parameter-check)
+* [Predictable Arbitrarity](audit-checklist.md#predictable-arbitrarity)
+* [Unchecked Low Level Calls](audit-checklist.md#unchecked-low-level-calls)
+* [Underflow/Overflow](audit-checklist.md#underflow-overflow)
+* [Vault](audit-checklist.md#vault)
+* [Reentrancy](audit-checklist.md#reentrancy)
 
 ### Critical
 
@@ -486,10 +486,6 @@ def __init__(self, db: IconScoreDatabase) -> None:
     self._total_supply = VarDB(self._TOTAL_SUPPLY, db, value_type=int)
     self._total_supply.set(10000000)
 ```
-
-#### Temporary Limitation
-
-N/A
 
 ### Warning
 

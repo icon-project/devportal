@@ -1,3 +1,9 @@
+---
+description: >-
+  The complete source code is on GitHub at
+  https://github.com/icon-project/samples. See irc2_token and crowdsale folders.
+---
+
 # Token & Crowdsale
 
 This document will explain how to write SCOREs with T-Bears framework. Let's start by creating a simple token contract. You can create an empty project using `init` command. Suppose your project name is 'sample\_token' and the main class name is 'SampleToken'.

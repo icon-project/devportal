@@ -8,15 +8,15 @@ ICON supports JavaScript SDK for 3rd party or user services development. You can
 
 | Module | Description |
 | :--- | :--- |
-| IconService | Class which provides APIs to communicate with ICON nodes |
-| IconService.IconWallet | Class which provides EOA functions. |
-| IconService.IconBuilder | Builder class for transaction object. |
-| IconService.SignedTransaction | Class representing the signed transaction object. |
-| IconService.HttpProvider | Class representing HTTP-based provider |
-| IconService.IconAmount | Class which provides unit conversion functions. |
-| IconService.IconConverter | Util module contains conversion functions. |
-| IconService.IconHexadecimal | Util module contains hex-prefix functions. |
-| IconService.IconValidator | Util module contains validator functions. |
+| [IconService](javascript-api-reference.md#iconservice) | Class which provides APIs to communicate with ICON nodes |
+| [IconService.IconWallet](javascript-api-reference.md#iconservice-iconwallet-wallet) | Class which provides EOA functions. |
+| [IconService.IconBuilder](javascript-api-reference.md#iconservice-iconbuilder) | Builder class for transaction object. |
+| [IconService.SignedTransaction](javascript-api-reference.md#iconservice-signedtransaction) | Class representing the signed transaction object. |
+| [IconService.HttpProvider](javascript-api-reference.md#iconservice-httpprovider) | Class representing HTTP-based provider |
+| [IconService.IconAmount](javascript-api-reference.md#iconservice-iconamount) | Class which provides unit conversion functions. |
+| [IconService.IconConverter](javascript-api-reference.md#iconservice-iconconverter) | Util module contains conversion functions. |
+| [IconService.IconHexadecimal](javascript-api-reference.md#iconservice-iconhexadecimal) | Util module contains hex-prefix functions. |
+| [IconService.IconValidator](javascript-api-reference.md#iconservice-iconvalidator) | Util module contains validator functions. |
 
 ### IconService
 
@@ -34,7 +34,7 @@ new IconService(provider: HttpProvider)
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| provider | `HttpProvider` | HttpProvider instance. |
+| provider | `HttpProvider` | [HttpProvider](javascript-api-reference.md#iconservice-httpprovider) instance. |
 
 **Example**
 
@@ -95,7 +95,7 @@ const balance = await iconService.getBalance('hx9d8a8376e7db9f00478feb9a46f44f0d
 
 Get the block information.
 
-> Since this API is an old version, we recommend to use getBlockByHeight\(\), getBlockByHash\(\), getLastBlock\(\) API.
+> Since this API is an old version, we recommend to use [getBlockByHeight\(\)](javascript-api-reference.md#getblockbyheight), [getBlockByHash\(\)](javascript-api-reference.md#getblockbyhash), [getLastBlock\(\)](javascript-api-reference.md#getlastblock) API.
 
 ```javascript
 .getBlock(value: string|number|BigNumber) => HttpCall // .execute() => object
@@ -109,13 +109,13 @@ Get the block information.
 
 Depending on the type of input value, there are different ways to get block information.
 
-1. Get block by height - Put integer value of a block height. It will delegate to [icx\_getBlockByHeight](icon-json-rpc-v3#section-icx_getblockbyheight) RPC method.
-2. Get block by hash - Put block hash value. It will delegate to [icx\_getBlockByHash](icon-json-rpc-v3#section-icx_getblockbyhash) RPC method.
-3. Get latest block - Put the string `'latest'`. It will delegate to [icx\_getLastBlock](icon-json-rpc-v3#section-icx_getlastblock) RPC method.
+1. Get block by height - Put integer value of a block height. It will delegate to [icx\_getBlockByHeight](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyheight) RPC method.
+2. Get block by hash - Put block hash value. It will delegate to [icx\_getBlockByHash](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyhash) RPC method.
+3. Get latest block - Put the string `'latest'`. It will delegate to [icx\_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock) RPC method.
 
 **Returns**
 
-`HttpCall` - The HttpCall instance for `icx_getBlockByHeight`, `icx_getBlockByHash` or `icx_getLastBlock` JSON-RPC API request. If `execute()` successfully, it returns a block `object`. For details of returned block object, see _Example_ section of [icx\_getLastBlock](icon-json-rpc-v3#section-icx_getlastblock).
+`HttpCall` - The HttpCall instance for `icx_getBlockByHeight`, `icx_getBlockByHash` or `icx_getLastBlock` JSON-RPC API request. If `execute()` successfully, it returns a block `object`. For details of returned block object, see _Example_ section of [icx\_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock).
 
 **Example**
 
@@ -280,7 +280,7 @@ Get the result of transaction by transaction hash.
 
 **Returns**
 
-`HttpCall` - The HttpCall instance for `icx_getTransactionResult` JSON-RPC API request. If `execute()` successfully, it returns a transaction result `object`. For details of returned object, see [here](icon-json-rpc-v3#section-icx_gettransactionresult).
+`HttpCall` - The HttpCall instance for `icx_getTransactionResult` JSON-RPC API request. If `execute()` successfully, it returns a transaction result `object`. For details of returned object, see [here](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_gettransactionbyhash).
 
 **Example**
 
@@ -301,7 +301,7 @@ Send a transaction that changes the states of address.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| signedTransaction | `SignedTransaction` | an instance of SignedTransaction class. |
+| signedTransaction | `SignedTransaction` | an instance of [SignedTransaction](javascript-api-reference.md#iconservice-signedtransaction) class. |
 
 **Returns**
 
@@ -326,7 +326,7 @@ Calls external function of SCORE.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| call | `Call` | an instance of Call class builded by CallBuilder. |
+| call | `Call` | an instance of Call class builded by [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder). |
 
 **Returns**
 
@@ -567,11 +567,11 @@ const pk = wallet.getAddress()
 
 | Module | Description |
 | :--- | :--- |
-| IcxTransactionBuilder | Builder class for `IcxTransaction` instance, which is for sending ICX. |
-| MessageTransactionBuilder | Builder class for `MessageTransaction` instance, which is for sending message data. Extends `IcxTransactionBuilder` class. |
-| DeployTransactionBuilder | Builder class for `DeployTransaction` instance, which is for deploying SCORE. Extends `IcxTransactionBuilder` class. |
-| CallTransactionBuilder | Builder class for `CallTransaction` instance, which is for invoking a _state-transition_ function of SCORE. Extends `IcxTransactionBuilder` class. |
-| CallBuilder | Builder class for `Call` instance, which is for invoking a _read-only_ function of SCORE. |
+| [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) | Builder class for `IcxTransaction` instance, which is for sending ICX. |
+| [MessageTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-messagetransactionbuilder) | Builder class for `MessageTransaction` instance, which is for sending message data. Extends `IcxTransactionBuilder` class. |
+| [DeployTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-deploytransactionbuilder) | Builder class for `DeployTransaction` instance, which is for deploying SCORE. Extends `IcxTransactionBuilder` class. |
+| [CallTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-calltransactionbuilder) | Builder class for `CallTransaction` instance, which is for invoking a _state-transition_ function of SCORE. Extends `IcxTransactionBuilder` class. |
+| [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder-callbuilder) | Builder class for `Call` instance, which is for invoking a _read-only_ function of SCORE. |
 
 ### IconService.IconBuilder.IcxTransactionBuilder
 
@@ -849,7 +849,7 @@ Builder class for `MessageTransaction` instance. `MessageTransaction` is an obje
 | `data` | A message data. Data type of the data should be **lowercase hex string prefixed with '0x'.** |
 | `dataType` | Data type of `data`. Fixed string `message` is in value. |
 
-For details of extended parameters and methods, see IcxTransactionBuilder section.
+For details of extended parameters and methods, see [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) section.
 
 #### Constructor
 
@@ -1075,7 +1075,7 @@ Builder class for `CallTransaction` instance. `CallTransaction` is an object rep
 | `data` | An object data for calling method. It contains 2 parameters: 1\) `method` - The method name of SCORE API. 2\) `params` \(optional\) - The input params for method |
 | `dataType` | Data type of `data`. Fixed string `call` is in value. |
 
-For details of extended parameters and methods, see IcxTransactionBuilder section.
+For details of extended parameters and methods, see [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) section.
 
 #### Constructor
 
@@ -1311,7 +1311,7 @@ const txObj = new CallBuilder()
 
 ### IconService.SignedTransaction
 
-`SignedTransaction` is a class for signing transaction object. It enables you to make signature, and signed transaction object by calling instance methods. Also, by passing `SignedTransaction` instance to sendTransaction\(\), it will automatically generate transaction object including signature, and send to ICON node.
+`SignedTransaction` is a class for signing transaction object. It enables you to make signature, and signed transaction object by calling instance methods. Also, by passing `SignedTransaction` instance to [sendTransaction](javascript-api-reference.md#sendtransaction)\(\), it will automatically generate transaction object including signature, and send to ICON node.
 
 #### Constructor
 
@@ -1421,7 +1421,7 @@ const signature = new SignedTransaction(icxTransaction, wallet).getRawTransactio
 
 ### IconService.HttpProvider
 
-`HttpProvider` is a class representing HTTP-based provider. It is commonly used for setting provider url of `IconService` instance. For details of network and node url, see [ICON Networks](the-icon-network) document.
+`HttpProvider` is a class representing HTTP-based provider. It is commonly used for setting provider url of `IconService` instance. For details of network and node url, see [ICON Networks](../../introduction/the-icon-network/) document.
 
 #### Constructor
 

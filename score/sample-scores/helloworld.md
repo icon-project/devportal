@@ -1,3 +1,7 @@
+---
+description: 'The source code is found on GitHub at https://github.com/icon-project/samples'
+---
+
 # HelloWorld
 
 The simplest yet completely legitimate SCORE that returns "Hello" in the response message.

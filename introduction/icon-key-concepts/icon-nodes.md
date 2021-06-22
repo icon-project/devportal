@@ -16,7 +16,7 @@ The user and application can access \(query or send transactions\) these nodes t
 
 ### Peer
 
-There are two types of Peer nodes, Public and Community Representative. As you see in the word "Representative", these nodes are supposed to be elected by ICONist or Community members. Details of the election are presented in [ICONSENSUS](https://icon.community/iconsensus/).
+There are two types of Peer nodes, Public and Community Representative. As you see in the word "Representative", these nodes are supposed to be elected by ICONist or Community members.
 
 Peer nodes are the essential entities of ICON network. They have roles to produce and validate the blocks, which contains transactions transmitted into ICON network. All transactions sent to ICON network are relayed or directed to Peer nodes. One of Peer nodes becomes a leader node, who has the right to propose a block on its turn. And the other Peer nodes validate the proposed block. The block is confirmed when 2/3 of Peer nodes agree on that block. Peer nodes will become a leader node in a pre-defined order, and produce one block on their turn.
 

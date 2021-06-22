@@ -12,10 +12,10 @@ Get different types of examples as follows. Complete source code is found on Git
 
 | Example | Description |
 | :--- | :--- |
-| Wallet | An example of creating and loading a keywallet. |
-| ICX Transfer | An example of transferring ICX and confirming the result. |
-| Token Deploy and Transfer | An example of deploying an IRC token, transferring the token and confirming the result. |
-| Sync Block | An example of checking block confirmation and printing the ICX and token transfer information. |
+| [Wallet](./#wallet) | An example of creating and loading a keywallet. |
+| [ICX Transfer](../java-sdk/#icx-transfer) | An example of transferring ICX and confirming the result. |
+| [Token Deploy and Transfer](../java-sdk/#token-deploy-and-transfer) | An example of deploying an IRC token, transferring the token and confirming the result. |
+| [Sync Block](../java-sdk/#sync-block) | An example of checking block confirmation and printing the ICX and token transfer information. |
 
 ### Prerequisite
 
