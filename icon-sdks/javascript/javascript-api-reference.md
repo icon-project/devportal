@@ -20,7 +20,7 @@ ICON supports JavaScript SDK for 3rd party or user services development. You can
 
 ### IconService
 
-`IconService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use ICON JSON-RPC APIs \(version 3\). All instance methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available.
+`IconService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use [ICON JSON-RPC APIs \(version 3\)](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md). All instance methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available.
 
 #### Constructor
 
