@@ -2,7 +2,7 @@
 
 ### 1. Export your keystore file first
 
-Export your Keystore file whitch you registered in. You can see how to get the Keystore file from this [link.](https://www.icondev.io/docs/account-management)
+Export your Keystore file whitch you registered in. You can see how to get the Keystore file from this [link.](../../introduction/icon-key-concepts/accounts.md)
 
 ### 2. Place your keystore file in the proper path
 

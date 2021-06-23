@@ -8,9 +8,9 @@ Understand how to write SCORE integration test
 
 ### Prerequisite
 
-* [SCORE Overview](score-overview)
-* [T-Bears Overview](tbears-overview) 
-* [ICON Python SDK](python-sdk)
+* [SCORE Overview](../../score/overview.md)
+* [T-Bears Overview](../../tbears/overview.md) 
+* [ICON Python SDK](../../icon-sdks/python-sdk/)
 
 ### How to Write SCORE Integration Test Code
 
@@ -170,6 +170,6 @@ OK
 
 ### References
 
-* [ICON Python SDK](python-sdk)
-* [ICON SCORE samples](sample-scores)
+* [ICON Python SDK](../../icon-sdks/python-sdk/)
+* [ICON SCORE samples](../../score/sample-scores/)
 

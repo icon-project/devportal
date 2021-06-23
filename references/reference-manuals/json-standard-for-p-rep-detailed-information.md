@@ -100,8 +100,7 @@ Create a JSON file and upload it to your domain server. When you call the `regis
 
 ### References
 
-* [P-Rep tools \(preptools\) Tutorial](https://www.icondev.io/docs/p-rep-tools-preptools-tutorial)
-* [How to register and unregister for P-Rep](https://www.icondev.io/docs/how-to-be-a-p-rep)
+* [P-Rep tools \(preptools\) Tutorial](../../icon-node/p-rep-tools.md)
 
 ### License
 

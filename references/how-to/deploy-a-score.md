@@ -6,23 +6,23 @@ In this document, we will explain various methods of deploying a SCORE onto the 
 
 * Have an EOA account and the matching keystore file.
 * ICX balance in your wallet.
-* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](doc:deploy-guideline). 
+* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](../../score/score-audit/). 
 
 ### Using T-Bears
 
-To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline](deploy-guideline#section-tbears-deploy-install).
+To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline](../../score/score-audit/deployment-process.md#t-bears).
 
 ### Using Python SDK
 
-[Token Deploy Code Example](python-sdk#section-token-deploy-transaction) on Python SDK.
+[Token Deploy Code Example](../../icon-sdks/python-sdk/#token-deploy-and-transfer) on Python SDK.
 
 ### Using Java SDK
 
-[Token Deploy Code Example](java-sdk#section-token-deploy-transaction) on Java SDK.
+[Token Deploy Code Example](../../icon-sdks/java-sdk/#token-deploy-and-transfer) on Java SDK.
 
 ### Using JavaScript SDK
 
-[Token Deploy Code Example](javascript-sdk#section-token-deploy-transaction) on JavaScript SDK.
+[Token Deploy Code Example](../../icon-sdks/javascript/#token-deploy-and-transfer) on JavaScript SDK.
 
 ### On the CSS \(Contract Support System\)
 
@@ -43,7 +43,7 @@ Where each term in the right side of the equation is calculated as;
 * CONTRACT\_CREATE = 1\_000\_000\_000 
 * CONTRACT\_UPDATE = 1\_600\_000\_000 
 * CONTRACT\_SET = 30\_000 \* bytes of the SCORE zip file
-* INPUT = 200 \* bytes of the `params.data` field in the JSON RPC [icx\_sendTransaction](icon-json-rpc-v3#section-icx_sendtransaction) request message
+* INPUT = 200 \* bytes of the `params.data` field in the JSON RPC [icx\_sendTransaction](../reference-manuals/icon-json-rpc-api-v3-specification.md#icx_sendtransaction) request message
 
 ```javascript
 // Example INPUT data
@@ -72,7 +72,7 @@ Steps = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
 
 #### Step estimation using the JSON RPC API
 
-[debug\_estimateStep](icon-json-rpc-v3#section-debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
+[debug\_estimateStep](../reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
 
 * SCORE install
 

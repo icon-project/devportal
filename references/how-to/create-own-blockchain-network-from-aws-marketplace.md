@@ -172,7 +172,7 @@ T-bears is an ICON SCORE development suite. The github address is: [https://gith
 
 **Step 1: Installation**
 
-Install the T-bears by referring to the following link: [T-Bears : Installation](doc:tbears-installation)
+Install the T-bears by referring to the following link: [T-Bears : Installation](../../tbears/installation.md)
 
 **Step 2: Block search & SCORE deploy**
 
@@ -473,7 +473,7 @@ Congratulations on setting up your ICON Development Network on AWS!
 
 ### References
 
-[**ICON JSON-RPC API v3**](icon-json-rpc-v3)
+[**ICON JSON-RPC API v3**](../reference-manuals/icon-json-rpc-api-v3-specification.md)
 
 **Amazon EC2 Key Pairs** [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 

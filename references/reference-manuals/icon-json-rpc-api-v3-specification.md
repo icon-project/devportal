@@ -132,16 +132,16 @@ Below table shows the default error messages for the error code. Actual message 
 
 API path : `<scheme>://<host>/api/v3`
 
-* icx\_getLastBlock
-* icx\_getBlockByHeight
-* icx\_getBlockByHash
-* icx\_call
-* icx\_getBalance
-* icx\_getScoreApi
-* icx\_getTotalSupply
-* icx\_getTransactionResult
-* icx\_getTransactionByHash
-* icx\_sendTransaction
+* [icx\_getLastBlock](icon-json-rpc-api-v3-specification.md#icx_getlastblock)
+* [icx\_getBlockByHeight](icon-json-rpc-api-v3-specification.md#icx_getblockbyheight)
+* [icx\_getBlockByHash](icon-json-rpc-api-v3-specification.md#icx_getblockbyhash)
+* [icx\_call](icon-json-rpc-api-v3-specification.md#icx_call)
+* [icx\_getBalance](icon-json-rpc-api-v3-specification.md#icx_getbalance)
+* [icx\_getScoreApi](icon-json-rpc-api-v3-specification.md#icx_getscoreapi)
+* [icx\_getTotalSupply](icon-json-rpc-api-v3-specification.md#icx_gettotalsupply)
+* [icx\_getTransactionResult](icon-json-rpc-api-v3-specification.md#icx_gettransactionresult)
+* [icx\_getTransactionByHash](icon-json-rpc-api-v3-specification.md#icx_gettransactionbyhash)
+* [icx\_sendTransaction](icon-json-rpc-api-v3-specification.md#icx_sendtransaction)
 
 **Sub API**
 
@@ -149,32 +149,32 @@ API path : `<scheme>://<host>/api/v3`
 
 **IISS API**
 
-* setStake
-* getStake
-* setDelegation
-* getDelegation
-* claimIScore
-* queryIScore
-* registerPRep
-* unregisterPRep
-* setPRep
-* setGovernanceVariables
-* getPRep
-* getPReps
+* [setStake](icon-json-rpc-api-v3-specification.md#setstake)
+* [getStake](icon-json-rpc-api-v3-specification.md#getstake)
+* [setDelegation](icon-json-rpc-api-v3-specification.md#setdelegation)
+* [getDelegation](icon-json-rpc-api-v3-specification.md#getdelegation)
+* [claimIScore](icon-json-rpc-api-v3-specification.md#claimiscore)
+* [queryIScore](icon-json-rpc-api-v3-specification.md#queryiscore)
+* [registerPRep](icon-json-rpc-api-v3-specification.md#registerprep)
+* [unregisterPRep](icon-json-rpc-api-v3-specification.md#unregisterprep)
+* [setPRep](icon-json-rpc-api-v3-specification.md#setprep)
+* [setGovernanceVariables](icon-json-rpc-api-v3-specification.md#setgovernancevariables)
+* [getPRep](icon-json-rpc-api-v3-specification.md#setprep)
+* [getPReps](icon-json-rpc-api-v3-specification.md#getprep)
 
 **Debug API**
 
 API path : `<scheme>://<host>/api/debug/v3`
 
-* debug\_estimateStep
-* debug\_getAccount
+* [debug\_estimateStep](icon-json-rpc-api-v3-specification.md#debug_estimatestep)
+* [debug\_getAccount](icon-json-rpc-api-v3-specification.md#debug_getaccount)
 
 **Other API**
 
 API path : `<scheme>://<host>/api/v3`
 
-* ise\_getStatus
-* rep\_getList
+* [ise\_getStatus](icon-json-rpc-api-v3-specification.md#ise_getstatus)
+* [rep\_getList](icon-json-rpc-api-v3-specification.md#rep_getlist)
 
 ### JSON-RPC Methods
 
@@ -1738,7 +1738,7 @@ Response on success
 | p2pEndpoint | String | O | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
 | nodeAddress | String | X | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
 
-\*details : See [JSON Standard for P-Rep Detailed Information](doc:json-standard-for-p-rep-detailed-information)
+\*details : See [JSON Standard for P-Rep Detailed Information](json-standard-for-p-rep-detailed-information.md)
 
 **Returns**
 
@@ -1836,7 +1836,7 @@ Request
 | p2pEndpoint | String | X | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
 | nodeAddress | String | X | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
 
-\*details : See [JSON Standard for P-Rep detailed information](https://github.com/icon-project/documentation/references/JSON-Standard-for-P-Rep-detailed-Information.md)
+\*details : See [JSON Standard for P-Rep detailed information](json-standard-for-p-rep-detailed-information.md)
 
 **Returns**
 
@@ -2115,5 +2115,5 @@ Response
 
 * [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification)
 * [ICON JSON RPC API v2](https://github.com/icon-project/icx_JSON_RPC)
-* [JSON Standard for P-Rep detailed information](https://github.com/icon-project/documentation/references/JSON-Standard-for-P-Rep-detailed-Information.md)
+* [JSON Standard for P-Rep detailed information](json-standard-for-p-rep-detailed-information.md)
 

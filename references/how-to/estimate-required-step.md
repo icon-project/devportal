@@ -121,7 +121,7 @@ $ curl -H "Content-Type: application/json" -d @stepEstimationRequest.json https:
 
 #### Java
 
-Below is a code snippet for Java. For the detailed ICON Java SDK usage guideline, please read [Java SDK](doc:java-sdk).
+Below is a code snippet for Java. For the detailed ICON Java SDK usage guideline, please read [Java SDK](../../icon-sdks/java-sdk/).
 
 ```java
 // make a raw transaction without the stepLimit
@@ -148,7 +148,7 @@ Bytes txHash = iconService.sendTransaction(signedTransaction).execute();
 
 #### Python
 
-Step estimation code snippet for Python. For the detailed ICON Python SDK usage guideline, please read [Python SDK](doc:python-sdk).
+Step estimation code snippet for Python. For the detailed ICON Python SDK usage guideline, please read [Python SDK](../../icon-sdks/python-sdk/).
 
 ```python
 # Generates a raw transaction without the stepLimit
@@ -173,18 +173,6 @@ signed_transaction = SignedTransaction(transaction, wallet, step_limit)
 tx_hash = icon_service.send_transaction(signed_transaction)
 ```
 
-#### JavaScript
-
-TBA
-
-#### Swift
-
-TBA
-
-#### T-Bears
-
-TBA
-
 ### Summary
 
 With the `debug_estimateStep` JSON-RPC API, developers can estimate how much Step will be required for a particular transaction under the current block state. Using various ICON SDKs, you can integrate the functionality in your DApp.
@@ -193,10 +181,10 @@ Please be aware that the returned value is just an **ESTIMATION**. The block sta
 
 ### References
 
-* [ICON JSON RPC](icon-json-rpc-v3#section-debug_estimatestep)
-* T-Bears
-* Java SDK
-* JavaScript SDK
-* Python SDK
-* Swift SDK
+* [ICON JSON RPC](../reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [T-Bears](../../tbears/overview.md)
+* [Java SDK](../../icon-sdks/java-sdk/)
+* [JavaScript SDK](../../icon-sdks/javascript/)
+* [Python SDK](../../icon-sdks/python-sdk/)
+* [Swift SDK](../../icon-sdks/swift-sdk/)
 

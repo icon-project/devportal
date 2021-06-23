@@ -8,9 +8,9 @@ Understand how to write SCORE unit-test
 
 ### Prerequisite
 
-* [SCORE Overview](score-overview)
-* [T-Bears Overview](doc:tbears-overview) 
-* [ICON Python SDK](python-sdk)
+* [SCORE Overview](../../score/overview.md)
+* [T-Bears Overview](../../tbears/overview.md) 
+* [ICON Python SDK](../../icon-sdks/python-sdk/)
 
 ### How to Write SCORE Unit Test Code
 
@@ -45,14 +45,14 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **score\_class** : SCORE  to instantiate
     * **owner** : Address to set as owner of SCORE
     * **on\_install\_params** : parameters of on\_install\_method
-  * Refer to `setUp` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `setUp` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 * update\_score\(prev\_score\_address, score\_class, on\_update\_params\)
   * Update SCORE at `prev_score_address` with `score_class` instance and get updated SCORE
   * **parameters**
     * **Prev\_score\_address** : address of SCORE to update
     * **score\_class** : SCORE class to update
     * **on\_update\_params** : parameters of on\_update method
-  * Refer to `test_update` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_update` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 
 **Setting SCORE properties**
 
@@ -61,7 +61,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
   * **parameters**
     * **sender** : Set sender attribute of msg to given sender argument
     * **value** : Set value attribute of msg to given sender argument
-  * Refer to `test_msg` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_msg` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 * set\_tx\(origin, timestamp, \_hash, index, nonce\)
   * Set tx property in SCORE
   * **parameters**
@@ -70,7 +70,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **\_hash** : Set hash attribute of tx to given \_hash argument
     * **index** : Set index attribute of tx to given index argument
     * **nonce** : Set nonce attribute of tx to given nonce argument
-  * Refer to `test_tx` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_tx` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 * set\_block\(height, timestamp\)
   * Set the block property inside SCORE.
 
@@ -83,7 +83,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
   * **parameters**
     * **height** : Set height attribute of block to given height argument
     * **timestamp** : Set timestamp attribute of block to given timestamp argument
-  * Refer to `test_block` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_block` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 
 **Patching InternalCall & asserting InternalCall**
 
@@ -94,7 +94,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
 
   * **parameters**
     * **internal\_score\_address** : address of interface SCORE
-  * Refer to `test_internal2` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_internal2` method in s[imple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md)
 * patch\_internal\_method\(score\_address, method, new\_method\)
   * You will use this method for patching query method to set return value.
 
@@ -106,14 +106,14 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **internal\_score\_address** : address of the SCORE having method to be called
     * **method** : method to be patched
     * **new\_method** : method to patch
-  * Refer to `test_interanl` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_interanl` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 * assert\_internal\_call\(internal\_score\_address, method, \*params\)
   * assert that internal call\(mock\) was called with the specified arguments. Raises an AssertionError if the params passed in are different to the last call to the mock.
   * **parameters**
     * **internal\_score\_address** : address of internal call SCORE
     * **method** : method to check
     * **params** : params to check
-  * Refer to `test_internal` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_internal` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 
 **Utils**
 
@@ -123,7 +123,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **\_from** : address of sender
     * **to** : address of receiver
     * **amount** : amount to transfer
-  * Refer to `test_transfer` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `test_transfer` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 * get\_balance\(address\)
   * Query icx balance of given address.
   * **parameters**
@@ -133,7 +133,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
   * Initialize accounts using given dictionary info.
   * **parameters**
     * **accounts\_info** : dictionary with address as key and balance as value
-  * Refer to `setUp` method in simple\_score2/tests/test\_unit\_simple\_score2.py
+  * Refer to `setUp` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 
 #### Examples
 
@@ -370,6 +370,4 @@ Ran 11 tests in 0.027s
 
 OK
 ```
-
-\[simple\_score2/tests/test\_unit\_simple\_score2.py\]:\#section-simple\_score2-tests-test\_unit\_simple\_score2-py
 

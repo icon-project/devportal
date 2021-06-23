@@ -1607,8 +1607,8 @@ Create a JSON file and upload it to your domain server. When you call the `regis
 
 ### References
 
-* [ICON JSON-RPC API v3](https://github.com/icon-project/icon-rpc-server/blob/master/docs/icon-json-rpc-v3.md)
-* [ICON SDK PYTHON](https://github.com/icon-project/icon-sdk-python)
+* [ICON JSON-RPC API v3](../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
+* [ICON SDK PYTHON](../icon-sdks/python-sdk/)
 
 ### License
 

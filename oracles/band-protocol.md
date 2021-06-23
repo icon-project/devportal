@@ -1,6 +1,6 @@
 # Band Protocol
 
-In addition to data native to the [ICON blockchain](https://www.icondev.io/docs/what-is-icon), ICON developers also have access to various cryptocurrency price data provided by [Band Protocol](https://bandprotocol.com/)’s oracle.
+In addition to data native to the [ICON blockchain](../introduction/what-is-icon-network.md), ICON developers also have access to various cryptocurrency price data provided by [Band Protocol](https://bandprotocol.com/)’s oracle.
 
 ## Standard Reference Dataset Contract Info
 
