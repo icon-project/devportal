@@ -7,7 +7,7 @@
 
 ### Reward for Representative
 
-Representatives can receive compensation through IISS. See [IISS](governance-iiss) for more information.
+Representatives can receive compensation through IISS. See [IISS](governance-iiss.md) for more information.
 
 ### On-chain Governance System
 

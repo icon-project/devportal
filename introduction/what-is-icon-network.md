@@ -16,3 +16,7 @@ In the 1970s, different private networks were independently operated and were di
 
 The ICON project aims to create a strongly interconnected blockchain network by integrating various public and enterprise networks in a similar way as TCP/IP. The ICON interchain protocol \(BTP\) will begin to integrate dApps and wallets \(users\) on different blockchains, have a role of bridging heterogeneous blockchains invisibly, and penetrate deeper into our lives.
 
+{% embed url="https://youtu.be/1MKosEH1OGY" %}
+
+
+

@@ -133,7 +133,7 @@ If you receive "Out of step" error message, open `tbears_cli_config.json` and in
 ```
 {% endhint %}
 
-SCORE has been successfully deployed. We will invoke `hello` method from CLI and see the result. You need to create a `call.json` file that contains the request message. `to` is the SCORE address, `from` is the message sender's address. Don't forget to provide the actual SCORE address, the one you got after deploy. For the complete json message format, please refer to [ICON JSON-RPC API v3 specification](https://www.icondev.io/docs/icon-json-rpc-v3).
+SCORE has been successfully deployed. We will invoke `hello` method from CLI and see the result. You need to create a `call.json` file that contains the request message. `to` is the SCORE address, `from` is the message sender's address. Don't forget to provide the actual SCORE address, the one you got after deploy. For the complete json message format, please refer to [ICON JSON-RPC API v3 specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md).
 
 ```text
 root@07dfee84208e:/tbears# tbears call call.json

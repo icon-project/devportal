@@ -1,3 +1,7 @@
+---
+description: 'Yellow paper: https://icon.foundation/download/IISS_Paper_v2.0_EN.pdf'
+---
+
 # Governance - IISS
 
 ### Basic IISS Overview
