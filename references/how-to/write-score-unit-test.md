@@ -221,7 +221,7 @@ class SimpleScore2(IconScoreBase):
         self.SetValue(value)
 
     @external
-    def setSCOREValue(self, value: str):https://www.icondev.io/docs/how-to-write-score-unit-test#simple_score2teststest_unit_simple_score2py
+    def setSCOREValue(self, value: str):
         score = self.create_interface_score(self.score_address.get(), SimpleScoreInterface)
         score.setValue(value)
 
