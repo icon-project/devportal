@@ -89,16 +89,11 @@ const provider = new HttpProvider('https://bicon.net.solidwallet.io/api/v3');
 
 /* Create IconService instance */
 const iconService = new IconService(provider);
+```
 
-### Queries
+#### Queries
 
-
- All query methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available. For more information, check [API reference documentation](https://www.icondev.io/docs/javascript-api-reference#section-iconservice).
-
-
- ### Queries
-
-All query methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available. For more information, check [API reference documentation](https://www.icondev.io/docs/javascript-api-reference#section-iconservice).
+ All query methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available. For more information, check the [API reference documentation](javascript-api-reference.md#iconservice).
 
 ```javascript
 const { CallBuilder } = IconService.IconBuilder;
@@ -237,8 +232,6 @@ const txHash = await iconService.sendTransaction(signedTransaction).execute();
 #### Install Dependency
 
 Please go to `quickstart` directory and install dependency to use `icon-sdk-js`.
-
-npm
 
 ```text
 npm install   // install dependencies for executing the quickstart project (including icon-sdk-js package)
