@@ -24,10 +24,6 @@ To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline](../../
 
 [Token Deploy Code Example](../../icon-sdks/javascript/#token-deploy-and-transfer) on JavaScript SDK.
 
-### On the CSS \(Contract Support System\)
-
-TBA
-
 ### Step Estimation for SCORE Deploy
 
 #### The formula

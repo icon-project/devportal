@@ -1,7 +1,5 @@
 # ICON JSON-RPC API v3 Specification
 
-
-
 ICON JSON-RPC APIs \(version 3\) are interfaces to interact with ICON nodes. This document explains ICON JSON-RPC API \(version 3\) data structures, rules and the list of methods.
 
 ### ICON JSON-RPC API v3 Specification

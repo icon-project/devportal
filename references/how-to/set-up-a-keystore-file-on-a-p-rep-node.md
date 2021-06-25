@@ -2,7 +2,7 @@
 
 ### 1. Export your keystore file first
 
-Export your Keystore file whitch you registered in. You can see how to get the Keystore file from this [link.](../../introduction/icon-key-concepts/accounts.md)
+Export your Keystore file whitch you registered in. You can see how to get the Keystore file from this [link.](create-an-account.md)
 
 ### 2. Place your keystore file in the proper path
 

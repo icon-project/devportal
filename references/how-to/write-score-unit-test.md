@@ -2,17 +2,17 @@
 
 This document explains how to write SCORE unit-test using T-Bears unit-test framework.
 
-### Purpose
+## Purpose
 
 Understand how to write SCORE unit-test
 
-### Prerequisite
+## Prerequisite
 
 * [SCORE Overview](../../score/overview.md)
 * [T-Bears Overview](../../tbears/overview.md) 
 * [ICON Python SDK](../../icon-sdks/python-sdk/)
 
-### How to Write SCORE Unit Test Code
+## How to Write SCORE Unit Test Code
 
 SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as follows
 
@@ -20,7 +20,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
 * Call SCORE method
 * Check the result
 
-#### Functions Provided by ScoreTestCase
+### Functions Provided by ScoreTestCase
 
 * Instantiate SCORE
   * Instantiate SCORE. So,  you can access attributes and methods of SCORE like a general object.
@@ -33,7 +33,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
 * Mock internalCall\(call external function in SCORE\).
   * The operation on the other SCORE is considered to be reliable. so, what you need is InternalCall called with specified arguments.
 
-#### Methods
+### Methods
 
 `ScoreTestCase` has 11 main methods. Inside `setUp` method and `tearDown` method, `ScoreTestCase` sets the environment for SCORE unit-test and clears them. So, if you want to override `setUp` or `tearDown`, you should call `super()` as a first statement in the overridden method.
 
@@ -135,7 +135,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **accounts\_info** : dictionary with address as key and balance as value
   * Refer to `setUp` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
 
-#### Examples
+### Examples
 
 In this example, we'll use two simple SCOREs only have getter and setter. \(the first SCORE has getter and setter and another SCORE has internalCall, getter, and setter\)
 
