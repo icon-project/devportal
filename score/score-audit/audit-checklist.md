@@ -475,9 +475,9 @@ data_list = list(data_set)
 self.test_var.set( json_dumps(data_list) )
 ```
 
-#### StateDB Write Operation
+#### StateDB Read/Write Operations in `__init__()`
 
-StateDB write operations inside of \_\_init\_\_\(\) function is prohibited. Updating state DB in \_\_init\_\_\(\) may cause unexpected behavior.
+StateDB read/write operations inside of `__init__()` function is strictly prohibited. Any state DB accesses in `__init__()` may cause unexpected behavior like deployment error.
 
 ```python
 # Bad
