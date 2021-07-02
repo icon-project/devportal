@@ -112,3 +112,5 @@
   * [JSON-RPC](icon-20/goloop/json-rpc/README.md)
     * [Goloop JSON-RPC API v3](icon-20/goloop/json-rpc/jsonrpc_v3.md)
     * [JSON-RPC v3](icon-20/goloop/json-rpc/btp_extension.md)
+  * [Node Management](icon-20/goloop/management/README.md)
+    * [API](icon-20/goloop/management/goloop_admin_api.md)
