@@ -100,3 +100,7 @@
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
 
+## ICON 2.0
+
+* [Goloop](icon-20/goloop/README.md)
+  * [How to build](icon-20/goloop/build.md)
