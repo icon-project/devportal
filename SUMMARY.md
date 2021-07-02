@@ -103,4 +103,16 @@
 ## ICON 2.0
 
 * [Goloop](icon-20/goloop/README.md)
-  * [How to build](icon-20/goloop/build.md)
+  * [Get Started](icon-20/goloop/get-started/REA  DME.md)
+    * [How to build](icon-20/goloop/get-started/build.md)
+    * [Local Network](icon-20/goloop/get-started/local-network.md)
+  * [Genesis](icon-20/goloop/genesis/README.md)
+    * [Transaction](icon-20/goloop/genesis/genesis_tx.md)
+    * [Storage](icon-20/goloop/genesis/genesis_storage.md)
+  * [JSON-RPC](icon-20/goloop/json-rpc/README.md)
+    * [Goloop JSON-RPC API v3](icon-20/goloop/json-rpc/jsonrpc_v3.md)
+    * [JSON-RPC v3](icon-20/goloop/json-rpc/btp_extension.md)
+  * [Node Management](icon-20/goloop/management/README.md)
+    * [API](icon-20/goloop/management/goloop_admin_api.md)
+    * [CLI](icon-20/goloop/management/goloop_cli.md)
+    * [Metrics](icon-20/goloop/management/metric.md)
