@@ -111,3 +111,4 @@
     * [Storage](icon-20/goloop/genesis/genesis_storage.md)
   * [JSON-RPC](icon-20/goloop/json-rpc/README.md)
     * [Goloop JSON-RPC API v3](icon-20/goloop/json-rpc/jsonrpc_v3.md)
+    * [JSON-RPC v3](icon-20/goloop/json-rpc/btp_extension.md)
