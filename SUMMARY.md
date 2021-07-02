@@ -103,4 +103,4 @@
 ## ICON 2.0
 
 * [Goloop](icon-20/goloop/README.md)
-  *  [Build](icon-20/goloop/build/md)
+  * [How to build](icon-20/goloop/build.md)
