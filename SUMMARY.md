@@ -106,3 +106,6 @@
   * [Get Started](icon-20/goloop/get-started/README.md)
     * [How to build](icon-20/goloop/get-started/build.md)
     * [Local Network](icon-20/goloop/get-started/local-network.md)
+  * [Genesis](icon-20/goloop/genesis/README.md)
+    * [Transaction](icon-20/goloop/genesis/genesis_tx.md)
+    * [Storage](icon-20/goloop/genesis/genesis_storage.md)
