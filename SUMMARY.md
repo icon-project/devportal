@@ -103,11 +103,11 @@
 ## ICON 2.0
 
 * [Goloop](icon-20/goloop/README.md)
-  * [Get Started](icon-20/goloop/get-started/README.md)
+  * [Get Started](icon-20/goloop/get-started/REA  DME.md)
     * [How to build](icon-20/goloop/get-started/build.md)
     * [Local Network](icon-20/goloop/get-started/local-network.md)
   * [Genesis](icon-20/goloop/genesis/README.md)
-    * [Transaction](icon-20/goloop/genesis/genesis_transaction.md)
+    * [Transaction](icon-20/goloop/genesis/genesis_tx.md)
     * [Storage](icon-20/goloop/genesis/genesis_storage.md)
   * [JSON-RPC](icon-20/goloop/json-rpc/README.md)
     * [Goloop JSON-RPC API v3](icon-20/goloop/json-rpc/jsonrpc_v3.md)
