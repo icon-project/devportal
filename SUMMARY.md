@@ -104,3 +104,11 @@
 
 * [Goloop](icon-20/goloop/README.md)
   * [How to build](icon-20/goloop/build.md)
+  * [Local Network](icon-20/goloop/local-network.md)
+  * [Genesis](icon-20/goloop/genesis/README.md)
+    * [Transaction](icon-20/goloop/genesis/genesis_transaction.md)
+    * [Storage](icon-20/goloop/genesis/genesis_storage.md)
+  * [JSON-RPC](icon-20/goloop/json-rpc/README.md)
+    * [Goloop JSON-RPC API v3](icon-20/goloop/json-rpc/jsonrpc_v3.md)
+    * [JSON-RPC v3](icon-20/goloop/json-rpc/btp_extension.md)
+  * [Node Management](icon-20/goloop/management.md)
