@@ -103,7 +103,7 @@
 ## ICON 2.0
 
 * [Goloop](icon-20/goloop/README.md)
-  * [Get Started](icon-20/goloop/get-started/REA  DME.md)
+  * [Get Started](icon-20/goloop/get-started/README.md)
     * [How to build](icon-20/goloop/get-started/build.md)
     * [Local Network](icon-20/goloop/get-started/local-network.md)
   * [Genesis](icon-20/goloop/genesis/README.md)
