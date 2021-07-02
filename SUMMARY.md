@@ -115,3 +115,4 @@
   * [Node Management](icon-20/goloop/management/README.md)
     * [API](icon-20/goloop/management/goloop_admin_api.md)
     * [CLI](icon-20/goloop/management/goloop_cli.md)
+    * [Metrics](icon-20/goloop/management/metric.md)
