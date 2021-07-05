@@ -56,26 +56,6 @@ Manage chains
 | [goloop chain stop](#goloop-chain-stop) |  Chain stop |
 | [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop chain backup
 
 ### Description
@@ -91,28 +71,6 @@ Start to backup the channel
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop chain config
 
@@ -130,28 +88,6 @@ Configure chain
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain genesis
 
 ### Description
@@ -167,28 +103,6 @@ Download chain genesis file
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop chain import
 
@@ -212,28 +126,6 @@ Start to import legacy database
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain inspect
 
 ### Description
@@ -255,28 +147,6 @@ Inspect chain
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop chain join
 
@@ -316,28 +186,6 @@ Join chain
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain leave
 
 ### Description
@@ -354,28 +202,6 @@ Leave chain
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain ls
 
 ### Description
@@ -391,28 +217,6 @@ List chains
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop chain prune
 
@@ -436,28 +240,6 @@ Start to prune the database based on the height
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain reset
 
 ### Description
@@ -473,28 +255,6 @@ Chain data reset
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop chain start
 
@@ -512,28 +272,6 @@ Chain start
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain stop
 
 ### Description
@@ -550,28 +288,6 @@ Chain stop
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
-
 ## goloop chain verify
 
 ### Description
@@ -587,28 +303,6 @@ Chain data verify
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain backup](#goloop-chain-backup) |  Start to backup the channel |
-| [goloop chain config](#goloop-chain-config) |  Configure chain |
-| [goloop chain genesis](#goloop-chain-genesis) |  Download chain genesis file |
-| [goloop chain import](#goloop-chain-import) |  Start to import legacy database |
-| [goloop chain inspect](#goloop-chain-inspect) |  Inspect chain |
-| [goloop chain join](#goloop-chain-join) |  Join chain |
-| [goloop chain leave](#goloop-chain-leave) |  Leave chain |
-| [goloop chain ls](#goloop-chain-ls) |  List chains |
-| [goloop chain prune](#goloop-chain-prune) |  Start to prune the database based on the height |
-| [goloop chain reset](#goloop-chain-reset) |  Chain data reset |
-| [goloop chain start](#goloop-chain-start) |  Chain start |
-| [goloop chain stop](#goloop-chain-stop) |  Chain stop |
-| [goloop chain verify](#goloop-chain-verify) |  Chain data verify |
 
 ## goloop debug
 
@@ -628,26 +322,6 @@ DEBUG API
 |---|---|
 | [goloop debug trace](#goloop-debug-trace) |  Get trace of the transaction |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop debug trace
 
 ### Description
@@ -660,16 +334,6 @@ Get trace of the transaction
 |Name,shorthand | Environment Variable | Required | Default | Description|
 |---|---|---|---|---|
 | --uri | GOLOOP_DEBUG_URI | true |  |  URI of DEBUG API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop debug](#goloop-debug) |  DEBUG API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop debug trace](#goloop-debug-trace) |  Get trace of the transaction |
 
 ## goloop gn
 
@@ -685,26 +349,6 @@ Genesis transaction manipulation
 | [goloop gn edit](#goloop-gn-edit) |  Edit genesis transaction |
 | [goloop gn gen](#goloop-gn-gen) |  Generate genesis transaction |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop gn edit
 
 ### Description
@@ -718,17 +362,6 @@ Edit genesis transaction
 |---|---|---|---|---|
 | --god, -g |  | false |  |  Address or keystore of GOD |
 | --validator, -v |  | false | [] |  Address or keystore of Validator, [Validator...] |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop gn edit](#goloop-gn-edit) |  Edit genesis transaction |
-| [goloop gn gen](#goloop-gn-gen) |  Generate genesis transaction |
 
 ## goloop gn gen
 
@@ -748,17 +381,6 @@ Generate genesis transaction
 | --supply, -s |  | false | 0x2961fff8ca4a62327800000 |  Total supply of the chain |
 | --treasury, -t |  | false | hx1000000000000000000000000000000000000000 |  Treasury address |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop gn edit](#goloop-gn-edit) |  Edit genesis transaction |
-| [goloop gn gen](#goloop-gn-gen) |  Generate genesis transaction |
-
 ## goloop gs
 
 ### Description
@@ -772,26 +394,6 @@ Genesis storage manipulation
 |---|---|
 | [goloop gs gen](#goloop-gs-gen) |  Create genesis storage from the template |
 | [goloop gs info](#goloop-gs-info) |  Show genesis storage information |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
 
 ## goloop gs gen
 
@@ -807,17 +409,6 @@ Create genesis storage from the template
 | --input, -i |  | false | genesis.json |  Input file or directory path |
 | --out, -o |  | false | gs.zip |  Output file path |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop gs gen](#goloop-gs-gen) |  Create genesis storage from the template |
-| [goloop gs info](#goloop-gs-info) |  Show genesis storage information |
-
 ## goloop gs info
 
 ### Description
@@ -832,17 +423,6 @@ Show genesis storage information
 | --cid_only, -c |  | false | false |  Showing chain ID only |
 | --nid_only, -n |  | false | false |  Showing network ID only |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop gs gen](#goloop-gs-gen) |  Create genesis storage from the template |
-| [goloop gs info](#goloop-gs-info) |  Show genesis storage information |
-
 ## goloop ks
 
 ### Description
@@ -855,26 +435,6 @@ Keystore manipulation
 |Command | Description|
 |---|---|
 | [goloop ks gen](#goloop-ks-gen) |  Generate keystore |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
 
 ## goloop ks gen
 
@@ -889,16 +449,6 @@ Generate keystore
 |---|---|---|---|---|
 | --out, -o |  | false | keystore.json |  Output file path |
 | --password, -p |  | false | gochain |  Password for the keystore |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop ks gen](#goloop-ks-gen) |  Generate keystore |
 
 ## goloop rpc
 
@@ -936,26 +486,6 @@ JSON-RPC API
 | [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
 | [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop rpc balance
 
 ### Description
@@ -970,32 +500,6 @@ GetBalance
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc blockbyhash
 
@@ -1012,32 +516,6 @@ GetBlockByHash
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc blockbyheight
 
 ### Description
@@ -1053,32 +531,6 @@ GetBlockByHeight
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc blockheaderbyheight
 
 ### Description
@@ -1093,32 +545,6 @@ GetBlockHeaderByHeight
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc call
 
@@ -1144,32 +570,6 @@ Call
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc databyhash
 
 ### Description
@@ -1185,32 +585,6 @@ GetDataByHash
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc lastblock
 
 ### Description
@@ -1225,32 +599,6 @@ GetLastBlock
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc monitor
 
@@ -1277,32 +625,6 @@ Monitor
 | [goloop rpc monitor block](#goloop-rpc-monitor-block) |  MonitorBlock |
 | [goloop rpc monitor event](#goloop-rpc-monitor-event) |  MonitorEvent |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc monitor block
 
 ### Description
@@ -1322,17 +644,6 @@ MonitorBlock
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc monitor block](#goloop-rpc-monitor-block) |  MonitorBlock |
-| [goloop rpc monitor event](#goloop-rpc-monitor-event) |  MonitorEvent |
 
 ## goloop rpc monitor event
 
@@ -1358,17 +669,6 @@ MonitorEvent
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc monitor block](#goloop-rpc-monitor-block) |  MonitorBlock |
-| [goloop rpc monitor event](#goloop-rpc-monitor-event) |  MonitorEvent |
-
 ## goloop rpc proofforevents
 
 ### Description
@@ -1383,32 +683,6 @@ GetProofForEvents
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc proofforresult
 
@@ -1425,32 +699,6 @@ GetProofForResult
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc raw
 
 ### Description
@@ -1466,32 +714,6 @@ Rpc with raw json file
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc scoreapi
 
 ### Description
@@ -1506,32 +728,6 @@ GetScoreApi
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc sendtx
 
@@ -1567,32 +763,6 @@ SendTransaction
 | [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
 | [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc sendtx call
 
 ### Description
@@ -1623,20 +793,6 @@ SmartContract Call Transaction
 | --step_limit | GOLOOP_RPC_STEP_LIMIT | true | 0 |  StepLimit |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx call](#goloop-rpc-sendtx-call) |  SmartContract Call Transaction |
-| [goloop rpc sendtx deploy](#goloop-rpc-sendtx-deploy) |  Deploy Transaction |
-| [goloop rpc sendtx raw](#goloop-rpc-sendtx-raw) |  Send transaction with json file |
-| [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
-| [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
-
 ## goloop rpc sendtx deploy
 
 ### Description
@@ -1665,20 +821,6 @@ Deploy Transaction
 | --step_limit | GOLOOP_RPC_STEP_LIMIT | true | 0 |  StepLimit |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx call](#goloop-rpc-sendtx-call) |  SmartContract Call Transaction |
-| [goloop rpc sendtx deploy](#goloop-rpc-sendtx-deploy) |  Deploy Transaction |
-| [goloop rpc sendtx raw](#goloop-rpc-sendtx-raw) |  Send transaction with json file |
-| [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
-| [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
-
 ## goloop rpc sendtx raw
 
 ### Description
@@ -1700,20 +842,6 @@ Send transaction with json file
 | --step_limit | GOLOOP_RPC_STEP_LIMIT | true | 0 |  StepLimit |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx call](#goloop-rpc-sendtx-call) |  SmartContract Call Transaction |
-| [goloop rpc sendtx deploy](#goloop-rpc-sendtx-deploy) |  Deploy Transaction |
-| [goloop rpc sendtx raw](#goloop-rpc-sendtx-raw) |  Send transaction with json file |
-| [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
-| [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
-
 ## goloop rpc sendtx raw2
 
 ### Description
@@ -1734,20 +862,6 @@ Send transaction with json file just timestamp & sign
 | --nid | GOLOOP_RPC_NID | true |  |  Network ID |
 | --step_limit | GOLOOP_RPC_STEP_LIMIT | true | 0 |  StepLimit |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx call](#goloop-rpc-sendtx-call) |  SmartContract Call Transaction |
-| [goloop rpc sendtx deploy](#goloop-rpc-sendtx-deploy) |  Deploy Transaction |
-| [goloop rpc sendtx raw](#goloop-rpc-sendtx-raw) |  Send transaction with json file |
-| [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
-| [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
 
 ## goloop rpc sendtx transfer
 
@@ -1777,20 +891,6 @@ Coin Transfer Transaction
 | --step_limit | GOLOOP_RPC_STEP_LIMIT | true | 0 |  StepLimit |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc sendtx call](#goloop-rpc-sendtx-call) |  SmartContract Call Transaction |
-| [goloop rpc sendtx deploy](#goloop-rpc-sendtx-deploy) |  Deploy Transaction |
-| [goloop rpc sendtx raw](#goloop-rpc-sendtx-raw) |  Send transaction with json file |
-| [goloop rpc sendtx raw2](#goloop-rpc-sendtx-raw2) |  Send transaction with json file just timestamp & sign |
-| [goloop rpc sendtx transfer](#goloop-rpc-sendtx-transfer) |  Coin Transfer Transaction |
-
 ## goloop rpc totalsupply
 
 ### Description
@@ -1805,32 +905,6 @@ GetTotalSupply
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop rpc txbyhash
 
@@ -1847,32 +921,6 @@ GetTransactionByHash
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc txresult
 
 ### Description
@@ -1888,32 +936,6 @@ GetTransactionResult
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
-
 ## goloop rpc votesbyheight
 
 ### Description
@@ -1928,32 +950,6 @@ GetVotesByHeight
 | --debug | GOLOOP_RPC_DEBUG | false | false |  JSON-RPC Response with detail information |
 | --debug_uri | GOLOOP_RPC_DEBUG_URI | false |  |  URI of JSON-RPC Debug API |
 | --uri | GOLOOP_RPC_URI | true |  |  URI of JSON-RPC API |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop rpc balance](#goloop-rpc-balance) |  GetBalance |
-| [goloop rpc blockbyhash](#goloop-rpc-blockbyhash) |  GetBlockByHash |
-| [goloop rpc blockbyheight](#goloop-rpc-blockbyheight) |  GetBlockByHeight |
-| [goloop rpc blockheaderbyheight](#goloop-rpc-blockheaderbyheight) |  GetBlockHeaderByHeight |
-| [goloop rpc call](#goloop-rpc-call) |  Call |
-| [goloop rpc databyhash](#goloop-rpc-databyhash) |  GetDataByHash |
-| [goloop rpc lastblock](#goloop-rpc-lastblock) |  GetLastBlock |
-| [goloop rpc monitor](#goloop-rpc-monitor) |  Monitor |
-| [goloop rpc proofforevents](#goloop-rpc-proofforevents) |  GetProofForEvents |
-| [goloop rpc proofforresult](#goloop-rpc-proofforresult) |  GetProofForResult |
-| [goloop rpc raw](#goloop-rpc-raw) |  Rpc with raw json file |
-| [goloop rpc scoreapi](#goloop-rpc-scoreapi) |  GetScoreApi |
-| [goloop rpc sendtx](#goloop-rpc-sendtx) |  SendTransaction |
-| [goloop rpc totalsupply](#goloop-rpc-totalsupply) |  GetTotalSupply |
-| [goloop rpc txbyhash](#goloop-rpc-txbyhash) |  GetTransactionByHash |
-| [goloop rpc txresult](#goloop-rpc-txresult) |  GetTransactionResult |
-| [goloop rpc votesbyheight](#goloop-rpc-votesbyheight) |  GetVotesByHeight |
 
 ## goloop server
 
@@ -2001,26 +997,6 @@ Server management
 | [goloop server save](#goloop-server-save) |  Save configuration |
 | [goloop server start](#goloop-server-start) |  Start server |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop server save
 
 ### Description
@@ -2065,17 +1041,6 @@ Save configuration
 | --p2p_listen | GOLOOP_P2P_LISTEN | false |  |  Listen ip-port of P2P |
 | --rpc_addr | GOLOOP_RPC_ADDR | false | :9080 |  Listen ip-port of JSON-RPC |
 | --rpc_dump | GOLOOP_RPC_DUMP | false | false |  JSON-RPC Request, Response Dump flag |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop server](#goloop-server) |  Server management |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop server save](#goloop-server-save) |  Save configuration |
-| [goloop server start](#goloop-server-start) |  Start server |
 
 ## goloop server start
 
@@ -2123,17 +1088,6 @@ Start server
 | --rpc_addr | GOLOOP_RPC_ADDR | false | :9080 |  Listen ip-port of JSON-RPC |
 | --rpc_dump | GOLOOP_RPC_DUMP | false | false |  JSON-RPC Request, Response Dump flag |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop server](#goloop-server) |  Server management |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop server save](#goloop-server-save) |  Save configuration |
-| [goloop server start](#goloop-server-start) |  Start server |
-
 ## goloop stats
 
 ### Description
@@ -2151,26 +1105,6 @@ Display a live streams of chains metric-statistics
 | --no-stream | GOLOOP_NO-STREAM | false | false |  Only pull the first metric-statistics |
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
 
 ## goloop system
 
@@ -2196,26 +1130,6 @@ System info
 | [goloop system info](#goloop-system-info) |  Get system information |
 | [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop system backup
 
 ### Description
@@ -2237,19 +1151,6 @@ Manage stored backups
 |---|---|
 | [goloop system backup ls](#goloop-system-backup-ls) |  List current backups |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system](#goloop-system) |  System info |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system backup](#goloop-system-backup) |  Manage stored backups |
-| [goloop system config](#goloop-system-config) |  Configure system |
-| [goloop system info](#goloop-system-info) |  Get system information |
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
-
 ## goloop system backup ls
 
 ### Description
@@ -2266,16 +1167,6 @@ List current backups
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system backup](#goloop-system-backup) |  Manage stored backups |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system backup ls](#goloop-system-backup-ls) |  List current backups |
-
 ## goloop system config
 
 ### Description
@@ -2291,19 +1182,6 @@ Configure system
 | --key_store | GOLOOP_KEY_STORE | false |  |  KeyStore file for wallet |
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system](#goloop-system) |  System info |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system backup](#goloop-system-backup) |  Manage stored backups |
-| [goloop system config](#goloop-system-config) |  Configure system |
-| [goloop system info](#goloop-system-info) |  Get system information |
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
 
 ## goloop system info
 
@@ -2325,19 +1203,6 @@ Get system information
 | --key_store | GOLOOP_KEY_STORE | false |  |  KeyStore file for wallet |
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system](#goloop-system) |  System info |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system backup](#goloop-system-backup) |  Manage stored backups |
-| [goloop system config](#goloop-system-config) |  Configure system |
-| [goloop system info](#goloop-system-info) |  Get system information |
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
 
 ## goloop system restore
 
@@ -2362,19 +1227,6 @@ Restore chain from a backup
 | [goloop system restore status](#goloop-system-restore-status) |  Get restore status |
 | [goloop system restore stop](#goloop-system-restore-stop) |  Stop current restoring job |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system](#goloop-system) |  System info |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system backup](#goloop-system-backup) |  Manage stored backups |
-| [goloop system config](#goloop-system-config) |  Configure system |
-| [goloop system info](#goloop-system-info) |  Get system information |
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
-
 ## goloop system restore start
 
 ### Description
@@ -2396,18 +1248,6 @@ Start to restore the specified backup
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system restore start](#goloop-system-restore-start) |  Start to restore the specified backup |
-| [goloop system restore status](#goloop-system-restore-status) |  Get restore status |
-| [goloop system restore stop](#goloop-system-restore-stop) |  Stop current restoring job |
-
 ## goloop system restore status
 
 ### Description
@@ -2424,18 +1264,6 @@ Get restore status
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system restore start](#goloop-system-restore-start) |  Start to restore the specified backup |
-| [goloop system restore status](#goloop-system-restore-status) |  Get restore status |
-| [goloop system restore stop](#goloop-system-restore-stop) |  Stop current restoring job |
-
 ## goloop system restore stop
 
 ### Description
@@ -2451,18 +1279,6 @@ Stop current restoring job
 | --key_store |  | false |  |  KeyStore file for wallet |
 | --node_dir |  | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s |  | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop system restore](#goloop-system-restore) |  Restore chain from a backup |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop system restore start](#goloop-system-restore-start) |  Start to restore the specified backup |
-| [goloop system restore status](#goloop-system-restore-status) |  Get restore status |
-| [goloop system restore stop](#goloop-system-restore-stop) |  Stop current restoring job |
 
 ## goloop user
 
@@ -2487,26 +1303,6 @@ User management
 | [goloop user ls](#goloop-user-ls) |  List users |
 | [goloop user rm](#goloop-user-rm) |  Remove user |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
-
 ## goloop user add
 
 ### Description
@@ -2522,18 +1318,6 @@ Add user
 | --key_store | GOLOOP_KEY_STORE | false |  |  KeyStore file for wallet |
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop user](#goloop-user) |  User management |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop user add](#goloop-user-add) |  Add user |
-| [goloop user ls](#goloop-user-ls) |  List users |
-| [goloop user rm](#goloop-user-rm) |  Remove user |
 
 ## goloop user ls
 
@@ -2551,18 +1335,6 @@ List users
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop user](#goloop-user) |  User management |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop user add](#goloop-user-add) |  Add user |
-| [goloop user ls](#goloop-user-ls) |  List users |
-| [goloop user rm](#goloop-user-rm) |  Remove user |
-
 ## goloop user rm
 
 ### Description
@@ -2579,18 +1351,6 @@ Remove user
 | --node_dir | GOLOOP_NODE_DIR | false |  |  Node data directory(default:[configuration file path]/.chain/[ADDRESS]) |
 | --node_sock, -s | GOLOOP_NODE_SOCK | true |  |  Node Command Line Interface socket path(default:[node_dir]/cli.sock) |
 
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop user](#goloop-user) |  User management |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop user add](#goloop-user-add) |  Add user |
-| [goloop user ls](#goloop-user-ls) |  List users |
-| [goloop user rm](#goloop-user-rm) |  Remove user |
-
 ## goloop version
 
 ### Description
@@ -2598,24 +1358,4 @@ Print goloop version
 
 ### Usage
 ` goloop version `
-
-### Parent command
-|Command | Description|
-|---|---|
-| [goloop](#goloop) |  Goloop CLI |
-
-### Related commands
-|Command | Description|
-|---|---|
-| [goloop chain](#goloop-chain) |  Manage chains |
-| [goloop debug](#goloop-debug) |  DEBUG API |
-| [goloop gn](#goloop-gn) |  Genesis transaction manipulation |
-| [goloop gs](#goloop-gs) |  Genesis storage manipulation |
-| [goloop ks](#goloop-ks) |  Keystore manipulation |
-| [goloop rpc](#goloop-rpc) |  JSON-RPC API |
-| [goloop server](#goloop-server) |  Server management |
-| [goloop stats](#goloop-stats) |  Display a live streams of chains metric-statistics |
-| [goloop system](#goloop-system) |  System info |
-| [goloop user](#goloop-user) |  User management |
-| [goloop version](#goloop-version) |  Print goloop version |
 
