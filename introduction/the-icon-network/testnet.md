@@ -61,7 +61,7 @@ Pagoda network is for testing P-Rep node
   * TestNet address
 * Also, you can use these faucets to get some test ICX: 
   * [https://faucet.sharpn.tech](https://faucet.sharpn.tech)
-  * [http://icon-faucet.ibriz.ai](http://icon-faucet.ibriz.ai)
+  * [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
   * [https://faucet.reliantnode.com/](https://faucet.reliantnode.com/)
 
 ### Want to use the ICONex chrome wallet to send ICX on the testnet?
