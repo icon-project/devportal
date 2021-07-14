@@ -17,7 +17,7 @@
   * [Testnet](introduction/the-icon-network/testnet.md)
   * [Mainnet](introduction/the-icon-network/mainnet.md)
 
-## SCORE
+## Python SCORE
 
 * [Overview](score/overview.md)
 * [Quickstart](score/quickstart/README.md)
@@ -41,7 +41,7 @@
   * [Multisig Wallet](score/sample-scores/multisig-wallet.md)
   * [DEX](score/sample-scores/dex.md)
 
-## T-Bears <a id="tbears"></a>
+## T-Bears for Python SCORE <a id="tbears"></a>
 
 * [Overview](tbears/overview.md)
 * [Installation](tbears/installation.md)
