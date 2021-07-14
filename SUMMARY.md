@@ -116,3 +116,5 @@
     * [API](icon-20/goloop/management/goloop_admin_api.md)
     * [CLI](icon-20/goloop/management/goloop_cli.md)
     * [Metrics](icon-20/goloop/management/metric.md)
+* [Java SCORE](icon-20/java-score/README.md)
+  * [Tutorial](icon-20/java-score/tutorial.md)
