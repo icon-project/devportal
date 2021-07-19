@@ -1,7 +1,5 @@
 # Support
 
-
-
 We sincerely appreciate all of you showing great interest in us and keep encouraging you to develop various DApps on ICON blockchain. We welcome our potential partners in the future and are ready to support them. If you have any further questions or need help, please feel free to contact us, and we would be thrilled in assisting you further.
 
 ICON official community

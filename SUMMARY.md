@@ -16,7 +16,6 @@
 * [The ICON Network](introduction/the-icon-network/README.md)
   * [Testnet](introduction/the-icon-network/testnet.md)
   * [Mainnet](introduction/the-icon-network/mainnet.md)
-* [Support](introduction/support.md)
 
 ## Python SCORE
 
@@ -119,4 +118,9 @@
     * [Metrics](icon-2.0/goloop/management/metric.md)
 * [Java SCORE](icon-2.0/java-score/README.md)
   * [Tutorial](icon-2.0/java-score/tutorial.md)
+
+---
+
+* [Support](support.md)
+* [Developer Forum](https://forum.icon.community/c/d/33)
 
