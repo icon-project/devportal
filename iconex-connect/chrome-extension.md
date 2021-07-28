@@ -98,7 +98,7 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 
 `REQUEST_ADDRESS` Requests for the address to use for service.
 
-`RESPONSE_HAS_ADDRESS` Returns the icx address selected by user.
+`RESPONSE_ADDRESS` Returns the icx address selected by user.
 
 ```javascript
 const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
