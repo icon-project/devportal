@@ -215,19 +215,19 @@ cd gochain
                     "query": "0x2faf080"
                 },
                 "stepCosts": {
-                    "default": "0x186a0",
-                    "contractCall": "0x61a8",
-                    "contractCreate": "0x3b9aca00",
-                    "contractUpdate": "0x5f5e1000",
-                    "contractDestruct": "-0x11170",
-                    "contractSet": "0x2710",
-                    "get": "0x0",
-                    "set": "0x140",
-                    "replace": "0x50",
-                    "delete": "-0xf0",
-                    "input": "0xc8",
-                    "eventLog": "0x64",
-                    "apiCall": "0x2710"
+                  "default": "0x186a0",
+                  "contractCall": "0x61a8",
+                  "contractCreate": "0x3b9aca00",
+                  "contractUpdate": "0x3b9aca00",
+                  "contractDestruct": "-0x11170",
+                  "contractSet": "0x59d8",
+                  "get": "0x0",
+                  "set": "0x140",
+                  "replace": "0x50",
+                  "delete": "-0xf0",
+                  "input": "0xc8",
+                  "eventLog": "0x64",
+                  "apiCall": "0x2710"
                 }
             },
             "validatorList": [
