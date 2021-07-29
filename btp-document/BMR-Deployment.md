@@ -31,182 +31,200 @@ BMR2: listen blocks generating from Moonriver Network --> build `Relay Message` 
 
 ____
 
-```shell
+```bash
 # INode is a folder that was created when deploying a local node in ICON Network
-$ CONFIG_DIR=path/to/config/folder/INode
+CONFIG_DIR=path/to/config/folder/INode
 
-$ cd $CONFIG_DIR
+cd $CONFIG_DIR
+
+mkdir BMR && cd BMR
 
 #  Clone BTP Project
-$ git clone https://github.com/icon-project/btp.git
+git clone https://github.com/icon-project/btp.git
 
-$ cd btp && git checkout refactor-layout
+cd btp && git checkout refactor-layout
 
 # Output binaries are placed under bin/ directory.
-$ make btpsimple
+make btpsimple
+# Copy binary file 'btpsimple' to local user's local binary folder
+cp $CONFIG_DIR/BMR/btp/bin/btpsimple /usr/local/bin
 ```
 
 ### 2. Generate keystore and configuration files
 
 ____
 
-#### Download CLI tools
-
-```shell
-# Get goloop-cli
-$ go get github.com/icon-project/goloop/cmd/goloop
-
-# Get ethkey-cli
-$ go get github.com/ethereum/go-ethereum/cmd/ethkey
-```
-
 #### Create keystore files
 
 - Generate keystore of BMR from Moonriver --> ICON
 
-```shell
-$ goloop ks gen --out $CONFIG_DIR/icon-bmr.keystore.json --password $YOUR_PASSWORD
+```bash
+goloop ks gen --out $CONFIG_DIR/icon-bmr.keystore.json --password YOUR_PASSWORD
 
 # Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
-$ cat > icon-bmr.secret
-# Enter your password
+echo -n "YOUR_PASSWORD" > $CONFIG_DIR/icon-bmr.secret
+
+# Save icon-bmr address to a file
+echo -n "ICON-BMR Addresss" > $CONFIG_DIR/icon-bmr.addr
 ```
 
 - Generate keystore of BMR from ICON --> Moonriver
 
-```shell
-$ ethkey generate moon-bmr.keystore.json
+```bash
+ethkey generate $CONFIG_DIR/moon-bmr.keystore.json
 # Enter your password
 # Repeat your password
 
+cat <<< $(jq '. += {"coinType":"evm"}' $CONFIG_DIR/moon-bmr.keystore.json) > $CONFIG_DIR/moon-bmr.keystore.json
+
 # Create a secret file 'moon-bmr.secret' and save $YOUR_PASSWORD into that file
-$ cat > moon-bmr.secret
-# Enter your password
+echo -n "YOUR_PASSWORD" > $CONFIG_DIR/moon-bmr.secret
+
+# Save moon-bmr address to a file
+echo -n "MOON-BMR Addresss" > $CONFIG_DIR/moon-bmr.addr
 ```
 
 #### Query `Offset` and a list of `Relays` from BMC
 
 &emsp; This step checks whether **BMRs** have been registered and added into **BMC**. As designed, only registered **BMRs**, that approved and added by `Operator`, are allowed to build `Relay Message` and push it to **BMC** contract
 
-- Get `BMCLinkStatus` (Moonriver --> ICON): please run below commands
+- Get `BMCLinkStatus` (Moonriver --> ICON):  please check out this [link](Smart-Contracts-ICON.md#get-link-status) to complete this requirement
 
-```bash
-$ goloop rpc --uri http://goloop:9080/api/v3/icon \
-    call --to $JAVA_SCORE_BMC_ADDRESS \
-    --method getStatus \
-    --param _link= $BTPSIMPLE_SRC_ADDRESS
-
-# For example:
-# goloop rpc --uri http://goloop:9080/api/v3/icon \
-#     call --to cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247 \
-#     --method getStatus \
-#     --param _link=btp://0x501.pra/0x5b5B619E6A040EBCB620155E0aAAe89AfA45D090
-```
-
-In success, you receive a response similar as:
-
-```json
-{
-    "block_interval_dst": "0x3e8",
-    "block_interval_src": "0x7d0",
-    "cur_height": "0x14d54",
-    "delay_limit": "0x3",
-    "max_agg": "0x10",
-    "relay_idx": "0x0",
-    "relays": [
-        {
-        "address": "hx2dbd4f999f0e6b3c017c029d569dd86950c23104",
-        "block_count": "0xd00",
-        "msg_count": "0x0"
-        }
-    ],
-    "rotate_height": "0x137ea",
-    "rotate_term": "0x8",
-    "rx_height": "0xca",
-    "rx_height_src": "0x16770",
-    "rx_seq": "0x0",
-    "tx_seq": "0x2",
-    "verifier": {
-        "height": "0x235fe",
-        "last_height": "0x234a0",
-        "offset": "0x234a0"     //  0x234a0 = 144544
-    }
-}
-```
-
-- Get `BMCLinkStatus` (ICON --> Moonriver): please check out this [link](Smart-Contracts-ICON.md) to complete this requirement
+- Get `BMCLinkStatus` (ICON --> Moonriver): please check out this [link](Smart-Contracts-PRA.md#4-config-moonriver-bmc) to complete this requirement
 
 #### Create configuration files
 
 - Generate configuration file of BMR from ICON --> Moonriver
 
 ```bash
-$ BTPSIMPLE_CONFIG=$CONFIG_DIR/moon.config.json
+cd $CONFIG_DIR/BMR/btp
 
-$ BTPSIMPLE_SRC_ADDRESS=btp://0x3.icon/address-of-BMC-ICON
-# For example: BTPSIMPLE_SRC_ADDRESS=btp://0x3.icon/cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247
-  
-$ BTPSIMPLE_SRC_ENDPOINT=http://goloop:9080/api/v3/icon
-  
-$ BTPSIMPLE_DST_ADDRESS=btp://0x501.pra/address-of-BMC-Moonriver
-# For example: BTPSIMPLE_DST_ADDRESS=btp://0x501.pra/0x5b5B619E6A040EBCB620155E0aAAe89AfA45D090
+# Make sure 'BTP_PROJ_DIR' has already defined
+# If not, please define as BTP_PROJ_DIR=/path/to/PRA-Contracts/btp
 
-$ BTPSIMPLE_DST_ENDPOINT=ws://localhost:9944
-  
-$ BTPSIMPLE_OFFSET=above-query-offset-ICON-->Moonriver
-# For example: BTPSIMPLE_OFFSET=3562
-  
-$ BTPSIMPLE_KEY_STORE=$CONFIG_DIR/moon-bmr.keystore.json
-  
-$ BTPSIMPLE_KEY_SECRET=$CONFIG_DIR/moon-bmr.secret
+chmod +x ./entrypoint.sh
 
-$ $CONFIG_DIR/btp/bin/btpsimple save $BTPSIMPLE_CONFIG
+BTPSIMPLE_CONFIG=$CONFIG_DIR/moon.config.json \
+BTPSIMPLE_SRC_ADDRESS=$(cat $CONFIG_DIR/btp.icon) \
+BTPSIMPLE_SRC_ENDPOINT=http://127.0.0.1:9080/api/v3/icon \
+BTPSIMPLE_DST_ADDRESS=$(cat $BTP_PROJ_DIR/bmc_perif.btp.addr) \
+BTPSIMPLE_DST_ENDPOINT=ws://localhost:9944 \
+BTPSIMPLE_OFFSET=$(cat $BTP_PROJ_DIR/moon.offset) \
+BTPSIMPLE_KEY_STORE=$CONFIG_DIR/moon-bmr.keystore.json \
+BTPSIMPLE_KEY_SECRET=$CONFIG_DIR/moon-bmr.secret \
+BTPSIMPLE_LOG_WRITER_FILENAME=$CONFIG_DIR/moon-bmr.log \
+./entrypoint.sh
 ```
 
 - Generate configuration file of BMR from Moonriver --> ICON
 
 ```bash
-$ BTPSIMPLE_CONFIG=$CONFIG_DIR/icon.config.json
+BTPSIMPLE_CONFIG=$CONFIG_DIR/icon.config.json \
+BTPSIMPLE_SRC_ADDRESS=$(cat $BTP_PROJ_DIR/bmc_perif.btp.addr) \
+BTPSIMPLE_SRC_ENDPOINT=ws://localhost:9944 \
+BTPSIMPLE_DST_ADDRESS=$(cat $CONFIG_DIR/btp.icon) \
+BTPSIMPLE_DST_ENDPOINT=http://127.0.0.1:9080/api/v3/icon \
+BTPSIMPLE_OFFSET=$(cat $CONFIG_DIR/icon.offset) \
+BTPSIMPLE_KEY_STORE=$CONFIG_DIR/icon-bmr.keystore.json \
+BTPSIMPLE_KEY_SECRET=$CONFIG_DIR/icon-bmr.secret \
+BTPSIMPLE_LOG_WRITER_FILENAME=$CONFIG_DIR/icon-bmr.log \
+./entrypoint.sh
+```
 
-$ BTPSIMPLE_SRC_ADDRESS=btp://0x501.pra/address-of-BMC-Moonriver
-# For example: BTPSIMPLE_SRC_ADDRESS=btp://0x501.pra/0x5b5B619E6A040EBCB620155E0aAAe89AfA45D090
+Add `"options": {"StepLimit": 50000000000000}` into `$CONFIG_DIR/icon.config.json`. For Example:
 
-$ BTPSIMPLE_SRC_ENDPOINT=ws://localhost:9944
-  
-$ BTPSIMPLE_DST_ADDRESS=btp://0x3.icon/address-of-BMC-ICON
-# For example: BTPSIMPLE_DST_ADDRESS=btp://0x3.icon/cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247
-
-$ BTPSIMPLE_DST_ENDPOINT=http://goloop:9080/api/v3/icon
-  
-$ BTPSIMPLE_OFFSET=above-query-offset-Moonriver-->ICON
-# For example: BTPSIMPLE_OFFSET=144544
-  
-$ BTPSIMPLE_KEY_STORE=$CONFIG_DIR/icon-bmr.keystore.json
-  
-$ BTPSIMPLE_KEY_SECRET=$CONFIG_DIR/icon-bmr.secret
-
-$ $CONFIG_DIR/btp/bin/btpsimple save $BTPSIMPLE_CONFIG
+```json
+"dst": {
+    "address": "btp://0x3.icon/cxbcad01c6b50459f0e2110fb90507f30d59f95579",
+    "endpoint": "http://127.0.0.1:9080/api/v3/icon",
+    "options": {
+      "StepLimit": 50000000000000
+    }
+},
 ```
 
 ### 3. Start BMRs
 
 ____
 
+Before starting the BMRs, we have to add some "fuels"
+
+- Adding funds to Moonbeam-BMR
+
+```bash
+export MOON_BMR=$(cat $CONFIG_DIR/moon-bmr.addr)
+# change your current directory to a directory that contains BMC, BSH or BMV
+# For example: mine is $BTP_PROJ_DIR (/Users/myfolder/PRA-Contracts/btp)
+cd $BTP_PROJ_DIR/solidity/bmc
+
+truffle console --network moonbeamlocal
+
+# Moonbeam provides some prefund accounts
+# Please make sure that these ones have been added into a truffle-config.js
+# so then below command can return them
+truffle(moonbeamlocal)> let accounts = await web3.eth.getAccounts()
+
+# Check a balance of one of these accounts
+# It returns a balance of accounts[0] in Wei
+truffle(moonbeamlocal)> await web3.eth.getBalance(accounts[0])
+'1207825499178649173706176'
+
+# Now, transfer 100 ETH to Moonbeam-BMR
+truffle(moonbeamlocal)> await web3.eth.sendTransaction({from: accounts[0], to: process.env.MOON_BMR, value: web3.utils.toBN("10000000000000000000000")})
+{
+  blockHash: '0x7735fde972b10ffe4456d3fe2af7f8f9070526186d5444ee9d3d724230be52b2',
+  blockNumber: 9,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: '0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac',
+  gasUsed: 21000,
+  logs: [],
+  logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0xa29ce7c50d01a9b20fe92dba2c149aaee0acec9c',
+  transactionHash: '0xeee0579439622198a68b0c9cf3c07202cf2f9e15628b03c4acd86e1a5334cf34',
+  transactionIndex: 0
+}
+
+# Check the balance of Moonbeam-BMR
+truffle(moonbeamlocal)> await web3.eth.getBalance(process.env.MOON_BMR)
+'10000000000000000000000'
+```
+
+- Add funds to ICON-BMR
+
+```bash
+# change your current directory to one that is being used to run 'goloop' command 
+# For example: mine is $CONFIG_DIR (/Users/myfolder/INode)
+# Note that: all generated files, including keystores, were saved in this directory as well
+AMOUNT=1000000000000000000000000
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
+--to $(cat $CONFIG_DIR/icon-bmr.addr) --value $AMOUNT \
+--key_store $CONFIG_DIR/godWallet.json --key_password gochain \
+--step_limit 10000000000 --nid 3
+
+# Check the balance of ICON-BMR
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/icon-bmr.addr)
+```
+
+Now, let start the BMRs
+
 - Start BMR from ICON --> Moonriver
 
-```shell
-$ $CONFIG_DIR/btp/bin/btpsimple start --config $CONFIG_DIR/moon.config.json
+```bash
+./bin/btpsimple start --config $CONFIG_DIR/moon.config.json
 ```
 
 - Start BMR from Moonriver --> ICON
 
-```shell
-$ $CONFIG_DIR/btp/bin/btpsimple start --config $CONFIG_DIR/icon.config.json
+```bash
+./bin/btpsimple start --config $CONFIG_DIR/icon.config.json
 ```
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-[<--- Prev](./Smart-Contracts-PRA.md)
+In the next section, we are going to guide you how to transfer the native coins between ICON and Moonriver networks manually. Click on 'Next' if you're interested
 
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+[<--- Prev](./Smart-Contracts-PRA.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./NativeCoin-Transfer-Example.md)
 <!--<p align="center">-->
 <!--  <a href="https://git.baikal.io/icon/btp/-/blob/BTPDocument/Smart-Contracts-PRA.md"><--- Prev</a>-->
 <!--</p> -->

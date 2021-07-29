@@ -6,7 +6,7 @@ _____
 
 A secured and distributed database architecture, the blockchain, has been introduced and launched for ten years. A great number of cryptocurrency and its ecosystem, competing to become the de-facto blockchain, has also been enriched over time. However, they are still merry-go-round on the old-traditional path of development which, in fact, makes this industry, as a whole, evolve into a series of stand-alone and disconnected pieces. Apparently, that's a major problem and we call it a "lack of interoperability" in the blockchain ecosystems today.
 
-In the traditional fiat-currency trading system, the payment infrastructures can be operated interoperably. Regardless of what currency and geographic location, goods, and services can simply be paid by swiping a debit or credit card. Interoperability simply means "borderless communication" in which two or more distinctive ecosystems can communicate and exchange their value to each other. Along with the development of the blockchain's full potential, we want distinct protocols to have compatible ways to interact and communicate with each other, and the ability to interoperate at the protocol level. Thus, the ICON Network has set out on a mission to "hyperconnect the world". We are excited to share the latest technology advancements and details around the ICON's interoperability solution, which is called Blockchain Transmission Protocol (BTP), with our community.
+In the traditional fiat-currency trading system, the payment infrastructures can be operated interoperably. Regardless of what currency and geographic location, goods, and services can simply be paid by swiping a debit or credit card. Interoperability simply means "borderless communication" in which two or more distinctive ecosystems can communicate and exchange their value to each other. Along with the development of the blockchain's full potential, we want distinct protocols to have compatible ways to interact and communicate with each other, and the ability to interoperate at the protocol level. Thus, ICON Network has set out on a mission to "hyperconnect the world". We are excited to share the latest technology advancements and details around ICON's interoperability solution, which is called Blockchain Transmission Protocol (BTP), with our community.
 
 | ![BTP Architecture](./images/BTPArchitecture.png) |
 |:--:|
@@ -29,10 +29,10 @@ ______
 
 In the last couple of years, Decentralized Finance (DeFi) has been gaining more attention. DeFi is a global and open financial system, built for the new era of the Internet, in which it strives to alternate traditional finance systems that are held and controlled by old infrastructures. With that aspiration, a great use case of the Blockchain Transmission Protocol (BTP) would be Tokens/Coins transfers among different blockchains. At the protocol level, the BTP facilitates such a request directly through smart contracts, from one chain to another without using a central trading platform. In this example, Polkadot Parachains will be used to demonstrate. For a sake of simplicity, the above diagram, which describes an interoperability use case of BTP, can be broken down into steps as following:
 
-- On the ICON's side, Bob sends `100 ICX` to the *BTP Service Handler* (BSH) contract
+- On ICON's side, Bob sends `100 ICX` to the *BTP Service Handler* (BSH) contract
 - A small fee (`1 ICX`) is being charged and sent to the *Fee Aggregation* contract in this example
-- The *BSH* contract locks the `99 ICX`, then sends a transferring service message to the *BTP Message Center* (BMC) on the ICON
-- *BTP Message Relay* (BMR) reads the message, that was thrown by Message Center on the ICON, containing information that `99 ICX` was locked in the *BSH* contract
+- The *BSH* contract locks the `99 ICX`, then sends a transferring service message to the *BTP Message Center* (BMC) on ICON
+- *BTP Message Relay* (BMR) reads the message, that was thrown by Message Center on ICON, containing information that `99 ICX` was locked in the *BSH* contract
 - *BMR* collects requiring data, builds `Relay Message`, then sends it to the *BTP Message Center* (BMC) on the Parachain
 - Upon receiving a message, *BMC* forwards it to *Message Verifier* (BMV) for going through a procedure of attestation
 - *BMV* contract either approves or rejects this requested message
@@ -41,7 +41,7 @@ In the last couple of years, Decentralized Finance (DeFi) has been gaining more 
 
 On the next page, we would like to provide essential and required resources of development Blockchain Transmission Protocol (BTP) connecting two blockchain ecosystems. Click on 'Next' to move on to the next page
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 [Next --->](BTP-Development-Resources.md)
 
 <!--<p align="center">-->

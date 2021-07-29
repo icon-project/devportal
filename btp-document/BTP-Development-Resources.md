@@ -24,7 +24,7 @@ BTP Service Handlers (BSH) is a smart contract that handles user's requests and 
 
 ____
 
-BTP Message Center (BMC) is a smart contract that builds BTP Message before sending to the Relay (BMR) and handles relay messages from other BMRs. In addition, BMC also has features to manage authorization (e.g. Operators of a Contract and a list of allowance Relays), and information of connected networks (i.e. link, route) to make sure communication from the source delivering to the destination network can be operated smoothly and conveniently.
+BTP Message Center (BMC) is a smart contract that builds BTP Message before sending to the Relay (BMR) and handles relay messages from other BMRs. In addition, BMC also has features to manage authorization (e.g. Operators of a Contract and a list of allowed Relays), and information of connected networks (i.e. link, route) to make sure communication from the source delivering to the destination network can be operated smoothly and conveniently.
 
 - Interfaces of `BMC` on PRA (Solidity) [[link](BMC.md)]
 - Interface of `BMC` on ICON (Java) [[link](https://github.com/icon-project/btp/blob/master/doc/bmc.md)]
@@ -38,9 +38,9 @@ BTP Message Verifier (BMV) is a smart contract that extracts a relay message, wh
 - Interfaces of `BMV` on PRA (Solidity) [[link](BMV.md)]
 - Interface of `BMV` on ICON (Java) [[link](https://github.com/icon-project/btp/blob/master/doc/bmv.md)]
 
-**Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depend on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added. In the next section, we would like to give you a practical utilization of these interfaces and provide instructions in developing BTP Network connecting two blockchain ecosystems to a tee. Click on 'Next' if you are interested
+**Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depending on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added. In the next section, we would like to give you a practical utilization of these interfaces and provide instructions in developing BTP Network connecting two blockchain ecosystems to a tee. Click on 'Next' if you are interested
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 [<--- Prev](./Overview.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./BTP-Development-Instructions.md)
 
 <!--<p align="center">-->

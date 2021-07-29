@@ -11,14 +11,14 @@ Before deploying these contracts, please make sure you have deployed a local nod
 Create a folder and clone this project to your local machine as follow:
 
 ```bash
-$ mkdir PRA-Contracts && cd PRA-Contracts
+mkdir PRA-Contracts && cd PRA-Contracts
 
-$ git clone https://github.com/icon-project/btp.git
+git clone https://github.com/icon-project/btp.git
 
-$ cd btp && git checkout icondao
+cd btp && git checkout icondao
 
 # Set environment variable
-$ BTP_PROJECT_DIR=/path/to/btp
+BTP_PROJ_DIR=/path/to/btp
 ```
 
 ### 1. Deploy BMC Contracts on Moonriver Network
@@ -30,11 +30,16 @@ ____
 - Run following commands:
 
 ```bash
-$ cd ${BTP_PROJ_DIR}/solidity/bmc
+cd $BTP_PROJ_DIR/solidity/bmc
 
-$ yarn
+yarn
 
-$ BMC_PRA_NET=0x501.pra truffle migrate --network Moonriverlocal
+# Please run these commands one by one to avoid unexpected error
+rm -rf .openzeppelin && truffle compile --all
+
+# @param
+# - BMC_PRA_NET: Chain ID and name of a network that BMC is going to deploy on, e.g. '0x501.pra'
+BMC_PRA_NET=0x501.pra truffle migrate --network moonbeamlocal
 ```
 
 - After running above commands, you have succeed to deploy required BMC contracts onto the Moonriver Network. In success, you will have a result similar as follows:
@@ -45,7 +50,7 @@ yarn install v1.22.10
 [1/4] 🔍  Resolving packages...
 success Already up-to-date.
 ✨  Done in 0.51s.
-$ BMC_PRA_NET=0x501.pra truffle migrate --network Moonriverlocal
+$ BMC_PRA_NET=0x501.pra truffle migrate --network moonbeamlocal
 
 Compiling your contracts...
 ===========================
@@ -53,7 +58,7 @@ Compiling your contracts...
 
 Starting migrations...
 ======================
-> Network name:    'Moonriverlocal'
+> Network name:    'moonbeamlocal'
 > Network id:      1281
 > Block gas limit: 15000000 (0xe4e1c0)
 
@@ -150,46 +155,66 @@ Summary
 - Run following commands to query:
 
 ```bash
-$ truffle console --network Moonriverlocal
+truffle console --network moonbeamlocal
 
-$ truffle(Moonriverlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
+truffle(moonbeamlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
 
-$ truffle(Moonriverlocal)> bmcPeriphery.address
+truffle(moonbeamlocal)> bmcPeriphery.address
 
-$ truffle(Moonriverlocal)> await bmcPeriphery.getBmcBtpAddress()
+truffle(moonbeamlocal)> await bmcPeriphery.getBmcBtpAddress()
 ```
 
 You will receive a query information similar as:
 
 ```bash
-$ truffle(Moonriverlocal)> bmcPeriphery.address
+truffle(moonbeamlocal)> bmcPeriphery.address
 '0x5CC307268a1393AB9A764A20DACE848AB8275c46'
+# This address is an example. DO NOT copy
 
-$ truffle(Moonriverlocal)> await bmcPeriphery.getBmcBtpAddress()
+truffle(moonbeamlocal)> await bmcPeriphery.getBmcBtpAddress()
 'btp://0x501.pra/0x5CC307268a1393AB9A764A20DACE848AB8275c46'
-```
+# This BTP address is an example. DO NOT copy
 
-**Note that:** This information will later be used on another deployments. Please do not skip these steps.
+
+# These information will be used on another deployments
+# Please save them for later use as follows
+# Exit truffle console via ".exit", then run below commands
+# Replace "BMC Periphery Address" and "BMC Periphery BTP Address" by your results
+
+echo -n "BMC Periphery Address" > $BTP_PROJ_DIR/bmc_perif.addr
+
+echo -n "BMC Periphery BTP Address" > $BTP_PROJ_DIR/bmc_perif.btp.addr
+```
 
 ### 2. Deploy BSH Contracts on Moonriver Network
 
 ____
 
-Open a new terminal window to deploy BSH contracts on the Moonriver Network
-
 - Run following commands and make sure use a correct contract address of `BMCPeriphery`:
 
 ```bash
-$ cd ${BTP_PROJ_DIR}/solidity/bsh
+cd $BTP_PROJ_DIR/solidity/bsh
 
-$ yarn
+yarn
 
-$ BSH_COIN_URL=https://Moonriver.network/ \
+# Please run these commands one by one to avoid unexpected error
+rm -rf .openzeppelin && truffle compile --all
+
+# @params:
+# - BMC_PERIPHERY_ADDRESS: an address on chain of BMCPeriphery contract
+# This address is queried after deploying BMC contracts
+# For example: BMC_PERIPHERY_ADDRESS = 0x5CC307268a1393AB9A764A20DACE848AB8275c46
+# - BSH_COIN_NAME: a native coin name of Moonriver Network - DEV
+# - BSH_COIN_FEE: a charging fee ratio of each request, e.g. 100/10000 = 1%
+# - BSH_SERVICE: a service name of BSH contract, e.g. 'CoinTransfer'
+# This service name is unique in one network. And it must be registered to BMC contract to activate
+# BMC contract checks its service name whether it's already existed
+BSH_COIN_URL=https://moonbeam.network/ \
   BSH_COIN_NAME=DEV \
   BSH_COIN_FEE=100 \
-  BMC_PERIPHERY_ADDRESS=address/of/BMCPeriphery-Contract \
-  BSH_SERVICE=CoinTransfer \
-  truffle migrate --network Moonriverlocal
+  BMC_PERIPHERY_ADDRESS=$(cat $BTP_PROJ_DIR/bmc_perif.addr) \
+  BSH_SERVICE=nativecoin \
+  truffle migrate --network moonbeamlocal
 ```
 
 - In success, you will have a result similar as:
@@ -203,7 +228,7 @@ Compiling your contracts...
 
 Starting migrations...
 ======================
-> Network name:    'Moonriverlocal'
+> Network name:    'moonbeamlocal'
 > Network id:      1281
 > Block gas limit: 15000000 (0xe4e1c0)
 
@@ -296,29 +321,74 @@ Summary
 > Final cost:          0.19494956 ETH
 ```
 
+- Get an address of deployed BSHPeriphery
+
+```bash
+truffle console --network moonbeamlocal
+
+truffle(moonbeamlocal)> let bshPeriphery = await BSHPeriphery.deployed()
+
+truffle(moonbeamlocal)> bshPeriphery.address
+```
+
+You will receive a query information similar as:
+
+```bash
+$ truffle(moonbeamlocal)> bshPeriphery.address
+'0xD5Cd1ea4E9874FfB7d553c517Cec812B3069e322'
+# This address is an example. DO NOT copy
+
+
+# This information will be used on another settings
+# Please save it for later use as follows
+# Exit truffle console via ".exit", then run below commands
+# Replace "BSH Periphery Address" by your result
+
+echo -n "BSH Periphery Address" > $BTP_PROJ_DIR/bsh_perif.addr
+```
+
 ### 3. Deploy BMV Contracts on Moonriver Network
 
 ____
-
-Open a new terminal window to deploy BMV contracts on the Moonriver Network
 
 #### Deploy BMV contracts
 
 - Run following commands and make sure use a correct contract address of `BMCPeriphery`
 
 ```bash
-$ cd ${BTP_PROJ_DIR}/solidity/bmv
+cd $BTP_PROJ_DIR/solidity/bmv
 
-$ yarn
+yarn
 
-$ BMC_CONTRACT_ADDRESS=address/of/BMCPeriphery-Contract \
-  BMV_ICON_NET=0x3.icon \
-  BMV_ICON_ENCODED_VALIDATORS=0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd \
-  BMV_ICON_INIT_OFFSET=1 \
-  BMV_ICON_INIT_ROOTSSIZE=8 \
-  BMV_ICON_INIT_CACHESIZE=8 \
-  BMV_ICON_LASTBLOCK_HASH=0x09e4564af11e93a5ed0b6f78f27c742ccd5a7f6a2df8f5b72a5d293ab7ca9e6e \
-  truffle migrate --network Moonriverlocal
+# Please run these commands one by one to avoid unexpected error
+rm -rf .openzeppelin && truffle compile --all
+
+# @params
+# - BMC_CONTRACT_ADDRESS: an address on chain of BMCPeriphery contract
+# This address is queried after deploying BMC contracts
+# For example: BMC_CONTRACT_ADDRESS = 0x5CC307268a1393AB9A764A20DACE848AB8275c46
+# - BMV_ICON_NET: Chain ID and name of a network that BMV is going to verify BTP Message
+# - BMV_ICON_INIT_OFFSET: a block height when ICON-BMC was deployed
+# - BMV_ICON_LASTBLOCK_HASH: a hash of the above block
+# - BMV_ICON_ENCODED_VALIDATORS: RLP encoding of Validators. It can be generated in two ways:
+#    + Using library: https://www.npmjs.com/package/rlp
+#    + Web App: https://toolkit.abdk.consulting/ethereum#rlp
+# The curruent list of validators, which is being used in this example, is ["hxb6b5791be0b5ef67063b3c10b840fb81514db2fd"]
+# Replace 'hx' by '0x00' -> RLP encode -> 0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd
+
+# How to get BMV_ICON_INIT_OFFSET and BMV_ICON_LASTBLOCK_HASH
+# Please make sure you have already deployed ICON-BMC
+CONFIG_DIR=/path/to/INode
+# For example: CONFIG_DIR=/Users/myfolder/INode
+
+BMC_CONTRACT_ADDRESS=$(cat $BTP_PROJ_DIR/bmc_perif.addr) \
+BMV_ICON_NET=0x3.icon \
+BMV_ICON_ENCODED_VALIDATORS=0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd \
+BMV_ICON_INIT_OFFSET=$(cat $CONFIG_DIR/block.height.icon) \
+BMV_ICON_INIT_ROOTSSIZE=8 \
+BMV_ICON_INIT_CACHESIZE=8 \
+BMV_ICON_LASTBLOCK_HASH=$(cat $CONFIG_DIR/block.hash.icon) \
+  truffle migrate --network moonbeamlocal
 ```
 
 - In success, you will have a result similar as:
@@ -419,55 +489,75 @@ Summary
 > Final cost:          0.17232432 ETH
 ```
 
-#### Get address and check status of BMV contract
+#### Get address of BMV contract
 
 ```bash
-$ truffle console --network Moonriverlocal
+truffle console --network moonbeamlocal
 
-$ truffle(Moonriverlocal)> let bmv = await BMV.deployed()
+truffle(moonbeamlocal)> let bmv = await BMV.deployed()
 
-$ truffle(Moonriverlocal)> bmv.address
+truffle(moonbeamlocal)> bmv.address
 ```
 
 You will receive information similar as:
 
 ```bash
-$ truffle(Moonriverlocal)> bmv.address
+truffle(moonbeamlocal)> bmv.address
 '0x7acc1aC65892CF3547b1b0590066FB93199b430D'
+# This address is an example. DO NOT copy
+
+
+# This information will be used on another settings
+# Please save it for later use as follows
+# Exit truffle console via ".exit", then run below commands
+# Replace "BMV Address" by your result
+
+echo -n "BMV Address" > $BTP_PROJ_DIR/bmv.addr
 ```
 
-**Note that:** Please do not skip these steps. This information will later be used to register ***Veriffier*** (`addVerifier()`) in ***BMCManagement*** contract
+<span style="color:red">**Attention:**</span> Please do not skip these steps. This information will later be used to register ***Veriffier***
 
 ### 4. Config Moonriver BMC
 
 ____
+In this example, we would like to show how to config to setup a connection between ICON and Moonriver networks. For other cases, there might be a different configuration
 
-**Note that: This configuration step must be executed after completely deploying smart contracts (BSH, BMC, and BMV) on both connecting networks. In this example, we would like to show how to config to setup a connection between ICON and Moonriver networks. For other cases, there might be a different configuration**
+<span style="color:red">**Attention:** This configuration step must be executed after completely deploying smart contracts (BSH, BMC, and BMV) on both connecting networks</span>
+
+- Preparation
+  - Generate Relay's address ---> follow this instruction [[link](BMR-Deployment.md#create-keystore-files)] if you have not completed this step
+  - Prepare addresses of BMC, BSH, BMV and Relay
+
+```bash
+export ICON_BMC=$(cat $CONFIG_DIR/btp.icon)
+export MOON_BSH=$(cat $BTP_PROJ_DIR/bsh_perif.addr)
+export MOON_BMV=$(cat $BTP_PROJ_DIR/bmv.addr)
+export RELAY=$(cat $CONFIG_DIR/moon-bmr.addr)
+export ICON_NET=$(cat $CONFIG_DIR/net.btp.icon)
+```
 
 - Launch Truffle console
 
 ```bash
-$ cd ${BTP_PROJ_DIR}/solidity/bmc
+cd $BTP_PROJ_DIR/solidity/bmc
 
-$ truffle console --network Moonriverlocal
+truffle console --network moonbeamlocal
 ```
 
 - Add **BMV**
 
 ```bash
-$ truffle(Moonriverlocal)> let bmcManagement = await BMCManagement.deployed()
+truffle(moonbeamlocal)> let bmcManagement = await BMCManagement.deployed()
 
-$ truffle(Moonriverlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
+truffle(moonbeamlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
 
-$ truffle(Moonriverlocal)> await bmcManagement.addVerifier("0x3.icon", bmv-contract-address)
-# For example: bmv-contract-address = "0x7acc1aC65892CF3547b1b0590066FB93199b430D"
+truffle(moonbeamlocal)> await bmcManagement.addVerifier(process.env.ICON_NET, process.env.MOON_BMV)
 ```
 
 - Add a connection link to ICON's BMC
 
 ```bash
-$ truffle(Moonriverlocal)> await bmcManagement.addLink("btp://0x3.icon/icon-bmc-contract-address")
-# For example: icon-bmc-contract-address = cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247
+truffle(moonbeamlocal)> await bmcManagement.addLink(process.env.ICON_BMC)
 ```
 
 The above command helps to set a connection link from Moonriver-BMC to ICON-BMC with default setting values:
@@ -481,22 +571,31 @@ The above command helps to set a connection link from Moonriver-BMC to ICON-BMC 
 - Set Link Configuration: this step will help you to change default setting values from the command above
 
 ```bash
-$ truffle(Moonriverlocal)> await bmcManagement.setLink("btp://0x3.icon/icon-bmc-contract-address", 3000, 5, 3)
-# For example: icon-bmc-contract-address = cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247
+truffle(moonbeamlocal)> await bmcManagement.setLink(process.env.ICON_BMC, 3000, 5, 3)
 ```
 
 - Add BSH Service contract
 
 ```bash
-$ truffle(Moonriverlocal)> await bmcManagement.addService("CoinTransfer", bsh-contract-address)
-# For example: bsh-contract-address = "0xD5Cd1ea4E9874FfB7d553c517Cec812B3069e322"
+truffle(moonbeamlocal)> await bmcManagement.addService("nativecoin", process.env.MOON_BSH)
+```
+
+- Add Relays and query Relays of one link
+
+```bash
+truffle(moonbeamlocal)> await bmcManagement.addRelay(process.env.ICON_BMC, [process.env.RELAY])
+
+truffle(moonbeamlocal)> await bmcManagement.getRelays(process.env.ICON_BMC)
 ```
 
 - Get Link Status: please **DO NOT** skip this step. This output will then be used to set parameters to deploy BMR
 
 ```bash
-$ truffle(Moonriverlocal)> await bmcPeriphery.getStatus("btp://0x3.icon/icon-bmc-contract-address")
-# For example: icon-bmc-contract-address = cx8eb24849a7ceb16b8fa537f5a8b378c6af4a0247
+truffle(moonbeamlocal)> await bmcPeriphery.getStatus(process.env.ICON_BMC)
+
+# Exit truffle console via ".exit", then save 'offsetMTA' to a file
+# Replace "OFFSET MTA" by a corresponding value from query result
+echo -n "OFFSET MTA" > $BTP_PROJ_DIR/moon.offset
 ```
 
 ### 5. Config Moonriver BSH
@@ -506,22 +605,25 @@ ____
 - Launch Truffle console
 
 ```bash
-$ cd ${BTP_PROJ_DIR}/solidity/bmc
+cd $BTP_PROJ_DIR/solidity/bsh
 
-$ truffle console --network Moonriverlocal
+truffle console --network moonbeamlocal
 ```
 
 - Register 'ICX' token
 
 ```bash
-$ truffle(Moonriverlocal)> let bshPeriphery = await BSHPeriphery.deployed()
+truffle(Moonriverlocal)> let bshPeriphery = await BSHPeriphery.deployed()
 
-$ truffle(Moonriverlocal)> let bshCore = await BSHCore.deployed()
+truffle(Moonriverlocal)> let bshCore = await BSHCore.deployed()
 
-$ truffle(Moonriverlocal)> await bshCore.register("ICX")
+truffle(Moonriverlocal)> await bshCore.register("ICX")
+
+# Query current supporting coins
+truffle(moonbeamlocal)> await bshCore.coinNames()
 ```
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 [<--- Prev](./Smart-Contracts-ICON.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./BMR-Deployment.md)
 
 <!--<p align="center">-->
