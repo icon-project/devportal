@@ -528,7 +528,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 #### Register Relay to ICON-BMC
 
-&emsp; **Note that: To complete this step, keystore of BMR from Moonriver --> ICON ('icon-bmr.keystore.json') must be generated.** Please check out this [link](BMR-deployment.md#create-keystore-files) to complete this requirement
+&emsp; **Note that: To complete this step, keystore of BMR from Moonriver --> ICON ('icon-bmr.keystore.json') must be generated.** Please check out this [link](BMR-Deployment.md#create-keystore-files) to complete this requirement
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \

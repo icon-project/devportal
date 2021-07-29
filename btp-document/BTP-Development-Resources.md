@@ -38,7 +38,20 @@ BTP Message Verifier (BMV) is a smart contract that extracts a relay message, wh
 - Interfaces of `BMV` on PRA (Solidity) [[link](BMV.md)]
 - Interface of `BMV` on ICON (Java) [[link](https://github.com/icon-project/btp/blob/master/doc/bmv.md)]
 
-**Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depending on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added. In the next section, we would like to give you a practical utilization of these interfaces and provide instructions in developing BTP Network connecting two blockchain ecosystems to a tee. Click on 'Next' if you are interested
+**Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depending on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added
+
+## Contract Upgradeability
+
+____
+
+Have you ever wondered what would happen if your logic implementation had some issues/bugs, or you might need to add more features after deploying your contracts to a network? By design, smart contracts are immutable. Even though immutability is a significant design for a blockchain-based software, developers still need a certain degree of mutability. Hence, contract upgradeability was proposed. If you are interested in this feature, please click on links below for more information:
+
+- [Short Introduction of Contract Upgradeability](Contract-Upgradeability.md)
+- [Special roles in a context of Contract Upgradeability](Special-Roles.md)
+
+&nbsp;
+
+In the next section, we would like to give you a practical utilization of these interfaces and provide instructions in developing BTP Network connecting two blockchain ecosystems to a tee. Click on 'Next' if you are interested
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 [<--- Prev](./Overview.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./BTP-Development-Instructions.md)
