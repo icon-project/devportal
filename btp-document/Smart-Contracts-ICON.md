@@ -449,6 +449,24 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 # If fail, it shows error message and status '0x0'
 # Otherwise, status '0x1  
 ```
+
+#### Add **BMV**
+
+```bash
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --step_limit 13610920001 \
+    --method addVerifier \
+    --param _net=$(cat $CONFIG_DIR/net.btp.dst) \
+    --param _addr=$(cat $CONFIG_DIR/bmv.icon) \
+    | jq -r . > $CONFIG_DIR/tx.verifier.icon
+
+# Also check whether this transaction is successful 
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.verifier.icon)
+# If fail, it shows error message and status '0x0'
+# Otherwise, status '0x1'
+```
+
 #### Add Connection Link to Moonriver-BMC
 
 &emsp; This step requires Moonriver chainID, and an address of Moonriver-BMC contract. The information is generated after deploying Moonbeam-BMC contract ([link](Smart-Contracts-PRA.md#deploy-bmc-contracts-on-moonriver-network))
@@ -485,23 +503,6 @@ In success, a connection link from ICON-BMC to Moonriver-BMC will be set with de
 <p align="center">
   <img src="./images/bmc_rotate_fail-over.png" width="800" height="300" />
 </p>
-
-#### Add **BMV**
-
-```bash
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
-    --step_limit 13610920001 \
-    --method addVerifier \
-    --param _net=$(cat $CONFIG_DIR/net.btp.dst) \
-    --param _addr=$(cat $CONFIG_DIR/bmv.icon) \
-    | jq -r . > $CONFIG_DIR/tx.verifier.icon
-
-# Also check whether this transaction is successful 
-# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.verifier.icon)
-# If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'
-```
 
 #### Set Link Configuration
 
