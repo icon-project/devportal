@@ -413,25 +413,42 @@ In this example, we would like to show how to config to setup a connection betwe
 
 <span style="color:red">**Attention:** This configuration step must be executed after completely deploying smart contracts (BSH, BMC, and BMV) on both connecting networks.</span> 
 
-#### Add **BMV**
+#### Generate Owner and Register Owner of BMC
 
 ```bash
 cd $CONFIG_DIR
 
+goloop ks gen --out $CONFIG_DIR/bmc-owner.json --password YOUR_PASSWORD
+# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
+echo -n "YOUR_PASSWORD" > $CONFIG_DIR/bmc-owner.secret
+
+# Save icon-bmr address to a file
+echo -n "BMC Owner Addresss" > $CONFIG_DIR/bmc-owner.addr
+
+# Register Owner
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
     --key_store godWallet.json --key_password gochain --nid 3 \
     --step_limit 13610920001 \
-    --method addVerifier \
-    --param _net=$(cat $CONFIG_DIR/net.btp.dst) \
-    --param _addr=$(cat $CONFIG_DIR/bmv.icon) \
-    | jq -r . > $CONFIG_DIR/tx.verifier.icon
-
+    --method addOwner \
+    --param _addr=$(cat $CONFIG_DIR/bmc-owner.addr) \
+    | jq -r . > $CONFIG_DIR/tx.addBMCOwner.icon
 # Also check whether this transaction is successful 
-# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.verifier.icon)
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.addBMCOwner.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'
-```
+# Otherwise, status '0x1
 
+
+# Add funds to BMC-Owner
+AMOUNT=1000000000000000000000000
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
+--to $(cat $CONFIG_DIR/bmc-owner.addr) --value $AMOUNT \
+--key_store $CONFIG_DIR/godWallet.json --key_password gochain \
+--step_limit 10000000000 --nid 3 | jq -r . > $CONFIG_DIR/tx.bmcOwner.addFund
+# Also check whether this transaction is successful 
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bmcOwner.addFund)
+# If fail, it shows error message and status '0x0'
+# Otherwise, status '0x1  
+```
 #### Add Connection Link to Moonriver-BMC
 
 &emsp; This step requires Moonriver chainID, and an address of Moonriver-BMC contract. The information is generated after deploying Moonbeam-BMC contract ([link](Smart-Contracts-PRA.md#deploy-bmc-contracts-on-moonriver-network))
@@ -442,7 +459,7 @@ BTP_PROJ_DIR=/path/to/PRA-Contracts/btp
 echo $(cat $BTP_PROJ_DIR/bmc_perif.btp.addr) > $CONFIG_DIR/btp.dst
 
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method addLink \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -469,13 +486,30 @@ In success, a connection link from ICON-BMC to Moonriver-BMC will be set with de
   <img src="./images/bmc_rotate_fail-over.png" width="800" height="300" />
 </p>
 
+#### Add **BMV**
+
+```bash
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --step_limit 13610920001 \
+    --method addVerifier \
+    --param _net=$(cat $CONFIG_DIR/net.btp.dst) \
+    --param _addr=$(cat $CONFIG_DIR/bmv.icon) \
+    | jq -r . > $CONFIG_DIR/tx.verifier.icon
+
+# Also check whether this transaction is successful 
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.verifier.icon)
+# If fail, it shows error message and status '0x0'
+# Otherwise, status '0x1'
+```
+
 #### Set Link Configuration
 
 &emsp; This step will help you to change default setting values
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method setLinkRotateTerm \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -484,7 +518,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
     | jq -r . > $CONFIG_DIR/tx.setLinkRotateTerm.icon
 
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method setLinkDelayLimit \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -514,7 +548,7 @@ echo -n $ICON_OFFSET > $CONFIG_DIR/icon.offset
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method addService \
     --param _addr=$(cat $CONFIG_DIR/nativeCoinBsh.icon) \
@@ -532,7 +566,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method addRelay \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -548,7 +582,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
     --step_limit 13610920001 \
     --method setFeeAggregator \
     --param _addr=$(cat $CONFIG_DIR/feeAggregation.icon) \
@@ -563,12 +597,42 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ____
 
+- Generate Owner and Register Owner of NativeCoinBSH
+
+```bash
+goloop ks gen --out $CONFIG_DIR/nativecoinBSH-owner.json --password YOUR_PASSWORD
+# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
+echo -n "YOUR_PASSWORD" > $CONFIG_DIR/nativecoinBSH-owner.secret
+
+# Save icon-bmr address to a file
+echo -n "NativeCoinBSH Owner Addresss" > $CONFIG_DIR/nativecoinBSH-owner.addr
+
+# Register Owner
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
+    --key_store godWallet.json --key_password gochain --nid 3 \
+    --step_limit 13610920001 \
+    --method addOwner \
+    --param _addr=$(cat $CONFIG_DIR/nativecoinBSH-owner.addr) \
+    | jq -r . > $CONFIG_DIR/tx.addNativeCoinBSHOwner.icon
+
+# Add funds to BSH-Owner
+AMOUNT=1000000000000000000000000
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
+--to $(cat $CONFIG_DIR/nativecoinBSH-owner.addr) --value $AMOUNT \
+--key_store $CONFIG_DIR/godWallet.json --key_password gochain \
+--step_limit 10000000000 --nid 3 | jq -r . > $CONFIG_DIR/tx.bshOwner.addFund
+# Also check whether this transaction is successful 
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bshOwner.addFund)
+# If fail, it shows error message and status '0x0'
+# Otherwise, status '0x1      
+```
+
 - Register 'DEV' token
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
-    --step_limit 13610920001 \
+    --key_store nativecoinBSH-owner.json --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
+    --nid 3 --step_limit 13610920001 \
     --method register \
     --param _name=DEV \
     | jq -r . > $CONFIG_DIR/tx.registerCoin.icon
@@ -582,8 +646,8 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
-    --step_limit 13610920001 \
+    --key_store nativecoinBSH-owner.json --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
+    --nid 3 --step_limit 13610920001 \
     --method setFeeRatio \
     --param _feeNumerator=100 \
     | jq -r . > $CONFIG_DIR/tx.setFeeRatio.icon

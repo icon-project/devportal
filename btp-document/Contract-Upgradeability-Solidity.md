@@ -1,4 +1,4 @@
-# Contract Upgradeability
+# Contract Upgradeability - Solidity
 
 ### Why do we need to upgrade a contract?
 

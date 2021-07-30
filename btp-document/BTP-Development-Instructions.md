@@ -115,7 +115,7 @@ The next following will provide instructions on how to deploy:
 - Deploy smart contracts on Moonriver's network
 - Deploy the BTP Message Relay (BMR)
 
-The deployments and settings might have some dependencies which means that one setting/deployment must complete prior another ones. Hence, please follow the below order to completely and safely deploy and set up configurations. If you mess up or skip one step, it might affect your deployment and setting which, in fact, lead to failure consequence
+The deployments and settings might have some dependencies, which mean that one setting/deployment must complete prior another ones. Hence, please follow the below order to completely and safely deploy and set up configurations. If you mess up or skip one step, it might affect your deployment and setting which, in fact, lead to failure consequence
 
 - Deploy ICON Node: complete [1. Deploy ICON Node](#1-deploy-icon-node)
 - Deploy Moonriver Node: complete [2. Deploy Moonriver Node](#2-deploy-moonriver-node)

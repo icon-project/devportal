@@ -15,6 +15,7 @@ ____
 - [BTP Service Handler (BSH) Interfaces](./BTP-Development-Resources.md#btp-service-handler-(bsh))
 - [BTP Message Center (BMC) Interfaces](./BTP-Development-Resources.md#btp-message-center-(bmc))
 - [BTP Message Verifier (BMV) Interfaces](./BTP-Development-Resources.md#btp-message-verifier-(bmv))
+- [Contract Upgradeability - Solidity](./BTP-Development-Resources.md#contract-upgradeability-solidity)
 
 ## BTP Development Instructions
 
@@ -25,7 +26,7 @@ ____
   - [Deploy Nodes](./BTP-Development-Instructions.md#create-blockchain-nodes)
     - [Deploy ICON Node](./BTP-Development-Instructions.md#1-deploy-icon-node)
     - [Deploy Moonriver Node](./BTP-Development-Instructions.md#2-deploy-moonriver-node)
-  - [Deploy Smart Contracts (ICON)](./Smart-Contracts-ICON.md)
+  - [Deploy Smart Contracts (ICON)](./Smart-Contracts-ICON.md#smart-contracts-on-icon-deployment)
     - [Preparation](./Smart-Contracts-ICON.md#1-preparation-compiling-requiring-java-files)
     - [Deploy BMC SCORE](./Smart-Contracts-ICON.md#2-deploy-bmc-score-contract)
     - [Deploy BMV SCORE](./Smart-Contracts-ICON.md#3-deploy-bmv-score-contract)

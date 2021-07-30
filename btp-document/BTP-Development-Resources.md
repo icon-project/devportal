@@ -40,14 +40,14 @@ BTP Message Verifier (BMV) is a smart contract that extracts a relay message, wh
 
 **Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depending on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added
 
-## Contract Upgradeability
+## Contract Upgradeability - Solidity
 
 ____
 
-Have you ever wondered what would happen if your logic implementation had some issues/bugs, or you might need to add more features after deploying your contracts to a network? By design, smart contracts are immutable. Even though immutability is a significant design for a blockchain-based software, developers still need a certain degree of mutability. Hence, contract upgradeability was proposed. If you are interested in this feature, please click on links below for more information:
+Have you ever wondered what would happen if your logic implementation had some issues/bugs, or you might need to add more features after deploying your contracts to a network? By design, smart contracts are immutable. Even though immutability is a significant design for a blockchain-based software, developers still need a certain degree of mutability. Hence, contract upgradeability (Solidity) was proposed. If you are interested in this feature, please click on links below for more information:
 
-- [Short Introduction of Contract Upgradeability](Contract-Upgradeability.md)
-- [Special roles in a context of Contract Upgradeability](Special-Roles.md)
+- [Short Introduction of Contract Upgradeability](Contract-Upgradeability-Solidity.md#contract-upgradeability-solidity)
+- [Special roles in a context of Contract Upgradeability](Special-Roles.md#special-authorization-roles-in-contract-upgradeability)
 
 &nbsp;
 
