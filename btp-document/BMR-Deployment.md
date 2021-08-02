@@ -131,14 +131,14 @@ BTPSIMPLE_LOG_WRITER_FILENAME=$CONFIG_DIR/icon-bmr.log \
 ./entrypoint.sh
 ```
 
-Add `"options": {"StepLimit": 50000000000000}` into `$CONFIG_DIR/icon.config.json`. For Example:
+Add `"options": {"stepLimit": 50000000000000}` into `$CONFIG_DIR/icon.config.json`. For Example:
 
 ```json
 "dst": {
     "address": "btp://0x3.icon/cxbcad01c6b50459f0e2110fb90507f30d59f95579",
     "endpoint": "http://127.0.0.1:9080/api/v3/icon",
     "options": {
-      "StepLimit": 50000000000000
+      "stepLimit": 50000000000000
     }
 },
 ```

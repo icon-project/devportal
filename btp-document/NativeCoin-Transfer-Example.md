@@ -64,14 +64,14 @@ truffle(moonbeamlocal)> accounts[1]
 truffle(moonbeamlocal)> let bshCore = await BSHCore.deployed()
 
 # Query balance of accounts[1] before receiving 'ICX' from Alice
-truffle(moonbeamlocal)> await bshCore.getBalanceOf(accounts[1], 'ICX')
+truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'ICX')
 
 # Convert BigNumber to easy-reading number
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
 
 # Exit truffle console (".exit") and save a responded address as destination
 BOB_ADDR=returned/account/above
-echo "btp:://$(cat $CONFIG_DIR/net.btp.dst)/$BOB_ADDR" > $CONFIG_DIR/bob.btp.addr
+echo "btp://$(cat $CONFIG_DIR/net.btp.dst)/$BOB_ADDR" > $CONFIG_DIR/bob.btp.addr
 ```
 
 - Transfer 'ICX' from Alice to Bob
@@ -104,6 +104,8 @@ truffle(moonbeamlocal)> let bshCore = await BSHCore.deployed()
 truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'ICX')
 
 # Convert BigNumber to easy-reading number
+# It might take time for BMRs and BMV to sync blocks. 
+# Thus, if the balance is still '0', please try it later
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
 ```
 
@@ -117,7 +119,7 @@ ____
 # In this example, we are going to use an abitrary account to demonstrate this transfer
 # Please specify your own account if needed
 echo -n "hx8062076aa5e68f021121d1c3b4b3979d21a6dcae" > $CONFIG_DIR/carol.addr
-echo "btp:://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
+echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
 
 # Check the balance of Carol
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/carol.addr)
@@ -127,9 +129,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/car
 # Change your current directory to '.../solidity/bsh'
 cd $BTP_PROJ_DIR/solidity/bsh
 
-CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
-CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
-AMOUNT=74706176
+export CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
+export CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
+export AMOUNT=74706176
 
 # Start truffle console
 truffle console --network moonbeamlocal
@@ -156,7 +158,15 @@ truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
 - Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
 
 ```bash
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/carol.addr)
+# call nativecoinBSH to query coinID of 'DEV'
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
+--to $(cat $CONFIG_DIR/nativecoinBsh.icon) --method coinId \
+--param _coinName=DEV | jq -r . > tx.coinID
+
+# call irc31token to query balance of Carol
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to $(cat $CONFIG_DIR/irc31token.icon) \
+--method balanceOf --param _owner=$(cat $CONFIG_DIR/carol.addr) \
+--param _id=$(cat $CONFIG_DIR/tx.coinID)
 ```
 
 &nbsp;
