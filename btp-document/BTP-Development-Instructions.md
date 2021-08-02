@@ -164,6 +164,10 @@ CONFIG_DIR=/path/to/config/folder/INode
 # Clone goloop project
 git clone https://github.com/icon-project/goloop.git
 
+git fetch --tags
+
+git checkout v0.9.7 -b v0.9.7
+
 # Build Docker image
 cd goloop && GL_TAG=0.9.7 make gochain-icon-image
 

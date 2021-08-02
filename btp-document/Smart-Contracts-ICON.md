@@ -8,7 +8,7 @@ ____
 
 Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](BTP-Development-Instructions.md#1-deploy-icon-node) and accomplish it
 
-Clone two BTP projects and copy this [[Java-Folder](./files/javascore.tar)] to your local folder that has created when you started your local node
+Clone two BTP projects to your local folder that has created when you started your local node
 
 ```bash
 CONFIG_DIR=/path/to/config/folder/INode
@@ -24,14 +24,6 @@ mkdir -p $CONFIG_DIR/ICONLOOP && cd $CONFIG_DIR/ICONLOOP
 git clone https://github.com/icon-project/btp.git
 
 cd btp && git checkout iconloop
-
-mkdir -p $CONFIG_DIR/TAR
-
-# Please download javascore.tar to your local machine. Link is attached above [Java-Folder]
-# Copy javascore.tar to $CONFIG_DIR/TAR and extract
-cp /path/to/download/folder/javascore.tar $CONFIG_DIR/TAR
-
-tar -xzvf $CONFIG_DIR/TAR/javascore.tar
 ```
 
 ### 1. Preparation - Compiling Requiring Java Files
@@ -41,8 +33,7 @@ ____
 - Run below commands to compile Java files and generate requiring `.jar` files:
 
 ```bash
-# Note that: there are three 'javascore' folders 
-# - $CONFIG_DIR/TAR/javascore: a 'javascore' folder that is extracted from 'javascore.tar'
+# Note that: there are two 'javascore' folders 
 # - $CONFIG_DIR/ICONDAO/btp/javascore: a 'javascore' folder that is cloned from github, then switch to branch icondao
 # - $CONFIG_DIR/ICONLOOP/btp/javascore: a 'javascore' folder that is cloned from github, then switch to branch iconloop
 # We apologize if these cumbersome instructions make confusion and inconvenience 
@@ -75,11 +66,10 @@ cd $CONFIG_DIR/ICONLOOP/btp/javascore/nativecoin
 
 gradle optimizedJar
 
-#  The following commands are working on a different directory - $CONFIG_DIR/TAR/javascore
 #  Compiling files to build IRC31Token contract
-cd $CONFIG_DIR/TAR/javascore/javaee-tokens
+cd $CONFIG_DIR/ICONLOOP/btp
 
-gradle optimizedJar
+make dist-java
 ```
 
 - Finally, copy all generated `.jar` files to a config folder of goloop container by running these commands:
@@ -97,7 +87,7 @@ cp $CONFIG_DIR/ICONLOOP/btp/javascore/bmc/build/libs/bmc-0.1.0-optimized.jar ${C
 
 cp $CONFIG_DIR/ICONLOOP/btp/javascore/nativecoin/build/libs/nativecoin-0.1.0-optimized.jar ${CONFIG_DIR}/javascore/
 
-cp $CONFIG_DIR/TAR/javascore/javaee-tokens/build/libs/irc31-0.1.0-debug.jar ${CONFIG_DIR}/javascore/
+cp $CONFIG_DIR/ICONLOOP/btp/build/contracts/javascore/irc31.jar ${CONFIG_DIR}/javascore/
 ```
 
 ### 2. Deploy BMC SCORE Contract
@@ -327,7 +317,7 @@ ____
 - Run these commands to deploy ***IRC31Token*** on ICON Network.
 
 ```bash
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy ./javascore/irc31-0.1.0-debug.jar \
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy ./javascore/irc31.jar \
     --key_store godWallet.json --key_password gochain --nid 3 \
     --content_type application/java --step_limit 13610920001 \
     | jq -r . > $CONFIG_DIR/tx.irc31token.icon
