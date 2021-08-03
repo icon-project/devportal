@@ -301,11 +301,11 @@ docker-compose up -d
   <img src="./images/Deploy-MOONRIVER-Node.png" width="800" height="300" />
 </p>
 
-A node on Moonriver can be easily deployed by running the below command (open a new terminal window or run in the background):
+A node on Moonriver can be easily deployed by running the below command:
 
 ```shell
 #  `--sealing 6000`: set a block to be generated every 6 seconds
-docker run --rm -p 9933:9933 -p 9944:9944 purestake/moonbeam:v0.9.2 --dev --ws-external --rpc-external --sealing 6000
+docker run -d -p 9933:9933 -p 9944:9944 purestake/moonbeam:v0.9.2 --dev --ws-external --rpc-external --sealing 6000
 ```
 
 **Note that:**

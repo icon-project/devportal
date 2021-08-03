@@ -59,3 +59,22 @@ ____
       - [Query Offset and BMRs](./BMR-Deployment.md#query-offset-and-list-of-Relays-from-BMC)
       - [Create Configuration Files](./BMR-Deployment.md#create-configuration-files)
     - [Start BMRs](./BMR-Deployment.md#3-start-bmrs)
+
+## Transfer Example
+
+____
+
+- [Transfer ICX](./NativeCoin-Transfer-Example.md#transfer-icx-to-moonriver-network)
+- [Transfer DEV](./NativeCoin-Transfer-Example.md#transfer-dev-to-icon-network)
+
+## Appendix
+
+____
+
+- [ICON-BSH commands](./Appendix.md#icon-bsh)
+- [ICON-BMC commands](./Appendix.md#icon-bmc)
+- [ICON-BMV commands](./Appendix.md#icon-bmv)
+- [MOON-BSH commands](./Appendix.md#moon-bsh)
+- [MOON-BMC commands](./Appendix.md#moon-bmc)
+- [MOON-BMV commands](./Appendix.md#moon-bmv)
+- [ICON Error Response Codes](./Appendix.md#icon-error-response-codes)

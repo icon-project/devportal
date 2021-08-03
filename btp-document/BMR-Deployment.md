@@ -212,13 +212,15 @@ Now, let start the BMRs
 - Start BMR from ICON --> Moonriver
 
 ```bash
-./bin/btpsimple start --config $CONFIG_DIR/moon.config.json
+# Make sure executable binary 'btpsimple' has been copied to /usr/local/bin
+# If not, please run the a command 'cp $CONFIG_DIR/BMR/btp/bin/btpsimple /usr/local/bin'
+btpsimple start --config $CONFIG_DIR/moon.config.json
 ```
 
 - Start BMR from Moonriver --> ICON
 
 ```bash
-./bin/btpsimple start --config $CONFIG_DIR/icon.config.json
+btpsimple start --config $CONFIG_DIR/icon.config.json
 ```
 
 In the next section, we are going to guide you how to transfer the native coins between ICON and Moonriver networks manually. Click on 'Next' if you're interested
