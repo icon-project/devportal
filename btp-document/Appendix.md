@@ -93,11 +93,28 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMC Address" --met
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMC Address" --method getRelayerManagerProperties
 ```
 
-### ICON-BMC
+### ICON-BMV
 
 ____
 
 ```bash
+# Get connected BMC
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method bmc
+
+# Get Net Address
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method netAddress
+
+# Get setID
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method setID
+
+# Get BMV Status
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method getStatus
+
+# Get address of PARACHAIN Event Decoder
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method paraEventDecoder
+
+# Get address of RELAYCHAIN Event Decoder
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method relayEventDecoder
 ```
 
 ### MOON-BSH
