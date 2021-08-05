@@ -95,9 +95,12 @@ go get github.com/icon-project/goloop/cmd/goloop
 # Get ethkey-cli
 go get github.com/ethereum/go-ethereum/cmd/ethkey
 
-# ****NOTE****:
-# Please copy binary files, 'goloop' and 'ethkey', to user's local binary folder
-# For example: cp ~/go/bin/goloop /usr/local/bin
+# **** NOTE ****:
+# Add 'path/to/folder/go/bin' to the PATH environment variable.
+# For example: 
+# export GOPATH=/path/to/folder/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOBIN
 ```
 
 ## Deployment Instructions
@@ -115,34 +118,7 @@ The next following will provide instructions on how to deploy:
 - Deploy smart contracts on Moonriver's network
 - Deploy the BTP Message Relay (BMR)
 
-The deployments and settings might have some dependencies, which mean that one setting/deployment must complete prior another ones. Hence, please follow the below order to completely and safely deploy and set up configurations. If you mess up or skip one step, it might affect your deployment and setting which, in fact, lead to failure consequence
-
-- Deploy ICON Node: complete [1. Deploy ICON Node](#1-deploy-icon-node)
-- Deploy Moonriver Node: complete [2. Deploy Moonriver Node](#2-deploy-moonriver-node)
-- Deploy Smart Contracts on ICON network: go to [Smart Contracts on ICON](Smart-Contracts-ICON.md#smart-contracts-on-icon-deployment) file. Please start from the beginning of this file
-  - Complete [1. Preparation](Smart-Contracts-ICON.md#1-preparation-compiling-requiring-java-files)
-  - Complete [2. Deploy BMC SCORE](Smart-Contracts-ICON.md#2-deploy-bmc-score-contract)
-  - Complete [3. Deploy BMV SCORE](Smart-Contracts-ICON.md#3-deploy-bmv-score-contract)
-  - Complete [4. Deploy IRC31Token](Smart-Contracts-ICON.md#4-deploy-irc31token-contract)
-  - Complete [5. Deploy NativeCoinBSH](Smart-Contracts-ICON.md#5-deploy-nativecoinbsh-contract)
-  - Complete [6. Deploy FeeAggregation](Smart-Contracts-ICON.md#6-deploy-feeaggregation-contract)
-- Deploy Smart Contracts on Moonriver network: go to [Smart Contracts on Moonriver](Smart-Contracts-PRA.md#smart-contracts-moonriver-deployment) file. Please start from the beginning of this file
-  - Complete [1. Deploy BMC](Smart-Contracts-PRA.md#1-deploy-bmc-contracts-on-moonriver-network)
-  - Complete [2. Deploy BSH](Smart-Contracts-PRA.md#2-deploy-bsh-contracts-on-moonriver-network)
-  - Complete [3. Deploy BMV](Smart-Contracts-PRA.md#3-deploy-bmv-contracts-on-moonriver-network)
-- Deploy BMRs: go to [BTP Message Relay (BMR)](BMR-Deployment.md#btp-message-relay-(bmr)-deployment). Please start from the beginning of this file
-  - Complete [1. Build executable files](BMR-Deployment.md#1-build-executable-files)
-  - Go to [2. Generate keystore and configuration files](BMR-Deployment.md#2-generate-keystore-and-configuration-files) and generate requiring keystore files. <span style="color:red">Please stop after generating keystore files. DO NOT go further</span>
-- Set configurations - Smart Contract on ICON network:
-  - Complete [7. ICON-BMC Configuration](Smart-Contracts-ICON.md#7-icon-bmc-configuration)
-  - Complete [8. NativeCoinBSH Configuration](Smart-Contracts-ICON.md#8-config-nativecoin-bsh)
-- Set configurations - Smart Contract on Moonriver network:
-  - Complete [4. Moonriver-BMC Configuration](Smart-Contracts-PRA.md#4-config-moonriver-bmc)
-  - Complete [5. Moonriver-BSH Configuration](Smart-Contracts-PRA.md#5-config-moonriver-bsh)  
-- BMRs deployment:
-  - Complete [Create configuration files](BMR-Deployment.md#create-configuration-files)
-  - Complete [3. Start BMRs](BMR-Deployment.md#3-start-bmrs)
-- Run Transfer Example: go to [Transfer native coins between ICON and Moonriver](NativeCoin-Transfer-Example.md#transfer-native-coins-between-moonriver-and-icon-networks) and complete all instructions in this file
+<span style="color:red">**Attention:** The deployments and settings might have some dependencies, which mean that one setting/deployment must complete prior another ones. Hence, please follow the below order to completely and safely deploy and set up configurations. If you mess up or skip one step, it might affect your deployment and setting which, in fact, lead to failure consequence</span> 
 
 ### Create Blockchain Nodes
 
@@ -157,9 +133,9 @@ ____
 - Preparation
 
 ```bash
-mkdir INode && cd INode
+mkdir BTPExample && cd BTPExample
 
-CONFIG_DIR=/path/to/config/folder/INode
+CONFIG_DIR=/path/to/BTPExample
 
 # Clone goloop project
 git clone https://github.com/icon-project/goloop.git
@@ -178,6 +154,10 @@ cd gochain
 ```
 
 - Create `icon.json` file to a directory `$CONFIG_DIR/goloop/gochain/testsuite/config/` and copy below contents:
+
+```bash
+vi $CONFIG_DIR/goloop/gochain/testsuite/config/icon.json
+```
 
 ```JSON
 {
@@ -270,6 +250,10 @@ cd gochain
 - Create `docker-compose.yml` file to a directory `$CONFIG_DIR/goloop/gochain` and copy below contents:
 
 ```bash
+vi $CONFIG_DIR/goloop/gochain/docker-compose.yml
+```
+
+```bash
 version: '3.3'
 services:
   gochain:
@@ -318,7 +302,7 @@ If you see an error as `Unable to find image 'purestake/moonbeam:v0.9.2' locally
 For the next following parts, we will instruct you to deploy smart contracts on each network. Please click on 'Next' and bear with us
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-[<--- Prev](./BTP-Development-Resources.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./Smart-Contracts-ICON.md)
+[<--- Prev](./BTP-Development-Resources.md#prerequisites) &emsp; &emsp; &emsp; &emsp; [Next --->](./Smart-Contracts-ICON.md#smart-contracts-on-icon-deployment)
 
 <!--<p align="center">-->
 <!--  <a href="https://git.baikal.io/icon/btp/-/blob/BTPDocument/BTP-Development-Resources.md" class="button"><--- Prev &emsp; &emsp;</a>-->

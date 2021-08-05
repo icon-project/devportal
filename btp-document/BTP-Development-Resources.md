@@ -54,7 +54,7 @@ Have you ever wondered what would happen if your logic implementation had some i
 In the next section, we would like to give you a practical utilization of these interfaces and provide instructions in developing BTP Network connecting two blockchain ecosystems to a tee. Click on 'Next' if you are interested
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-[<--- Prev](./Overview.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./BTP-Development-Instructions.md)
+[<--- Prev](./Overview.md) &emsp; &emsp; &emsp; &emsp; [Next --->](./BTP-Development-Instructions.md#setup-and-installation)
 
 <!--<p align="center">-->
 <!--  <a href="https://git.baikal.io/icon/btp/-/blob/BTPDocument/Overview.md" class="button"><--- Prev &emsp; &emsp;</a>-->

@@ -14,8 +14,6 @@ ____
 - Generate Alice's keystore and address on ICON network
 
 ```bash
-CONFIG_DIR=/path/to/INode
-
 cd $CONFIG_DIR
 
 goloop ks gen --out $CONFIG_DIR/alice.keystore.json --password YOUR_PASSWORD
@@ -45,10 +43,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/ali
 - In this example, we would like to use pre-funds accounts, which was provided in the `truffle.config.js`, as receiver on Moonriver network. You can specify your account for an experiment
 
 ```bash
-BTP_PROJ_DIR=/path/to/PRA-Contracts/btp
-
-# Change your current directory to '.../solidity/bsh'
-cd $BTP_PROJ_DIR/solidity/bsh
+cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
 
 # Start truffle console
 truffle console --network moonbeamlocal
@@ -94,7 +89,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 - Check balance of Bob's account after receiving 'ICX' from Alice
 
 ```bash
-cd $BTP_PROJ_DIR/solidity/bsh
+cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
 
 truffle console --network moonbeamlocal
 
@@ -118,6 +113,7 @@ ____
 ```bash
 # In this example, we are going to use an abitrary account to demonstrate this transfer
 # Please specify your own account if needed
+cd $CONFIG_DIR
 echo -n "hx8062076aa5e68f021121d1c3b4b3979d21a6dcae" > $CONFIG_DIR/carol.addr
 echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
 
@@ -127,7 +123,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/car
 
 ```bash
 # Change your current directory to '.../solidity/bsh'
-cd $BTP_PROJ_DIR/solidity/bsh
+cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
 
 export CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
 export CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
@@ -158,6 +154,7 @@ truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
 - Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
 
 ```bash
+cd $CONFIG_DIR
 # call nativecoinBSH to query coinID of 'DEV'
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
 --to $(cat $CONFIG_DIR/nativecoinBsh.icon) --method coinId \

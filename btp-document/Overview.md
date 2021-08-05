@@ -42,7 +42,7 @@ In the last couple of years, Decentralized Finance (DeFi) has been gaining more 
 On the next page, we would like to provide essential and required resources of development Blockchain Transmission Protocol (BTP) connecting two blockchain ecosystems. Click on 'Next' to move on to the next page
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-[Next --->](BTP-Development-Resources.md)
+[Next --->](BTP-Development-Resources.md#prerequisites)
 
 <!--<p align="center">-->
 <!--  <a href="https://git.baikal.io/icon/btp/-/blob/BTPDocument/BTP-Development-Resources.md">Next </a>-->
