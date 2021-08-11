@@ -417,6 +417,8 @@ def get_organizer(self) -> Address:
 
 ### StateDB Operation
 
+DictDB depth level must not exceed 3 as it will be very expensive to manage in ICON 2.0.
+
 In order not to cause an unexpected situation, VarDB, DictDB and ArrayDB should be accessed in a permitted manner.
 
 ```python
