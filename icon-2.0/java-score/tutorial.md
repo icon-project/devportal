@@ -1,13 +1,5 @@
 # Tutorial
 
-## References
-
-* [Helper scripts to run gochain docker container as a local network](https://github.com/icon-project/gochain-local)
-* [Testsuite README.md](https://github.com/icon-project/goloop/blob/master/testsuite/README.md)
-* [Java SCORE Examples](https://github.com/icon-project/java-score-examples)
-* [goloop\_cli.md](https://github.com/icon-project/devportal/tree/5edeec57740cb04b9e04d31fe5ff79fceaeb5b02/icon-20/java-score/icon-20/goloop/management/goloop_cli.md)  
-* [Goloop JSON-RPC API v3](https://github.com/icon-project/devportal/tree/5edeec57740cb04b9e04d31fe5ff79fceaeb5b02/icon-20/java-score/icon-20/goloop/json-rpc/jsonrpc_v3.md) 
-
 ## Goals
 
 * Build docker image for local.

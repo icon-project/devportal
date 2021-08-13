@@ -94,7 +94,7 @@ Then, you may create the genesis for the chain with keystores of validators. You
   ./bin/goloop gn gen -o genesis.json -g god.json ks0.json ks1.json ks2.json ks3.json
   ```
 
-Then you may modify `genesis.json` according to your preferences. You may refer [Genesis Transaction](https://github.com/icon-project/devportal/tree/d06a5967467c7c616a247f980afb321fb44da8d0/icon-20/goloop/get-started/genesis_tx.md) for more details. And also you may use Genesis Template feature of [Genesis Storage](https://github.com/icon-project/devportal/tree/d06a5967467c7c616a247f980afb321fb44da8d0/icon-20/goloop/get-started/genesis_storage.md), then create genesis storage from it.
+Then you may modify `genesis.json` according to your preferences. You may refer [Genesis Transaction](icon-2.0/goloop/genesis/genesis_tx.md) for more details. And also you may use Genesis Template feature of [Genesis Storage](icon-2.0/goloop/get-started/genesis_storage.md), then create genesis storage from it.
 
 **Example**
 
