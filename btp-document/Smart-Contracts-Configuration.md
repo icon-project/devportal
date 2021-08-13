@@ -15,12 +15,16 @@ ____
 ```bash
 cd $CONFIG_DIR
 
-goloop ks gen --out $CONFIG_DIR/bmc-owner.json --password YOUR_PASSWORD
-# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
-echo -n "YOUR_PASSWORD" > $CONFIG_DIR/bmc-owner.secret
+# Replace YOUR_PASSWORD if needed
+YOUR_PASSWORD=1234
 
-# Save icon-bmr address to a file
-echo -n "BMC Owner Addresss" > $CONFIG_DIR/bmc-owner.addr
+goloop ks gen --out $CONFIG_DIR/bmc-owner.json --password $YOUR_PASSWORD
+
+# Create a secret file 'bmc-owner.secret' and save $YOUR_PASSWORD into that file
+echo -n $YOUR_PASSWORD > $CONFIG_DIR/bmc-owner.secret
+
+# Save bmc-owner address to a file
+echo $(jq -r '.address' "$CONFIG_DIR/bmc-owner.json") > $CONFIG_DIR/bmc-owner.addr
 
 # Register Owner
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -192,12 +196,16 @@ ____
 - Generate Owner and Register Owner of NativeCoinBSH
 
 ```bash
-goloop ks gen --out $CONFIG_DIR/nativecoinBSH-owner.json --password YOUR_PASSWORD
-# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
-echo -n "YOUR_PASSWORD" > $CONFIG_DIR/nativecoinBSH-owner.secret
+# Replace YOUR_PASSWORD if needed
+YOUR_PASSWORD=1234
 
-# Save icon-bmr address to a file
-echo -n "NativeCoinBSH Owner Addresss" > $CONFIG_DIR/nativecoinBSH-owner.addr
+goloop ks gen --out $CONFIG_DIR/nativecoinBSH-owner.json --password $YOUR_PASSWORD
+
+# Create a secret file 'nativecoinBSH-owner.secret' and save $YOUR_PASSWORD into that file
+echo -n $YOUR_PASSWORD > $CONFIG_DIR/nativecoinBSH-owner.secret
+
+# Save nativecoinBSH-owner address to a file
+echo $(jq -r '.address' "$CONFIG_DIR/nativecoinBSH-owner.json") > $CONFIG_DIR/nativecoinBSH-owner.addr
 
 # Register Owner
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \

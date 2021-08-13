@@ -16,13 +16,16 @@ ____
 ```bash
 cd $CONFIG_DIR
 
-goloop ks gen --out $CONFIG_DIR/alice.keystore.json --password YOUR_PASSWORD
+# Replace YOUR_PASSWORD if needed
+YOUR_PASSWORD=1234
 
-# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
-echo -n "YOUR_PASSWORD" > $CONFIG_DIR/alice.secret
+goloop ks gen --out $CONFIG_DIR/alice.keystore.json --password $YOUR_PASSWORD
 
-# Save icon-bmr address to a file
-echo -n "Alice Addresss" > $CONFIG_DIR/alice.addr
+# Create a secret file 'alice.secret' and save $YOUR_PASSWORD into that file
+echo -n $YOUR_PASSWORD > $CONFIG_DIR/alice.secret
+
+# Save Alice address to a file
+echo $(jq -r '.address' "$CONFIG_DIR/alice.keystore.json") > $CONFIG_DIR/alice.addr
 ```
 
 - Add "fuels" to Alice's account
@@ -65,7 +68,8 @@ truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'I
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
 
 # Exit truffle console (".exit") and save a responded address as destination
-BOB_ADDR=returned/account/above
+# Replace BOB_ADDR=returned/account/above if needed
+BOB_ADDR=0x3Cd0A705a2DC65e5b1E1205896BaA2be8A07c6e0
 echo "btp://$(cat $CONFIG_DIR/net.btp.dst)/$BOB_ADDR" > $CONFIG_DIR/bob.btp.addr
 ```
 

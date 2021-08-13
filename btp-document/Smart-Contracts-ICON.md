@@ -129,6 +129,12 @@ vi $CONFIG_DIR/godWallet.json
 cd $CONFIG_DIR
 echo "0x3.icon" > $CONFIG_DIR/net.btp.icon
 
+# Add '.../go/bin' to the PATH environment variable.
+# For example: 
+# export GOPATH=~/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOBIN
+
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy ./javascore/bmc-0.1.0-optimized.jar \
     --key_store godWallet.json --key_password gochain --nid 3 \
     --content_type application/java --step_limit 13610920001 \
@@ -214,6 +220,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
   - `paraEventDecoderAddress`: address of Event Decoder for Parachain - e.g. ***Moonriver*** Event Decoder
   - `relayCurrentSetId`: set a current counter of updating `encodedValidators`. When a list of Validators is updated, the setID is increased by one
   - `paraChainId`: an ID of Parachain
+  - `evmEventIndex`: index of evm log event in para chain
+  - `newAuthoritiesEventIndex`: index of new authorities event in relay chain
+  - `candidateIncludedEventIndex`: index of candidate included in relay chain
 
 For a sake of simplicity, we have setup an utility that helps to initialize these parameters. Please follow the instructions below:
 
@@ -226,12 +235,19 @@ yarn
 
 - Specify your configurations:
 
-  - Open a file - `getBMVInitializeParams.ts`
+```bash
+# Replace your RELAY_ENDPOINT if needed
+export RELAY_ENDPOINT=wss://kusama-rpc.polkadot.io
 
-  - Specify Relaychain and Parachain web socket endpoint by replacing `RELAY_ENDPOINT`, `PARA_ENDPOINT` in line 30, and 31 with your configuration. In this example, we use a local testnet, thus the settings are `PARA_ENDPOINT = ws://127.0.0.1:9944`, and `RELAY_ENDPOINT = wss://kusama-rpc.polkadot.io`
+# Replace your PARA_ENDPOINT if needed
+export PARA_ENDPOINT=ws://127.0.0.1:9944
 
-  - In order to setting `relayMtaOffset`, and `paraMtaOffset`, you replace `RELAY_OFFSET`, `PARA_OFFSET` in line 33, 34 with the current block height of corresponding chains. You can use [Polkadot Portal](https://polkadot.js.org/apps/?#/explorer) (using Chrome browser) to retrieve these information. Since we are using a local testnet for this example, `paraMtaOffset` is simply set by checking a current block of deployed node and `relayMtaOffset` is the current block of ***Kusama*** that is retrieved via the above link
+# You can use https://polkadot.js.org/apps/?#/explorer to retrieve this information
+export RELAY_CHAIN_OFFSET=8000000
 
+# Checking a current block of deployed Moonriver node
+export PARA_CHAIN_OFFSET=27
+```
 - Then, run the below command:
 
 ```shell
@@ -242,7 +258,6 @@ yarn getBMVInitializeParams
   - `MTA root size`: can be set a value `0x8`
   - `MTA caches size`: can be set a value `0x8`
   - `Allow MTA newer witness`: `0x0` (Not Allow) or `0x1` (Allow)
-  - `parachainID`: change `0x` -> any hex number, e.g. `0x0`
 
 ```bash
 VALIDATORS="$(eval "echo $(jq -r '.encodedValidators' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
@@ -257,6 +272,14 @@ PC_LAST_BLOCKHASH="$(eval "echo $(jq -r '.paraLastBlockHash' "$CONFIG_DIR/ICONDA
 
 SET_ID="$(eval "echo $(jq -r '.relayCurrentSetId' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
 
+PARACHAIN_ID="$(eval "echo $(jq -r '.paraChainId' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
+
+EVM_EVENT_INDEX="$(eval "echo $(jq -r '.evmEventIndex' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
+
+NEW_AUTHORITIES_EVENT_INDEX="$(eval "echo $(jq -r '.newAuthoritiesEventIndex' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
+
+CANDIDATE_INCLUDED_EVENT_INDEX="$(eval "echo $(jq -r '.candidateIncludedEventIndex' "$CONFIG_DIR/ICONDAO/btp/javascore/bmv/helper/BMVInitializeData.json")")"
+
 # Replace your value if needed
 MTA_ROOT_SIZE=0x8
 
@@ -265,9 +288,6 @@ MTA_CATCH_SIZE=0x8
 
 # Replace your value if needed
 ALLOW_NEWER_WITNESS=0x1
-
-# Replace your value if needed
-PARACHAIN_ID=0x0
 ```
 
 ```bash
@@ -295,6 +315,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy ./javascore/par
     --param paraEventDecoderAddress=$(cat $CONFIG_DIR/moonriverDecoder.icon) \
     --param relayCurrentSetId=$SET_ID \
     --param paraChainId=$PARACHAIN_ID \
+    --param evmEventIndex=$EVM_EVENT_INDEX \
+    --param newAuthoritiesEventIndex=$NEW_AUTHORITIES_EVENT_INDEX \
+    --param candidateIncludedEventIndex=$CANDIDATE_INCLUDED_EVENT_INDEX \
      | jq -r . > $CONFIG_DIR/tx.bmv.icon
 ```
 

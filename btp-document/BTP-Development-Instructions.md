@@ -98,7 +98,7 @@ go get github.com/ethereum/go-ethereum/cmd/ethkey
 # **** NOTE ****:
 # Add 'path/to/folder/go/bin' to the PATH environment variable.
 # For example: 
-# export GOPATH=/path/to/folder/go
+# export GOPATH=~/go
 # export GOBIN=$GOPATH/bin
 # export PATH=$PATH:$GOBIN
 ```
@@ -135,14 +135,10 @@ ____
 ```bash
 mkdir BTPExample && cd BTPExample
 
-CONFIG_DIR=/path/to/BTPExample
+CONFIG_DIR=${PWD}
 
 # Clone goloop project
 git clone https://github.com/icon-project/goloop.git
-
-git fetch --tags
-
-git checkout v0.9.7 -b v0.9.7
 
 # Build Docker image
 cd goloop && GL_TAG=0.9.7 make gochain-icon-image

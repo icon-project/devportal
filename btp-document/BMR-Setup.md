@@ -56,13 +56,16 @@ ____
 - Generate keystore of BMR from Moonriver --> ICON
 
 ```bash
-goloop ks gen --out $CONFIG_DIR/icon-bmr.keystore.json --password YOUR_PASSWORD
+# Replace YOUR_PASSWORD if needed
+YOUR_PASSWORD=1234
 
-# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
-echo -n "YOUR_PASSWORD" > $CONFIG_DIR/icon-bmr.secret
+goloop ks gen --out $CONFIG_DIR/icon-bmr.keystore.json --password $YOUR_PASSWORD
 
 # Save icon-bmr address to a file
-echo -n "ICON-BMR Addresss" > $CONFIG_DIR/icon-bmr.addr
+echo $(jq -r '.address' "$CONFIG_DIR/icon-bmr.keystore.json") > $CONFIG_DIR/icon-bmr.addr
+
+# Create a secret file 'icon-bmr.secret' and save $YOUR_PASSWORD into that file
+echo -n $YOUR_PASSWORD > $CONFIG_DIR/icon-bmr.secret
 ```
 
 - Generate keystore of BMR from ICON --> Moonriver
@@ -72,13 +75,16 @@ ethkey generate $CONFIG_DIR/moon-bmr.keystore.json
 # Enter your password
 # Repeat your password
 
+# Replace YOUR_ENTERED_PASSWORD if needed
+YOUR_ENTERED_PASSWORD=1234
+
 cat <<< $(jq '. += {"coinType":"evm"}' $CONFIG_DIR/moon-bmr.keystore.json) > $CONFIG_DIR/moon-bmr.keystore.json
 
-# Create a secret file 'moon-bmr.secret' and save $YOUR_PASSWORD into that file
-echo -n "YOUR_PASSWORD" > $CONFIG_DIR/moon-bmr.secret
-
 # Save moon-bmr address to a file
-echo -n "MOON-BMR Addresss" > $CONFIG_DIR/moon-bmr.addr
+echo -n "0x$(jq -r '.address' "$CONFIG_DIR/moon-bmr.keystore.json")" > $CONFIG_DIR/moon-bmr.addr
+
+# Create a secret file 'moon-bmr.secret' and save YOUR_ENTERED_PASSWORD into that file
+echo -n $YOUR_ENTERED_PASSWORD > $CONFIG_DIR/moon-bmr.secret
 ```
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
