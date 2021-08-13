@@ -1,8 +1,8 @@
-# Extension for IISS
+# IISS Extension
 
 ## Introduction
 
-This document explains JSON-RPC APIs (version 3) for IISS available to interact with Goloop nodes.
+This document explains JSON-RPC APIs \(version 3\) for IISS available to interact with Goloop nodes.
 
 This document was written based on IISS 3.1
 
@@ -15,7 +15,7 @@ API path : `<scheme>://<host>/api/v3`
 * Each IISS API `TX` method section explains the content of `data` field in `icx_sendTransaction`
 * Each IISS API `QUERY` method section explains the content of `data` field in `icx_call`
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -47,7 +47,7 @@ Stake some amount of ICX
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -66,9 +66,9 @@ Stake some amount of ICX
 
 #### Parameters
 
-| Key   | VALUE Type | Required | Description                                                                                              |
-|:------|:-----------|:---------|:---------------------------------------------------------------------------------------------------------|
-| value | T_INT      | true     | Amount of ICX icons in loop to stake                                                                     |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| value | T\_INT | true | Amount of ICX icons in loop to stake |
 
 ### getStake
 
@@ -76,7 +76,7 @@ Returns the stake status of a given address
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -96,13 +96,13 @@ Returns the stake status of a given address
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -121,24 +121,24 @@ Returns the stake status of a given address
 
 #### Returns
 
-| Key                         | VALUE Type     | Required | Description                           |
-| :-------------------------- | :------------- | :------- | :------------------------------------ |
-| stake                       | T_INT          | true     | ICX amount of stake in loop           |
-| unstakes                    | T_LIST[T_DICT] | false    | Unstake info list                     |
-| unstakes.unstake            | T_INT          | false    | ICX amount of unstake in loop         |
-| unstakes.unstakeBlockHeight | T_INT          | false    | BlockHeight when unstake will be done |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| stake | T\_INT | true | ICX amount of stake in loop |
+| unstakes | T\_LIST\[T\_DICT\] | false | Unstake info list |
+| unstakes.unstake | T\_INT | false | ICX amount of unstake in loop |
+| unstakes.unstakeBlockHeight | T\_INT | false | BlockHeight when unstake will be done |
 
 ### setDelegation
 
 Delegate some ICX amount of stake to P-Reps
 
-- Maximum number of P-Reps to delegate is 100
-- The transaction which has duplicated P-Rep addresses will be failed
-- This transaction overwrites the previous delegate information
+* Maximum number of P-Reps to delegate is 100
+* The transaction which has duplicated P-Rep addresses will be failed
+* This transaction overwrites the previous delegate information
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -166,7 +166,7 @@ Delegate some ICX amount of stake to P-Reps
 
 > Request to revoke all delegations
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -185,11 +185,11 @@ Delegate some ICX amount of stake to P-Reps
 
 #### Parameters
 
-| Key                 | VALUE Type     | Required | Description                              |
-| :------------------ | :------------- | :------- | :--------------------------------------- |
-| delegations         | T_LIST(T_DICT) | true     | List of delegation dict (MAX: 100 entries) |
-| delegations.address | T_ADDR_EOA     | true     | Address of P-Rep to delegate             |
-| delegations.value   | T_INT          | true     | Delegation amount in loop                |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| delegations | T\_LIST\(T\_DICT\) | true | List of delegation dict \(MAX: 100 entries\) |
+| delegations.address | T\_ADDR\_EOA | true | Address of P-Rep to delegate |
+| delegations.value | T\_INT | true | Delegation amount in loop |
 
 ### getDelegation
 
@@ -197,7 +197,7 @@ Returns the delegation status of a given address
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -217,13 +217,13 @@ Returns the delegation status of a given address
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -246,25 +246,25 @@ Returns the delegation status of a given address
 
 #### Returns
 
-| Key            | VALUE Type | Required | Description                                                  |
-| :------------- | :--------- | :------- | :----------------------------------------------------------- |
-| totalDelegated | T_INT      | true     | The sum of delegation amount                                 |
-| votingPower    | T_INT      | true     | Remaining amount of stake that ICONist can delegate to other P-Reps |
-| delegations         | T_LIST(T_DICT) | true     | List of delegation dict (MAX: 100 entries) |
-| delegations.address | T_ADDR_EOA     | true     | Address of P-Rep to delegate             |
-| delegations.value   | T_INT          | true     | Delegation amount in loop                |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| totalDelegated | T\_INT | true | The sum of delegation amount |
+| votingPower | T\_INT | true | Remaining amount of stake that ICONist can delegate to other P-Reps |
+| delegations | T\_LIST\(T\_DICT\) | true | List of delegation dict \(MAX: 100 entries\) |
+| delegations.address | T\_ADDR\_EOA | true | Address of P-Rep to delegate |
+| delegations.value | T\_INT | true | Delegation amount in loop |
 
 ### setBond
 
 Bond some ICX amount of stake to P-Reps
 
-- Maximum number of P-Reps to bond is 100
-- The transaction which has duplicated P-Rep addresses will be failed
-- This transaction overwrites the previous bond information
+* Maximum number of P-Reps to bond is 100
+* The transaction which has duplicated P-Rep addresses will be failed
+* This transaction overwrites the previous bond information
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -292,11 +292,11 @@ Bond some ICX amount of stake to P-Reps
 
 #### Parameters
 
-| Key                 | VALUE Type     | Required | Description                              |
-| :------------------ | :------------- | :------- | :--------------------------------------- |
-| bonds | T_LIST(T_DICT) | true     | List of bond dict (MAX: 100 entries) |
-| bonds.address | T_ADDR_EOA     | true     | Address of P-Rep to bond |
-| bonds.value   | T_INT          | true     | Bond amount in loop                |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bonds | T\_LIST\(T\_DICT\) | true | List of bond dict \(MAX: 100 entries\) |
+| bonds.address | T\_ADDR\_EOA | true | Address of P-Rep to bond |
+| bonds.value | T\_INT | true | Bond amount in loop |
 
 ### getBond
 
@@ -304,7 +304,7 @@ Returns the bond status of a given address
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -324,13 +324,13 @@ Returns the bond status of a given address
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -363,15 +363,15 @@ Returns the bond status of a given address
 
 #### Returns
 
-| Key            | VALUE Type | Required | Description                                                  |
-| :------------- | :--------- | :------- | :----------------------------------------------------------- |
-| bonds | T_LIST(T_DICT) | true     | List of bond dict |
-| bonds.address | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate             |
-| bonds.value   | T_INT          | true     | Bond amount in loop                |
-| unbonds | T_LIST(T_DICT) | true     | List of unbond dict |
-| unbonds.address | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate             |
-| unbonds.value | T_INT          | true     | Unbonding amount in loop                |
-| unbonds.expireBlockHeight | T_INT          | true     | BlockHeight when unBonding will be done |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bonds | T\_LIST\(T\_DICT\) | true | List of bond dict |
+| bonds.address | T\_ADDR\_EOA,T\_ADDR\_SCORE | true | Address of P-Rep to delegate |
+| bonds.value | T\_INT | true | Bond amount in loop |
+| unbonds | T\_LIST\(T\_DICT\) | true | List of unbond dict |
+| unbonds.address | T\_ADDR\_EOA,T\_ADDR\_SCORE | true | Address of P-Rep to delegate |
+| unbonds.value | T\_INT | true | Unbonding amount in loop |
+| unbonds.expireBlockHeight | T\_INT | true | BlockHeight when unBonding will be done |
 
 ### claimIScore
 
@@ -379,7 +379,7 @@ Claim the total reward that a ICONist has received
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -399,11 +399,11 @@ N/A
 
 #### EventLog
 
-| Name                             | Data Type | Indexed | Description             |
-| :------------------------------- | :-------- | :------ | :---------------------- |
-| IScoreClaimedV2(Address,int,int) | T_STRING  | true    | Signature               |
-| IScore                           | T_INT     | false   | Reward amount in IScore |
-| ICX                              | T_INT     | false   | Reward amount in loop   |
+| Name | Data Type | Indexed | Description |
+| :--- | :--- | :--- | :--- |
+| IScoreClaimedV2\(Address,int,int\) | T\_STRING | true | Signature |
+| IScore | T\_INT | false | Reward amount in IScore |
+| ICX | T\_INT | false | Reward amount in loop |
 
 ### queryIScore
 
@@ -411,7 +411,7 @@ Returns the amount of I-Score that a ICONist has received as a reward
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -431,13 +431,13 @@ Returns the amount of I-Score that a ICONist has received as a reward
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -451,21 +451,21 @@ Returns the amount of I-Score that a ICONist has received as a reward
 
 #### Returns
 
-| Key          | VALUE Type | Required | Description                                         |
-| :----------- | :--------- | :------- | :-------------------------------------------------- |
-| blockHeight  | T_INT      | true     | Block height when I-Score is estimated              |
-| iscore       | T_INT      | true     | Amount of I-Score                                   |
-| estimatedICX | T_INT      | true     | Estimated amount in loop<br/>1000 I-Score == 1 loop |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| blockHeight | T\_INT | true | Block height when I-Score is estimated |
+| iscore | T\_INT | true | Amount of I-Score |
+| estimatedICX | T\_INT | true | Estimated amount in loop 1000 I-Score == 1 loop |
 
 ### registerPRep
 
 Register an address as a P-Rep to Blockchain
 
-- 2000 ICX are required as a registration fee
+* 2000 ICX are required as a registration fee
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -492,26 +492,25 @@ Register an address as a P-Rep to Blockchain
 
 #### Parameters
 
-| Key         | VALUE Type | Required | Description                                                  |
-| :---------- | :--------- | :------- | :----------------------------------------------------------- |
-| name        | T_STRING   | true     | P-Rep name<br>"ABC Node"                                     |
-| email       | T_STRING   | true     | P-Rep email<br>"abc@example.com"                             |
-| country     | T_STRING   | true     | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)<br>"KOR", "USA", "CHN" |
-| city        | T_STRING   | true     | "Seoul", "New York", "Paris"                                 |
-| website     | T_STRING   | true     | P-Rep homepage url<BR>"https://abc.example.com"              |
-| detailes    | T_STRING   | true     | Url including P-Rep detail information<br/>"https://abc.example.com/details/" |
-| p2pEndpoint | T_STRING   | true     | Network info used for connecting among P-Rep nodes<br/>"123.45.67.89:7100", "node.example.com:7100" |
-| nodeAddress | T_STRING   | False    | Node Key for only consensus<br/>"hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| name | T\_STRING | true | P-Rep name "ABC Node" |
+| email | T\_STRING | true | P-Rep email "abc@example.com" |
+| country | T\_STRING | true | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) "KOR", "USA", "CHN" |
+| city | T\_STRING | true | "Seoul", "New York", "Paris" |
+| website | T\_STRING | true | P-Rep homepage url "[https://abc.example.com](https://abc.example.com)" |
+| detailes | T\_STRING | true | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
+| p2pEndpoint | T\_STRING | true | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
+| nodeAddress | T\_STRING | False | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
 
-*details :
-See [JSON Standard for P-Rep Detailed Information](/references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
+\*details : See [JSON Standard for P-Rep Detailed Information](../../../references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
 
 #### EventLog
 
-| Name                    | Data Type  | Indexed | Description   |
-| :---------------------- | :--------- | :------ | :------------ |
-| PRepRegistered(Address) | T_STRING   | true    | Signature     |
-| Address                 | T_ADDR_EOA | false   | P-Rep address |
+| Name | Data Type | Indexed | Description |
+| :--- | :--- | :--- | :--- |
+| PRepRegistered\(Address\) | T\_STRING | true | Signature |
+| Address | T\_ADDR\_EOA | false | P-Rep address |
 
 ### unregisterPRep
 
@@ -519,7 +518,7 @@ Unregister a P-Rep
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -539,10 +538,10 @@ N/A
 
 #### EventLog
 
-| Name                      | Data Type  | Indexed | Description   |
-| :------------------------ | :--------- | :------ | :------------ |
-| PRepUnregistered(Address) | T_STRING   | true    | Signature     |
-| Address                   | T_ADDR_EOA | false   | P-Rep address |
+| Name | Data Type | Indexed | Description |
+| :--- | :--- | :--- | :--- |
+| PRepUnregistered\(Address\) | T\_STRING | true | Signature |
+| Address | T\_ADDR\_EOA | false | P-Rep address |
 
 ### setPRep
 
@@ -550,7 +549,7 @@ Update P-Rep register information
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -571,26 +570,25 @@ Update P-Rep register information
 
 #### Parameters
 
-| Key         | VALUE Type | Required | Description                                                  |
-| :---------- | :--------- | :------- | :----------------------------------------------------------- |
-| name        | T_STRING   | false    | P-Rep name<br>"ABC Node"                                     |
-| email       | T_STRING   | false    | P-Rep email<br>"abc@example.com"                             |
-| country     | T_STRING   | false    | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)<br>"KOR", "USA", "CHN" |
-| city        | T_STRING   | false    | "Seoul", "New York", "Paris"                                 |
-| website     | T_STRING   | false    | P-Rep homepage url<BR>"https://abc.example.com"              |
-| detailes    | T_STRING   | false    | Url including P-Rep detail information<br/>"https://abc.example.com/details/" |
-| p2pEndpoint | T_STRING   | false    | Network info used for connecting among P-Rep nodes<br/>"123.45.67.89:7100", "node.example.com:7100" |
-| nodeAddress | T_STRING   | false    | Node Key for only consensus<br/>"hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| name | T\_STRING | false | P-Rep name "ABC Node" |
+| email | T\_STRING | false | P-Rep email "abc@example.com" |
+| country | T\_STRING | false | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) "KOR", "USA", "CHN" |
+| city | T\_STRING | false | "Seoul", "New York", "Paris" |
+| website | T\_STRING | false | P-Rep homepage url "[https://abc.example.com](https://abc.example.com)" |
+| detailes | T\_STRING | false | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
+| p2pEndpoint | T\_STRING | false | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
+| nodeAddress | T\_STRING | false | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
 
-*details :
-See [JSON Standard for P-Rep Detailed Information](/references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
+\*details : See [JSON Standard for P-Rep Detailed Information](../../../references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
 
 #### EventLog
 
-| Name             | Data Type  | Indexed | Description   |
-| :--------------- | :--------- | :------ | :------------ |
-| PRepSet(Address) | T_STRING   | true    | Signature     |
-| Address          | T_ADDR_EOA | false   | P-Rep address |
+| Name | Data Type | Indexed | Description |
+| :--- | :--- | :--- | :--- |
+| PRepSet\(Address\) | T\_STRING | true | Signature |
+| Address | T\_ADDR\_EOA | false | P-Rep address |
 
 ### getPRep
 
@@ -598,7 +596,7 @@ Returns P-Rep register information
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -618,13 +616,13 @@ Returns P-Rep register information
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -652,36 +650,36 @@ Returns P-Rep register information
 
 #### Returns
 
-| Key         | VALUE Type | Required | Description                                                  |
-| :---------- | :--------- | :------- | :----------------------------------------------------------- |
-| status      | T_INT | true | 0: active<br>1: unregistered                                     |
-| grade       | T_INT | true | 0: Main P-Rep<br>1: Sub P-Rep<br>2: P-Rep candidate               |
-| address | T_ADDR_EOA | true | P-Rep address |
-| name        | T_STRING   | true | P-Rep name<br>"ABC Node"                                     |
-| email       | T_STRING   | true | P-Rep email<br>"abc@example.com"                             |
-| country     | T_STRING   | true | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)<br>"KOR", "USA", "CHN" |
-| city        | T_STRING   | true | "Seoul", "New York", "Paris"                                 |
-| website     | T_STRING   | true | P-Rep homepage url<BR>"https://abc.example.com"              |
-| detailes    | T_STRING   | true | Url including P-Rep detail information<br/>"https://abc.example.com/details/" |
-| p2pEndpoint | T_STRING   | true | Network info used for connecting among P-Rep nodes<br/>"123.45.67.89:7100", "node.example.com:7100" |
-| nodeAddress | T_STRING   | true | Node Key for only consensus<br/>"hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
-| irep        | T_INT | true | Incentive rep used to calculate the reward for P-Rep<br>Limit: +- 20% of the previous value<br> Unit: loop |
-| irepUpdatedBlockHeight | T_INT | true | Block height when a P-Rep changed I-Rep value |
-| lastGenerateBlockHeight | T_INT | true | Height of the last block which a P-Rep generated |
-| stake | T_INT | true | Amount of stake that a P-Rep has |
-| delegated | T_INT | true | Delegation amount that a P-Rep receives from ICONists |
-| totalBlocks | T_INT | true | The number of blocks that a P-Rep received when running as a Main P-Rep |
-| validatedBlocks | T_INT | true | The number of blocks that a P-Rep validated when running as a Main P-Rep |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| status | T\_INT | true | 0: active 1: unregistered |
+| grade | T\_INT | true | 0: Main P-Rep 1: Sub P-Rep 2: P-Rep candidate |
+| address | T\_ADDR\_EOA | true | P-Rep address |
+| name | T\_STRING | true | P-Rep name "ABC Node" |
+| email | T\_STRING | true | P-Rep email "abc@example.com" |
+| country | T\_STRING | true | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) "KOR", "USA", "CHN" |
+| city | T\_STRING | true | "Seoul", "New York", "Paris" |
+| website | T\_STRING | true | P-Rep homepage url "[https://abc.example.com](https://abc.example.com)" |
+| detailes | T\_STRING | true | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
+| p2pEndpoint | T\_STRING | true | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
+| nodeAddress | T\_STRING | true | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
+| irep | T\_INT | true | Incentive rep used to calculate the reward for P-Rep Limit: +- 20% of the previous value  Unit: loop |
+| irepUpdatedBlockHeight | T\_INT | true | Block height when a P-Rep changed I-Rep value |
+| lastGenerateBlockHeight | T\_INT | true | Height of the last block which a P-Rep generated |
+| stake | T\_INT | true | Amount of stake that a P-Rep has |
+| delegated | T\_INT | true | Delegation amount that a P-Rep receives from ICONists |
+| totalBlocks | T\_INT | true | The number of blocks that a P-Rep received when running as a Main P-Rep |
+| validatedBlocks | T\_INT | true | The number of blocks that a P-Rep validated when running as a Main P-Rep |
 
 ### getPReps
 
 Returns the status of all registered P-Rep candidates in descending order by delegated ICX amount
 
-- Unregistered or disqualified P-Reps are not included
+* Unregistered or disqualified P-Reps are not included
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -702,14 +700,14 @@ Returns the status of all registered P-Rep candidates in descending order by del
 
 #### Parameters
 
-| Key          | VALUE Type | Required | Description                                               |
-| :----------- | :--------- | :------- | :-------------------------------------------------------- |
-| startRanking | T_INT      | false    | Default: 1<br/>P-Rep list which starts from start ranking |
-| endRanking   | T_INT      | false    | Default: the last ranking                                 |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| startRanking | T\_INT | false | Default: 1 P-Rep list which starts from start ranking |
+| endRanking | T\_INT | false | Default: the last ranking |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -766,24 +764,24 @@ Returns the status of all registered P-Rep candidates in descending order by del
 
 #### Returns
 
-| Key                     | VALUE Type | Required | Description                                                  |
-| :---------------------- | :--------- | :------- | :----------------------------------------------------------- |
-| blockHeight | T_INT      | true     | The latest block height when this request was processed |
-| startRanking | T_INT      | true     | Start ranking of P-Rep list |
-| totalDelegated | T_INT      | true     | Total delegation amount that all P-Reps receive |
-| totalStake | T_INT      | true     | The sum of ICX that all ICONists stake |
-| preps | T_LIST(T_DICT) | true     | P-Rep list. Details : refer to [getPRep](#getPRep) |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| blockHeight | T\_INT | true | The latest block height when this request was processed |
+| startRanking | T\_INT | true | Start ranking of P-Rep list |
+| totalDelegated | T\_INT | true | Total delegation amount that all P-Reps receive |
+| totalStake | T\_INT | true | The sum of ICX that all ICONists stake |
+| preps | T\_LIST\(T\_DICT\) | true | P-Rep list. Details : refer to [getPRep](iiss_extension.md#getPRep) |
 
 ### setBonderList
 
 Set allowed bonder list to P-Rep
 
-- Maximum number of allowed ICONists to bond is 10
-- This transaction overwrites the previous bonder list information
+* Maximum number of allowed ICONists to bond is 10
+* This transaction overwrites the previous bonder list information
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -805,9 +803,9 @@ Set allowed bonder list to P-Rep
 
 #### Parameters
 
-| Key        | VALUE Type                      | Required | Description                        |
-| :--------- | :------------------------------ | :------- | :--------------------------------- |
-| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 100 entries) |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bonderList | T\_LIST\(T\_ADDR\_EOA,T\_ADDR\_SCORE\) | true | List of address \(MAX: 100 entries\) |
 
 ### getBonderList
 
@@ -815,7 +813,7 @@ Returns the allowed bonder list
 
 > Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -835,13 +833,13 @@ Returns the allowed bonder list
 
 #### Parameters
 
-| Key     | VALUE Type | Required | Description      |
-| :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| address | T\_ADDR\_EOA | true | Address to query |
 
 > Example responses
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": 1234,
@@ -856,10 +854,11 @@ Returns the allowed bonder list
 
 #### Returns
 
-| Key        | VALUE Type                      | Required | Description                        |
-| :--------- | :------------------------------ | :------- | :--------------------------------- |
-| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 100 entries) |
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bonderList | T\_LIST\(T\_ADDR\_EOA,T\_ADDR\_SCORE\) | true | List of address \(MAX: 100 entries\) |
 
 ## References
 
-- [Goloop JSON-RPC API v3](jsonrpc_v3.md)
+* [Goloop JSON-RPC API v3](jsonrpc_v3.md)
+

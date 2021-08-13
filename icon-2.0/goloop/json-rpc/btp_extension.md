@@ -2,7 +2,7 @@
 title: Extension for BTP
 ---
 
-# JSON-RPC v3
+# BTP Extension
 
 ## Introduction
 
