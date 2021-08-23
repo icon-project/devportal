@@ -157,8 +157,8 @@ API path : `<scheme>://<host>/api/v3`
 * [unregisterPRep](icon-json-rpc-api-v3-specification.md#unregisterprep)
 * [setPRep](icon-json-rpc-api-v3-specification.md#setprep)
 * [setGovernanceVariables](icon-json-rpc-api-v3-specification.md#setgovernancevariables)
-* [getPRep](icon-json-rpc-api-v3-specification.md#setprep)
-* [getPReps](icon-json-rpc-api-v3-specification.md#getprep)
+* [getPRep](icon-json-rpc-api-v3-specification.md#getprep)
+* [getPReps](icon-json-rpc-api-v3-specification.md#getpreps)
 
 **Debug API**
 
@@ -1926,7 +1926,8 @@ Request
 
 | KEY | VALUE type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| status | T\_INT | O | 0: active 1: unregistered |
+| status | T\_INT | O | 0: active 1: unregistered 2: disqualified |
+| penalty | T\_INT | O | 0: none 1: disqualification 2: low productivity 3: block validation failure |
 | grade | T\_INT | O | 0: Main P-Rep 1: Sub P-Rep 2: P-Rep candidate |
 | name | String | O | P-Rep name "ABC Node", "Banana Node" |
 | email | String | O | P-Rep email "abc@example.com" |
