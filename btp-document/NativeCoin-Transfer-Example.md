@@ -14,7 +14,7 @@ ____
 - Generate Alice's keystore and address on ICON network
 
 ```bash
-cd $CONFIG_DIR
+cd $PROJECT_DIR/btp
 
 # Replace YOUR_PASSWORD if needed
 YOUR_PASSWORD=1234
@@ -35,9 +35,11 @@ AMOUNT=1000000000000000000000000
 
 # transfer 'amount' of ICX coins to Alice's account
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
---to $(cat $CONFIG_DIR/alice.addr) --value $AMOUNT \
---key_store $CONFIG_DIR/godWallet.json --key_password gochain \
---step_limit 10000000000 --nid 3
+    --to $(cat $CONFIG_DIR/alice.addr) --value $AMOUNT \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 10000000000
 
 # Check the balance of Alice
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/alice.addr)
@@ -46,7 +48,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/ali
 - In this example, we would like to use pre-funds accounts, which was provided in the `truffle.config.js`, as receiver on Moonriver network. You can specify your account for an experiment
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
 # Start truffle console
 truffle console --network moonbeamlocal
@@ -76,15 +78,16 @@ echo "btp://$(cat $CONFIG_DIR/net.btp.dst)/$BOB_ADDR" > $CONFIG_DIR/bob.btp.addr
 - Transfer 'ICX' from Alice to Bob
 
 ```bash
-cd $CONFIG_DIR
+cd $PROJECT_DIR/btp
 
 # Change your amount if needed
 AMOUNT=1000000
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
---to $(cat $CONFIG_DIR/nativeCoinBsh.icon) --method transferNativeCoin \
---param _to=$(cat $CONFIG_DIR/bob.btp.addr) --value $AMOUNT \
---key_store $CONFIG_DIR/alice.keystore.json --key_password $(cat $CONFIG_DIR/alice.secret) \
---step_limit 10000000000 --nid 3 | jq -r . > $CONFIG_DIR/tx.AliceToBob.transfer
+    --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) --method transferNativeCoin \
+    --param _to=$(cat $CONFIG_DIR/bob.btp.addr) --value $AMOUNT \
+    --key_store $CONFIG_DIR/alice.keystore.json --key_password $(cat $CONFIG_DIR/alice.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 10000000000 | jq -r . > $CONFIG_DIR/tx.AliceToBob.transfer
 
 # Check whether a transfer is successful
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.AliceToBob.transfer)
@@ -93,7 +96,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 - Check balance of Bob's account after receiving 'ICX' from Alice
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
 truffle console --network moonbeamlocal
 
@@ -105,6 +108,7 @@ truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'I
 # Convert BigNumber to easy-reading number
 # It might take time for BMRs and BMV to sync blocks. 
 # Thus, if the balance is still '0', please try it later
+# exit truffle console, wait a bit, then re-run checking balance again
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
 ```
 
@@ -117,7 +121,7 @@ ____
 ```bash
 # In this example, we are going to use an abitrary account to demonstrate this transfer
 # Please specify your own account if needed
-cd $CONFIG_DIR
+cd $PROJECT_DIR/btp
 echo -n "hx8062076aa5e68f021121d1c3b4b3979d21a6dcae" > $CONFIG_DIR/carol.addr
 echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
 
@@ -127,7 +131,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/car
 
 ```bash
 # Change your current directory to '.../solidity/bsh'
-cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
 export CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
 export CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
@@ -158,11 +162,11 @@ truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
 - Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
 
 ```bash
-cd $CONFIG_DIR
+cd $PROJECT_DIR/btp
 # call nativecoinBSH to query coinID of 'DEV'
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
 --to $(cat $CONFIG_DIR/nativecoinBsh.icon) --method coinId \
---param _coinName=DEV | jq -r . > tx.coinID
+--param _coinName=DEV | jq -r . > $CONFIG_DIR/tx.coinID
 
 # call irc31token to query balance of Carol
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to $(cat $CONFIG_DIR/irc31token.icon) \

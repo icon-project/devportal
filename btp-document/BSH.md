@@ -94,13 +94,26 @@ function setFeeRatio(uint256 _feeNumerator) external;
 ```
 
 - Description:
-  - Update a new base URI
+  - Update a new value of `fee_ratio`
   - Caller MUST have an ownership role
-  - The transfer fee is calculated by feeNumerator/FEE_DEMONINATOR.
+  - The transfer fee is calculated by `fixed_fee + feeNumerator/FEE_DEMONINATOR * transfer_amount`
   - The feeNumetator should be less than FEE_DEMONINATOR
   - _feeNumerator is set to `10` in construction by default, which means the default fee ratio is 0.1%
 - Params:
   - _feeNumerator: uint256 ( Unsigned integer value of Fee Numerator )
+
+<span style="color:gray">**setFixedFee()**</span>
+```solidity
+function setFixedFee(uint256 _fixedFee) external;
+```
+
+- Description:
+  - Update a new value of `fixed_fee`
+  - Caller MUST have an ownership role
+  - The transfer fee is calculated by `fixed_fee + feeNumerator/FEE_DEMONINATOR * transfer_amount`
+  - The `fixed_fee` will be set by SCORE Admin, the value is calculated based on an exchange rate at a setting time
+- Params:
+  - _fixedFee: uint256 ( Unsigned integer value of `fixed_fee` )  
 
 <span style="color:gray">**register()**</span>
 ```solidity
@@ -274,20 +287,6 @@ function coinNames() external view returns (string[] memory _names);
 - Params:
   - _coinName: string ( A registered coin/wrapped coin `name` )
   - _value: uint256 ( An amount about to re-claim )
-
-<span style="color:gray">**refund()**</span>
-```solidity
-    function refund(address _to, string calldata _coinName, uint256 _value) external;
-```
-
-- Description:
-  - Refunding coins/wrapped coins back to Requester in case of a failed request
-  - Caller MUST be this contract or Contract's Owner/Operator
-  - The amount to claim MUST be smaller or equal to a refundable balance
-- Params:
-  - _to: address ( Address to receive a refunding amount )
-  - _coinName: string ( A registered coin/wrapped coin `name` )
-  - _value: uint256 ( An amount about to refund )  
   
 <span style="color:gray">**mint()**</span>
 ```solidity

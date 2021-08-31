@@ -13,7 +13,7 @@ ____
 #### Generate Owner and Register Owner of BMC
 
 ```bash
-cd $CONFIG_DIR
+cd $PROJECT_DIR/btp
 
 # Replace YOUR_PASSWORD if needed
 YOUR_PASSWORD=1234
@@ -28,7 +28,9 @@ echo $(jq -r '.address' "$CONFIG_DIR/bmc-owner.json") > $CONFIG_DIR/bmc-owner.ad
 
 # Register Owner
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addOwner \
     --param _addr=$(cat $CONFIG_DIR/bmc-owner.addr) \
@@ -42,9 +44,11 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Add funds to BMC-Owner
 AMOUNT=1000000000000000000000000
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
---to $(cat $CONFIG_DIR/bmc-owner.addr) --value $AMOUNT \
---key_store $CONFIG_DIR/godWallet.json --key_password gochain \
---step_limit 10000000000 --nid 3 | jq -r . > $CONFIG_DIR/tx.bmcOwner.addFund
+    --to $(cat $CONFIG_DIR/bmc-owner.addr) --value $AMOUNT \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 10000000000 | jq -r . > $CONFIG_DIR/tx.bmcOwner.addFund
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bmcOwner.addFund)
 # If fail, it shows error message and status '0x0'
@@ -55,7 +59,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addVerifier \
     --param _net=$(cat $CONFIG_DIR/net.btp.dst) \
@@ -74,7 +80,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 echo $(cat $CONFIG_DIR/bmc_perif.btp.addr) > $CONFIG_DIR/btp.dst
 
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addLink \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -107,7 +115,9 @@ In success, a connection link from ICON-BMC to Moonriver-BMC will be set with de
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method setLinkRotateTerm \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -116,7 +126,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
     | jq -r . > $CONFIG_DIR/tx.setLinkRotateTerm.icon
 
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method setLinkDelayLimit \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -146,7 +158,9 @@ echo -n $ICON_OFFSET > $CONFIG_DIR/icon.offset
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addService \
     --param _addr=$(cat $CONFIG_DIR/nativeCoinBsh.icon) \
@@ -162,7 +176,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addRelay \
     --param _link=$(cat $CONFIG_DIR/btp.dst) \
@@ -178,7 +194,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
-    --key_store bmc-owner.json --key_password $(cat $CONFIG_DIR/bmc-owner.secret) --nid 3 \
+    --key_store $CONFIG_DIR/bmc-owner.json \
+    --key_password $(cat $CONFIG_DIR/bmc-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method setFeeAggregator \
     --param _addr=$(cat $CONFIG_DIR/feeAggregation.icon) \
@@ -209,7 +227,9 @@ echo $(jq -r '.address' "$CONFIG_DIR/nativecoinBSH-owner.json") > $CONFIG_DIR/na
 
 # Register Owner
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addOwner \
     --param _addr=$(cat $CONFIG_DIR/nativecoinBSH-owner.addr) \
@@ -218,9 +238,11 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Add funds to BSH-Owner
 AMOUNT=1000000000000000000000000
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
---to $(cat $CONFIG_DIR/nativecoinBSH-owner.addr) --value $AMOUNT \
---key_store $CONFIG_DIR/godWallet.json --key_password gochain \
---step_limit 10000000000 --nid 3 | jq -r . > $CONFIG_DIR/tx.bshOwner.addFund
+    --to $(cat $CONFIG_DIR/nativecoinBSH-owner.addr) --value $AMOUNT \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 10000000000 | jq -r . > $CONFIG_DIR/tx.bshOwner.addFund
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bshOwner.addFund)
 # If fail, it shows error message and status '0x0'
@@ -231,8 +253,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
-    --key_store nativecoinBSH-owner.json --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
-    --nid 3 --step_limit 13610920001 \
+    --key_store $CONFIG_DIR/nativecoinBSH-owner.json \
+    --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 13610920001 \
     --method register \
     --param _name=DEV \
     | jq -r . > $CONFIG_DIR/tx.registerCoin.icon
@@ -246,8 +270,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
-    --key_store nativecoinBSH-owner.json --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
-    --nid 3 --step_limit 13610920001 \
+    --key_store $CONFIG_DIR/nativecoinBSH-owner.json \
+    --key_password $(cat $CONFIG_DIR/nativecoinBSH-owner.secret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
+    --step_limit 13610920001 \
     --method setFeeRatio \
     --param _feeNumerator=100 \
     | jq -r . > $CONFIG_DIR/tx.setFeeRatio.icon
@@ -260,14 +286,17 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 - Set `NativeCoinBSH` as an Owner of `IRC31Token`
 
 ```bash
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/irc31token.icon) \
-    --key_store godWallet.json --key_password gochain --nid 3 \
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
+    --to $(cat $CONFIG_DIR/irc31token.icon) \
+    --key_store $CONFIG_DIR/goloop.keystore.json \
+    --key_password $(cat $CONFIG_DIR/goloop.keysecret) \
+    --nid $(cat $CONFIG_DIR/nid.icon) \
     --step_limit 13610920001 \
     --method addOwner \
     --param _addr=$(cat $CONFIG_DIR/nativeCoinBsh.icon) \
     | jq -r . > $CONFIG_DIR/tx.addOwnerIrc31.icon
 # Also check whether this transaction is successful 
-# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat tx.addOwnerIrc31.icon)
+# goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.addOwnerIrc31.icon)
 # If fail, it shows error message and status '0x0'
 # Otherwise, status '0x1'    
 ```
@@ -281,98 +310,57 @@ ____
   - Prepare addresses of BMC, BSH, BMV and Relay
 
 ```bash
-export ICON_BMC=$(cat $CONFIG_DIR/btp.icon)
-export MOON_BSH=$(cat $CONFIG_DIR/bsh_perif.addr)
-export MOON_BMV=$(cat $CONFIG_DIR/bmv.addr)
-export RELAY=$(cat $CONFIG_DIR/moon-bmr.addr)
+export ICON_BTP_ADDRESS=$(cat $CONFIG_DIR/btp.icon)
+export BSH_MOONBEAM=$(cat $CONFIG_DIR/bsh.moonbeam)
+export BMV_MOONBEAM=$(cat $CONFIG_DIR/bmv.moonbeam)
+export RELAY_ADDRESS=$(cat $CONFIG_DIR/moon-bmr.addr)
 export ICON_NET=$(cat $CONFIG_DIR/net.btp.icon)
 ```
 
 - Launch Truffle console
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bmc
+$PROJECT_DIR/btp/build/contracts/solidity/bmc
 
-truffle console --network moonbeamlocal
-```
+npm install -g chai
 
-- Add **BMV**
+# Add BMV
+truffle exec $SCRIPT_DIR/mb_bmc_add_verifier.js --network moonbeamlocal
 
-```bash
-truffle(moonbeamlocal)> let bmcManagement = await BMCManagement.deployed()
+# Add a connection link to ICON's BMC
+# The below command helps to set a connection link from Moonriver-BMC to ICON-BMC with default setting values:
+#    + `BLOCK_INTERVAL_MSEC`: block interval of ICON (default = 1000ms)
+#    + `MAX_AGGREGATION`: max_aggregation value (default = 10)
+#    + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC (default = 3)
+# Then, change default setting values as:
+#    + `BLOCK_INTERVAL_MSEC`: block interval of ICON (default -> 3000ms)
+#    + `MAX_AGGREGATION`: max_aggregation value (default -> 5)
+#    + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC (default -> 3)
+# Please modify this script to change your expected settings
+truffle exec $SCRIPT_DIR/mb_bmc_add_link.js --network moonbeamlocal
 
-truffle(moonbeamlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
+# Add services to BMCManagement
+# The script below adds:
+#   + Register service name `nativecoin` and bind this service to BSH_MOONBEAM address
+#   + Register RELAY_ADDRESS and add to `ICON_BTP_ADDRESS`
+truffle exec $SCRIPT_DIR/mb_bmc_add_service.js --network moonbeamlocal
 
-truffle(moonbeamlocal)> await bmcManagement.addVerifier(process.env.ICON_NET, process.env.MOON_BMV)
-```
+# Get Link Status: please DO NOT skip this step. This output will then be used to set parameters to deploy BMR
+truffle exec $SCRIPT_DIR/mb_bmc_get_linkStat.js --network moonbeamlocal
 
-- Add a connection link to ICON's BMC
-
-```bash
-truffle(moonbeamlocal)> await bmcManagement.addLink(process.env.ICON_BMC)
-```
-
-The above command helps to set a connection link from Moonriver-BMC to ICON-BMC with default setting values:
-
-&emsp; &emsp; &emsp; + `BLOCK_INTERVAL_MSEC`: block interval of ICON (default = 1000ms)
-
-&emsp; &emsp; &emsp; + `MAX_AGGREGATION`: max_aggregation value (default = 10)
-
-&emsp; &emsp; &emsp; + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC (default = 3)
-
-- Set Link Configuration: this step will help you to change default setting values from the command above
-
-```bash
-truffle(moonbeamlocal)> await bmcManagement.setLink(process.env.ICON_BMC, 3000, 5, 3)
-```
-
-- Add BSH Service contract
-
-```bash
-truffle(moonbeamlocal)> await bmcManagement.addService("nativecoin", process.env.MOON_BSH)
-```
-
-- Add Relays and query Relays of one link
-
-```bash
-truffle(moonbeamlocal)> await bmcManagement.addRelay(process.env.ICON_BMC, [process.env.RELAY])
-
-truffle(moonbeamlocal)> await bmcManagement.getRelays(process.env.ICON_BMC)
-```
-
-- Get Link Status: please **DO NOT** skip this step. This output will then be used to set parameters to deploy BMR
-
-```bash
-truffle(moonbeamlocal)> await bmcPeriphery.getStatus(process.env.ICON_BMC)
-
-# Exit truffle console via ".exit", then save 'offsetMTA' to a file
-# Replace "OFFSET MTA" by a corresponding value from query result
-echo -n "OFFSET MTA" > $CONFIG_DIR/moon.offset
+echo $(jq -r '.offsetMTA' "$CONFIG_DIR/bmc_linkstats.moonbeam") > $CONFIG_DIR/moon.offset
 ```
 
 ### 4. Config Moonriver BSH
 
 ____
 
-- Launch Truffle console
+- Run the script to register `ICX`
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
-truffle console --network moonbeamlocal
-```
-
-- Register 'ICX' token
-
-```bash
-truffle(Moonriverlocal)> let bshPeriphery = await BSHPeriphery.deployed()
-
-truffle(Moonriverlocal)> let bshCore = await BSHCore.deployed()
-
-truffle(Moonriverlocal)> await bshCore.register("ICX")
-
-# Query current supporting coins
-truffle(moonbeamlocal)> await bshCore.coinNames()
+truffle exec $SCRIPT_DIR/mb_bsh_register_coin.js --network moonbeamlocal
 ```
 
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;

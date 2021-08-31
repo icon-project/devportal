@@ -8,28 +8,16 @@ ____
 
 Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](BTP-Development-Instructions.md#2-deploy-moonriver-node) and accomplish it
 
-Create a folder and clone this project to your local machine as follow:
-
-```bash
-cd $CONFIG_DIR
-
-mkdir Moonriver && cd Moonriver
-
-git clone https://github.com/icon-project/btp.git
-
-cd btp && git checkout icondao
-```
-
 ### 1. Deploy BMC Contracts on Moonriver Network
 
 ____
 
-#### Deploy BMC contracts
-
 - Run following commands:
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bmc
+cd $PROJECT_DIR/btp/build/contracts/solidity/bmc
+
+SCRIPT_DIR=$PROJECT_DIR/btp/docker-compose/goloop2moonbeam/scripts
 
 yarn
 
@@ -38,7 +26,16 @@ rm -rf .openzeppelin && truffle compile --all
 
 # @param
 # - BMC_PRA_NET: Chain ID and name of a network that BMC is going to deploy on, e.g. '0x501.pra'
-BMC_PRA_NET=0x501.pra truffle migrate --network moonbeamlocal
+export BMC_PRA_NET=0x501.pra 
+
+truffle migrate --network moonbeamlocal
+
+# Run script to extract BMCPeriphery and BMCManagement addresses
+# BMCPeriphery address -> $CONFIG_DIR/bmc.moonbeam
+# BMCManagement address -> $CONFIG_DIR/bmc_management.moonbeam
+truffle exec $SCRIPT_DIR/mb_extract_bmc.js --network moonbeamlocal
+
+echo "btp://$BMC_PRA_NET/$(cat $CONFIG_DIR/bmc.moonbeam)" > $CONFIG_DIR/bmc_perif.btp.addr
 ```
 
 - After running above commands, you have succeed to deploy required BMC contracts onto the Moonriver Network. In success, you will have a result similar as follows:
@@ -149,42 +146,6 @@ Summary
 > Final cost:          0.01137812 ETH
 ```
 
-#### Get a contract address and full BTP address format of deployed BMCPeriphery contract
-
-- Run following commands to query:
-
-```bash
-truffle console --network moonbeamlocal
-
-truffle(moonbeamlocal)> let bmcPeriphery = await BMCPeriphery.deployed()
-
-truffle(moonbeamlocal)> bmcPeriphery.address
-
-truffle(moonbeamlocal)> await bmcPeriphery.getBmcBtpAddress()
-```
-
-You will receive a query information similar as:
-
-```bash
-truffle(moonbeamlocal)> bmcPeriphery.address
-'0x5CC307268a1393AB9A764A20DACE848AB8275c46'
-# This address is an example. DO NOT copy
-
-truffle(moonbeamlocal)> await bmcPeriphery.getBmcBtpAddress()
-'btp://0x501.pra/0x5CC307268a1393AB9A764A20DACE848AB8275c46'
-# This BTP address is an example. DO NOT copy
-
-
-# These information will be used on another deployments
-# Please save them for later use as follows
-# Exit truffle console via ".exit", then run below commands
-# Replace "BMC Periphery Address" and "BMC Periphery BTP Address" by your results
-
-echo -n "BMC Periphery Address" > $CONFIG_DIR/bmc_perif.addr
-
-echo -n "BMC Periphery BTP Address" > $CONFIG_DIR/bmc_perif.btp.addr
-```
-
 ### 2. Deploy BSH Contracts on Moonriver Network
 
 ____
@@ -192,7 +153,7 @@ ____
 - Run following commands and make sure use a correct contract address of `BMCPeriphery`:
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bsh
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
 yarn
 
@@ -211,9 +172,14 @@ rm -rf .openzeppelin && truffle compile --all
 BSH_COIN_URL=https://moonbeam.network/ \
   BSH_COIN_NAME=DEV \
   BSH_COIN_FEE=100 \
-  BMC_PERIPHERY_ADDRESS=$(cat $CONFIG_DIR/bmc_perif.addr) \
+  BMC_PERIPHERY_ADDRESS=$(cat $CONFIG_DIR/bmc.moonbeam) \
   BSH_SERVICE=nativecoin \
   truffle migrate --network moonbeamlocal
+
+# Run script to extract BSHPeriphery and BSHCore addresses
+# BSHPeriphery address -> $CONFIG_DIR/bsh.moonbeam
+# BSHCore address -> $CONFIG_DIR/bsh_core.moonbeam
+truffle exec $SCRIPT_DIR/mb_extract_bsh.js --network moonbeamlocal  
 ```
 
 - In success, you will have a result similar as:
@@ -320,42 +286,14 @@ Summary
 > Final cost:          0.19494956 ETH
 ```
 
-- Get an address of deployed BSHPeriphery
-
-```bash
-truffle console --network moonbeamlocal
-
-truffle(moonbeamlocal)> let bshPeriphery = await BSHPeriphery.deployed()
-
-truffle(moonbeamlocal)> bshPeriphery.address
-```
-
-You will receive a query information similar as:
-
-```bash
-$ truffle(moonbeamlocal)> bshPeriphery.address
-'0xD5Cd1ea4E9874FfB7d553c517Cec812B3069e322'
-# This address is an example. DO NOT copy
-
-
-# This information will be used on another settings
-# Please save it for later use as follows
-# Exit truffle console via ".exit", then run below commands
-# Replace "BSH Periphery Address" by your result
-
-echo -n "BSH Periphery Address" > $CONFIG_DIR/bsh_perif.addr
-```
-
 ### 3. Deploy BMV Contracts on Moonriver Network
 
 ____
 
-#### Deploy BMV contracts
-
 - Run following commands and make sure use a correct contract address of `BMCPeriphery`
 
 ```bash
-cd $CONFIG_DIR/Moonriver/btp/solidity/bmv
+cd $PROJECT_DIR/btp/build/contracts/solidity/bmv
 
 yarn
 
@@ -375,14 +313,18 @@ rm -rf .openzeppelin && truffle compile --all
 # The curruent list of validators, which is being used in this example, is ["hxb6b5791be0b5ef67063b3c10b840fb81514db2fd"]
 # Replace 'hx' by '0x00' -> RLP encode -> 0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd
 
-BMC_CONTRACT_ADDRESS=$(cat $CONFIG_DIR/bmc_perif.addr) \
-BMV_ICON_NET=0x3.icon \
+BMC_CONTRACT_ADDRESS=$(cat $CONFIG_DIR/bmc.moonbeam) \
+BMV_ICON_NET=$(cat $CONFIG_DIR/net.btp.icon) \
 BMV_ICON_ENCODED_VALIDATORS=0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd \
 BMV_ICON_INIT_OFFSET=$(cat $CONFIG_DIR/block.height.icon) \
 BMV_ICON_INIT_ROOTSSIZE=8 \
 BMV_ICON_INIT_CACHESIZE=8 \
 BMV_ICON_LASTBLOCK_HASH=$(cat $CONFIG_DIR/block.hash.icon) \
   truffle migrate --network moonbeamlocal
+
+# Run script to extract BMV address
+# BMV address -> $CONFIG_DIR/bmv.moonbeam
+truffle exec $SCRIPT_DIR/mb_extract_bmv.js --network moonbeamlocal
 ```
 
 - In success, you will have a result similar as:
@@ -481,32 +423,6 @@ Summary
 =======
 > Total deployments:   5
 > Final cost:          0.17232432 ETH
-```
-
-#### Get address of BMV contract
-
-```bash
-truffle console --network moonbeamlocal
-
-truffle(moonbeamlocal)> let bmv = await BMV.deployed()
-
-truffle(moonbeamlocal)> bmv.address
-```
-
-You will receive information similar as:
-
-```bash
-truffle(moonbeamlocal)> bmv.address
-'0x7acc1aC65892CF3547b1b0590066FB93199b430D'
-# This address is an example. DO NOT copy
-
-
-# This information will be used on another settings
-# Please save it for later use as follows
-# Exit truffle console via ".exit", then run below commands
-# Replace "BMV Address" by your result
-
-echo -n "BMV Address" > $CONFIG_DIR/bmv.addr
 ```
 
 <span style="color:red">**Attention:**</span> Please do not skip these steps. This information will later be used to register ***Veriffier***

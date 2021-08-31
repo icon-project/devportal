@@ -5,7 +5,9 @@
 [comment]: <&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![0](https://progress-bar.dev/0/)>
 
 ____
-This section guides you through a setup of a Blockchain Transmission Protocol (BTP) connecting two networks. ICON and Moonriver networks would be used to demonstrate this scheme in this example. This document is aimed to support various groups of people who might be not developers but requires minimum knowledge of computers. As of now, we attempt to make these instructions as simple and detail as possible so everyone can do it manually and can be easy to catch up on. Please follow these instructions and do not skip any steps unless you understand what you are currently doing. Hopefully, a script, in the future, would be provided which can make these to be done "with the eyes shut".
+This section guides you through a setup of a Blockchain Transmission Protocol (BTP) connecting two networks. ICON and Moonriver networks would be used to demonstrate the scheme in this example. This document is aimed to support various groups of people who might be not developers but requires minimum knowledge of computer skills. As of now, we attempt to make these instructions as simple and detail as possible so everyone can do it manually and can be easy to catch up on. Please follow these instructions and do not skip any steps unless you understand what you are currently doing.
+
+We have a script to make this example get easier. Please follow this instruction [[link](https://github.com/icon-project/btp/blob/icondao/docker-compose/goloop2moonbeam/README.MD)] if you are interested in running via docker. Otherwise, please continue following instructions below
 
 **Supporting Operating Systems:**
 
@@ -135,144 +137,36 @@ ____
 ```bash
 mkdir BTPExample && cd BTPExample
 
-CONFIG_DIR=${PWD}
+PROJECT_DIR=${PWD}
 
-# Clone goloop project
-git clone https://github.com/icon-project/goloop.git
+# Clone project
+git clone https://github.com/icon-project/btp.git
 
-# Build Docker image
-cd goloop && GL_TAG=0.9.7 make gochain-icon-image
+cd $PROJECT_DIR/btp
 
-# Create new gochain folder
-mkdir gochain && mkdir -p gochain/testsuite/config
-
-cd gochain
+git checkout icondao
 ```
 
-- Create `icon.json` file to a directory `$CONFIG_DIR/goloop/gochain/testsuite/config/` and copy below contents:
+- ICON's configuration files are located in `$PROJECT_DIR/btp/docker-compose/goloop2moonbeam/goloop/config`. You can modify these files for your settings
+  - `icon.genesis.json`: ICON's genesis configuration file
+  - `goloop.server.json`: ICON's node configuration file
+  - `goloop.keystore.json`: node's keystore
+  - `goloop.keysecret`: node's password key
+
+- Run below commands to make `btpsimple-image`:
 
 ```bash
-vi $CONFIG_DIR/goloop/gochain/testsuite/config/icon.json
-```
+cd $PROJECT_DIR/btp
 
-```JSON
-{
-    "nid": 3,
-    "channel": "icon",
-    "concurrency_level": 1,
-    "db_type": "goleveldb",
-    "ee_instances": 1,
-    "ee_socket": "",
-    "engines": "python,java",
-    "p2p": "127.0.0.1:8080",
-    "p2p_listen": "",
-    "role": 2,
-    "rpc_addr": ":9080",
-    "rpc_debug": true,
-    "rpc_dump": false,
-    "log_level": "trace",
-    "seed_addr": "",
-    "genesis": {
-        "accounts": [
-            {
-                "address": "hxb6b5791be0b5ef67063b3c10b840fb81514db2fd",
-                "balance": "0x2961fff8ca4a62327800000",
-                "name": "god"
-            },
-            {
-                "address": "hx1000000000000000000000000000000000000000",
-                "balance": "0x0",
-                "name": "treasury"
-            }
-        ],
-        "chain": {
-            "revision": "0xd",
-            "auditEnabled": "0x0",
-            "fee": {
-                "stepPrice": "0x2e90edd00",
-                "stepLimit": {
-                    "invoke": "0x9502f900",
-                    "query": "0x2faf080"
-                },
-                "stepCosts": {
-                  "default": "0x186a0",
-                  "contractCall": "0x61a8",
-                  "contractCreate": "0x3b9aca00",
-                  "contractUpdate": "0x3b9aca00",
-                  "contractDestruct": "-0x11170",
-                  "contractSet": "0x59d8",
-                  "get": "0x0",
-                  "set": "0x140",
-                  "replace": "0x50",
-                  "delete": "-0xf0",
-                  "input": "0xc8",
-                  "eventLog": "0x64",
-                  "apiCall": "0x2710"
-                }
-            },
-            "validatorList": [
-                "hxb6b5791be0b5ef67063b3c10b840fb81514db2fd"
-            ]
-        },
-        "message": "genesis for local node",
-        "nid": "0x3"
-    },
-    "key_store": {
-        "address": "hxb6b5791be0b5ef67063b3c10b840fb81514db2fd",
-        "id": "87323a66-289a-4ce2-88e4-00278deb5b84",
-        "version": 3,
-        "coinType": "icx",
-        "crypto": {
-            "cipher": "aes-128-ctr",
-            "cipherparams": {
-                "iv": "069e46aaefae8f1c1f840d6b09144999"
-            },
-            "ciphertext": "f35ff7cf4f5759cb0878088d0887574a896f7f0fc2a73898d88be1fe52977dbd",
-            "kdf": "scrypt",
-            "kdfparams": {
-                "dklen": 32,
-                "n": 65536,
-                "r": 8,
-                "p": 1,
-                "salt": "0fc9c3b24cdb8175"
-            },
-            "mac": "1ef4ff51fdee8d4de9cf59e160da049eb0099eb691510994f5eca492f56c817a"
-        }
-    },
-    "key_password": "gochain"
-}
-```
+make btpsimple-image
+```  
 
-- Create `docker-compose.yml` file to a directory `$CONFIG_DIR/goloop/gochain` and copy below contents:
+- Start ICON's Node
 
 ```bash
-vi $CONFIG_DIR/goloop/gochain/docker-compose.yml
-```
+cd $PROJECT_DIR/btp/docker-compose/goloop2moonbeam
 
-```bash
-version: '3.3'
-services:
-  gochain:
-    image: goloop/gochain-icon:0.9.7
-    volumes:
-      - ${PWD}/testsuite:/testsuite/
-    ports:
-      - "9080:9080"
-    environment: 
-        - GOCHAIN_CONFIG=/testsuite/config/icon.json
-        - GOCHAIN_DATA=/testsuite/data/iconee
-        - GOCHAIN_LOGFILE=/testsuite/data/iconee.log
-        - GOCHAIN_CLEAN_DATA=false
-        - JAVAEE_BIN=/goloop/execman/bin/execman
-        - PYEE_VERIFY_PACKAGE=true
-```
-
-- Start the server
-
-```bash
-cd $CONFIG_DIR/goloop/gochain
-
-docker-compose up -d
+docker-compose up goloop
 ```
 
 #### 2. Deploy Moonriver Node
@@ -283,17 +177,11 @@ docker-compose up -d
 
 A node on Moonriver can be easily deployed by running the below command:
 
-```shell
-#  `--sealing 6000`: set a block to be generated every 6 seconds
-docker run -d -p 9933:9933 -p 9944:9944 purestake/moonbeam:v0.9.2 --dev --ws-external --rpc-external --sealing 6000
+```bash
+cd $PROJECT_DIR/btp/docker-compose/goloop2moonbeam
+
+docker-compose up moonbeam
 ```
-
-**Note that:**
-If you see an error as `Unable to find image 'purestake/moonbeam:v0.9.2' locally`, please do not cancel/terminate a shell command. Please wait for a few seconds, a requiring Docker image will be automatically downloaded to your local machine
-
-<p align="center">
-  <img src="./images/moonriver-caution.png" width="600" height="400" />
-</p>
 
 For the next following parts, we will instruct you to deploy smart contracts on each network. Please click on 'Next' and bear with us
 

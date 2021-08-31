@@ -27,35 +27,15 @@ BMR2: listen blocks generating from Moonriver Network --> build `Relay Message` 
 
 ==> To avoid chicken-and-egg problem, `Operator` will choose an `offset` and set it into BMV contract when this contract is deployed. From that point, blocks can be verified and synced. Upon successful verification, BMV updates this `offset` to the latest block height. In addition, current block height on A might be higher than current block height was verified by BMV contract on B. Thus, BMR is required to retrieve the latest `offset` from BMV contract through calling `getBMCLinkStatus` on B
 
-### 1. Build executable files
-
-____
-
-```bash
-cd $CONFIG_DIR
-
-mkdir BMR && cd BMR
-
-#  Clone BTP Project
-git clone https://github.com/icon-project/btp.git
-
-cd btp && git checkout refactor-layout
-
-# Output binaries are placed under bin/ directory.
-# Add /bin directory to PATH environment variable
-# For example:
-# export BTPSIMPLE=${PWD}/bin
-# export PATH=$PATH:$BTPSIMPLE
-make btpsimple
-```
-
-### 2. Generate keystores
+### Generate keystores
 
 ____
 
 - Generate keystore of BMR from Moonriver --> ICON
 
 ```bash
+cd $PROJECT_DIR/btp
+
 # Replace YOUR_PASSWORD if needed
 YOUR_PASSWORD=1234
 
@@ -71,6 +51,7 @@ echo -n $YOUR_PASSWORD > $CONFIG_DIR/icon-bmr.secret
 - Generate keystore of BMR from ICON --> Moonriver
 
 ```bash
+# Please run `ethkey` to generate keystore first
 ethkey generate $CONFIG_DIR/moon-bmr.keystore.json
 # Enter your password
 # Repeat your password
