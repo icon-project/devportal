@@ -118,6 +118,7 @@
     * [CLI](icon-2.0/goloop/management/goloop_cli.md)
     * [Metrics](icon-2.0/goloop/management/metric.md)
 * [Java SCORE](icon-2.0/java-score/README.md)
+  * [Examples](https://github.com/icon-project/java-score-examples)
   * [Tutorial](icon-2.0/java-score/tutorial.md)
 
 ---

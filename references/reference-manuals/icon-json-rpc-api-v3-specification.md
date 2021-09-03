@@ -2,9 +2,9 @@
 
 ICON JSON-RPC APIs \(version 3\) are interfaces to interact with ICON nodes. This document explains ICON JSON-RPC API \(version 3\) data structures, rules and the list of methods.
 
-### ICON JSON-RPC API v3 Specification
+## ICON JSON-RPC API v3 Specification
 
-#### API Convention
+### API Convention
 
 Follows [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification).
 
@@ -50,7 +50,7 @@ Follows [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification).
 
 * "KEY" naming follows camel case.
 
-#### VALUE Types
+### VALUE Types
 
 Basically, every VALUE in JSON-RPC message is string. Below table shows the most common "VALUE types".
 
@@ -64,7 +64,7 @@ Basically, every VALUE in JSON-RPC message is string. Below table shows the most
 | T\_SIG | base64 encoded string | VAia7YZ2Ji6igKWzjR2YsGa2m53nKPrfK7uXYW78QLE+ATehAVZPC40szvAiA6NEU5gCYB4c4qaQzqDh2ugcHgA= |
 | T\_DATA\_TYPE | Type of data | call, deploy, message or deposit |
 
-#### JSON-RPC Error Codes
+### JSON-RPC Error Codes
 
 This chapter explains the error codes used in ICON JSON-RPC API response.
 
@@ -97,7 +97,7 @@ Below table shows the default error messages for the error code. Actual message 
 }
 ```
 
-#### JSON-RPC API v3 ChangeLog
+### JSON-RPC API v3 ChangeLog
 
 * Fixed to conform to JSON-RPC 2.0 specification
   * Success response: result
@@ -122,11 +122,11 @@ Below table shows the default error messages for the error code. Actual message 
   * v3: "dataType"
 * Removed tx\_hash from the icx\_sendTransaction message.
 
-#### JSON-RPC APIs
+### JSON-RPC APIs
 
 > For multichannel requests, add `/<channel_name>` at the end of the API path.
 
-**Main  API**
+**Main API**
 
 API path : `<scheme>://<host>/api/v3`
 
@@ -174,9 +174,9 @@ API path : `<scheme>://<host>/api/v3`
 * [ise\_getStatus](icon-json-rpc-api-v3-specification.md#ise_getstatus)
 * [rep\_getList](icon-json-rpc-api-v3-specification.md#rep_getlist)
 
-### JSON-RPC Methods
+## JSON-RPC Methods
 
-#### icx\_getLastBlock
+### icx\_getLastBlock
 
 * Returns the last block information.
 
@@ -237,7 +237,7 @@ None
 }
 ```
 
-#### icx\_getBlockByHeight
+### icx\_getBlockByHeight
 
 * Returns block information by block height.
 
@@ -313,7 +313,7 @@ None
 }
 ```
 
-#### icx\_getBlockByHash
+### icx\_getBlockByHash
 
 * Returns block information by block hash.
 
@@ -389,7 +389,7 @@ None
 }
 ```
 
-#### icx\_call
+### icx\_call
 
 * Calls SCORE's external function.
 * Does not make state transition \(i.e., read-only\).
@@ -458,7 +458,7 @@ None
 }
 ```
 
-#### icx\_getBalance
+### icx\_getBalance
 
 * Returns the ICX balance of the given EOA or SCORE.
 
@@ -503,7 +503,7 @@ None
 }
 ```
 
-#### icx\_getScoreApi
+### icx\_getScoreApi
 
 * Returns SCORE's external API list.
 
@@ -596,7 +596,7 @@ Fields containing information about the function
 }
 ```
 
-#### icx\_getTotalSupply
+### icx\_getTotalSupply
 
 * Returns total ICX coin supply that has been issued.
 
@@ -626,7 +626,7 @@ None
 }
 ```
 
-#### icx\_getTransactionResult
+### icx\_getTransactionResult
 
 * Returns the transaction result requested by transaction hash.
 
@@ -740,7 +740,7 @@ None
 }
 ```
 
-#### icx\_getTransactionByHash
+### icx\_getTransactionByHash
 
 * Returns the transaction information requested by transaction hash.
 
@@ -843,7 +843,7 @@ None
 }
 ```
 
-#### icx\_sendTransaction
+### icx\_sendTransaction
 
 You can do one of the followings using this method.
 
@@ -1068,12 +1068,9 @@ It is used when transferring a message, and `data` has a HEX string.
         "message": "Method not found"
     }
 }
-
 ```
 
-
-
-#### debug\_estimateStep
+### debug\_estimateStep
 
 * Generates and returns an estimated step of how much step is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimation can be larger than the actual amount of step to be used by the transaction for several reasons such as node performance.
 
@@ -1134,7 +1131,7 @@ It is used when transferring a message, and `data` has a HEX string.
 }
 ```
 
-#### debug\_getAccount
+### debug\_getAccount
 
 * Returns the Account information including stake, delegation of the given EOA or SCORE.
 
@@ -1208,7 +1205,7 @@ Information of Account
 }
 ```
 
-#### rep\_getList
+### rep\_getList
 
 * Get all list of Representatives and information about terms & RepRootHash
 
@@ -1256,7 +1253,7 @@ None
 }
 ```
 
-#### ise\_getStatus
+### ise\_getStatus
 
 * Returns the status of iconservice
 
@@ -1307,7 +1304,7 @@ None
 }
 ```
 
-### IISS API
+## IISS API
 
 * All IISS APIs follow SCORE API call convention
 * Target SCORE Address for IISS APIs: `cx0000000000000000000000000000000000000000`
@@ -1339,7 +1336,7 @@ None
 }
 ```
 
-#### setStake
+### setStake
 
 * Stake some amount of ICX
 
@@ -1379,7 +1376,7 @@ Request
 }
 ```
 
-#### getStake
+### getStake
 
 * Returns the stake status of a given address
 
@@ -1452,7 +1449,7 @@ Response on success when there is no unstake
 }
 ```
 
-#### setDelegation
+### setDelegation
 
 * Delegate some ICX amount of stake to P-Reps
 * Maximum number of P-Reps to delegate is 10
@@ -1525,7 +1522,7 @@ Request to revoke all delegations
 }
 ```
 
-#### getDelegation
+### getDelegation
 
 * Returns the delegation status of a given address
 
@@ -1591,7 +1588,7 @@ Response on success
 }
 ```
 
-#### claimIScore
+### claimIScore
 
 * Claim the total reward that a ICONist has received
 
@@ -1663,7 +1660,7 @@ The result of `claimIScore` transaction
 }
 ```
 
-#### queryIScore
+### queryIScore
 
 * Returns the amount of I-Score that a ICONist has received as a reward
 
@@ -1717,7 +1714,7 @@ Response on success
 }
 ```
 
-#### registerPRep
+### registerPRep
 
 * Register an address as a P-Rep to Blockchain
 * 2000 ICX are required as a registration fee
@@ -1779,7 +1776,7 @@ Request
 }
 ```
 
-#### unregisterPRep
+### unregisterPRep
 
 * Unregister a P-Rep
 
@@ -1817,7 +1814,7 @@ Request
 }
 ```
 
-#### setPRep
+### setPRep
 
 * Update P-Rep register information
 
@@ -1871,7 +1868,7 @@ Request
 }
 ```
 
-#### setGovernanceVariables
+### setGovernanceVariables
 
 * Update governance variables
 * Allowed only once in a term
@@ -1912,7 +1909,7 @@ Request
 }
 ```
 
-#### getPRep
+### getPRep
 
 * Returns P-Rep register information 
 
@@ -2007,7 +2004,7 @@ Response on failure
 }
 ```
 
-#### getPReps
+### getPReps
 
 * Returns the status of all registered P-Rep candidates in descending order by delegated ICX amount
 * Unregistered or disqualified P-Reps are not included
@@ -2110,7 +2107,7 @@ Response
 }
 ```
 
-### References
+## References
 
 * [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification)
 * [ICON JSON RPC API v2](https://github.com/icon-project/icx_JSON_RPC)
