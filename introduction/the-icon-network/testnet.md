@@ -64,6 +64,20 @@ Pagoda network is for testing P-Rep node
   * [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
   * [https://faucet.reliantnode.com/](https://faucet.reliantnode.com/)
 
+### BTP
+
+|  |  |
+| :--- | :--- |
+| Name | BTP |
+| Node | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io) |
+| API endpoint | [https://btp.net.solidwallet.io/api/v3](https://btp.net.solidwallet.io/api/v3) |
+| Network ID \(nid\) | 0x42 |
+| Tracker | [https://btp.tracker.solidwallet.io](https://btp.tracker.solidwallet.io) |
+| Transaction fee | on |
+| SCORE audit | off |
+
+* To receive test ICX on BTP testnet, please ask in [https://t.me/icondevs](ICONDev telegram channel).
+  
 ### Want to use the ICONex chrome wallet to send ICX on the testnet?
 
 To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](../../references/how-to/change-network-in-iconex.md)

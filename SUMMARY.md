@@ -111,12 +111,14 @@
     * [Storage](icon-2.0/goloop/genesis/genesis_storage.md)
   * [JSON-RPC](icon-2.0/goloop/json-rpc/README.md)
     * [Goloop JSON-RPC API v3](icon-2.0/goloop/json-rpc/jsonrpc_v3.md)
-    * [JSON-RPC v3](icon-2.0/goloop/json-rpc/btp_extension.md)
+    * [BTP Extension](icon-2.0/goloop/json-rpc/btp_extension.md)
+    * [IISS Extension](icon-2.0/goloop/json-rpc/iiss_extension.md)
   * [Node Management](icon-2.0/goloop/management/README.md)
     * [API](icon-2.0/goloop/management/goloop_admin_api.md)
     * [CLI](icon-2.0/goloop/management/goloop_cli.md)
     * [Metrics](icon-2.0/goloop/management/metric.md)
 * [Java SCORE](icon-2.0/java-score/README.md)
+  * [Examples](https://github.com/icon-project/java-score-examples)
   * [Tutorial](icon-2.0/java-score/tutorial.md)
 
 ---

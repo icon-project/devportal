@@ -6,19 +6,19 @@ description: >-
 
 # Chrome Extension
 
-### Simple Summary
+## Simple Summary
 
 A protocol defined for ICONex to message with external web page.
 
-### Abstract
+## Abstract
 
 This document describes a way for external web page to request and response for about icon account such as getting icx address, authority for transaction and signature.
 
-### Motivation
+## Motivation
 
 This protocol allows third-party developer to use ICON network through ICONex
 
-### Specification
+## Specification
 
 You need to implement two part of dispatching event to ICONex and listening event from ICONex using CustomEvent. The type and payload of events is assigned to detail field in CustomEvent.
 
@@ -29,7 +29,7 @@ _Data in detail field:_
 | type | string | Pre-defined type of events |
 | payload | any | Data required for the request or response. |
 
-#### Dispatch Event for Request
+### Dispatch Event for Request
 
 ```javascript
 const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
@@ -39,7 +39,7 @@ const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: {
 window.dispatchEvent(customEvent);
 ```
 
-#### Listen Event for Response
+### Listen Event for Response
 
 ```javascript
 const eventHandler = event => {
@@ -49,7 +49,7 @@ const eventHandler = event => {
 window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 ```
 
-#### Methods
+### Methods
 
 **HAS\_ACCOUNT**
 
@@ -98,7 +98,7 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 
 `REQUEST_ADDRESS` Requests for the address to use for service.
 
-`RESPONSE_HAS_ADDRESS` Returns the icx address selected by user.
+`RESPONSE_ADDRESS` Returns the icx address selected by user.
 
 ```javascript
 const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
