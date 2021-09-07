@@ -8,7 +8,7 @@ There are two types of accounts in ICON, accounts that are associated with users
 
 EOA has an associated private key, can sign and send a transaction, therefore can be the owner of transactions. However, a contract address does not have a private key, and cannot initiate a transaction. A contract address can only be the destination of transactions.
 
-There are some special, pre-defined accounts, such as:
+There are some special, predefined accounts, such as:
 
 * Governance contract
 * Public Treasury

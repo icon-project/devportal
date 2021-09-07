@@ -49,6 +49,8 @@ description: >-
 
 \[Table 2\] Transaction Fee Weight
 
+In ICON 2, the fee policy will be updated. Please refere to the following post for reference [https://forum.icon.community/t/icon-2-0-score-fee-policy-update-draft-proposal/2194/5](https://forum.icon.community/t/icon-2-0-score-fee-policy-update-draft-proposal/2194/5).
+
 | Weight | Description |
 | :--- | :--- |
 | βcontractCall | 25,000 |
@@ -92,6 +94,8 @@ There are certain applications that are awkward to charge end-users the fees for
 | 3 | 0% | 100% | 100% |
 
 ### Virtual Step
+
+#### \* In ICON 2, virtual step bonus has been removed. SCORE can still enable fee sharing but only the deposited ICX will be used. There is no extra virtual step generated anymore.
 
 * Virtual Step is the new fee system of the ICON network for the SCORE owner.  
 * Virtual Step is generated every month in proportion to the quantity of ICX deposited and the duration of the deposit period determined. The SCORE owner can pay fees with the generated Virtual Step. 
