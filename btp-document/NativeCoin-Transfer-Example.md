@@ -5,7 +5,67 @@ In this section, we would like to instruct you how to transfer:
 - A native coin of Moonriver network, e.g. `DEV`, to ICON network
 - A native coin of ICON network, `ICX`, to Moonriver network
 
-Let's light up a torch and get ready to transfer
+## Transfer 'DEV' to ICON Network
+
+____
+
+- Query balance of a receiving account before receiving 'DEV' from an account on Moonriver network
+
+```bash
+# In this example, we are going to use an abitrary account to demonstrate this transfer
+# Please specify your own account if needed
+cd $PROJECT_DIR/btp
+echo -n "hx8062076aa5e68f021121d1c3b4b3979d21a6dcae" > $CONFIG_DIR/carol.addr
+echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
+
+# Check the balance of Carol
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/carol.addr)
+```
+
+```bash
+# Change your current directory to '.../solidity/bsh'
+cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
+
+export CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
+export CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
+export AMOUNT=74706176
+
+# Start truffle console
+truffle console --network moonbeamlocal
+
+# Get BSHCore contract instance
+truffle(moonbeamlocal)> let bshCore = await BSHCore.deployed()
+
+# Get pre-funds accounts
+truffle(moonbeamlocal)> let accounts = await web3.eth.getAccounts()
+
+# Check current balance of accounts[2] and make sure it has sufficient amount of coins
+truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
+
+# Then, make a transfer request
+# You can replace 'hx8062076aa5e68f021121d1c3b4b3979d21a6dcae' by your address on ICON network
+# You can specify your own value to transfer
+truffle(moonbeamlocal)> await bshCore.transferNativeCoin(process.env.CAROL_BTP_ADDR, {from: accounts[2], value: process.env.AMOUNT})
+
+# After a few seconds, please check the account's balance again
+# If success, the balance will be deducted. Otherwise, an account will be refunded
+truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
+```
+
+- Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
+
+```bash
+cd $PROJECT_DIR/btp
+# call nativecoinBSH to query coinID of 'DEV'
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
+--to $(cat $CONFIG_DIR/nativecoinBsh.icon) --method coinId \
+--param _coinName=DEV | jq -r . > $CONFIG_DIR/tx.coinID
+
+# call irc31token to query balance of Carol
+goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to $(cat $CONFIG_DIR/irc31token.icon) \
+--method balanceOf --param _owner=$(cat $CONFIG_DIR/carol.addr) \
+--param _id=$(cat $CONFIG_DIR/tx.coinID)
+```
 
 ## Transfer 'ICX' to Moonriver Network
 
@@ -110,68 +170,6 @@ truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'I
 # Thus, if the balance is still '0', please try it later
 # exit truffle console, wait a bit, then re-run checking balance again
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
-```
-
-## Transfer 'DEV' to ICON Network
-
-____
-
-- Query balance of a receiving account before receiving 'DEV' from an account on Moonriver network
-
-```bash
-# In this example, we are going to use an abitrary account to demonstrate this transfer
-# Please specify your own account if needed
-cd $PROJECT_DIR/btp
-echo -n "hx8062076aa5e68f021121d1c3b4b3979d21a6dcae" > $CONFIG_DIR/carol.addr
-echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/carol.addr)" > $CONFIG_DIR/carol.btp.addr
-
-# Check the balance of Carol
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/carol.addr)
-```
-
-```bash
-# Change your current directory to '.../solidity/bsh'
-cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
-
-export CAROL_ADDR=$(cat $CONFIG_DIR/carol.addr)
-export CAROL_BTP_ADDR=$(cat $CONFIG_DIR/carol.btp.addr)
-export AMOUNT=74706176
-
-# Start truffle console
-truffle console --network moonbeamlocal
-
-# Get BSHCore contract instance
-truffle(moonbeamlocal)> let bshCore = await BSHCore.deployed()
-
-# Get pre-funds accounts
-truffle(moonbeamlocal)> let accounts = await web3.eth.getAccounts()
-
-# Check current balance of accounts[2] and make sure it has sufficient amount of coins
-truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
-
-# Then, make a transfer request
-# You can replace 'hx8062076aa5e68f021121d1c3b4b3979d21a6dcae' by your address on ICON network
-# You can specify your own value to transfer
-truffle(moonbeamlocal)> await bshCore.transferNativeCoin(process.env.CAROL_BTP_ADDR, {from: accounts[2], value: process.env.AMOUNT})
-
-# After a few seconds, please check the account's balance again
-# If success, the balance will be deducted. Otherwise, an account will be refunded
-truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
-```
-
-- Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
-
-```bash
-cd $PROJECT_DIR/btp
-# call nativecoinBSH to query coinID of 'DEV'
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
---to $(cat $CONFIG_DIR/nativecoinBsh.icon) --method coinId \
---param _coinName=DEV | jq -r . > $CONFIG_DIR/tx.coinID
-
-# call irc31token to query balance of Carol
-goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to $(cat $CONFIG_DIR/irc31token.icon) \
---method balanceOf --param _owner=$(cat $CONFIG_DIR/carol.addr) \
---param _id=$(cat $CONFIG_DIR/tx.coinID)
 ```
 
 &nbsp;

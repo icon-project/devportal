@@ -53,8 +53,8 @@ ____
 
 ____
 
-- [Transfer ICX](./NativeCoin-Transfer-Example.md#transfer-icx-to-moonriver-network)
 - [Transfer DEV](./NativeCoin-Transfer-Example.md#transfer-dev-to-icon-network)
+- [Transfer ICX](./NativeCoin-Transfer-Example.md#transfer-icx-to-moonriver-network)
 
 ## Appendix
 
