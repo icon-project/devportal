@@ -76,8 +76,8 @@ Pagoda network is for testing P-Rep node
 | Transaction fee | on |
 | SCORE audit | off |
 
-* To receive test ICX on BTP testnet, please ask in [https://t.me/icondevs](ICONDev telegram channel).
-  
+* To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel \([https://t.me/icondevs](https://t.me/icondevs)\)
+
 ### Want to use the ICONex chrome wallet to send ICX on the testnet?
 
 To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](../../references/how-to/change-network-in-iconex.md)
