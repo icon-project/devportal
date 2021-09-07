@@ -119,7 +119,7 @@ dependencies {
 
 Prepare `hello-world/src/main/java/com/iconloop/score/example/HelloWorld.java` file as below.
 
-```text
+```java
 /*
  * Copyright 2021 ICONLOOP Inc.
  *
