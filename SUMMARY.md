@@ -10,7 +10,6 @@
   * [Transactions](introduction/icon-key-concepts/transactions.md)
   * [Transactions Fees](introduction/icon-key-concepts/transactions-fees.md)
   * [ICON Nodes](introduction/icon-key-concepts/icon-nodes.md)
-  * [Parallel Processing](introduction/icon-key-concepts/parallel-processing.md)
   * [Governance - Public Representative \(P-Rep\)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
   * [Governance - IISS](introduction/icon-key-concepts/governance-iiss.md)
 * [The ICON Network](introduction/the-icon-network/README.md)
