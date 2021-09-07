@@ -21,7 +21,3 @@ The other 78 P-Reps are considered as Sub P-Rep and only receive the representat
 ### Citizen
 
 Citizen nodes synchronize the blockchain data from Peer nodes. Citizen is not just a simple data replication store but verifies every block data by executing the transactions in the block. Therefore, we can trust the sanity of the block data downloaded from the Peer nodes. In addition, because Citizen does not participate in block generation, when it receives the transaction requests, Citizen relays the transaction requests to the Peer nodes. With the above two main functions, Citizen is typically deployed as a service end-point of ICON Network. Citizen answers the queries from the users and relays transactions to the Peer nodes. It is designed that no transactions and queries are supposed to be sent to the Peer nodes directly. This architecture keeps the Peer nodes focusing on consensus, that is, producing and validating blocks. In addition, limited access to Peer nodes makes the ICON network safer from attacks. Since Citizen nodes verify the blocks and transactions, Exchanges or DApp operators are recommended to setup own Citizen nodes inside their network, rather than use publicly opened Citizen nodes outside their network.
-
-![OUTDATED TO-DO](https://github.com/icon-project/documentation/blob/develop/icon-key-concepts/types_of_nodes.png?raw=true)
-
-The user and application can access \(query or send transactions\) these nodes through ICONex wallet or ICON SDK. They can also access the nodes using JSON RPC directly as well.
