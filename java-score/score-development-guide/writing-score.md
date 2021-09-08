@@ -26,7 +26,7 @@ The `build.gradle` file contains the dependencies which contain the dependent pa
 
 	optimizedJar {
     mainClassName = 'com.iconloop.score.example.HelloWorld'
-}
+    }
 
 The `deployJar` extension is used to deploy the optimized jar to local or remote ICON networks that support the Java SCORE execution environment.
 
@@ -42,7 +42,7 @@ The `deployJar` extension is used to deploy the optimized jar to local or remote
     parameters {
         arg('name', 'Alice')
     }
-}
+    }
 
 ### Structure of Score
 
