@@ -50,7 +50,8 @@ Every SCORE has a main class which is specified in the `build.gradle`. The main 
 
 The following is the main class content for the [Hello world](https://github.com/icon-project/java-score-examples/blob/master/hello-world/src/main/java/com/iconloop/score/example/HelloWorld.java) score:
 
-	public class HelloWorld {
+```java
+public class HelloWorld {
     private final String name;
 
     public HelloWorld(String name) {
@@ -68,6 +69,8 @@ The following is the main class content for the [Hello world](https://github.com
         Context.println(msg);
         return msg;
     }
+
+```
 
 Below is the comparison of Java to  Python Score Structure
 
@@ -93,12 +96,14 @@ By Including the package from [Maven Central](https://search.maven.org/search?q=
 
 You need to create an entry Java class to inherit the attributes and methods from the basic token classes. The example below would be the simplest IRC2 token SCORE with a fixed supply.
 
-	public class IRC2FixedSupply extends IRC2Basic {
+```java
+public class IRC2FixedSupply extends IRC2Basic {
     public IRC2FixedSupply(String _name, String _symbol) {
         super(_name, _symbol, 3);
         _mint(Context.getCaller(), BigInteger.valueOf(1000000));
     	}
 	}
+```
 
 ### Built-In Properties
 
@@ -194,10 +199,13 @@ This annotation can be used to indicate whether the method parameter is optional
 
 `fallback` is a special method that is invoked whenever the contract receives plain ICX coins without data.
 
-    @Payable
-    public void fallback() {
-        // just receive incoming funds
+```java
+@Payable
+public void fallback() {
+    // just receive incoming funds
     }
+```
+
 However, if the `fallback` method is not annotated with `@Payable`, it would not be listed on the SCORE APIs and could not be called as well.
 The `fallback` method cannot be annotated with `@External`  (i.e., fallback method cannot be specified in the transaction message as a callee method)
 
@@ -228,18 +236,21 @@ Value type can be `VarDb`, `DictDB`, `ArrayDB` or `BranchDB`.
 ### Invoking Other Score Methods
 
 One SCORE can invoke an external method of another SCORE using the following APIs.
-
-	// [package score.Context]
+```java
+// [package score.Context]
 public static Object call(Address targetAddress, String method, Object... params);
 
-public static Object call(BigInteger value,
-Address targetAddress, String method, Object... params);
+public static Object call(BigInteger value,Address targetAddress, String method, Object... params);
+
+```
 
 The following example is for calling `tokenFallback`.
 
-	if (_to.isContract()) {
+```java
+if (_to.isContract()) {
     Context.call(_to, "tokenFallback", _from, _value, dataBytes);
-	}
+    }
+```
 
 ### Exception Handling
 
@@ -247,7 +258,7 @@ The following example is for calling `tokenFallback`.
 
 Signals a failure of an inter-contract call. The construction constructs a new exception on calling.
 
-**UserRevertedExcption**
+**UserRevertedException**
 
 Signals a manual reversion from a score. The construction constructs a new exception on calling.
 
