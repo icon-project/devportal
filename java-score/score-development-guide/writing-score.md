@@ -15,7 +15,7 @@ After reading this document, you will understand the structure of SCORE and lear
 ### Prerequisite
 
 We assume you have already set up a local environment to deploy java score using gloop CLI library. While setting up the environment you would have to build the docker image and javaee-api.jar for local.
--	[Deploy Java Score](https://www.icondev.io/icon-2.0/java-score/tutorial)
+-	[Deploy Java Score](../../icon-2.0/java-score/tutorial.md)
 
 ### Creating a Workspace
 

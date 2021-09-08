@@ -49,6 +49,11 @@
 * [Emulated Node Environment](tbears/emulated-node-environment.md)
 * [Configuration](tbears/configuration.md)
 
+## Java Score
+
+* [Score Development Guide](java-score/score-development-guide/README.md)
+  * [Writing Score](java-score/score-development-guide/writing-score.md)
+
 ## ICON SDKs
 
 * [Overview](icon-sdks/overview.md)
