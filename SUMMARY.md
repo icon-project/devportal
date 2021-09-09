@@ -2,31 +2,6 @@
 
 * [Get Started](README.md)
 
-## BTP <a id="btp-gitbook"></a>
-
-* [Overview](btp-gitbook/overview/README.md)
-  * [Blokchain Transmission Protocol \(BTP\)](btp-gitbook/overview/blokchain-transmission-protocol-btp.md)
-  * [BTP Example](btp-gitbook/overview/btp-example.md)
-* [BTP Development Resources](btp-gitbook/btp-development-resources/README.md)
-  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces.md)
-  * [Prerequisites](btp-gitbook/btp-development-resources/prerequisites.md)
-  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces-1.md)
-  * [BTP Message Center \(BMC\) Interfaces](btp-gitbook/btp-development-resources/btp-message-center-bmc-interfaces.md)
-  * [BTP Message Verifier \(BMV\) Interfaces](btp-gitbook/btp-development-resources/btp-message-verifier-bmv-interfaces.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions/README.md)
-  * [Setup and Installation Requirements](btp-gitbook/btp-development-instructions/setup-and-installation-requirements.md)
-  * [Deployment Instructions](btp-gitbook/btp-development-instructions/deployment-instructions/README.md)
-    * [Deploy Nodes](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/README.md)
-      * [1. Deploy ICON Node](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/1.-deploy-icon-node.md)
-      * [2. Deploy Moonriver Node](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/2.-deploy-moonriver-node.md)
-    * [Deploy Smart Contracts \(ICON\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-icon.md)
-    * [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-moonriver.md)
-    * [Relays Setup](btp-gitbook/btp-development-instructions/deployment-instructions/relays-setup.md)
-    * [Smart Contracts Configuration](btp-gitbook/btp-development-instructions/deployment-instructions/smart-contracts-configuration.md)
-    * [Deploy Relays](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-relays.md)
-  * [Transfer Example](btp-gitbook/btp-development-instructions/transfer-example.md)
-  * [Appendix](btp-gitbook/btp-development-instructions/appendix.md)
-
 ## Introduction
 
 * [What Is ICON Network?](introduction/what-is-icon-network.md)
@@ -149,4 +124,29 @@
 
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
+
+## BTP <a id="btp-gitbook"></a>
+
+* [Overview](btp-gitbook/overview/README.md)
+  * [Blokchain Transmission Protocol \(BTP\)](btp-gitbook/overview/blokchain-transmission-protocol-btp.md)
+  * [BTP Example](btp-gitbook/overview/btp-example.md)
+* [BTP Development Resources](btp-gitbook/btp-development-resources/README.md)
+  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces.md)
+  * [Prerequisites](btp-gitbook/btp-development-resources/prerequisites.md)
+  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces-1.md)
+  * [BTP Message Center \(BMC\) Interfaces](btp-gitbook/btp-development-resources/btp-message-center-bmc-interfaces.md)
+  * [BTP Message Verifier \(BMV\) Interfaces](btp-gitbook/btp-development-resources/btp-message-verifier-bmv-interfaces.md)
+* [BTP Development Instructions](btp-gitbook/btp-development-instructions/README.md)
+  * [Setup and Installation Requirements](btp-gitbook/btp-development-instructions/setup-and-installation-requirements.md)
+  * [Deployment Instructions](btp-gitbook/btp-development-instructions/deployment-instructions/README.md)
+    * [Deploy Nodes](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/README.md)
+      * [1. Deploy ICON Node](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/1.-deploy-icon-node.md)
+      * [2. Deploy Moonriver Node](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes/2.-deploy-moonriver-node.md)
+    * [Deploy Smart Contracts \(ICON\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-icon.md)
+    * [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-moonriver.md)
+    * [Relays Setup](btp-gitbook/btp-development-instructions/deployment-instructions/relays-setup.md)
+    * [Smart Contracts Configuration](btp-gitbook/btp-development-instructions/deployment-instructions/smart-contracts-configuration.md)
+    * [Deploy Relays](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-relays.md)
+  * [Transfer Example](btp-gitbook/btp-development-instructions/transfer-example.md)
+  * [Appendix](btp-gitbook/btp-development-instructions/appendix.md)
 
