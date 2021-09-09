@@ -1,2 +1,0 @@
-# Deploy Smart Contracts \(ICON\)
-

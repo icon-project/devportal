@@ -128,17 +128,7 @@
 ## BTP <a id="btp-gitbook"></a>
 
 * [Overview](btp-gitbook/overview.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions/README.md)
-  * [Setup and Installation Requirements](btp-gitbook/btp-development-instructions/setup-and-installation-requirements.md)
-  * [Deployment Instructions](btp-gitbook/btp-development-instructions/deployment-instructions/README.md)
-    * [Deploy Nodes](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-nodes.md)
-    * [Deploy Smart Contracts \(ICON\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-icon.md)
-    * [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-smart-contracts-moonriver.md)
-    * [Relays Setup](btp-gitbook/btp-development-instructions/deployment-instructions/relays-setup.md)
-    * [Smart Contracts Configuration](btp-gitbook/btp-development-instructions/deployment-instructions/smart-contracts-configuration.md)
-    * [Deploy Relays](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-relays.md)
-  * [Transfer Example](btp-gitbook/btp-development-instructions/transfer-example.md)
-  * [Appendix](btp-gitbook/btp-development-instructions/appendix.md)
+* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
 * [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
 * [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
