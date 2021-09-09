@@ -1,2 +1,0 @@
-# Blokchain Transmission Protocol \(BTP\)
-

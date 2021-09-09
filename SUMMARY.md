@@ -127,9 +127,7 @@
 
 ## BTP <a id="btp-gitbook"></a>
 
-* [Overview](btp-gitbook/overview/README.md)
-  * [Blokchain Transmission Protocol \(BTP\)](btp-gitbook/overview/blokchain-transmission-protocol-btp.md)
-  * [BTP Example](btp-gitbook/overview/btp-example.md)
+* [Overview](btp-gitbook/overview.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources/README.md)
   * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces.md)
   * [Prerequisites](btp-gitbook/btp-development-resources/prerequisites.md)
