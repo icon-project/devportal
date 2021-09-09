@@ -128,11 +128,6 @@
 ## BTP <a id="btp-gitbook"></a>
 
 * [Overview](btp-gitbook/overview.md)
-* [BTP Development Resources](btp-gitbook/btp-development-resources/README.md)
-  * [Prerequisites](btp-gitbook/btp-development-resources/prerequisites.md)
-  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/prerequisites.md#btp-service-handler-bsh)
-  * [BTP Message Center \(BMC\) Interfaces](btp-gitbook/btp-development-resources/btp-message-center-bmc-interfaces.md)
-  * [BTP Message Verifier \(BMV\) Interfaces](btp-gitbook/btp-development-resources/btp-message-verifier-bmv-interfaces.md)
 * [BTP Development Instructions](btp-gitbook/btp-development-instructions/README.md)
   * [Setup and Installation Requirements](btp-gitbook/btp-development-instructions/setup-and-installation-requirements.md)
   * [Deployment Instructions](btp-gitbook/btp-development-instructions/deployment-instructions/README.md)
@@ -144,4 +139,12 @@
     * [Deploy Relays](btp-gitbook/btp-development-instructions/deployment-instructions/deploy-relays.md)
   * [Transfer Example](btp-gitbook/btp-development-instructions/transfer-example.md)
   * [Appendix](btp-gitbook/btp-development-instructions/appendix.md)
+* [BTP Development Resources](btp-gitbook/btp-development-resources.md)
+* [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
+* [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
+* [Relays Setup](btp-gitbook/relays-setup.md)
+* [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
+* [Deploy Relays](btp-gitbook/deploy-relays.md)
+* [Transfer Example](btp-gitbook/transfer-example.md)
+* [Appendix](btp-gitbook/appendix.md)
 
