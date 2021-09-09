@@ -130,7 +130,7 @@
 * [Overview](btp-gitbook/overview.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources/README.md)
   * [Prerequisites](btp-gitbook/btp-development-resources/prerequisites.md)
-  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/#btp-service-handler-(bsh))
+  * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/#btp-service-handler-bsh)
   * [BTP Service Handler \(BSH\) Interfaces](btp-gitbook/btp-development-resources/btp-service-handler-bsh-interfaces-1.md)
   * [BTP Message Center \(BMC\) Interfaces](btp-gitbook/btp-development-resources/btp-message-center-bmc-interfaces.md)
   * [BTP Message Verifier \(BMV\) Interfaces](btp-gitbook/btp-development-resources/btp-message-verifier-bmv-interfaces.md)
