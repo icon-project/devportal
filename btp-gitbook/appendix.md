@@ -1,10 +1,8 @@
 # Appendix
 
-In this section, we would like to provides commands to request/to query information from smart contracts (BSH, BMV, BMC) on both networks and also some necessary error response codes that might occurs regarding of a failure deployment/request
+In this section, we would like to provides commands to request/to query information from smart contracts \(BSH, BMV, BMC\) on both networks and also some necessary error response codes that might occurs regarding of a failure deployment/request
 
-### ICON-BSH
-
-____
+## ICON-BSH
 
 ```bash
 # Query all supporting coins
@@ -42,9 +40,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call \
 --param _addr=Array of Accounts --param _ids=Array of Coin IDs
 ```
 
-### ICON-BMC
-
-____
+## ICON-BMC
 
 ```bash
 # Get BTP Address of BMC contract
@@ -93,9 +89,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMC Address" --met
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMC Address" --method getRelayerManagerProperties
 ```
 
-### ICON-BMV
-
-____
+## ICON-BMV
 
 ```bash
 # Get connected BMC
@@ -117,9 +111,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --met
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to "BMV Address" --method relayEventDecoder
 ```
 
-### MOON-BSH
-
-____
+## MOON-BSH
 
 ```bash
 # Attention: These commands should be executed within truffle console and in the directory (../solidity/bsh)
@@ -195,9 +187,7 @@ truffle(moonbeamlocal)> let bshPeriphery = await BSHPeriphery.deployed()
 truffle(moonbeamlocal)> await bshPeriphery.hasPendingRequest()
 ```
 
-### MOON-BMC
-
-____
+## MOON-BMC
 
 ```bash
 # Attention: These commands should be executed within truffle console and in the directory (../solidity/bmc)
@@ -278,12 +268,9 @@ truffle(moonbeamlocal)> await bmcManagement.removeRelay("BTP address of connecte
 
 # Get Relays - Caller: Any
 truffle(moonbeamlocal)> await bmcManagement.getRelays("BTP address of connected BMC")
-
 ```
 
-### MOON-BMV
-
-____
+## MOON-BMV
 
 ```bash
 # Attention: These commands should be executed within truffle console and in the directory (../solidity/bmv)
@@ -299,36 +286,35 @@ truffle(moonbeamlocal)> await bmv.getConnectedBMC()
 truffle(moonbeamlocal)> await bmv.getNetAddress()
 ```
 
-### ICON-Error Response Codes
-
-____
+## ICON-Error Response Codes
 
 BTP Exception Response Code has a range as:
 
-- BTPException.BTP => 0 ~ 9
-- BTPException.BMC => 10 ~ 24
-- BTPException.BMV => 25 ~ 39
-- BTPException.BSH => 40 ~ 54
-- BTPException.RESERVED => 55 ~ 68
+* BTPException.BTP =&gt; 0 ~ 9
+* BTPException.BMC =&gt; 10 ~ 24
+* BTPException.BMV =&gt; 25 ~ 39
+* BTPException.BSH =&gt; 40 ~ 54
+* BTPException.RESERVED =&gt; 55 ~ 68
 
 BMC - BTP Exception of common errors:
 
-- Unknown(10)
-- Unauthorized(11)
-- InvalidSn(12)
-- AlreadyExistsBMV(13)
-- NotExistsBMV(14)
-- AlreadyExistsBSH(15)
-- NotExistsBSH(16)
-- AlreadyExistsLink(17)
-- NotExistsLink(18)
-- AlreadyExistsBMR(19)
-- NotExistsBMR(20)
-- Unreachable(21)
+* Unknown\(10\)
+* Unauthorized\(11\)
+* InvalidSn\(12\)
+* AlreadyExistsBMV\(13\)
+* NotExistsBMV\(14\)
+* AlreadyExistsBSH\(15\)
+* NotExistsBSH\(16\)
+* AlreadyExistsLink\(17\)
+* NotExistsLink\(18\)
+* AlreadyExistsBMR\(19\)
+* NotExistsBMR\(20\)
+* Unreachable\(21\)
 
 BSH - BTP Exception of common errors:
 
-- Unknown(40)
-- Unauthorized(41)
-- IRC31Failure(42)
-- IRC31Reverted(43)
+* Unknown\(40\)
+* Unauthorized\(41\)
+* IRC31Failure\(42\)
+* IRC31Reverted\(43\)
+

@@ -1,15 +1,13 @@
-# Transfer Native Coins betwen Moonriver and ICON Networks
+# Transfer Example
 
 In this section, we would like to instruct you how to transfer:
 
-- A native coin of Moonriver network, e.g. `DEV`, to ICON network
-- A native coin of ICON network, `ICX`, to Moonriver network
+* A native coin of Moonriver network, e.g. `DEV`, to ICON network
+* A native coin of ICON network, `ICX`, to Moonriver network
 
 ## Transfer 'DEV' to ICON Network
 
-____
-
-- Query balance of a receiving account before receiving 'DEV' from an account on Moonriver network
+* Query balance of a receiving account before receiving 'DEV' from an account on Moonriver network
 
 ```bash
 # In this example, we are going to use an abitrary account to demonstrate this transfer
@@ -52,7 +50,7 @@ truffle(moonbeamlocal)> await bshCore.transferNativeCoin(process.env.CAROL_BTP_A
 truffle(moonbeamlocal)> web3.eth.getBalance(accounts[2])
 ```
 
-- Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
+* Query balance of a receiving account after receiving 'DEV' from an account on Moonriver network
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -69,9 +67,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon call --to $(cat $CONFIG_DIR/i
 
 ## Transfer 'ICX' to Moonriver Network
 
-____
-
-- Generate Alice's keystore and address on ICON network
+* Generate Alice's keystore and address on ICON network
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -88,7 +84,7 @@ echo -n $YOUR_PASSWORD > $CONFIG_DIR/alice.secret
 echo $(jq -r '.address' "$CONFIG_DIR/alice.keystore.json") > $CONFIG_DIR/alice.addr
 ```
 
-- Add "fuels" to Alice's account
+* Add "fuels" to Alice's account
 
 ```bash
 AMOUNT=1000000000000000000000000
@@ -105,7 +101,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/alice.addr)
 ```
 
-- In this example, we would like to use pre-funds accounts, which was provided in the `truffle.config.js`, as receiver on Moonriver network. You can specify your account for an experiment
+* In this example, we would like to use pre-funds accounts, which was provided in the `truffle.config.js`, as receiver on Moonriver network. You can specify your account for an experiment
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
@@ -135,7 +131,7 @@ BOB_ADDR=0x3Cd0A705a2DC65e5b1E1205896BaA2be8A07c6e0
 echo "btp://$(cat $CONFIG_DIR/net.btp.dst)/$BOB_ADDR" > $CONFIG_DIR/bob.btp.addr
 ```
 
-- Transfer 'ICX' from Alice to Bob
+* Transfer 'ICX' from Alice to Bob
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -153,7 +149,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.AliceToBob.transfer)
 ```
 
-- Check balance of Bob's account after receiving 'ICX' from Alice
+* Check balance of Bob's account after receiving 'ICX' from Alice
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
@@ -171,3 +167,4 @@ truffle(moonbeamlocal)> let balance = await bshCore.getBalanceOf(accounts[1], 'I
 # exit truffle console, wait a bit, then re-run checking balance again
 truffle(moonbeamlocal)> web3.utils.BN(balance._usableBalance).toNumber()
 ```
+

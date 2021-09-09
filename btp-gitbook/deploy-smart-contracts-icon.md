@@ -1,18 +1,12 @@
-## Smart Contracts on ICON Deployment
+# Deploy Smart Contracts \(ICON\)
 
-____
+![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deploy-Contracts-ICON.png)
 
-<p align="center">
-  <img src="./images/Deploy-Contracts-ICON.png" width="800" height="300" />
-</p>
+Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BTP-Development-Instructions.md#1-deploy-icon-node) and accomplish it
 
-Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](BTP-Development-Instructions.md#1-deploy-icon-node) and accomplish it
+## 1. Deploy BMC SCORE Contract
 
-### 1. Deploy BMC SCORE Contract
-
-____
-
-- Run these commands to deploy ***BMC*** contract on ICON Network
+* Run these commands to deploy _**BMC**_ contract on ICON Network
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -37,7 +31,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     | jq -r . > $CONFIG_DIR/tx.bmc.icon
 ```
 
-- Extract address of ***BMC*** contract after deployment as:
+* Extract address of _**BMC**_ contract after deployment as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bmc.icon) \
@@ -57,19 +51,17 @@ echo -n $BLOCK_HASH > $CONFIG_DIR/block.hash.icon
 echo -n $BLOCK_HEIGHT > $CONFIG_DIR/block.height.icon
 ```
 
-- Generate BTP address format of BMC contract as:
+* Generate BTP address format of BMC contract as:
 
 ```bash
 echo "btp://$(cat $CONFIG_DIR/net.btp.icon)/$(cat $CONFIG_DIR/bmc.icon)" > $CONFIG_DIR/btp.icon
 ```
 
-### 2. Deploy BMV SCORE Contract
+## 2. Deploy BMV SCORE Contract
 
-____
+### Deploy _**Kusama**_ and _**Moonriver**_ Event Decoder
 
-#### Deploy ***Kusama*** and ***Moonriver*** Event Decoder
-
-- Run these commands to deploy ***Kusama*** and ***Moonriver*** Event Decoder on ICON Network
+* Run these commands to deploy _**Kusama**_ and _**Moonriver**_ Event Decoder on ICON Network
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
@@ -88,7 +80,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     | jq -r . > $CONFIG_DIR/tx.moonriverDecoder.icon
 ```
 
-- Extract addresses of ***Kusama*** and ***Moonriver*** Event Decoder contract as:
+* Extract addresses of _**Kusama**_ and _**Moonriver**_ Event Decoder contract as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.kusamaDecoder.icon) \
@@ -104,41 +96,37 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 # Otherwise, status '0x1'
 ```
 
-#### Deploy ***BMV*** contract on ICON Network
+### Deploy _**BMV**_ contract on ICON Network
 
-- Preparing setting parameters:
-
-  - `relayMtaOffset`: offset of Merkle Tree Accumulator (MTA) - a block height that BMV starts to sync block on Relaychain
-  - `paraMtaOffset`: offset of Merkle Tree Accumulator (MTA) - a block height that BMV starts to sync block on Parachain
-  - `bmc`: address of BMC SCORE contract
-  - `net`: a network that BMV will handle, e.g. Moonriver
-  - `mtaRootSize`: size of MTA roots use for both Parachain and Relaychain
-  - `mtaCacheSize`: size of MTA cache use for both Parachain and Relaychain
-  - `mtaIsAllowNewerWitness`: allow to verify newer witness. This setting allows BMV to verify in case of MTA block height of a client is higher than MTA block height of BMV contract
-  - `relayLastBlockHash`: hash of previous block - `relayMtaOffset`. BMV must check that a previous hash of an incoming block is equal to the `relayLastBlockHash`
-  - `paraLastBlockHash`: hash of previous block - `paraMtaOffset`. BMV must check that a previous hash of an incoming block is equal to the `paraLastBlockHash`
-  - `encodedValidators`: `Base64(RLP.encode(List<byte[]> validatorPublicKey))`, encoded of validators list of relay chain
-  - `relayEventDecoderAddress`: address of Event Decoder for Relaychain - e.g. ***Kusama*** Event Decoder
-  - `paraEventDecoderAddress`: address of Event Decoder for Parachain - e.g. ***Moonriver*** Event Decoder
-  - `relayCurrentSetId`: set a current counter of updating `encodedValidators`. When a list of Validators is updated, the setID is increased by one
-  - `paraChainId`: an ID of Parachain
-  - `evmEventIndex`: index of evm log event in para chain
-  - `newAuthoritiesEventIndex`: index of new authorities event in relay chain
-  - `candidateIncludedEventIndex`: index of candidate included in relay chain
+* Preparing setting parameters:
+  * `relayMtaOffset`: offset of Merkle Tree Accumulator \(MTA\) - a block height that BMV starts to sync block on Relaychain
+  * `paraMtaOffset`: offset of Merkle Tree Accumulator \(MTA\) - a block height that BMV starts to sync block on Parachain
+  * `bmc`: address of BMC SCORE contract
+  * `net`: a network that BMV will handle, e.g. Moonriver
+  * `mtaRootSize`: size of MTA roots use for both Parachain and Relaychain
+  * `mtaCacheSize`: size of MTA cache use for both Parachain and Relaychain
+  * `mtaIsAllowNewerWitness`: allow to verify newer witness. This setting allows BMV to verify in case of MTA block height of a client is higher than MTA block height of BMV contract
+  * `relayLastBlockHash`: hash of previous block - `relayMtaOffset`. BMV must check that a previous hash of an incoming block is equal to the `relayLastBlockHash`
+  * `paraLastBlockHash`: hash of previous block - `paraMtaOffset`. BMV must check that a previous hash of an incoming block is equal to the `paraLastBlockHash`
+  * `encodedValidators`: `Base64(RLP.encode(List<byte[]> validatorPublicKey))`, encoded of validators list of relay chain
+  * `relayEventDecoderAddress`: address of Event Decoder for Relaychain - e.g. _**Kusama**_ Event Decoder
+  * `paraEventDecoderAddress`: address of Event Decoder for Parachain - e.g. _**Moonriver**_ Event Decoder
+  * `relayCurrentSetId`: set a current counter of updating `encodedValidators`. When a list of Validators is updated, the setID is increased by one
+  * `paraChainId`: an ID of Parachain
+  * `evmEventIndex`: index of evm log event in para chain
+  * `newAuthoritiesEventIndex`: index of new authorities event in relay chain
+  * `candidateIncludedEventIndex`: index of candidate included in relay chain
 
 For a sake of simplicity, we have setup an utility that helps to initialize these parameters. Please follow the instructions below:
 
-- Install Yarn packages:
-
-<!-- cd $PROJECT_DIR/btp/javascore
-tar -xzvf bmv_without_relaychain.tar.gz -->
+* Install Yarn packages:
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/javascore/helper
 yarn
 ```
 
-- Specify your configurations:
+* Specify your configurations:
 
 ```bash
 # Replace your RELAY_ENDPOINT if needed
@@ -154,16 +142,16 @@ export RELAY_CHAIN_OFFSET=8000000
 export PARA_CHAIN_OFFSET=27
 ```
 
-- Then, run the below command:
+* Then, run the below command:
 
-```shell
+```text
 yarn getBMVInitializeParams
 ```
 
-- In success, a file, `BMVInitializeData.json`, will be generated in the `$PROJECT_DIR/btp/build/contracts/javascore/helper` directory. This JSON file contains initialized parameters that are essential to deploy ***BMV*** contract.
-  - `MTA root size`: can be set a value `0x8`
-  - `MTA caches size`: can be set a value `0x8`
-  - `Allow MTA newer witness`: `0x0` (Not Allow) or `0x1` (Allow)
+* In success, a file, `BMVInitializeData.json`, will be generated in the `$PROJECT_DIR/btp/build/contracts/javascore/helper` directory. This JSON file contains initialized parameters that are essential to deploy _**BMV**_ contract.
+  * `MTA root size`: can be set a value `0x8`
+  * `MTA caches size`: can be set a value `0x8`
+  * `Allow MTA newer witness`: `0x0` \(Not Allow\) or `0x1` \(Allow\)
 
 ```bash
 HELPER_DIR=$PROJECT_DIR/btp/build/contracts/javascore/helper
@@ -224,7 +212,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     | jq -r . > $CONFIG_DIR/tx.bmv.icon
 ```
 
-- Extract address of ***BMV*** contract after deployment as:
+* Extract address of _**BMV**_ contract after deployment as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bmv.icon) \
@@ -235,11 +223,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 # Otherwise, status '0x1'
 ```
 
-### 3. Deploy IRC31Token Contract
+## 3. Deploy IRC31Token Contract
 
-____
-
-- Run these commands to deploy ***IRC31Token*** on ICON Network.
+* Run these commands to deploy _**IRC31Token**_ on ICON Network.
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
@@ -251,7 +237,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     | jq -r . > $CONFIG_DIR/tx.irc31token.icon
 ```
 
-- Extract address of ***IRC31Token*** contract after deployment as:
+* Extract address of _**IRC31Token**_ contract after deployment as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.irc31token.icon) \
@@ -262,11 +248,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 # Otherwise, status '0x1'
 ```
 
-### 4. Deploy NativeCoinBSH Contract
+## 4. Deploy NativeCoinBSH Contract
 
-____
-
-- Run these commands to deploy ***NativeCoinBSH*** on ICON Network
+* Run these commands to deploy _**NativeCoinBSH**_ on ICON Network
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
@@ -280,7 +264,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     --param _name=ICX | jq -r . > $CONFIG_DIR/tx.nativeCoinBsh.icon
 ```
 
-- Extract address of ***NativeCoinBSH*** contract after deployment as:
+* Extract address of _**NativeCoinBSH**_ contract after deployment as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.nativeCoinBsh.icon) \
@@ -291,11 +275,9 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx
 # Otherwise, status '0x1'
 ```
 
-### 5. Deploy FeeAggregation Contract
+## 5. Deploy FeeAggregation Contract
 
-____
-
-- Run below command to deploy ***FeeAggregation*** contract on ICON Network as follow:
+* Run below command to deploy _**FeeAggregation**_ contract on ICON Network as follow:
 
 ```bash
 # Replace another Receiver Address if needed
@@ -311,7 +293,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx deploy \
     | jq -r . > $CONFIG_DIR/tx.feeAggregation.icon
 ```
 
-- Extract address of ***FeeAggregation*** contract after deployment as:
+* Extract address of _**FeeAggregation**_ contract after deployment as:
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon \
@@ -322,3 +304,4 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon \
 # If fail, it shows error message and status '0x0'
 # Otherwise, status '0x1'
 ```
+

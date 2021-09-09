@@ -1,18 +1,12 @@
-## Smart Contracts on Moonriver Deployment
+# Deploy Smart Contracts \(Moonriver\)
 
-____
+![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deploy-Contracts-Moon.png)
 
-<p align="center">
-  <img src="./images/Deploy-Contracts-Moon.png" width="800" height="300" />
-</p>
+Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BTP-Development-Instructions.md#2-deploy-moonriver-node) and accomplish it
 
-Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](BTP-Development-Instructions.md#2-deploy-moonriver-node) and accomplish it
+## 1. Deploy BMC Contracts on Moonriver Network
 
-### 1. Deploy BMC Contracts on Moonriver Network
-
-____
-
-- Run following commands:
+* Run following commands:
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bmc
@@ -38,7 +32,7 @@ truffle exec $SCRIPT_DIR/mb_extract_bmc.js --network moonbeamlocal
 echo "btp://$BMC_PRA_NET/$(cat $CONFIG_DIR/bmc.moonbeam)" > $CONFIG_DIR/bmc_perif.btp.addr
 ```
 
-- After running above commands, you have succeed to deploy required BMC contracts onto the Moonriver Network. In success, you will have a result similar as follows:
+* After running above commands, you have succeed to deploy required BMC contracts onto the Moonriver Network. In success, you will have a result similar as follows:
 
 ```bash
 $ yarn
@@ -146,11 +140,9 @@ Summary
 > Final cost:          0.01137812 ETH
 ```
 
-### 2. Deploy BSH Contracts on Moonriver Network
+## 2. Deploy BSH Contracts on Moonriver Network
 
-____
-
-- Run following commands and make sure use a correct contract address of `BMCPeriphery`:
+* Run following commands and make sure use a correct contract address of `BMCPeriphery`:
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
@@ -180,10 +172,10 @@ BSH_COIN_URL=https://moonbeam.network/ \
 # Run script to extract BSHPeriphery and BSHCore addresses
 # BSHPeriphery address -> $CONFIG_DIR/bsh.moonbeam
 # BSHCore address -> $CONFIG_DIR/bsh_core.moonbeam
-truffle exec $SCRIPT_DIR/mb_extract_bsh.js --network moonbeamlocal  
+truffle exec $SCRIPT_DIR/mb_extract_bsh.js --network moonbeamlocal
 ```
 
-- In success, you will have a result similar as:
+* In success, you will have a result similar as:
 
 ```bash
 Compiling your contracts...
@@ -287,11 +279,9 @@ Summary
 > Final cost:          0.19494956 ETH
 ```
 
-### 3. Deploy BMV Contracts on Moonriver Network
+## 3. Deploy BMV Contracts on Moonriver Network
 
-____
-
-- Run following commands and make sure use a correct contract address of `BMCPeriphery`
+* Run following commands and make sure use a correct contract address of `BMCPeriphery`
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bmv
@@ -328,7 +318,7 @@ BMV_ICON_LASTBLOCK_HASH=$(cat $CONFIG_DIR/block.hash.icon) \
 truffle exec $SCRIPT_DIR/mb_extract_bmv.js --network moonbeamlocal
 ```
 
-- In success, you will have a result similar as:
+* In success, you will have a result similar as:
 
 ```bash
 Starting migrations...
@@ -426,4 +416,5 @@ Summary
 > Final cost:          0.17232432 ETH
 ```
 
-<span style="color:red">**Attention:**</span> Please do not skip these steps. This information will later be used to register ***Veriffier***
+**Attention:** Please do not skip these steps. This information will later be used to register _**Veriffier**_
+

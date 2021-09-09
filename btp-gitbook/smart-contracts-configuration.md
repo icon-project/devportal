@@ -1,16 +1,12 @@
-## Smart Contracts Configuration
-
-____
+# Smart Contracts Configuration
 
 In this example, we would like to show how to config to setup a connection between ICON and Moonriver networks. For other cases, there might be a different configuration
 
-<span style="color:red">**Attention:** This configuration step must be executed after completely deploying smart contracts (BSH, BMC, and BMV) on both connecting networks and generating keystore files of both BTP Message Relays (BMRs)</span>
+**Attention:** This configuration step must be executed after completely deploying smart contracts \(BSH, BMC, and BMV\) on both connecting networks and generating keystore files of both BTP Message Relays \(BMRs\)
 
-### 1. ICON-BMC Configuration
+## 1. ICON-BMC Configuration
 
-____
-
-#### Generate Owner and Register Owner of BMC
+### Generate Owner and Register Owner of BMC
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -52,10 +48,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bmcOwner.addFund)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1  
+# Otherwise, status '0x1
 ```
 
-#### Add **BMV**
+### Add **BMV**
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -74,7 +70,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Otherwise, status '0x1'
 ```
 
-#### Add Connection Link to Moonriver-BMC
+### Add Connection Link to Moonriver-BMC
 
 ```bash
 echo $(cat $CONFIG_DIR/bmc_perif.btp.addr) > $CONFIG_DIR/btp.dst
@@ -90,28 +86,24 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.link.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
 In success, a connection link from ICON-BMC to Moonriver-BMC will be set with default setting values:
 
-&emsp; &emsp; &emsp; + `BLOCK_INTERVAL_MSEC`: block interval of Moonriver (default = 1000ms)
+      + `BLOCK_INTERVAL_MSEC`: block interval of Moonriver \(default = 1000ms\)
 
-&emsp; &emsp; &emsp; + `MAX_AGGREGATION`: max_aggregation value (default = 10)
+      + `MAX_AGGREGATION`: max\_aggregation value \(default = 10\)
 
-&emsp; &emsp; &emsp; + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC (default = 3)
+      + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC \(default = 3\)
 
-<p align="center">
-  <img src="./images/bmc_rotate_round-robin.png" width="800" height="300" />
-</p>
+![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/bmc_rotate_round-robin.png)
 
-<p align="center">
-  <img src="./images/bmc_rotate_fail-over.png" width="800" height="300" />
-</p>
+![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/bmc_rotate_fail-over.png)
 
-#### Set Link Configuration
+### Set Link Configuration
 
-&emsp; This step will help you to change default setting values
+  This step will help you to change default setting values
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -138,10 +130,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether these transactions are successful 
 # For example: goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.setLinkRotateTerm.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-#### Get Link Status
+### Get Link Status
 
 ```bash
 # The link status will then be used in BMR settings. Please do not skip this step
@@ -154,7 +146,7 @@ ICON_OFFSET="$(eval "echo $(jq -r '.verifier.offset' "$CONFIG_DIR/getStatus.bmc.
 echo -n $ICON_OFFSET > $CONFIG_DIR/icon.offset
 ```
 
-#### Add BSH Service contract
+### Add BSH Service contract
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -169,10 +161,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.addService.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-#### Register Relay to ICON-BMC
+### Register Relay to ICON-BMC
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -187,10 +179,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.registerRelay.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-#### Set FeeAggregation address to ICON-BMC
+### Set FeeAggregation address to ICON-BMC
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/bmc.icon) \
@@ -204,14 +196,12 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.addFeeAggregation.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-### 2. Config NativeCoin BSH
+## 2. Config NativeCoin BSH
 
-____
-
-- Generate Owner and Register Owner of NativeCoinBSH
+* Generate Owner and Register Owner of NativeCoinBSH
 
 ```bash
 # Replace YOUR_PASSWORD if needed
@@ -246,10 +236,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx transfer \
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.bshOwner.addFund)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1      
+# Otherwise, status '0x1
 ```
 
-- Register 'DEV' token
+* Register 'DEV' token
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
@@ -263,10 +253,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.registerCoin.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-- Set Fee Ratio
+* Set Fee Ratio
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFIG_DIR/nativeCoinBsh.icon) \
@@ -280,10 +270,10 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call --to $(cat $CONFI
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.setFeeRatio.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-- Set `NativeCoinBSH` as an Owner of `IRC31Token`
+* Set `NativeCoinBSH` as an Owner of `IRC31Token`
 
 ```bash
 goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
@@ -298,16 +288,14 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
 # Also check whether this transaction is successful 
 # goloop rpc --uri http://127.0.0.1:9080/api/v3/icon txresult $(cat $CONFIG_DIR/tx.addOwnerIrc31.icon)
 # If fail, it shows error message and status '0x0'
-# Otherwise, status '0x1'    
+# Otherwise, status '0x1'
 ```
 
-### 3. Config Moonriver BMC
+## 3. Config Moonriver BMC
 
-____
-
-- Preparation
-  - Generate Relay's address ---> follow this instruction [[link](BMR-Deployment.md#create-keystore-files)] if you have not completed this step
-  - Prepare addresses of BMC, BSH, BMV and Relay
+* Preparation
+  * Generate Relay's address ---&gt; follow this instruction \[[link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BMR-Deployment.md#create-keystore-files)\] if you have not completed this step
+  * Prepare addresses of BMC, BSH, BMV and Relay
 
 ```bash
 export ICON_BTP_ADDRESS=$(cat $CONFIG_DIR/btp.icon)
@@ -317,7 +305,7 @@ export RELAY_ADDRESS=$(cat $CONFIG_DIR/moon-bmr.addr)
 export ICON_NET=$(cat $CONFIG_DIR/net.btp.icon)
 ```
 
-- Launch Truffle console
+* Launch Truffle console
 
 ```bash
 $PROJECT_DIR/btp/build/contracts/solidity/bmc
@@ -351,14 +339,13 @@ truffle exec $SCRIPT_DIR/mb_bmc_get_linkStat.js --network moonbeamlocal
 echo $(jq -r '.offsetMTA' "$CONFIG_DIR/bmc_linkstats.moonbeam") > $CONFIG_DIR/moon.offset
 ```
 
-### 4. Config Moonriver BSH
+## 4. Config Moonriver BSH
 
-____
-
-- Run the script to register `ICX`
+* Run the script to register `ICX`
 
 ```bash
 cd $PROJECT_DIR/btp/build/contracts/solidity/bsh
 
 truffle exec $SCRIPT_DIR/mb_bsh_register_coin.js --network moonbeamlocal
 ```
+

@@ -1,10 +1,8 @@
-## BTP Message Relay (BMR) Deployment
+# Deploy Relays
 
-____
+## 1. Create configuration files
 
-### 1. Create configuration files
-
-- Generate configuration file of BMR from ICON --> Moonriver
+* Generate configuration file of BMR from ICON --&gt; Moonriver
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -29,7 +27,7 @@ BTPSIMPLE_LOG_WRITER_FILENAME=$CONFIG_DIR/moon-bmr.log \
 ./entrypoint.sh
 ```
 
-- Generate configuration file of BMR from Moonriver --> ICON
+* Generate configuration file of BMR from Moonriver --&gt; ICON
 
 ```bash
 BTPSIMPLE_CONFIG=$CONFIG_DIR/icon.config.json \
@@ -46,7 +44,7 @@ BTPSIMPLE_LOG_WRITER_FILENAME=$CONFIG_DIR/icon-bmr.log \
 
 Add `"options": {"stepLimit": 50000000000000}` into `$CONFIG_DIR/icon.config.json`. For Example:
 
-```json
+```javascript
 "dst": {
     "address": "btp://0x3.icon/cxbcad01c6b50459f0e2110fb90507f30d59f95579",
     "endpoint": "http://127.0.0.1:9080/api/v3/icon",
@@ -56,13 +54,11 @@ Add `"options": {"stepLimit": 50000000000000}` into `$CONFIG_DIR/icon.config.jso
 },
 ```
 
-### 2. Start BMRs
-
-____
+## 2. Start BMRs
 
 Before starting the BMRs, we have to add some "fuels"
 
-- Adding funds to Moonbeam-BMR
+* Adding funds to Moonbeam-BMR
 
 ```bash
 export MOON_BMR=$(cat $CONFIG_DIR/moon-bmr.addr)
@@ -71,7 +67,7 @@ cd $PROJECT_DIR/btp/build/contracts/solidity/bmc
 truffle exec $SCRIPT_DIR/mb_fund_bmr.js --network moonbeamlocal
 ```
 
-- Add funds to ICON-BMR
+* Add funds to ICON-BMR
 
 ```bash
 cd $PROJECT_DIR/btp
@@ -90,14 +86,15 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon balance $(cat $CONFIG_DIR/ico
 
 Now, let start the BMRs
 
-- Start BMR from ICON --> Moonriver
+* Start BMR from ICON --&gt; Moonriver
 
 ```bash
 $PROJECT_DIR/btp/bin/btpsimple start --config $CONFIG_DIR/moon.config.json
 ```
 
-- Start BMR from Moonriver --> ICON
+* Start BMR from Moonriver --&gt; ICON
 
 ```bash
 $PROJECT_DIR/btp/bin/btpsimple start --config $CONFIG_DIR/icon.config.json
 ```
+
