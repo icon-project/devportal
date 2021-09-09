@@ -1,6 +1,6 @@
 # Development Tools
 
-### T-Bears Development Suite
+## T-Bears Development Suite
 
 Before you start writing a SCORE, you need to install the T-Bears. T-Bears provides the followings;
 
@@ -13,13 +13,13 @@ For the details of T-Bears, please go to [T-Bears Overview](../../tbears/overvie
 
 If you have finished the [SCORE Quickstart](../quickstart/), you must have the T-Bears installed. If not, please refer to the T-Bears [Installation](../../tbears/installation.md) instruction.
 
-### IDE - PyCharm
+## IDE - PyCharm
 
 Because SCORE is written in Python, any IDE that supports python can be used for the SCORE development. In this document, we will explain how to set up and initialize a SCORE project in PyCharm. We assume that you are familiar with Python development.
 
-#### Install PyCharm CE, if you don't have it yet.
+### Install PyCharm CE, if you don't have it yet.
 
-#### Create a Python project
+### Create a Python project
 
 ![](../../.gitbook/assets/cf93d28-createproject.png)
 
@@ -29,7 +29,7 @@ Currently \(as of 2019. May\), T-Bears only works on Python 3.6. When you set th
 
 ![](../../.gitbook/assets/ba011aa-baseinterpreter.png)
 
-#### Install T-Bears using PIP
+### Install T-Bears using PIP
 
 Reference: [T-Bears Installation](../../tbears/installation.md)
 
@@ -71,7 +71,7 @@ After finishing installation, you can check the T-Bears version using `tbears -v
 
 ![](../../.gitbook/assets/6dd46ba-tbears_-v%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-#### Create a SCORE project
+### Create a SCORE project
 
 You can create a SCORE project using T-Bears CLI command `init`.
 
@@ -83,7 +83,7 @@ tbears init score_w_pycharm ScoreWithPycharm
 
 ![](../../.gitbook/assets/7624f24-init_success.png)
 
-#### Write your code
+### Write your code
 
 New SCORE project has been successfully created. Select the main class file and start writing code on PyCharm.
 
