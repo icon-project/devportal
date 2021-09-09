@@ -6,9 +6,7 @@ A secured and distributed database architecture, the blockchain, has been introd
 
 In the traditional fiat-currency trading system, the payment infrastructures can be operated interoperably. Regardless of what currency and geographic location, goods, and services can simply be paid by swiping a debit or credit card. Interoperability simply means "borderless communication" in which two or more distinctive ecosystems can communicate and exchange their value to each other. Along with the development of the blockchain's full potential, we want distinct protocols to have compatible ways to interact and communicate with each other, and the ability to interoperate at the protocol level. Thus, ICON Network has set out on a mission to "hyperconnect the world". We are excited to share the latest technology advancements and details around ICON's interoperability solution, which is called Blockchain Transmission Protocol \(BTP\), with our community.
 
-| ![BTP Architecture](https://github.com/icon-project/devportal/tree/ff1654e1c6b117bd5b034059c4278699ee117dcf/btp-gitbook/images/BTPArchitecture.png) |
-| :---: |
-| _BTP Architecture_ |
+![](./images/BTPArchitecture.png)
 
 The infrastructure of BTP consists of four components:
 
