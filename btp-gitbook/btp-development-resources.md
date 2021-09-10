@@ -13,21 +13,21 @@ As mentioned earlier, the security and reliability of the Blockchain Transmissio
 
 BTP Service Handlers \(BSH\) is a smart contract that handles user's requests and sends them to BTP Message Center \(BMC\). The request can also come from other smart contracts. In addition, BSHs are also responsible for handling messages from other supported BSHs. As long as service smart contracts following BSH standards and meeting the requirements as proposed, anyone can develop their BSH contracts and attempt to request to connect with BMC contracts. Once this request is approved, its service can be officially activated and operated in the BTP Network.
 
-* Interfaces of `BSH` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BSH.md)\]
+* Interfaces of `BSH` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BSH.md)\]
 * Interface of `BSH` on ICON \(Java\) \[[link](https://github.com/icon-project/btp/blob/master/doc/bsh.md)\]
 
 ## BTP Message Center \(BMC\)
 
 BTP Message Center \(BMC\) is a smart contract that builds BTP Message before sending to the Relay \(BMR\) and handles relay messages from other BMRs. In addition, BMC also has features to manage authorization \(e.g. Operators of a Contract and a list of allowed Relays\), and information of connected networks \(i.e. link, route\) to make sure communication from the source delivering to the destination network can be operated smoothly and conveniently.
 
-* Interfaces of `BMC` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BMC.md)\]
+* Interfaces of `BMC` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BMC.md)\]
 * Interface of `BMC` on ICON \(Java\) \[[link](https://github.com/icon-project/btp/blob/master/doc/bmc.md)\]
 
 ## BTP Message Verifier \(BMV\)
 
 BTP Message Verifier \(BMV\) is a smart contract that extracts a relay message, which is composed of a BTP message with proof of existence, to the BTP message before verifying. For easy verification, it may update trust information for the following events. Most of the implementations may track the hashes of block headers. If the blockchain system provides proof of absence of the BTP messages, then it's enough for the verifier to sustain the last state only. It updates the hash only if it sees proof of absence of further BTP messages in the block. Most blockchain systems don't provide proof of absence for their data. Therefore, it is mandatory to provide methods to verify historical hashes. Merkle Accumulator can be used for verifying old hashes. BMV sustains roots of Merkle Tree Accumulator, and relay will sustain all elements of Merkle Tree Accumulator. The relay may make the proof of any one of old hashes. So, even if byzantine relay updated the trust information with the proof of a new block, a normal relay can send BTP Messages in the past block with the proof.
 
-* Interfaces of `BMV` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BMV.md)\]
+* Interfaces of `BMV` on PRA \(Solidity\) \[[link](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BMV.md)\]
 * Interface of `BMV` on ICON \(Java\) \[[link](https://github.com/icon-project/btp/blob/master/doc/bmv.md)\]
 
 **Note that:** The provided interfaces are mandated to provide general or minimal requirements in building smart contracts so that distinct protocols could have compatible ways to interact and communicate with each other. Depending on the design of your project, a specific logic of implementations can be varied and additional functions/methods can be added
