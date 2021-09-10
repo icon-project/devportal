@@ -4,8 +4,8 @@
 
 ____
 
-- [Blokchain Transmission Protocol (BTP)](./Overview.md#crosschain-interoperability-blockchain-transmission-Protocol-(btp))
-- [BTP Example](./Overview.md#btp-interoperability-example)
+- [Blokchain Transmission Protocol (BTP)](./overview.md#overview)
+- [BTP Example](./overview.md#btp-interoperability-example)
 
 ## BTP Development Resources
 
