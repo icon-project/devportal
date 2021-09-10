@@ -4,5 +4,3 @@ ICON Network is a decentralized smart contract protocol based on loopchain \(ICO
 
 
 
-
-
