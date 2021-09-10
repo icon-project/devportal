@@ -1,8 +1,8 @@
 # Deploy Smart Contracts \(ICON\)
 
-![](../.gitbook/assets/deploy-contracts-icon.png)
+![](../.gitbook/assets/Deploy-Contracts-ICON%20%281%29.png)
 
-Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BTP-Development-Instructions.md#1-deploy-icon-node) and accomplish it
+Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](btp-development-instructions.md#1-deploy-icon-node) and accomplish it
 
 ## 1. Deploy BMC SCORE Contract
 

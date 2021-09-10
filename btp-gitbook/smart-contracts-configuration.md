@@ -294,7 +294,7 @@ goloop rpc --uri http://127.0.0.1:9080/api/v3/icon sendtx call \
 ## 3. Config Moonriver BMC
 
 * Preparation
-  * Generate Relay's address ---&gt; follow this instruction \[[link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BMR-Deployment.md#create-keystore-files)\] if you have not completed this step
+  * Generate Relay's address ---&gt; follow this instruction \[[link](relays-setup.md#generate-keystores)\] if you have not completed this step
   * Prepare addresses of BMC, BSH, BMV and Relay
 
 ```bash
