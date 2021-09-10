@@ -416,5 +416,5 @@ Summary
 > Final cost:          0.17232432 ETH
 ```
 
-**Attention:** Please do not skip these steps. This information will later be used to register _**Veriffier**_
+**Attention:** Please do not skip these steps. This information will later be used to register _**Verifier**_
 
