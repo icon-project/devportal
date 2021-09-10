@@ -125,7 +125,7 @@
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
 
-## BTP \(WIP\) <a id="btp-gitbook"></a>
+## BTP <a id="btp-gitbook"></a>
 
 * [Overview](btp-gitbook/overview.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
