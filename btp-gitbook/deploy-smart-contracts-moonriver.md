@@ -1,8 +1,8 @@
 # Deploy Smart Contracts \(Moonriver\)
 
-![](../.gitbook/assets/deploy-contracts-moon.png)
+![](../.gitbook/assets/deploy-contracts-moon%20%281%29.png)
 
-Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/BTP-Development-Instructions.md#2-deploy-moonriver-node) and accomplish it
+Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](btp-development-instructions.md#2-deploy-moonriver-node) and accomplish it
 
 ## 1. Deploy BMC Contracts on Moonriver Network
 

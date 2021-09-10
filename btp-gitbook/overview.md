@@ -19,7 +19,7 @@ The Blockchain Transmission Protocol \(BTP\) is unique amongst existing interope
 
 ## BTP Interoperability Example:
 
-![](../.gitbook/assets/exampleusecase.png)
+![](../.gitbook/assets/ExampleUsecase%20%281%29.png)
 
 In the last couple of years, Decentralized Finance \(DeFi\) has been gaining more attention. DeFi is a global and open financial system, built for the new era of the Internet, in which it strives to alternate traditional finance systems that are held and controlled by old infrastructures. With that aspiration, a great use case of the Blockchain Transmission Protocol \(BTP\) would be Tokens/Coins transfers among different blockchains. At the protocol level, the BTP facilitates such a request directly through smart contracts, from one chain to another without using a central trading platform. In this example, Polkadot Parachains will be used to demonstrate. For a sake of simplicity, the above diagram, which describes an interoperability use case of BTP, can be broken down into steps as following:
 
