@@ -139,3 +139,16 @@
 * [Transfer Example](btp-gitbook/transfer-example.md)
 * [Appendix](btp-gitbook/appendix.md)
 
+## Release notes
+
+* [2021-03-20](release-notes/2021-03-20.md)
+* [2021-03-04](release-notes/2021-03-04.md)
+* [2021-02-17](release-notes/2021-02-17.md)
+* [2020-09-03](release-notes/2020-09-03.md)
+* [2020-08-27](release-notes/2020-08-27.md)
+* [2020-08-23](release-notes/2020-08-23.md)
+* [2020-08-10](release-notes/2020-08-10.md)
+* [2020-04-08](release-notes/2020-04-08.md)
+* [2020-01-28](release-notes/2020-01-28.md)
+* [2019-12-19](release-notes/2019-12-19.md)
+
