@@ -118,7 +118,7 @@ The next following will provide instructions on how to deploy:
 
 #### 1. Deploy ICON Node
 
-![](../.gitbook/assets/deploy-icon-node.png)
+![](../.gitbook/assets/deploy-icon-node%20%281%29.png)
 
 * Preparation
 
