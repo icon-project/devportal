@@ -97,9 +97,9 @@ In success, a connection link from ICON-BMC to Moonriver-BMC will be set with de
 
       + `DELAY_LIMIT`: acceptance of delayed submission sending from BMR to BMC \(default = 3\)
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/bmc_rotate_round-robin.png)
+![](../.gitbook/assets/bmc_rotate_round-robin.png)
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/bmc_rotate_fail-over.png)
+![](../.gitbook/assets/bmc_rotate_fail-over.png)
 
 ### Set Link Configuration
 

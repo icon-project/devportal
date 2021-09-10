@@ -2,8 +2,6 @@
 
 ## Setup and Installation
 
-\[comment\]: &lt;         ![0](https://progress-bar.dev/0/)&gt;
-
 This section guides you through a setup of a Blockchain Transmission Protocol \(BTP\) connecting two networks. ICON and Moonriver networks would be used to demonstrate the scheme in this example. This document is aimed to support various groups of people who might be not developers but requires minimum knowledge of computer skills. As of now, we attempt to make these instructions as simple and detail as possible so everyone can do it manually and can be easy to catch up on. Please follow these instructions and do not skip any steps unless you understand what you are currently doing.
 
 We have a script to make this example get easier. Please follow this instruction \[[link](https://github.com/icon-project/btp/blob/icondao/docker-compose/goloop2moonbeam/README.MD)\] if you are interested in running via docker. Otherwise, please continue following instructions below
@@ -104,7 +102,7 @@ go get github.com/ethereum/go-ethereum/cmd/ethkey
 
 ## Deployment Instructions
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deployment-Module.png)
+![](../.gitbook/assets/deployment-module.png)
 
 The next following will provide instructions on how to deploy:
 
@@ -120,7 +118,7 @@ The next following will provide instructions on how to deploy:
 
 #### 1. Deploy ICON Node
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deploy-ICON-Node.png)
+![](../.gitbook/assets/deploy-icon-node.png)
 
 * Preparation
 
@@ -160,7 +158,7 @@ docker-compose up goloop
 
 #### 2. Deploy Moonriver Node
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deploy-MOONRIVER-Node.png)
+![](../.gitbook/assets/deploy-moonriver-node.png)
 
 A node on Moonriver can be easily deployed by running the below command:
 

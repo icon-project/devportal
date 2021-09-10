@@ -1,6 +1,6 @@
 # Relays Setup
 
-![](https://github.com/icon-project/devportal/tree/1305eb284b2609ad444b9f6db3a5edcaf24631e9/btp-gitbook/images/Deploy-BMR.png)
+![](../.gitbook/assets/deploy-bmr.png)
 
 BTP Message Relay \(BMR\) is a component, that consists of several unidirectional Relays, which takes responsibility for monitoring and gathering proofs for BTP events in the network. It means that _**BMR**_ always has at least two Relays working concurrently:
 

@@ -6,7 +6,7 @@ A secured and distributed database architecture, the blockchain, has been introd
 
 In the traditional fiat-currency trading system, the payment infrastructures can be operated interoperably. Regardless of what currency and geographic location, goods, and services can simply be paid by swiping a debit or credit card. Interoperability simply means "borderless communication" in which two or more distinctive ecosystems can communicate and exchange their value to each other. Along with the development of the blockchain's full potential, we want distinct protocols to have compatible ways to interact and communicate with each other, and the ability to interoperate at the protocol level. Thus, ICON Network has set out on a mission to "hyperconnect the world". We are excited to share the latest technology advancements and details around ICON's interoperability solution, which is called Blockchain Transmission Protocol \(BTP\), with our community.
 
-![](https://github.com/icon-project/devportal/tree/00fd852b6db0a14c1fc8dca2a8ac93a97b208d95/btp-gitbook/images/BTPArchitecture.png)
+![](../.gitbook/assets/btparchitecture.png)
 
 The infrastructure of BTP consists of four components:
 
@@ -19,9 +19,7 @@ The Blockchain Transmission Protocol \(BTP\) is unique amongst existing interope
 
 ## BTP Interoperability Example:
 
-| ![Cross-chain Usecase of BTP Example](https://github.com/icon-project/devportal/tree/ff1654e1c6b117bd5b034059c4278699ee117dcf/btp-gitbook/images/ExampleUsecase.png) |
-| :---: |
-| _Cross-chain Usecase of BTP Example_ |
+![](../.gitbook/assets/exampleusecase.png)
 
 In the last couple of years, Decentralized Finance \(DeFi\) has been gaining more attention. DeFi is a global and open financial system, built for the new era of the Internet, in which it strives to alternate traditional finance systems that are held and controlled by old infrastructures. With that aspiration, a great use case of the Blockchain Transmission Protocol \(BTP\) would be Tokens/Coins transfers among different blockchains. At the protocol level, the BTP facilitates such a request directly through smart contracts, from one chain to another without using a central trading platform. In this example, Polkadot Parachains will be used to demonstrate. For a sake of simplicity, the above diagram, which describes an interoperability use case of BTP, can be broken down into steps as following:
 

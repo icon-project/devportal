@@ -128,8 +128,8 @@
 ## BTP \(WIP\) <a id="btp-gitbook"></a>
 
 * [Overview](btp-gitbook/overview.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
+* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
 * [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
 * [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
 * [Relays Setup](btp-gitbook/relays-setup.md)
