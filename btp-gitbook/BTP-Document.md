@@ -12,9 +12,9 @@ ____
 ____
 
 - [Prerequisites](./btp-development-resources.md#prerequisites)
-- [BTP Service Handler (BSH) Interfaces](./btp-development-resources.md#btp-service-handler-(bsh))
-- [BTP Message Center (BMC) Interfaces](./btp-development-resources.md#btp-message-center-(bmc))
-- [BTP Message Verifier (BMV) Interfaces](./btp-development-resources.md#btp-message-verifier-(bmv))
+- [BTP Service Handler (BSH) Interfaces](./btp-development-resources.md#btp-service-handler-bsh)
+- [BTP Message Center (BMC) Interfaces](./btp-development-resources.md#btp-message-center-bmc)
+- [BTP Message Verifier (BMV) Interfaces](./btp-development-resources.md#btp-message-verifier-bmv)
 - [Contract Upgradeability - Solidity](./btp-development-resources.md#contract-upgradeability-solidity)
 
 ## BTP Development Instructions
