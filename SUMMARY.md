@@ -128,6 +128,7 @@
 ## BTP <a id="btp-gitbook"></a>
 
 * [Overview](btp-gitbook/overview.md)
+* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
 * [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
 * [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
@@ -137,5 +138,4 @@
 * [Deploy Relays](btp-gitbook/deploy-relays.md)
 * [Transfer Example](btp-gitbook/transfer-example.md)
 * [Appendix](btp-gitbook/appendix.md)
-* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
 
