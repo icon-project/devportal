@@ -137,4 +137,5 @@
 * [Deploy Relays](btp-gitbook/deploy-relays.md)
 * [Transfer Example](btp-gitbook/transfer-example.md)
 * [Appendix](btp-gitbook/appendix.md)
+* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
 

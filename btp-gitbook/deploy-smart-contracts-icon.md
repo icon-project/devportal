@@ -1,6 +1,6 @@
 # Deploy Smart Contracts \(ICON\)
 
-![](../.gitbook/assets/Deploy-Contracts-ICON%20%281%29.png)
+![](../.gitbook/assets/Deploy-Contracts-ICON%20%281%29%20%281%29.png)
 
 Before deploying these contracts, please make sure you have already started a local node in ICON Network. If you have not yet done this step, please check out this [link](btp-development-instructions.md#1-deploy-icon-node) and accomplish it
 

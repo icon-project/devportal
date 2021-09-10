@@ -1,6 +1,6 @@
 # Deploy Smart Contracts \(Moonriver\)
 
-![](../.gitbook/assets/deploy-contracts-moon%20%281%29.png)
+![](../.gitbook/assets/deploy-contracts-moon%20%281%29%20%281%29.png)
 
 Before deploying these contracts, please make sure you have deployed a local node in the Moonriver Network. If you have not done this step, please check out this [link](btp-development-instructions.md#2-deploy-moonriver-node) and accomplish it
 
