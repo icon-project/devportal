@@ -127,8 +127,8 @@
 
 ## BTP <a id="btp-gitbook"></a>
 
-* [Overview](btp-gitbook/overview.md)
 * [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
+* [Overview](btp-gitbook/overview.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
 * [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
 * [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
