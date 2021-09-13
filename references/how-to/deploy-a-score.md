@@ -1,9 +1,3 @@
----
-description: >-
-  This page needs to be updated for ICON 2.0 due to incompatibility with the
-  debug API endpoint.
----
-
 # Deploy a SCORE
 
 In this document, we will explain various methods of deploying a SCORE onto the mainnet, and how to estimate the step limit for the deploy transaction.

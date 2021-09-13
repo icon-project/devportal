@@ -1,3 +1,7 @@
+---
+description: This page needs to be updated for ICON 2.0 new system SCORE architecture.
+---
+
 # ICON Governance SCORE APIs
 
 This document describes APIs that Governance SCORE provides.

@@ -93,7 +93,6 @@
   * [Write SCORE unit test](references/how-to/write-score-unit-test.md)
   * [Write SCORE integration test](references/how-to/write-score-integration-test.md)
   * [Generate a transaction signature](references/how-to/generate-a-transaction-signature.md)
-  * [Create own blockchain network from AWS marketplace](references/how-to/create-own-blockchain-network-from-aws-marketplace.md)
 * [Reference Manuals](references/reference-manuals/README.md)
   * [ICON JSON-RPC API v3 Specification](references/reference-manuals/icon-json-rpc-api-v3-specification.md)
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
