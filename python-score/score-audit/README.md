@@ -6,11 +6,15 @@ description: >-
 
 # SCORE Audit
 
+**NOTICE: New PYTHON SCOREs will not be allowed anymore in ICON 2.0. If you are starting a new project, please use Java. If you are already working on python SCOREs for a while and do not have the resources to switch to Java before ICON 2.0, please let use know in** [**this thread**](https://forum.icon.community/t/python-score-migration-to-java/2227) **before ICON 2.0 mainnet launch.**
+
 For every SCOREs requested to deploy to the ICON mainnet, we perform a security audit in an effort to verify they do not break the mainnet. The audit process may take several days. Before you plan to build your DApp, please take the time to look at these guidelines.
 
 Note, ICON Foundation audits do not audit for security or business logic of a contract. ICON is not responsible for any contract that passes our audit. ICON does not endorse or vouch for the security or business logic of any contract that has gone through the ICON’s audit process. ICON Foundation audits only issues that can cause a critical problem on the blockchain, not the security or business logic of a contract itself.
 
 ### Guidelines
+
+**Please provide integration tests result on Sejong \(function calls with parameters and Sejong transaction hashes\).**
 
 Code should be deterministic as it will run on multiple nodes. You should avoid any business logic that depends on non-deterministic input such as clock time, random number, or external data source.
 

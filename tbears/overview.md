@@ -4,6 +4,10 @@ description: 'The source code is found on GitHub at https://github.com/icon-proj
 
 # Overview
 
+**NOTICE: New PYTHON SCOREs will not be allowed anymore in ICON 2.0. If you are starting a new project, please use Java. If you are already working on python SCOREs for a while and do not have the resources to switch to Java before ICON 2.0, please let use know in** [**this thread**](https://forum.icon.community/t/python-score-migration-to-java/2227) **before ICON 2.0 mainnet launch.**
+
+**T-Bears will not be updated for ICON 2.0.**
+
 T-Bears is a suite of development tools for SCORE. T-Bears provides a project template for SCORE to help you start right away. You can code and test your smart contract locally in an emulated environment, and when ready, deploy SCORE onto the ICON network from the command-line interface. Below is the runtime view of the T-Bears.
 
 ![](../.gitbook/assets/d5ebfe7-tbears.png)
