@@ -102,7 +102,7 @@ go get github.com/ethereum/go-ethereum/cmd/ethkey
 
 ## Deployment Instructions
 
-![](../.gitbook/assets/deployment-module%20%281%29%20%281%29.png)
+![](../.gitbook/assets/deployment-module%20%281%29%20%281%29%20%281%29.png)
 
 The next following will provide instructions on how to deploy:
 
