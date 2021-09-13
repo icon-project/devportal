@@ -1,4 +1,10 @@
+---
+description: 'Python SCOREs will be deprecated in the future, please switch to Java instead.'
+---
+
 # Overview
+
+### NOTICE: New Python SCOREs will not be accepted on ICON 2.0. Please switch to Java. If you need assistance please let us know in [this thread](https://forum.icon.community/t/python-score-migration-to-java/2227).
 
 ### ICON Smart Contract - SCORE
 
