@@ -1,4 +1,4 @@
-# Writing Score
+### Writing Score
 
 The document presents how to write a SCORE, smart contract of the ICON network. Through the series of documents, you will learn from setting the workspace to deploying a SCORE.
 
@@ -24,13 +24,17 @@ The score is compiled the following the same structure as any other Java program
 The `build.gradle` file contains the dependencies which contain the dependent packages for building the SCORE.
 `optimizedJar` extends from Gradle’s `Jar` type i.e. all attributes and methods available on `Jar` are also available on optimizedJar. In optimizedJar `mainClassName` property is required to indicate the entry point for initial execution. This property is included into the generated jar bundle with the `Main-Class` header in the manifest.
 
-	optimizedJar {
+```java
+    optimizedJar {
     mainClassName = 'com.iconloop.score.example.HelloWorld'
     }
 
+```
+
 The `deployJar` extension is used to deploy the optimized jar to local or remote ICON networks that support the Java SCORE execution environment.
 
-	deployJar {
+```java
+    deployJar {
     endpoints {
         local {
             uri = 'http://localhost:9082/api/v3'
@@ -43,6 +47,8 @@ The `deployJar` extension is used to deploy the optimized jar to local or remote
         arg('name', 'Alice')
     }
     }
+```
+
 
 ### Structure of Score
 
@@ -107,67 +113,9 @@ public class IRC2FixedSupply extends IRC2Basic {
 
 ### Built-In Properties
 
-**Address Class**
-
-Address Class represents an address of an account in the ICON Network. Following is the method summary of the class.
-
-| Modifier and Type | Method        | Description                                                             |
-|-------------------|---------------|-------------------------------------------------------------------------|
-| boolean           | equals        | Compares this address to the specified object.                          |
-| static Address    | fromString    | Creates an address from the hex string format.                          |
-| int               | hashCode()    | Returns a hash code for this address.                                   |
-| boolean           | isContract()  | Returns true if and only if this address represents a contract address. |
-| byte[]            | toByteArray() | Converts this address to a new byte array.                              |
-| java.lang.String  | toString()    | Returns a string representation of this address.                        |
-
-**Context Class**
-
-Every score has an associated Context which allows the application to interface with the environment the SCORE is running.
-It includes the transaction and block context and other blockchain functionality.
-Following is the summary of the methods of the class
-
-| Modifier and Type            | Method                                                                                                                               | Description                                                                                   |
-|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| static <T> T                 | call(java.lang.Class<T> cls, java.math.BigInteger value, Address targetAddress, java.lang.String method, java.lang.Object... params) | Calls the method of the given account address with the value.                                 |
-| static <T> T                 | call(java.lang.Class<T> cls, Address targetAddress, java.lang.String method, java.lang.Object... params)                             | Calls the method of the account designated by the targetAddress.                              |
-| static java.lang.Object      | call(java.math.BigInteger value, Address targetAddress, java.lang.String method, java.lang.Object... params)                         | Calls the method of the given account address with the value.                                 |
-| static java.lang.Object      | call(Address targetAddress, java.lang.String method, java.lang.Object... params)                                                     | Calls the method of the account designated by the targetAddress.                              |
-| static Address               | deploy(byte[] content, java.lang.Object... params)                                                                                   | Deploys a SCORE with the given byte streams.                                                  |
-| static Address               | deploy(Address targetAddress, byte[] content, java.lang.Object... params)                                                            | Deploys a SCORE with the given byte streams to the target address.                            |
-| static Address               | getAddress()                                                                                                                         | Returns the address of the currently-running SCORE.                                           |
-| static Address               | getAddressFromKey(byte[] pubKey)                                                                                                     | Returns the address that is associated with the given public key.                             |
-| static java.math.BigInteger  | getBalance(Address address)                                                                                                          | Returns the balance of an account.                                                            |
-| static long                  | getBlockHeight()                                                                                                                     | Returns the block height.                                                                     |
-| static long                  | getBlockTimestamp()                                                                                                                  | Returns the block timestamp.                                                                  |
-| static Address               | getCaller()                                                                                                                          | Returns the caller's address.                                                                 |
-| static int                   | getFeeSharingProportion()                                                                                                            | Returns the current fee sharing proportion of the SCORE.                                      |
-| static Address               | getOrigin()                                                                                                                          | Returns the originator's address.                                                             |
-| static Address               | getOwner()                                                                                                                           | Returns the address of the account who initially deployed the contract.                       |
-| static byte[]                | getTransactionHash()                                                                                                                 | Returns the hash of the transaction.                                                          |
-| static int                   | getTransactionIndex()                                                                                                                | Returns the transaction index in a block.                                                     |
-| static java.math.BigInteger  | getTransactionNonce()                                                                                                                | Returns the nonce of a transaction request.                                                   |
-| static long                  | getTransactionTimestamp()                                                                                                            | Returns the timestamp of a transaction request.                                               |
-| static java.math.BigInteger  | getValue()                                                                                                                           | Returns the value being transferred to this SCORE.                                            |
-| static byte[]                | hash(java.lang.String alg, byte[] msg)                                                                                               | Returns hash value of the given message.                                                      |
-| static void                  | logEvent(java.lang.Object[] indexed, java.lang.Object[] data)                                                                        | Records a log on the blockchain.                                                              |
-| static ArrayDB        | newArrayDB(java.lang.String id, java.lang.Class<E> valueClass)                                                                       | Returns a new array DB.                                                                       |
-| static <K,V> BranchDB<K,V>   | newBranchDB(java.lang.String id, java.lang.Class<?> leafValueClass)                                                                  | Returns a new branch DB.                                                                      |
-| static ObjectReader          | newByteArrayObjectReader(java.lang.String codec, byte[] byteArray)                                                                   | Returns a new object reader reading from a byte array.                                        |
-| static ByteArrayObjectWriter | newByteArrayObjectWriter(java.lang.String codec)                                                                                     | Returns a new object writer writing to a byte array.                                          |
-| static <K,V> DictDB<K,V>     | newDictDB(java.lang.String id, java.lang.Class<V> valueClass)                                                                        | Returns a new dictionary DB.                                                                  |
-| static <E> VarDB<E>          | newVarDB(java.lang.String id, java.lang.Class<E> valueClass)                                                                         | Returns a new variable DB.                                                                    |
-| static void                  | println(java.lang.String message)                                                                                                    | Prints a message, for debugging purpose.                                                      |
-| static byte[]                | recoverKey(java.lang.String alg, byte[] msg, byte[] sig, boolean compressed)                                                         | Recovers the public key from the message and the recoverable signature.                       |
-| static void                  | require(boolean condition)                                                                                                           | Checks that the provided condition is true and if it is false, triggers a revert.             |
-| static void                  | require(boolean condition, java.lang.String message)                                                                                 | Checks that the provided condition is true and if it is false, triggers a revert.             |
-| static void                  | revert()                                                                                                                             | Stops the current execution and rolls back all state changes.                                 |
-| static void                  | revert(int code)                                                                                                                     | Stops the current execution and rolls back all state changes.                                 |
-| static void                  | revert(int code, java.lang.String message)                                                                                           | Stops the current execution and rolls back all state changes.                                 |
-| static void                  | revert(java.lang.String message)                                                                                                     | Stops the current execution and rolls back all state changes.                                 |
-| static void                  | setFeeSharingProportion(int proportion)                                                                                              | Sets the proportion of transaction fees that the SCORE will pay.                              |
-| static void                  | transfer(Address targetAddress, java.math.BigInteger value)                                                                          | Transfers the value to the given target address from this SCORE's account.                    |
-| static boolean               | verifySignature(java.lang.String alg, byte[] msg, byte[] sig, byte[] pubKey)                                                         | Returns true if the given signature for the given message by the given public key is correct. |
-
+The score package has two classes using which you can interact with the score.
+* [Address Class](address.md)
+* [Context Class](context.md)
 
 ### Implementing Score External Methods
 
@@ -193,7 +141,15 @@ If the value of an element, named `indexed`, is set, the designated number of pa
 
 **Optional Annotators (@Optional)**
 
-This annotation can be used to indicate whether the method parameter is optional. If a method parameter is annotated with this Optional, the parameter can be omitted in the transaction message. If optional parameters were omitted when the external method is called, the value of optional parameters would be their zero values.  The zero value is: 0 for numeric types, false for the boolean type, and null for Object types.
+This annotation can be used to indicate whether the method parameter is optional. 
+If a method parameter is annotated with this Optional, the parameter can be omitted 
+in the transaction message. If optional parameters were omitted when the external method 
+is called, the value of optional parameters would be their zero values.  The zero value is: 0 for numeric types, false for the boolean type, and null for Object types.
+
+**Keep Annotators**
+
+Denotes that the element should not be removed when the code is optimized by tool kit.
+
 
 **fallback**
 
