@@ -114,21 +114,16 @@ The "details" parameter is an external json file that holds additional informati
 
 ## **3. Build MainNet P-Rep Node**
 
-**Examples using Ubuntu 16.04+**
+{% page-ref page="../icon-2.0/goloop/get-started/build.md" %}
 
 ### **Pre-requisites**
 
-The specifications below are recommended for main P-Reps \(top 22\). Sub P-Reps \(outside of top 22\) can run lower-end specs as they do not produce/validate blocks but only serve as citizen nodes. Current blockchain size is 153G as of this update \(2020/3/17\).
+The specifications below are recommended for main P-Reps \(top 22\). Sub P-Reps \(outside of top 22\) can run lower-end specs as they do not produce/validate blocks but only serve as citizen nodes. Current blockchain size is 1.1T as of this update \(2021, September 13th\).
 
-#### **Hardware**
+#### **Hardware considering the node is running on AWS**
 
-| Description | Minimum Specifications | Recommended Specifications |
-| :--- | :--- | :--- |
-| CPU model | Intel\(R\) Xeon\(R\) CPU @ 3.00GHz | Intel\(R\) Xeon\(R\) CPU @ 3.00GHz |
-| vCPU \(core\) | 16 | 36 |
-| RAM | 32G | 72G |
-| Disk | 200G | 500G |
-| Network | 1Gbps | 1Gbps |
+* c5.4xlarge \(2TB SSD, gp3, 3000 IOPS, 125MBps\)
+  * [https://aws.amazon.com/ec2/instance-types/c5/](https://aws.amazon.com/ec2/instance-types/c5/)
 
 #### **Software**
 
@@ -192,43 +187,68 @@ $ docker-compose version
 
 ### **3.3 Running a P-Rep Node Container using docker-compose**
 
-Create a file named `docker-compose.yml` in a text editor and add the following content:
-
-```yaml
-version: "3"
-services:
-  prep-node:
-     image: "iconloop/prep-node"
-     container_name: "prep-mainnet"
-     network_mode: host     
-     restart: "always"
-     environment:
-        NETWORK_ENV: "mainnet"
-        LOG_OUTPUT_TYPE: "file"
-        SWITCH_BH_VERSION3: "10324749"
-        CERT_PATH: "/cert"
-        LOOPCHAIN_LOG_LEVEL: "DEBUG"
-        ICON_LOG_LEVEL: "DEBUG"        
-        FASTEST_START: "yes" # Restore from lastest snapshot DB
-        PRIVATE_KEY_FILENAME: "YOUR_KEYSTORE or YOUR_CERTKEY FILENAME" # only file name
-        PRIVATE_PASSWORD: "YOUR_KEY_PASSWORD"
-     cap_add:
-        - SYS_TIME      
-     volumes:
-        - ./data:/data # mount a data volumes
-        - ./cert:/cert # Automatically generate cert key files here
-     ports:
-        - 9000:9000
-        - 7100:7100
-```
-
-**Run docker-compose**
+#### Pull ICON2 image <a id="docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303"></a>
 
 ```text
-$ docker-compose up -d
+# docker pull <goloop package image>
 ```
 
-The parameter provided **FASTEST\_START: "yes"** will download the latest full-hour blockchain snapshot, and the remaining blocks will be synchronized automatically. You can check server status and current block height via this API: [http://{YOUR\_NODE\_IP}:9000/api/v1/status/peer](http://{YOUR_NODE_IP}:9000/api/v1/status/peer).
+#### Keystore
+
+If you have your own KEYSTORE, store it and the password file in the configuration directory.
+
+```text
+# cp keystore.json ./config/keystore.json
+# echo -n "password" > ./config/keysecret
+```
+
+If you have your own KEYSTORE, store it and the password file in the configuration directory.
+
+#### Create docker-compose config
+
+```text
+version: "3.7"
+services:
+    node:
+        image: iconloop/goloop-icon:latest
+        env_file:
+            - ./node.env
+        volumes:
+            - ./data:/goloop/data
+            - ./mainnet:/mainnet
+            - ./config:/goloop/config
+        ports:
+            - "9080:9080"
+            - "8080:8080"
+```
+
+Start containers
+
+```text
+# docker-compose up -d
+```
+
+Check the status
+
+```text
+# docker-compose exec node goloop system info
+{
+  "buildVersion": "v0.9.9-338-g19c58f03-dirty",
+  "buildTags": "darwin/amd64 tags()-2021-09-03-14:35:59",
+  "setting": {
+    "address": "hx14637aec2d2941f56d4878557b298bea5460fdaa",
+    "p2p": "node0:8080",
+    "p2pListen": "0.0.0.0:8080",
+    "rpcAddr": ":9080",
+    "rpcDump": false
+  },
+  "config": {
+    "eeInstances": 1,
+    "rpcDefaultChannel": "",
+    "rpcIncludeDebug": false
+  }
+}
+```
 
 ### **Citizen Node**
 
@@ -236,26 +256,7 @@ Citizen nodes are non-producing nodes on the ICON network. A non-producing node 
 
 ICON node software is identical for P-Rep nodes and Citizen nodes, one can follow the same procedures to set up a P-Rep node, without registration, to operate a Citizen node.
 
-### **Experiment on TestNet**
-
-TestNet Pagoda is available for node operation testing, you can experiment with this  [docker-compose template](http://download.solidwallet.io/zicon/docker-compose.yml).
-
-#### **Pagoda Network Information**
-
-|  |  |
-| :--- | :--- |
-| Name | Pagoda |
-| Node | [https://zicon.net.solidwallet.io](https://zicon.net.solidwallet.io) |
-| API endpoint | [https://zicon.net.solidwallet.io/api/v3](https://zicon.net.solidwallet.io/api/v3) |
-| Network ID \(nid\) | 80 |
-| Tracker | [https://zicon.tracker.solidwallet.io/](https://zicon.tracker.solidwallet.io/) |
-| Transaction fee | on |
-| SCORE audit | on |
-
-To receive test ICX, please send email to `testicx@icon.foundation` with the following information.
-
-* Testnet node URL
-* Address to receive the testnet ICX. Address should start with `hx` followed by a 20-byte string.
+### \*\*\*\*[**Experiment on TestNet**](../introduction/the-icon-network/testnet.md#testnet)\*\*\*\*
 
 ## **Having Trouble?**
 

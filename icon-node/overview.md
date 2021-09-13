@@ -1,3 +1,9 @@
+---
+description: >-
+  This page describes loopchain (ICON1) and is there obsolete. We will provide a
+  new architecture description for goloop in the future.
+---
+
 # Overview
 
 ## **Network Diagram of P-Rep Nodes**
