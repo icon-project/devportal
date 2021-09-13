@@ -25,7 +25,5 @@ description: 'Yellow paper: https://icon.foundation/download/IISS_Paper_v2.0_EN.
   * All ICONists can receive the reward in return for delegating their ICX to P-Reps
 * Contribution Items
 
-## Governance Variables
-
-{% page-ref page="governance-iiss.md" %}
+## [Governance Variables](governance-public-representative-p-rep.md#inflation-controls-and-reward-distribution)
 
