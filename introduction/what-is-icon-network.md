@@ -2,7 +2,7 @@
 
 ### What is ICON Network?
 
-ICON Network is a general purpose blockchain protocol based on the native cryptocurrency ICX that can run smart contracts, adopt the BFT-DPoS \(Delegated Proof-of-Stake\) consensus protocol, and use an economic-governance protocol called DPoC \(Delegated Proof-of-Contribution\). The ICON Network is powered by a proprietary blockchain engine called 'loopchain' and has the ability to handle hundreds of transactions per second. The ICON project was started to ensure the integrity and transparency of data shared between institutions and companies, and to move mutual assets on heterogeneous blockchains without a centralized organization. In the long term, ICON Network will be an interchain that connects multiple blockchains based on BTP technology.
+ICON Network is a general purpose blockchain protocol based on the native cryptocurrency ICX that can run smart contracts, adopt an improved version of the Tendermint consensus protocol, and use an economic-governance protocol called DPoS \(Delegated Proof-of-Stake\). The ICON Network is powered by an open source blockchain engine called 'goloop' and has the ability to handle hundreds of transactions per second. The ICON project was started to ensure the integrity and transparency of data shared between institutions and companies, and to move mutual assets on heterogeneous blockchains without a centralized organization. In the long term, ICON Network is becoming an interchain that connects multiple blockchains based on BTP technology.
 
 ### Interchain - Connect Heterogeneous Blockchains
 
