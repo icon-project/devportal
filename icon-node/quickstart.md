@@ -260,5 +260,5 @@ ICON node software is identical for P-Rep nodes and Citizen nodes, one can follo
 
 ## **Having Trouble?**
 
-For troubleshoots and other questions, please join [ICON P-Rep MainNet](https://t.me/joinchat/H33WtRIOelpmVW2JExULOQ) or [ICON P-Rep TestNet](https://t.me/joinchat/H33WtUfvyjOtm6Uh1D9TnA) Telegram Channels.
+For troubleshoots and other questions, please join ICON P-Rep MainNet or ICON P-Rep TestNet Telegram Channels. You can ask for an invite in the [main telegram channel](https://t.me/hello_iconworld).
 
