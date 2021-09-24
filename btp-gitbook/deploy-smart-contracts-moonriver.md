@@ -19,8 +19,8 @@ yarn
 rm -rf .openzeppelin && truffle compile --all
 
 # @param
-# - BMC_PRA_NET: Chain ID and name of a network that BMC is going to deploy on, e.g. '0x501.pra'
-export BMC_PRA_NET=0x501.pra 
+# - BMC_BTP_NET: Chain ID and name of a network that BMC is going to deploy on, e.g. '0x501.pra'
+export BMC_BTP_NET=0x501.pra 
 
 truffle migrate --network moonbeamlocal
 
@@ -29,7 +29,7 @@ truffle migrate --network moonbeamlocal
 # BMCManagement address -> $CONFIG_DIR/bmc_management.moonbeam
 truffle exec $SCRIPT_DIR/mb_extract_bmc.js --network moonbeamlocal
 
-echo "btp://$BMC_PRA_NET/$(cat $CONFIG_DIR/bmc.moonbeam)" > $CONFIG_DIR/bmc_perif.btp.addr
+echo "btp://$BMC_BTP_NET/$(cat $CONFIG_DIR/bmc.moonbeam)" > $CONFIG_DIR/bmc_perif.btp.addr
 ```
 
 * After running above commands, you have succeed to deploy required BMC contracts onto the Moonriver Network. In success, you will have a result similar as follows:
@@ -40,7 +40,7 @@ yarn install v1.22.10
 [1/4] 🔍  Resolving packages...
 success Already up-to-date.
 ✨  Done in 0.51s.
-$ BMC_PRA_NET=0x501.pra truffle migrate --network moonbeamlocal
+$ BMC_BTP_NET=0x501.pra truffle migrate --network moonbeamlocal
 
 Compiling your contracts...
 ===========================
@@ -292,19 +292,22 @@ yarn
 rm -rf .openzeppelin && truffle compile --all
 
 # @params
-# - BMC_CONTRACT_ADDRESS: an address on chain of BMCPeriphery contract
+# - BMC_PERIPHERY_ADDRESS: an address on chain of BMCPeriphery contract
 # This address is queried after deploying BMC contracts
-# For example: BMC_CONTRACT_ADDRESS = 0x5CC307268a1393AB9A764A20DACE848AB8275c46
+# For example: BMC_PERIPHERY_ADDRESS = 0x5CC307268a1393AB9A764A20DACE848AB8275c46
 # - BMV_ICON_NET: Chain ID and name of a network that BMV is going to verify BTP Message
 # - BMV_ICON_INIT_OFFSET: a block height when ICON-BMC was deployed
 # - BMV_ICON_LASTBLOCK_HASH: a hash of the above block
-# - BMV_ICON_ENCODED_VALIDATORS: RLP encoding of Validators. It can be generated in two ways:
-#    + Using library: https://www.npmjs.com/package/rlp
-#    + Web App: https://toolkit.abdk.consulting/ethereum#rlp
-# The curruent list of validators, which is being used in this example, is ["hxb6b5791be0b5ef67063b3c10b840fb81514db2fd"]
-# Replace 'hx' by '0x00' -> RLP encode -> 0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd
+# - BMV_ICON_ENCODED_VALIDATORS: a result of ICON JSON-RPC method `icx_getDataByHash` with the input is
+# PreviousBlockHeader.NextValidatorHash. So, to get this param for block N, you must get BlockHeader of N - 1
+# User can execute to ge the result : 
+#
+# make iconvalidators
+# 
+# GOLOOP_RPC_URI="https://btp.net.solidwallet.io/api/v3/icon_dex" $PROJECT_DIR/bin/iconvalidators build 3453901
+#
 
-BMC_CONTRACT_ADDRESS=$(cat $CONFIG_DIR/bmc.moonbeam) \
+BMC_PERIPHERY_ADDRESS=$(cat $CONFIG_DIR/bmc.moonbeam) \
 BMV_ICON_NET=$(cat $CONFIG_DIR/net.btp.icon) \
 BMV_ICON_ENCODED_VALIDATORS=0xd69500b6b5791be0b5ef67063b3c10b840fb81514db2fd \
 BMV_ICON_INIT_OFFSET=$(cat $CONFIG_DIR/block.height.icon) \
