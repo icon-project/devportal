@@ -180,5 +180,5 @@ Termination of Deposit for Early Withdrawal
 ### Reference
 
 * [How to estimate required step](../../references/how-to/estimate-required-step.md) 
-* [Fee Sharing and Virtual Step](../../python-score/score-development-guide/fee-sharing-and-virtual-step.md)
+* [Fee Sharing and Virtual Step]()
 

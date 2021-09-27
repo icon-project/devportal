@@ -16,38 +16,36 @@
   * [Testnet](introduction/the-icon-network/testnet.md)
   * [Mainnet](introduction/the-icon-network/mainnet.md)
 
-## Python SCORE
+## ICON Node
 
-* [Overview](python-score/overview.md)
-* [Quickstart](python-score/quickstart/README.md)
-  * [Part 1. HelloWorld on local emulated environment](python-score/quickstart/part-1.-helloworld-on-local-emulated-environment.md)
-  * [Part 2. HelloWorld on testnet](python-score/quickstart/part-2.-helloworld-on-testnet.md)
-* [SCORE Development Guide](python-score/score-development-guide/README.md)
-  * [Development Tools](python-score/score-development-guide/development-tools.md)
-  * [Writing SCORE](python-score/score-development-guide/writing-score.md)
-  * [Iconservice API References](https://iconservice.readthedocs.io/en/latest)
-  * [Deploying your SCORE](python-score/score-development-guide/deploying-your-score.md)
-  * [Invoking SCORE Functions](python-score/score-development-guide/invoking-score-functions.md)
-  * [Step Estimation](python-score/score-development-guide/step-estimation.md)
-  * [Testing your SCORE](python-score/score-development-guide/testing-your-score.md)
-  * [Fee Sharing and Virtual Step](python-score/score-development-guide/fee-sharing-and-virtual-step.md)
-* [SCORE Audit](python-score/score-audit/README.md)
-  * [Audit Checklist](python-score/score-audit/audit-checklist.md)
-  * [Deployment Process](python-score/score-audit/deployment-process.md)
-* [Sample SCOREs](python-score/sample-scores/README.md)
-  * [HelloWorld](python-score/sample-scores/helloworld.md)
-  * [Token & Crowdsale](python-score/sample-scores/token-and-crowdsale.md)
-  * [Multisig Wallet](python-score/sample-scores/multisig-wallet.md)
-  * [DEX](python-score/sample-scores/dex.md)
+* [Goloop](icon-node/goloop/README.md)
+  * [Get Started](icon-node/goloop/get-started/README.md)
+    * [How to build](icon-node/goloop/get-started/build.md)
+    * [Local Network](icon-node/goloop/get-started/local-network.md)
+  * [Genesis](icon-node/goloop/genesis/README.md)
+    * [Transaction](icon-node/goloop/genesis/genesis_tx.md)
+    * [Storage](icon-node/goloop/genesis/genesis_storage.md)
+  * [JSON-RPC](icon-node/goloop/json-rpc/README.md)
+    * [Goloop JSON-RPC API v3](icon-node/goloop/json-rpc/jsonrpc_v3.md)
+    * [BTP Extension](icon-node/goloop/json-rpc/btp_extension.md)
+    * [IISS Extension](icon-node/goloop/json-rpc/iiss_extension.md)
+  * [Node Management](icon-node/goloop/management/README.md)
+    * [API](icon-node/goloop/management/goloop_admin_api.md)
+    * [CLI](icon-node/goloop/management/goloop_cli.md)
+    * [Metrics](icon-node/goloop/management/metric.md)
+* [Overview](icon-node/overview.md)
+* [Quickstart](icon-node/quickstart.md)
+* [P-Rep Tools](icon-node/p-rep-tools.md)
+* [Maintenance](icon-node/maintenance/README.md)
+  * [Node operation and configuration](icon-node/maintenance/node-operation-and-configuration.md)
+  * [Understanding log files](icon-node/maintenance/understanding-log-files.md)
+  * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
+  * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
 
-## T-Bears for Python SCORE <a id="tbears"></a>
+## Java SCORE <a id="java-score-1"></a>
 
-* [Overview](tbears/overview.md)
-* [Installation](tbears/installation.md)
-* [CLI Commands](tbears/cli-commands.md)
-* [Testing Framework](tbears/testing-framework.md)
-* [Emulated Node Environment](tbears/emulated-node-environment.md)
-* [Configuration](tbears/configuration.md)
+* [Examples](https://github.com/icon-project/java-score-examples)
+* [Tutorial](java-score-1/tutorial.md)
 
 ## ICON SDKs
 
@@ -61,22 +59,25 @@
 * [Swift SDK](icon-sdks/swift-sdk/README.md)
   * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)
 
+## BTP <a id="btp-gitbook"></a>
+
+* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
+* [Overview](btp-gitbook/overview.md)
+* [BTP Development Resources](btp-gitbook/btp-development-resources.md)
+* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
+* [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
+* [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
+* [Relays Setup](btp-gitbook/relays-setup.md)
+* [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
+* [Deploy Relays](btp-gitbook/deploy-relays.md)
+* [Transfer Example](btp-gitbook/transfer-example.md)
+* [Appendix](btp-gitbook/appendix.md)
+
 ## ICONex Connect
 
 * [Chrome Extension](iconex-connect/chrome-extension.md)
 * [iOS](iconex-connect/ios.md)
 * [Android](iconex-connect/android.md)
-
-## ICON Node
-
-* [Overview](icon-node/overview.md)
-* [Quickstart](icon-node/quickstart.md)
-* [P-Rep Tools](icon-node/p-rep-tools.md)
-* [Maintenance](icon-node/maintenance/README.md)
-  * [Node operation and configuration](icon-node/maintenance/node-operation-and-configuration.md)
-  * [Understanding log files](icon-node/maintenance/understanding-log-files.md)
-  * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
-  * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
 
 ## Oracles
 
@@ -98,45 +99,10 @@
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
 
-## ICON 2.0
-
-* [Goloop](icon-2.0/goloop/README.md)
-  * [Get Started](icon-2.0/goloop/get-started/README.md)
-    * [How to build](icon-2.0/goloop/get-started/build.md)
-    * [Local Network](icon-2.0/goloop/get-started/local-network.md)
-  * [Genesis](icon-2.0/goloop/genesis/README.md)
-    * [Transaction](icon-2.0/goloop/genesis/genesis_tx.md)
-    * [Storage](icon-2.0/goloop/genesis/genesis_storage.md)
-  * [JSON-RPC](icon-2.0/goloop/json-rpc/README.md)
-    * [Goloop JSON-RPC API v3](icon-2.0/goloop/json-rpc/jsonrpc_v3.md)
-    * [BTP Extension](icon-2.0/goloop/json-rpc/btp_extension.md)
-    * [IISS Extension](icon-2.0/goloop/json-rpc/iiss_extension.md)
-  * [Node Management](icon-2.0/goloop/management/README.md)
-    * [API](icon-2.0/goloop/management/goloop_admin_api.md)
-    * [CLI](icon-2.0/goloop/management/goloop_cli.md)
-    * [Metrics](icon-2.0/goloop/management/metric.md)
-* [Java SCORE](icon-2.0/java-score/README.md)
-  * [Examples](https://github.com/icon-project/java-score-examples)
-  * [Tutorial](icon-2.0/java-score/tutorial.md)
-
 ---
 
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
-
-## BTP <a id="btp-gitbook"></a>
-
-* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
-* [Overview](btp-gitbook/overview.md)
-* [BTP Development Resources](btp-gitbook/btp-development-resources.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
-* [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
-* [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
-* [Relays Setup](btp-gitbook/relays-setup.md)
-* [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
-* [Deploy Relays](btp-gitbook/deploy-relays.md)
-* [Transfer Example](btp-gitbook/transfer-example.md)
-* [Appendix](btp-gitbook/appendix.md)
 
 ## Release notes
 

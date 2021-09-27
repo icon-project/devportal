@@ -8,8 +8,8 @@ Understand how to write SCORE unit-test
 
 ## Prerequisite
 
-* [SCORE Overview](../../python-score/overview.md)
-* [T-Bears Overview](../../tbears/overview.md) 
+* [SCORE Overview]()
+* [T-Bears Overview]() 
 * [ICON Python SDK](../../icon-sdks/python-sdk/)
 
 ## How to Write SCORE Unit Test Code

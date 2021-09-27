@@ -6,11 +6,11 @@ In this document, we will explain various methods of deploying a SCORE onto the 
 
 * Have an EOA account and the matching keystore file.
 * ICX balance in your wallet.
-* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](../../python-score/score-audit/). 
+* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](). 
 
 ### Using T-Bears
 
-To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline](../../python-score/score-audit/deployment-process.md#t-bears).
+To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline]().
 
 ### Using Python SDK
 

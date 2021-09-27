@@ -17,8 +17,8 @@ Before you submit your SCORE to the ICON mainnet, you should test thoroughly on 
 
 Note that SCORE audit is not enabled in testnet. Please make sure you understand the ICON audit policy and follow the guidelines.
 
-* [Audit Checklist](../../python-score/score-audit/audit-checklist.md)
-* [Deploy Guideline](../../python-score/score-audit/deployment-process.md)
+* [Audit Checklist]()
+* [Deploy Guideline]()
 
 If you have any questions about the audit process, please send email to `audit@icon.foundation`.
 

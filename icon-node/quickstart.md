@@ -114,7 +114,7 @@ The "details" parameter is an external json file that holds additional informati
 
 ## **3. Build MainNet P-Rep Node**
 
-{% page-ref page="../icon-2.0/goloop/get-started/build.md" %}
+{% page-ref page="goloop/get-started/build.md" %}
 
 ### **Pre-requisites**
 

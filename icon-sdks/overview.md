@@ -12,7 +12,7 @@ Every ICON node provides JSON-RPC APIs. To talk to an ICON node, you can send ra
 
 Also, T-Bears provides CLI commands implementing JSON-RPC APIs. T-Bears CLI is a handy tool to test your score quickly without a single line of code during initial test.
 
-* [CLI \(T-Bears\)](../tbears/cli-commands.md#t-bears-server-commands)
+* [CLI \(T-Bears\)]()
 
 Besides, there are couple of community driven tools.
 
