@@ -69,7 +69,7 @@ pip install tbears
 
 After finishing installation, you can check the T-Bears version using `tbears -v` command.
 
-![](../../.gitbook/assets/6dd46ba-tbears_-v%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/6dd46ba-tbears_-v%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 ### Create a SCORE project
 

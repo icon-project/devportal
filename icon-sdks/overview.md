@@ -1,6 +1,6 @@
 # Overview
 
-### ICON SDKs
+## ICON SDKs
 
 Every ICON node provides JSON-RPC APIs. To talk to an ICON node, you can send raw JSON-RPC request, or, even better, use ICON SDKs in various languages. ICON officially supports Java, Python, JavaScript, and Swift.
 

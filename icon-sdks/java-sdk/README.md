@@ -19,14 +19,14 @@ Get different types of examples as follows.
 
 This document is focused on how to use the SDK properly. For the detailed API specification, see the API reference documentation.
 
-### Prerequisite
+## Prerequisite
 
 This Java SDK works on the following platforms:
 
 * Java 8+ \(for Java 7, you can explore source code [here](https://github.com/icon-project/icon-sdk-java/blob/sdk-for-java7/README.md)\)
 * Android 3.0+ \(API 11+\)
 
-### Installation
+## Installation
 
 Download [the latest JAR](https://search.maven.org/search?q=g:foundation.icon%20a:icon-sdk) or grab via Maven:
 
@@ -46,9 +46,9 @@ dependencies {
 }
 ```
 
-### Using the SDK
+## Using the SDK
 
-#### IconService
+### IconService
 
 APIs are called through `IconService`. `IconService` can be initialized as follows.
 
@@ -68,7 +68,7 @@ OkHttpClient okHttpClient = new OkHttpClient.Builder()
 IconService iconService = new IconService(new HttpProvider(okHttpClient, "http://localhost:9000", 3));
 ```
 
-#### Queries
+### Queries
 
 All queries are requested by a `Request` object. Query requests can be executed as **Synchronized** or **Asynchronized**. Once the request has been executed, the same request object cannot be executed again.
 
@@ -146,7 +146,7 @@ try {
 }
 ```
 
-#### Transactions
+### Transactions
 
 Calling SCORE APIs to change states is requested as sending a transaction.
 
@@ -247,7 +247,7 @@ request.execute(new Callback<Bytes>() {
 });
 ```
 
-#### Step Estimation
+### Step Estimation
 
 @ Available since: 0.9.12
 
@@ -280,7 +280,7 @@ Bytes txHash = iconService.sendTransaction(signedTransaction).execute();
 
 Note that the estimation can be smaller or larger than the actual amount of step to be used by the transaction, so it is recommended to add some margin to the estimation when you set the `stepLimit` of the `SignedTransaction`.
 
-#### Converter
+### Converter
 
 All the requests and responses values are parcelled as `RpcItem` \(`RpcObject`, `RpcArray`, `RcpValue`\). You can convert your own class using `RpcConverter`.
 
@@ -330,9 +330,9 @@ Call<Person> call = new Call.Builder()
 Person memberPerson = iconService.call(call).execute();
 ```
 
-### Code Examples
+## Code Examples
 
-#### Wallet
+### Wallet
 
 This example shows how to create a new `KeyWallet` or load wallet with a private key or Keystore file.
 
@@ -380,7 +380,7 @@ System.out.println("fileName:" + fileName); // Keystore file name output
 fileName:UTC--2018-08-30T03-27-41.768000000Z--hx4d37a7013c14bedeedbe131c72e97ab337aea159.json
 ```
 
-#### ICX Transfer
+### ICX Transfer
 
 This example shows how to transfer ICX and check the result.
 
@@ -478,7 +478,7 @@ System.out.println("balance:" + balance));
 balance:5000000000000000000
 ```
 
-#### Token Deploy and Transfer
+### Token Deploy and Transfer
 
 This example shows how to deploy a token and check the result. After that, shows how to send tokens and check the balance.
 
@@ -691,7 +691,7 @@ System.out.println("balance:"+balance));
 balance:6000000000000000000
 ```
 
-#### Sync Block
+### Sync Block
 
 This example shows how to read block information and print the transaction result for every block creation.
 
@@ -808,17 +808,17 @@ tokenName:StandardToken
 tokenSymbol:ST
 ```
 
-### Chagelog
+## Chagelog
 
 * [https://github.com/icon-project/icon-sdk-java/blob/master/CHANGELOG.md](https://github.com/icon-project/icon-sdk-java/blob/master/CHANGELOG.md)
 
-### References
+## References
 
 * [API Reference](http://www.javadoc.io/doc/foundation.icon/icon-sdk)
 * [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
 * [ICON Network](../../introduction/the-icon-network/)
 
-### Licenses
+## Licenses
 
 This project follows the Apache 2.0 License. Please refer to [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
 
