@@ -59,7 +59,7 @@ import\_stmt: "{" import\_element \("," import\_element\) _"}"_
   * [getVersion](icon-governance-score-apis.md#getversion)
   * [isInImportWhiteList](icon-governance-score-apis.md#isinimportwhitelist)
   * [getServiceConfig](icon-governance-score-apis.md#getserviceconfig)
-  * [getRevision](icon-governance-score-apis.md#getversion)
+  * [getRevision](icon-governance-score-apis.md#getrevision)
   * [getProposal](icon-governance-score-apis.md#getproposal)
   * [getProposals](icon-governance-score-apis.md#getproposals)
 * Invoke methods
