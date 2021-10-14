@@ -43,7 +43,7 @@ This is the JSON standard for detailed information about the P-Rep. P-Rep can su
   * logo: Logo images of P-Rep
     * logo\_256: image 256x256px
     * logo\_1024: image 1024x1024px
-    * logo\_sgv: image svg
+    * logo_sgv: image svg
   * media: URL and username of social media
     * steemit: Steemit URL
     * twitter: Twitter URL
@@ -56,10 +56,10 @@ This is the JSON standard for detailed information about the P-Rep. P-Rep can su
     * wechat: Username
 * server: Server information of Public Representative
   * location: Server location
-    * country: Node country code in accordance to [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+    * country: Node country code in accordance to [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2)
     * city: Node city in human readable format
-  * server\_type: Type of server ‘cloud, on-premise, hybrid’
-  * api\_endpoint: HTTP endpoint [http://host:port](http://host:port)
+  * server_type: Type of server ‘cloud, on-premise, hybrid’
+  * api_endpoint: HTTP endpoint [http://host:port](http://host/:port)
 
 #### How to use
 
@@ -100,9 +100,8 @@ Create a JSON file and upload it to your domain server. When you call the `regis
 
 ### References
 
-* [P-Rep tools \(preptools\) Tutorial](../../icon-node/p-rep-tools.md)
+* [P-Rep tools (preptools) Tutorial](../../icon-node/p-rep-tools.md)
 
 ### License
 
 This project follows the Apache 2.0 License. Please refer to [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
-

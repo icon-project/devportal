@@ -1,49 +1,45 @@
----
-title: JSON-RPC v3
----
-
 # Goloop JSON-RPC API v3
 
 ## Introduction
 
-This document explains JSON-RPC APIs \(version 3\) available to interact with Goloop nodes.
+This document explains JSON-RPC APIs (version 3) available to interact with Goloop nodes.
 
 ## Value Types
 
 Basically, every VALUE in JSON-RPC message is string. Below table shows the most common "VALUE types".
 
-| VALUE type | Description | Example |
-| :--- | :--- | :--- |
-| [T\_ADDR\_EOA](jsonrpc_v3.md) | "hx" + 40 digit HEX string | hxbe258ceb872e08851f1f59694dac2558708ece11 |
-| [T\_ADDR\_SCORE](jsonrpc_v3.md) | "cx" + 40 digit HEX string | cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32 |
-| [T\_HASH](jsonrpc_v3.md) | "0x" + 64 digit HEX string | 0xc71303ef8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238 |
-| [T\_INT](jsonrpc_v3.md) | "0x" + lowercase HEX string. No zero padding. | 0xa |
-| [T\_BIN\_DATA](jsonrpc_v3.md) | "0x" + lowercase HEX string. Length must be even. | 0x34b2 |
-| [T\_SIG](jsonrpc_v3.md) | base64 encoded string | VAia7YZ2Ji6igKWzjR2YsGa2m53nKPrfK7uXYW78QLE+ATehAVZPC40szvAiA6NEU5gCYB4c4qaQzqDh2ugcHgA= |
-| [T\_DATA\_TYPE](jsonrpc_v3.md) | Type of data | call, deploy or message |
-| [T\_STRING](jsonrpc_v3.md) | normal string | test, hello, ... |
+| VALUE type                    | Description                                       | Example                                                                                  |
+| ----------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [T_ADDR_EOA](jsonrpc_v3.md)   | "hx" + 40 digit HEX string                        | hxbe258ceb872e08851f1f59694dac2558708ece11                                               |
+| [T_ADDR_SCORE](jsonrpc_v3.md) | "cx" + 40 digit HEX string                        | cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32                                               |
+| [T_HASH](jsonrpc_v3.md)       | "0x" + 64 digit HEX string                        | 0xc71303ef8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238                       |
+| [T_INT](jsonrpc_v3.md)        | "0x" + lowercase HEX string. No zero padding.     | 0xa                                                                                      |
+| [T_BIN_DATA](jsonrpc_v3.md)   | "0x" + lowercase HEX string. Length must be even. | 0x34b2                                                                                   |
+| [T_SIG](jsonrpc_v3.md)        | base64 encoded string                             | VAia7YZ2Ji6igKWzjR2YsGa2m53nKPrfK7uXYW78QLE+ATehAVZPC40szvAiA6NEU5gCYB4c4qaQzqDh2ugcHgA= |
+| [T_DATA_TYPE](jsonrpc_v3.md)  | Type of data                                      | call, deploy or message                                                                  |
+| [T_STRING](jsonrpc_v3.md)     | normal string                                     | test, hello, ...                                                                         |
 
 ## Failure Code
 
 Following is a list of failure codes.
 
-| Name | Value | Description |
-| :--- | :---: | :--- |
-| UNKNOWN\_FAILURE | 1 | An uncategorized internal system error occurred. |
-| CONTRACT\_NOT\_FOUND | 2 | There is no valid contract on the target address. |
-| METHOD\_NOT\_FOUND | 3 | The specified method does not exist or is not usable. |
-| METHOD\_NOT\_PAYABLE | 4 | The specified method is not payable. |
-| ILLEGAL\_FORMAT | 5 | An Illegal method parameter or decorator has been declared. |
-| INVALID\_PARAMETER | 6 | An invalid parameter has been passed to a method. |
-| INVALID\_INSTANCE | 7 | An object has not been derived from the appropriate base class. |
-| INVALID\_CONTAINER\_ACCESS | 8 | Invalid container access occurred. |
-| ACCESS\_DENIED | 9 | Access operation is denied, typically due to a database permission check. |
-| OUT\_OF\_STEP | 10 | Out of step |
-| OUT\_OF\_BALANCE | 11 | Out of balance |
-| TIMEOUT\_ERROR | 12 | Timeout error |
-| STACK\_OVERFLOW | 13 | Too deep inter-call |
-| SKIP\_TRANSACTION | 14 | The transaction is not executed. |
-| REVERTED | 32 ~ 999 | End with revert request.\(by Revision5, it was limited to 99\) |
+| Name                     |   Value   | Description                                                               |
+| ------------------------ | :-------: | ------------------------------------------------------------------------- |
+| UNKNOWN_FAILURE          |     1     | An uncategorized internal system error occurred.                          |
+| CONTRACT_NOT_FOUND       |     2     | There is no valid contract on the target address.                         |
+| METHOD_NOT_FOUND         |     3     | The specified method does not exist or is not usable.                     |
+| METHOD_NOT_PAYABLE       |     4     | The specified method is not payable.                                      |
+| ILLEGAL_FORMAT           |     5     | An Illegal method parameter or decorator has been declared.               |
+| INVALID_PARAMETER        |     6     | An invalid parameter has been passed to a method.                         |
+| INVALID_INSTANCE         |     7     | An object has not been derived from the appropriate base class.           |
+| INVALID_CONTAINER_ACCESS |     8     | Invalid container access occurred.                                        |
+| ACCESS_DENIED            |     9     | Access operation is denied, typically due to a database permission check. |
+| OUT_OF_STEP              |     10    | Out of step                                                               |
+| OUT_OF_BALANCE           |     11    | Out of balance                                                            |
+| TIMEOUT_ERROR            |     12    | Timeout error                                                             |
+| STACK_OVERFLOW           |     13    | Too deep inter-call                                                       |
+| SKIP_TRANSACTION         |     14    | The transaction is not executed.                                          |
+| REVERTED                 | 32 \~ 999 | End with revert request.(by Revision5, it was limited to 99)              |
 
 ## JSON-RPC Failure
 
@@ -72,23 +68,23 @@ Following is a list of failure codes.
 
 Below table shows the default error messages for the error code. Actual message may vary depending on the implementation.
 
-| Category | Error code | Message | Description |
-| :--- | :--- | :--- | :--- |
-| Json Parsing | -32700 | Parse error | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
-| RPC Parsing | -32600 | Invalid Request | The JSON sent is not a valid Request object. |
-|  | -32601 | Method not found | The method does not exist / is not available. |
-|  | -32602 | Invalid params | Invalid method parameter\(s\). |
-|  | -32603 | Internal error | Internal JSON-RPC error. |
-| Server Error | -32000 ~ -32099 |  | Server error. |
-| System Error | -31000 | System Error | Unknown system error. |
-|  | -31001 | Pool Overflow | Transaction pool overflow. |
-|  | -31002 | Pending | Transaction is in the pool, but not included in the block. |
-|  | -31003 | Executing | Transaction is included in the block, but it doesn’t have confirmed result. |
-|  | -31004 | Not found | Requested data is not found. |
-|  | -31005 | Lack of resource | Resource is not available. |
-|  | -31006 | Timeout | Fail to get result of transaction in specified timeout |
-|  | -31007 | System timeout | Fail to get result of transaction in system timeout \(short time than specified\) |
-| SCORE Error | -30000 ~ -30999 |  | Mapped errors from [Failure code](jsonrpc_v3.md#failure-code) \( = -30000 - `value` \) |
+| Category     | Error code       | Message          | Description                                                                                                     |
+| ------------ | ---------------- | ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| Json Parsing | -32700           | Parse error      | <p>Invalid JSON was received by the server.<br>An error occurred on the server while parsing the JSON text.</p> |
+| RPC Parsing  | -32600           | Invalid Request  | The JSON sent is not a valid Request object.                                                                    |
+|              | -32601           | Method not found | The method does not exist / is not available.                                                                   |
+|              | -32602           | Invalid params   | Invalid method parameter(s).                                                                                    |
+|              | -32603           | Internal error   | Internal JSON-RPC error.                                                                                        |
+| Server Error | -32000 \~ -32099 |                  | Server error.                                                                                                   |
+| System Error | -31000           | System Error     | Unknown system error.                                                                                           |
+|              | -31001           | Pool Overflow    | Transaction pool overflow.                                                                                      |
+|              | -31002           | Pending          | Transaction is in the pool, but not included in the block.                                                      |
+|              | -31003           | Executing        | Transaction is included in the block, but it doesn’t have confirmed result.                                     |
+|              | -31004           | Not found        | Requested data is not found.                                                                                    |
+|              | -31005           | Lack of resource | Resource is not available.                                                                                      |
+|              | -31006           | Timeout          | Fail to get result of transaction in specified timeout                                                          |
+|              | -31007           | System timeout   | Fail to get result of transaction in system timeout (short time than specified)                                 |
+| SCORE Error  | -30000 \~ -30999 |                  | Mapped errors from [Failure code](jsonrpc_v3.md#failure-code) ( = -30000 - `value` )                            |
 
 ## JSON-RPC HTTP Header
 
@@ -96,13 +92,13 @@ You may set HTTP header for extension data of the request.
 
 **HTTP Header name** : `Icon-Options`
 
-| Option | Description | Allowed APIs |
-| :--- | :--- | :--- |
-| timeout | Timeout for waiting in millisecond | icx\_sendTransactionAndWait   icx\_waitTransactionResult |
+| Option  | Description                        | Allowed APIs                                                     |
+| ------- | ---------------------------------- | ---------------------------------------------------------------- |
+| timeout | Timeout for waiting in millisecond | <p>icx_sendTransactionAndWait <br> icx_waitTransactionResult</p> |
 
 ## JSON-RPC Methods
 
-### icx\_getLastBlock
+### icx_getLastBlock
 
 Returns the last block information.
 
@@ -155,10 +151,10 @@ None
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-### icx\_getBlockByHeight
+### icx_getBlockByHeight
 
 Returns block information by block height.
 
@@ -177,9 +173,9 @@ Returns block information by block height.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| height | [T\_INT](jsonrpc_v3.md#T_INT) | Integer of a block height |
+| KEY    | VALUE type                   | Description               |
+| ------ | ---------------------------- | ------------------------- |
+| height | [T_INT](jsonrpc_v3.md#T_INT) | Integer of a block height |
 
 > Example responses
 
@@ -216,10 +212,10 @@ Returns block information by block height.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-### icx\_getBlockByHash
+### icx_getBlockByHash
 
 Returns block information by block hash.
 
@@ -238,9 +234,9 @@ Returns block information by block hash.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| hash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Hash of a block |
+| KEY  | VALUE type                     | Description     |
+| ---- | ------------------------------ | --------------- |
+| hash | [T_HASH](jsonrpc_v3.md#T_HASH) | Hash of a block |
 
 > Example responses
 
@@ -277,14 +273,14 @@ Returns block information by block hash.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-### icx\_call
+### icx_call
 
 Calls SCORE's external function.
 
-Does not make state transition \(i.e., read-only\).
+Does not make state transition (i.e., read-only).
 
 > Request
 
@@ -309,14 +305,14 @@ Does not make state transition \(i.e., read-only\).
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| from | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) | Message sender's address. |
-| to | [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | SCORE address that will handle the message. |
-| dataType | [T\_DATA\_TYPE](jsonrpc_v3.md#T_DATA_TYPE) | `call` is the only possible data type. |
-| data | JSON object | See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
-| data.method | JSON string | Name of the function. |
-| data.params | JSON object | Parameters to be passed to the function. |
+| KEY         | VALUE type                                 | Description                                                 |
+| ----------- | ------------------------------------------ | ----------------------------------------------------------- |
+| from        | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA)     | Message sender's address.                                   |
+| to          | [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | SCORE address that will handle the message.                 |
+| dataType    | [T_DATA_TYPE](jsonrpc_v3.md#T_DATA_TYPE)   | `call` is the only possible data type.                      |
+| data        | JSON object                                | See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
+| data.method | JSON string                                | Name of the function.                                       |
+| data.params | JSON object                                | Parameters to be passed to the function.                    |
 
 > Example responses
 
@@ -331,10 +327,10 @@ Does not make state transition \(i.e., read-only\).
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success |  |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     |        |
 
-### icx\_getBalance
+### icx_getBalance
 
 Returns the ICX balance of the given EOA or SCORE.
 
@@ -353,9 +349,9 @@ Returns the ICX balance of the given EOA or SCORE.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| address | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | Address of EOA or SCORE |
+| KEY     | VALUE type                                                                           | Description             |
+| ------- | ------------------------------------------------------------------------------------ | ----------------------- |
+| address | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | Address of EOA or SCORE |
 
 > Example responses
 
@@ -370,10 +366,10 @@ Returns the ICX balance of the given EOA or SCORE.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success |  |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     |        |
 
-### icx\_getScoreApi
+### icx_getScoreApi
 
 Returns SCORE's external API list.
 
@@ -392,9 +388,9 @@ Returns SCORE's external API list.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| address | [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | SCORE address to be examined. |
+| KEY     | VALUE type                                 | Description                   |
+| ------- | ------------------------------------------ | ----------------------------- |
+| address | [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | SCORE address to be examined. |
 
 > Example responses
 
@@ -448,22 +444,22 @@ Returns SCORE's external API list.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success |  |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     |        |
 
 * Fields containing information about the function
   * type : `function`, `fallback`, or `eventlog`
   * name : function name
   * inputs : parameters in array
     * name : parameter name
-    * type : parameter type \(`int`, `str`, `bytes`, `bool`, `Address`\)
-    * indexed : `0x1` if the parameter is indexed \(when this is `eventlog`\)
+    * type : parameter type (`int`, `str`, `bytes`, `bool`, `Address`)
+    * indexed : `0x1` if the parameter is indexed (when this is `eventlog`)
   * outputs : return value
-    * type : return value type \(`int`, `str`, `bytes`, `bool`, `Address`, `dict`, `list`\)
+    * type : return value type (`int`, `str`, `bytes`, `bool`, `Address`, `dict`, `list`)
   * readonly : `0x1` if this is declared as `external(readonly=True)`
   * payable : `0x1` if this has `payable` decorator
 
-### icx\_getTotalSupply
+### icx_getTotalSupply
 
 Returns total ICX coin supply that has been issued.
 
@@ -494,10 +490,10 @@ None
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success |  |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     |        |
 
-### icx\_getTransactionResult
+### icx_getTransactionResult
 
 Returns the transaction result requested by transaction hash.
 
@@ -516,9 +512,9 @@ Returns the transaction result requested by transaction hash.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| txHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Hash of the transaction |
+| KEY    | VALUE type                     | Description             |
+| ------ | ------------------------------ | ----------------------- |
+| txHash | [T_HASH](jsonrpc_v3.md#T_HASH) | Hash of the transaction |
 
 > Example responses
 
@@ -545,35 +541,35 @@ Returns the transaction result requested by transaction hash.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
 [Transaction Result](jsonrpc_v3.md)
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| status | [T\_INT](jsonrpc_v3.md#T_INT) | 1 on success, 0 on failure. |
-| to | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | Recipient address of the transaction |
-| failure | JSON object | This field exists when status is 0. Please refer [failure object](jsonrpc_v3.md#T_FAILURE) |
-| txHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Transaction hash |
-| txIndex | [T\_INT](jsonrpc_v3.md#T_INT) | Transaction index in the block |
-| blockHeight | [T\_INT](jsonrpc_v3.md#T_INT) | Height of the block that includes the transaction. |
-| blockHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Hash of the block that includes the transaction. |
-| cumulativeStepUsed | [T\_INT](jsonrpc_v3.md#T_INT) | Sum of stepUsed by this transaction and all preceding transactions in the same block. |
-| stepUsed | [T\_INT](jsonrpc_v3.md#T_INT) | The amount of step used by this transaction. |
-| stepPrice | [T\_INT](jsonrpc_v3.md#T_INT) | The step price used by this transaction. |
-| scoreAddress | [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | SCORE address if the transaction created a new SCORE. \(optional\) |
-| eventLogs | [T\_ARRAY](jsonrpc_v3.md#T_ARRAY) | Array of eventlogs, which this transaction generated. |
-| logsBloom | [T\_BIN\_DATA](jsonrpc_v3.md#T_BIN_DATA) | Bloom filter to quickly retrieve related eventlogs. |
+| KEY                | VALUE type                                                                           | Description                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| status             | [T_INT](jsonrpc_v3.md#T_INT)                                                         | 1 on success, 0 on failure.                                                                |
+| to                 | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | Recipient address of the transaction                                                       |
+| failure            | JSON object                                                                          | This field exists when status is 0. Please refer [failure object](jsonrpc_v3.md#T_FAILURE) |
+| txHash             | [T_HASH](jsonrpc_v3.md#T_HASH)                                                       | Transaction hash                                                                           |
+| txIndex            | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Transaction index in the block                                                             |
+| blockHeight        | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Height of the block that includes the transaction.                                         |
+| blockHash          | [T_HASH](jsonrpc_v3.md#T_HASH)                                                       | Hash of the block that includes the transaction.                                           |
+| cumulativeStepUsed | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Sum of stepUsed by this transaction and all preceding transactions in the same block.      |
+| stepUsed           | [T_INT](jsonrpc_v3.md#T_INT)                                                         | The amount of step used by this transaction.                                               |
+| stepPrice          | [T_INT](jsonrpc_v3.md#T_INT)                                                         | The step price used by this transaction.                                                   |
+| scoreAddress       | [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE)                                           | SCORE address if the transaction created a new SCORE. (optional)                           |
+| eventLogs          | [T_ARRAY](jsonrpc_v3.md#T_ARRAY)                                                     | Array of eventlogs, which this transaction generated.                                      |
+| logsBloom          | [T_BIN_DATA](jsonrpc_v3.md#T_BIN_DATA)                                               | Bloom filter to quickly retrieve related eventlogs.                                        |
 
 [Failure object](jsonrpc_v3.md)
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| code | [T\_INT](jsonrpc_v3.md#T_INT) | [Failure code](jsonrpc_v3.md#failure-code). |
-| message | [T\_STRING](jsonrpc_v3.md#T_STRING) | Message for the failure. |
+| KEY     | VALUE type                         | Description                                 |
+| ------- | ---------------------------------- | ------------------------------------------- |
+| code    | [T_INT](jsonrpc_v3.md#T_INT)       | [Failure code](jsonrpc_v3.md#failure-code). |
+| message | [T_STRING](jsonrpc_v3.md#T_STRING) | Message for the failure.                    |
 
-### icx\_getTransactionByHash <a id="T_FAILURE"></a>
+### icx_getTransactionByHash <a href="t_failure" id="t_failure"></a>
 
 Returns the transaction information requested by transaction hash.
 
@@ -592,9 +588,9 @@ Returns the transaction information requested by transaction hash.
 
 #### Parameters
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| txHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Hash of the transaction |
+| KEY    | VALUE type                     | Description             |
+| ------ | ------------------------------ | ----------------------- |
+| txHash | [T_HASH](jsonrpc_v3.md#T_HASH) | Hash of the transaction |
 
 > Example responses
 
@@ -622,28 +618,28 @@ Returns the transaction information requested by transaction hash.
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| version | [T\_INT](jsonrpc_v3.md#T_INT) | Protocol version \("0x3" for V3\) |
-| from | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) | EOA address that created the transaction |
-| to | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value | [T\_INT](jsonrpc_v3.md#T_INT) | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
-| stepLimit | [T\_INT](jsonrpc_v3.md#T_INT) | Maximum step allowance that can be used by the transaction. |
-| timestamp | [T\_INT](jsonrpc_v3.md#T_INT) | Transaction creation time. Timestamp is in microsecond. |
-| nid | [T\_INT](jsonrpc_v3.md#T_INT) | Network ID |
-| nonce | [T\_INT](jsonrpc_v3.md#T_INT) | An arbitrary number used to prevent transaction hash collision. |
-| txHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Transaction hash |
-| txIndex | [T\_INT](jsonrpc_v3.md#T_INT) | Transaction index in a block. Null when it is pending. |
-| blockHeight | [T\_INT](jsonrpc_v3.md#T_INT) | Block height where this transaction was in. Null when it is pending. |
-| blockHash | [T\_HASH](jsonrpc_v3.md#T_HASH) | Hash of the block where this transaction was in. Null when it is pending. |
-| signature | [T\_SIG](jsonrpc_v3.md#T_SIG) | Signature of the transaction. |
-| dataType | [T\_DATA\_TYPE](jsonrpc_v3.md#T_DATA_TYPE) | Type of data. \(call, deploy, message or deposit\) |
-| data | JSON object | Contains various type of data depending on the dataType. See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
+| KEY         | VALUE type                                                                           | Description                                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| version     | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Protocol version ("0x3" for V3)                                                                                      |
+| from        | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA)                                               | EOA address that created the transaction                                                                             |
+| to          | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | EOA address to receive coins, or SCORE address to execute the transaction.                                           |
+| value       | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Amount of ICX coins in loop to transfer. When omitted, assumes 0. (1 icx = 1 ^ 18 loop)                              |
+| stepLimit   | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Maximum step allowance that can be used by the transaction.                                                          |
+| timestamp   | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Transaction creation time. Timestamp is in microsecond.                                                              |
+| nid         | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Network ID                                                                                                           |
+| nonce       | [T_INT](jsonrpc_v3.md#T_INT)                                                         | An arbitrary number used to prevent transaction hash collision.                                                      |
+| txHash      | [T_HASH](jsonrpc_v3.md#T_HASH)                                                       | Transaction hash                                                                                                     |
+| txIndex     | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Transaction index in a block. Null when it is pending.                                                               |
+| blockHeight | [T_INT](jsonrpc_v3.md#T_INT)                                                         | Block height where this transaction was in. Null when it is pending.                                                 |
+| blockHash   | [T_HASH](jsonrpc_v3.md#T_HASH)                                                       | Hash of the block where this transaction was in. Null when it is pending.                                            |
+| signature   | [T_SIG](jsonrpc_v3.md#T_SIG)                                                         | Signature of the transaction.                                                                                        |
+| dataType    | [T_DATA_TYPE](jsonrpc_v3.md#T_DATA_TYPE)                                             | Type of data. (call, deploy, message or deposit)                                                                     |
+| data        | JSON object                                                                          | Contains various type of data depending on the dataType. See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
 
-### icx\_sendTransaction
+### icx_sendTransaction
 
 You can do one of the followings using this function.
 
@@ -811,21 +807,21 @@ This function causes state transition.
 
 #### Parameters
 
-| KEY | VALUE type | Required | Description |
-| :--- | :--- | :---: | :--- |
-| version | [T\_INT](jsonrpc_v3.md#T_INT) | required | Protocol version \("0x3" for V3\) |
-| from | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) | required | EOA address that created the transaction |
-| to | [T\_ADDR\_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T\_ADDR\_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | required | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value | [T\_INT](jsonrpc_v3.md#T_INT) | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
-| stepLimit | [T\_INT](jsonrpc_v3.md#T_INT) | required | Maximum step allowance that can be used by the transaction. |
-| timestamp | [T\_INT](jsonrpc_v3.md#T_INT) | required | Transaction creation time. Timestamp is in microsecond. |
-| nid | [T\_INT](jsonrpc_v3.md#T_INT) | required | Network ID \("0x1" for Mainnet, "0x2" for Testnet, etc\) |
-| nonce | [T\_INT](jsonrpc_v3.md#T_INT) | optional | An arbitrary number used to prevent transaction hash collision. |
-| signature | [T\_SIG](jsonrpc_v3.md#T_SIG) | required | Signature of the transaction. |
-| dataType | [T\_DATA\_TYPE](jsonrpc_v3.md#T_DATA_TYPE) | optional | Type of data. \(call, deploy, message or deposit\) |
-| data | JSON object | optional | The content of data varies depending on the dataType. See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
+| KEY       | VALUE type                                                                           | Required | Description                                                                                                       |
+| --------- | ------------------------------------------------------------------------------------ | :------: | ----------------------------------------------------------------------------------------------------------------- |
+| version   | [T_INT](jsonrpc_v3.md#T_INT)                                                         | required | Protocol version ("0x3" for V3)                                                                                   |
+| from      | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA)                                               | required | EOA address that created the transaction                                                                          |
+| to        | [T_ADDR_EOA](jsonrpc_v3.md#T_ADDR_EOA) or [T_ADDR_SCORE](jsonrpc_v3.md#T_ADDR_SCORE) | required | EOA address to receive coins, or SCORE address to execute the transaction.                                        |
+| value     | [T_INT](jsonrpc_v3.md#T_INT)                                                         | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. (1 icx = 1 ^ 18 loop)                           |
+| stepLimit | [T_INT](jsonrpc_v3.md#T_INT)                                                         | required | Maximum step allowance that can be used by the transaction.                                                       |
+| timestamp | [T_INT](jsonrpc_v3.md#T_INT)                                                         | required | Transaction creation time. Timestamp is in microsecond.                                                           |
+| nid       | [T_INT](jsonrpc_v3.md#T_INT)                                                         | required | Network ID ("0x1" for Mainnet, "0x2" for Testnet, etc)                                                            |
+| nonce     | [T_INT](jsonrpc_v3.md#T_INT)                                                         | optional | An arbitrary number used to prevent transaction hash collision.                                                   |
+| signature | [T_SIG](jsonrpc_v3.md#T_SIG)                                                         | required | Signature of the transaction.                                                                                     |
+| dataType  | [T_DATA_TYPE](jsonrpc_v3.md#T_DATA_TYPE)                                             | optional | Type of data. (call, deploy, message or deposit)                                                                  |
+| data      | JSON object                                                                          | optional | The content of data varies depending on the dataType. See [Parameters - data](jsonrpc_v3.md#sendtxparameterdata). |
 
-#### [Parameters - data](jsonrpc_v3.md) <a id="sendtxparameterdata"></a>
+#### [Parameters - data](jsonrpc_v3.md) <a href="sendtxparameterdata" id="sendtxparameterdata"></a>
 
 `data` contains the following data in various formats depending on the dataType.
 
@@ -833,20 +829,20 @@ This function causes state transition.
 
 It is used when calling a function in SCORE, and `data` has dictionary value as follows.
 
-| KEY | VALUE type | Required | Description |
-| :--- | :--- | :---: | :--- |
-| method | String | required | Name of the function to invoke in SCORE |
-| params | JSON object | optional | Function parameters |
+| KEY    | VALUE type  | Required | Description                             |
+| ------ | ----------- | :------: | --------------------------------------- |
+| method | String      | required | Name of the function to invoke in SCORE |
+| params | JSON object | optional | Function parameters                     |
 
 **dataType == deploy**
 
 It is used when installing or updating a SCORE, and `data` has dictionary value as follows.
 
-| KEY | VALUE type | Required | Description |
-| :--- | :--- | :---: | :--- |
-| contentType | String | required | Mime-type of the content |
-| content | [T\_BIN\_DATA](jsonrpc_v3.md#T_BIN_DATA) | required | Compressed SCORE data |
-| params | JSON object | optional | Function parameters will be delivered to on\_install\(\) or on\_update\(\) |
+| KEY         | VALUE type                             | Required | Description                                                          |
+| ----------- | -------------------------------------- | :------: | -------------------------------------------------------------------- |
+| contentType | String                                 | required | Mime-type of the content                                             |
+| content     | [T_BIN_DATA](jsonrpc_v3.md#T_BIN_DATA) | required | Compressed SCORE data                                                |
+| params      | JSON object                            | optional | Function parameters will be delivered to on_install() or on_update() |
 
 **dataType == message**
 
@@ -856,22 +852,22 @@ It is used when transferring a message, and `data` has a HEX string.
 
 It is used to change deposit.
 
-| KEY | VALUE type | Required | Description |
-| :--- | :--- | :---: | :--- |
-| action | String | required | Action to do. \( add, withdraw \) |
-| id | [T\_HASH](jsonrpc_v3.md#T_HASH) | optional | ID of the deposit to withdraw |
-| amount | [T\_INT](jsonrpc_v3.md#T_INT) | optional | Amount of deposit to withdraw |
+| KEY    | VALUE type                     | Required | Description                     |
+| ------ | ------------------------------ | :------: | ------------------------------- |
+| action | String                         | required | Action to do. ( add, withdraw ) |
+| id     | [T_HASH](jsonrpc_v3.md#T_HASH) | optional | ID of the deposit to withdraw   |
+| amount | [T_INT](jsonrpc_v3.md#T_INT)   | optional | Amount of deposit to withdraw   |
 
 While the `action` is `add`, it uses coin value for adding a limited deposit or increasing the unlimited deposit. The deposit would be used for paying used steps by the transaction.
 
 While the `action` is `withdraw`, `id` must be set for the limited deposit. Otherwise, it may set `amount` for partial withdrawal for the unlimited deposit.
 
-| Case | data.action | data.id | data.amount | value |
-| :--- | :--- | :---: | :--- | :--- |
-| Add deposit | `add` |  |  | amount to add |
-| Withdraw limited deposit | `withdraw` | ID of the deposit |  |  |
-| Withdraw a part of unlimited deposit | `withdraw` |  | amount to withdraw |  |
-| Withdraw whole of unlimited deposit | `withdraw` |  |  |  |
+| Case                                 | data.action |      data.id      | data.amount        | value         |
+| ------------------------------------ | ----------- | :---------------: | ------------------ | ------------- |
+| Add deposit                          | `add`       |                   |                    | amount to add |
+| Withdraw limited deposit             | `withdraw`  | ID of the deposit |                    |               |
+| Withdraw a part of unlimited deposit | `withdraw`  |                   | amount to withdraw |               |
+| Withdraw whole of unlimited deposit  | `withdraw`  |                   |                    |               |
 
 > Example responses
 
@@ -886,13 +882,13 @@ While the `action` is `withdraw`, `id` must be set for the limited deposit. Othe
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-* Transaction hash \([T\_HASH](jsonrpc_v3.md#T_HASH)\) on success
+* Transaction hash ([T_HASH](jsonrpc_v3.md#T_HASH)) on success
 * Error code and message on failure
 
-### icx\_sendTransactionAndWait
+### icx_sendTransactionAndWait
 
 It sends a transaction like `icx_sendTransaction`, then it will wait for the result of it for specified time. If the timeout isn't set by user, it uses `defaultWaitTimeout`.
 
@@ -901,14 +897,14 @@ It's disabled by default. It can be enabled by setting `defaultWaitTimeout` as n
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-* Same response value\([Transaction Result](jsonrpc_v3.md#T_RESULT)\) as `icx_getTransactionResult` on success
+* Same response value([Transaction Result](jsonrpc_v3.md#T_RESULT)) as `icx_getTransactionResult` on success
 * Error code, message and data on failure
-* `data` field of failure will be transaction hash\([T\_HASH](jsonrpc_v3.md#T_HASH)\) on timeout
+* `data` field of failure will be transaction hash([T_HASH](jsonrpc_v3.md#T_HASH)) on timeout
 
-### icx\_waitTransactionResult
+### icx_waitTransactionResult
 
 It will wait for the result of the transaction for specified time. If the timeout isn't set by user, it uses `defaultWaitTimeout`.
 
@@ -917,10 +913,9 @@ It's disabled by default. It can be enabled by setting `defaultWaitTimeout` as n
 #### Responses
 
 | Status | Meaning | Description | Schema |
-| :--- | :--- | :--- | :--- |
-| 200 | OK | Success | Block |
+| ------ | ------- | ----------- | ------ |
+| 200    | OK      | Success     | Block  |
 
-* Same response value\([Transaction Result](jsonrpc_v3.md#T_RESULT)\) as `icx_getTransactionResult` on success
+* Same response value([Transaction Result](jsonrpc_v3.md#T_RESULT)) as `icx_getTransactionResult` on success
 * Error code, message and data on failure
-* `data` field of failure will be transaction hash\([T\_HASH](jsonrpc_v3.md#T_HASH)\) on timeout
-
+* `data` field of failure will be transaction hash([T_HASH](jsonrpc_v3.md#T_HASH)) on timeout

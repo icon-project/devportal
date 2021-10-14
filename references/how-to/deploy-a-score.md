@@ -6,11 +6,11 @@ In this document, we will explain various methods of deploying a SCORE onto the 
 
 * Have an EOA account and the matching keystore file.
 * ICX balance in your wallet.
-* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](). 
+* Understand the lifecycle of SCORE and the audit process. If you are not familiar with the concepts, please read [SCORE Audit: Deploy Guideline](broken-reference). 
 
 ### Using T-Bears
 
-To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline]().
+To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline](broken-reference).
 
 ### Using Python SDK
 
@@ -30,16 +30,16 @@ To deploy a SCORE using T-Bears CLI, please follow the [deploy guideline]().
 
 Required steps for SCORE deploy is as follows.
 
-* Installing SCORE = DEFAULT + INPUT + CONTRACT\_SET + CONTRACT\_CREATE
-* Updating SCORE = DEFAULT + INPUT + CONTRACT\_SET + CONTRACT\_UPDATE
+* Installing SCORE = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
+* Updating SCORE = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_UPDATE
 
 Where each term in the right side of the equation is calculated as;
 
 * DEFAULT = 100\_000 
-* CONTRACT\_CREATE = 1\_000\_000\_000 
-* CONTRACT\_UPDATE = 1\_600\_000\_000 
-* CONTRACT\_SET = 30\_000 \* bytes of the SCORE zip file
-* INPUT = 200 \* bytes of the `params.data` field in the JSON RPC [icx\_sendTransaction](../reference-manuals/icon-json-rpc-api-v3-specification.md#icx_sendtransaction) request message
+* CONTRACT_CREATE = 1\_000\_000\_000 
+* CONTRACT_UPDATE = 1\_600\_000\_000 
+* CONTRACT_SET = 30\_000 \* bytes of the SCORE zip file
+* INPUT = 200 \* bytes of the `params.data` field in the JSON RPC [icx_sendTransaction](../reference-manuals/icon-json-rpc-api-v3-specification.md#icx_sendtransaction) request message
 
 ```javascript
 // Example INPUT data
@@ -58,7 +58,7 @@ Where each term in the right side of the equation is calculated as;
 
 Suppose we have a SCORE zip file of 1,528 bytes in size, and the INPUT data size is 1,546 bytes. Required steps for installing the SCORE is;
 
-```text
+```
 Steps = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
    = 100,000 + (1,546 * 200) + (1,528 * 30,000)  + 1,000,000,000
    = 100,000 + 309,200 + 45,840,000 + 1,000,000,000
@@ -68,7 +68,7 @@ Steps = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
 
 #### Step estimation using the JSON RPC API
 
-[debug\_estimateStep](../reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
+[debug_estimateStep](../reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
 
 * SCORE install
 
@@ -125,4 +125,3 @@ Steps = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
     }
 }
 ```
-

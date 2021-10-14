@@ -8,8 +8,8 @@ Understand how to write SCORE unit-test
 
 ## Prerequisite
 
-* [SCORE Overview]()
-* [T-Bears Overview]() 
+* [SCORE Overview](broken-reference)
+* [T-Bears Overview](broken-reference) 
 * [ICON Python SDK](../../icon-sdks/python-sdk/)
 
 ## How to Write SCORE Unit Test Code
@@ -30,7 +30,7 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
   * Store changed state caused by SCORE method invocation. The state is stored in memory, not in the file system.
 * Mock event log
   * It is sufficient to check that the event log has been called
-* Mock internalCall\(call external function in SCORE\).
+* Mock internalCall(call external function in SCORE).
   * The operation on the other SCORE is considered to be reliable. so, what you need is InternalCall called with specified arguments.
 
 ### Methods
@@ -39,30 +39,30 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
 
 **Getting SCORE instance**
 
-* get\_score\_instance\(score\_class, owner, on\_install\_params\)
+* get_score_instance(score_class, owner, on_install_params)
   * Get an instance of the SCORE class passed as an `score_class` argument
   * **parameters**
-    * **score\_class** : SCORE  to instantiate
+    * **score_class** : SCORE  to instantiate
     * **owner** : Address to set as owner of SCORE
-    * **on\_install\_params** : parameters of on\_install\_method
-  * Refer to `setUp` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
-* update\_score\(prev\_score\_address, score\_class, on\_update\_params\)
+    * **on_install_params** : parameters of on_install_method
+  * Refer to `setUp` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
+* update_score(prev_score_address, score_class, on_update_params)
   * Update SCORE at `prev_score_address` with `score_class` instance and get updated SCORE
   * **parameters**
-    * **Prev\_score\_address** : address of SCORE to update
-    * **score\_class** : SCORE class to update
-    * **on\_update\_params** : parameters of on\_update method
-  * Refer to `test_update` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
+    * **Prev_score_address** : address of SCORE to update
+    * **score_class** : SCORE class to update
+    * **on_update_params** : parameters of on_update method
+  * Refer to `test_update` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
 
 **Setting SCORE properties**
 
-* set\_msg\(sender, value\)
+* set_msg(sender, value)
   * Set msg property in SCORE
   * **parameters**
     * **sender** : Set sender attribute of msg to given sender argument
     * **value** : Set value attribute of msg to given sender argument
-  * Refer to `test_msg` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
-* set\_tx\(origin, timestamp, \_hash, index, nonce\)
+  * Refer to `test_msg` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
+* set_tx(origin, timestamp, \_hash, index, nonce)
   * Set tx property in SCORE
   * **parameters**
     * **origin** : Set origin attribute of tx to given origin argument
@@ -70,76 +70,73 @@ SCORE unittest should inherit `ScoreTestCase`. The SCORE unit test code works as
     * **\_hash** : Set hash attribute of tx to given \_hash argument
     * **index** : Set index attribute of tx to given index argument
     * **nonce** : Set nonce attribute of tx to given nonce argument
-  * Refer to `test_tx` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
-* set\_block\(height, timestamp\)
-  * Set the block property inside SCORE.
+  * Refer to `test_tx` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
+* set_block(height, timestamp)
+  *   Set the block property inside SCORE.
 
-    If you pass only height, the value of block.timestamp is set to height \* 2 seconds.
+      If you pass only height, the value of block.timestamp is set to height \* 2 seconds.
 
-    When this method is called, the block\_height inside the SCORE associated with the block is set to height, and the return value of the now \(\) method is set to timestamp.
+      When this method is called, the block_height inside the SCORE associated with the block is set to height, and the return value of the now () method is set to timestamp.
 
-    It should be called if you use the value associated with the block information in the SCORE method you are calling.
-
+      It should be called if you use the value associated with the block information in the SCORE method you are calling.
   * **parameters**
     * **height** : Set height attribute of block to given height argument
     * **timestamp** : Set timestamp attribute of block to given timestamp argument
-  * Refer to `test_block` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
+  * Refer to `test_block` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
 
 **Patching InternalCall & asserting InternalCall**
 
-* register\_interface\_score\(internal\_score\_address\)
-  * This method should be called before testing the internal\_call that calls the SCORE method with an `internal_score_address` address.
+* register_interface_score(internal_score_address)
+  *   This method should be called before testing the internal_call that calls the SCORE method with an `internal_score_address` address.
 
-    If you call this method, you can use the `assert_internal_call` method to evaluate whether internal\_call is called properly with specified arguments.
-
+      If you call this method, you can use the `assert_internal_call` method to evaluate whether internal_call is called properly with specified arguments.
   * **parameters**
-    * **internal\_score\_address** : address of interface SCORE
-  * Refer to `test_internal2` method in s[imple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md)
-* patch\_internal\_method\(score\_address, method, new\_method\)
-  * You will use this method for patching query method to set return value.
+    * **internal_score_address** : address of interface SCORE
+  * Refer to `test_internal2` method in s[imple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md)
+* patch_internal_method(score_address, method, new_method)
+  *   You will use this method for patching query method to set return value.
 
-    Since this function internally calls `register_interface_score`, you don't need to call `register_interface_score` when calling this function.
+      Since this function internally calls `register_interface_score`, you don't need to call `register_interface_score` when calling this function.
 
-    The third argument, the new method, must be a function with the same number of arguments as the actual method.
-
+      The third argument, the new method, must be a function with the same number of arguments as the actual method.
   * **parameters**
-    * **internal\_score\_address** : address of the SCORE having method to be called
+    * **internal_score_address** : address of the SCORE having method to be called
     * **method** : method to be patched
-    * **new\_method** : method to patch
-  * Refer to `test_interanl` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
-* assert\_internal\_call\(internal\_score\_address, method, \*params\)
-  * assert that internal call\(mock\) was called with the specified arguments. Raises an AssertionError if the params passed in are different to the last call to the mock.
+    * **new_method** : method to patch
+  * Refer to `test_interanl` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
+* assert_internal_call(internal_score_address, method, \*params)
+  * assert that internal call(mock) was called with the specified arguments. Raises an AssertionError if the params passed in are different to the last call to the mock.
   * **parameters**
-    * **internal\_score\_address** : address of internal call SCORE
+    * **internal_score_address** : address of internal call SCORE
     * **method** : method to check
     * **params** : params to check
-  * Refer to `test_internal` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
+  * Refer to `test_internal` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
 
 **Utils**
 
-* transfer\(\_from, to, amount\)
+* transfer(\_from, to, amount)
   * Transfer icx to given 'to' address. If you pass a SCORE address to the `to` argument, this method calls the SCORE fallback method.
   * **parameters**
     * **\_from** : address of sender
     * **to** : address of receiver
     * **amount** : amount to transfer
-  * Refer to `test_transfer` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
-* get\_balance\(address\)
+  * Refer to `test_transfer` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
+* get_balance(address)
   * Query icx balance of given address.
   * **parameters**
     * **address** : address to query for icx balance
-  * Refer to `test_get_balance` method in simple\_score2/tests/test\_unit\_simple\_score2.py
-* initialize\_accounts\(accounts\_info\)
+  * Refer to `test_get_balance` method in simple_score2/tests/test_unit_simple_score2.py
+* initialize_accounts(accounts_info)
   * Initialize accounts using given dictionary info.
   * **parameters**
-    * **accounts\_info** : dictionary with address as key and balance as value
-  * Refer to `setUp` method in [simple\_score2/tests/test\_unit\_simple\_score2.py](write-score-unit-test.md#examples)
+    * **accounts_info** : dictionary with address as key and balance as value
+  * Refer to `setUp` method in [simple_score2/tests/test_unit_simple_score2.py](write-score-unit-test.md#examples)
 
 ### Examples
 
-In this example, we'll use two simple SCOREs only have getter and setter. \(the first SCORE has getter and setter and another SCORE has internalCall, getter, and setter\)
+In this example, we'll use two simple SCOREs only have getter and setter. (the first SCORE has getter and setter and another SCORE has internalCall, getter, and setter)
 
-**simple\_score/simple\_score.py**
+**simple_score/simple_score.py**
 
 ```python
 from iconservice import *
@@ -175,7 +172,7 @@ class SimpleScore(IconScoreBase):
         return self.value.get()
 ```
 
-**simple\_score2/simple\_score2.py**
+**simple_score2/simple_score2.py**
 
 ```python
 from iconservice import *
@@ -255,7 +252,7 @@ class SimpleScore2(IconScoreBase):
         assert self.now() == 30
 ```
 
-**simple\_score2/tests/test\_unit\_simple\_score2.py**
+**simple_score2/tests/test_unit_simple_score2.py**
 
 ```python
 from iconservice import Address
@@ -370,4 +367,3 @@ Ran 11 tests in 0.027s
 
 OK
 ```
-

@@ -26,12 +26,12 @@ Transaction data is in JSON format with some restrictions.
 
 **Allowed types in JSON**
 
-| Type | Description |
-| :--- | :--- |
-| String | Normal string without U+0000 \(NULL\) character. ex\) “Value” |
-| Dictionary | Pairs of key and value. ex\) {“key1”: “value1”, “key1”: “value2”} |
-| Array | Series of values. ex\) \[“value1”, “value2”\] |
-| Null | null |
+| Type       | Description                                                      |
+| ---------- | ---------------------------------------------------------------- |
+| String     | Normal string without U+0000 (NULL) character. ex) “Value”       |
+| Dictionary | Pairs of key and value. ex) {“key1”: “value1”, “key1”: “value2”} |
+| Array      | Series of values. ex) \[“value1”, “value2”]                      |
+| Null       | null                                                             |
 
 #### Serialize
 
@@ -56,9 +56,9 @@ ICON follows the JSON-RPC v2.0 protocol spec. A signed transaction request looks
 }
 ```
 
-Transaction data is serialized by concatenating key, value pairs in `params` with `.` as a delimiter. Our final goal is generating the `signature` of transaction data, therefore, the `signature` field shown above example is not part of the data to be serialized. Adding the method name, “icx\_sendTransaction”, to the serialized string as a prefix completes the serialization process.
+Transaction data is serialized by concatenating key, value pairs in `params` with `.` as a delimiter. Our final goal is generating the `signature` of transaction data, therefore, the `signature` field shown above example is not part of the data to be serialized. Adding the method name, “icx_sendTransaction”, to the serialized string as a prefix completes the serialization process.
 
-```text
+```
 icx_sendTransaction.<key1>.<value1>....<keyN>.<valueN>
 ```
 
@@ -68,16 +68,16 @@ Make sure that all the special characters in string must be UTF-8 encoded.
 
 Apply UTF-8 encoding to the text. Characters listed below should be escaped with `\`. String must not have any null character, U+0000.
 
-| Name | Backslash \(REVERSE SOLIDUS\) | Period \(FULL STOP\) | Left curly bracket | Right curly bracket | Left square bracket | Right square bracket |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Shape | _\_ | **.** | **{** | **}** | **\[** | **\]** |
-| UTF-8 | 0x5C | 0x2E | 0x7B | 0x7D | 0x5B | 0x5D |
+| Name  | Backslash (REVERSE SOLIDUS) | Period (FULL STOP) | Left curly bracket | Right curly bracket | Left square bracket | Right square bracket |
+| ----- | --------------------------- | ------------------ | ------------------ | ------------------- | ------------------- | -------------------- |
+| Shape | _\\_                        | **.**              | **{**              | **}**               | **\[**              | **]**                |
+| UTF-8 | 0x5C                        | 0x2E               | 0x7B               | 0x7D                | 0x5B                | 0x5D                 |
 
 **Dictionary type**
 
-Enclosed with `{` and `}`, and key/value pairs are separated with `.`. Every keys in dictionary are string type, therefore, the same encoding rules apply. The order of keys in the serialized data follows the natural ordering of the UTF-8 encoded byte comparison \(it’s same as Unicode string order\).
+Enclosed with `{` and `}`, and key/value pairs are separated with `.`. Every keys in dictionary are string type, therefore, the same encoding rules apply. The order of keys in the serialized data follows the natural ordering of the UTF-8 encoded byte comparison (it’s same as Unicode string order).
 
-```text
+```
 {<key1>.<value1>.<key2>.<value2>....<keyN>.<valueN>}
 ```
 
@@ -95,7 +95,7 @@ Example:
 
 Serialized as
 
-```text
+```
 {method.transfer.params.{to.hxab2d8215eab14bc6bdd8bfb2c8151257032ecd8b.value.0x1}}
 ```
 
@@ -103,7 +103,7 @@ Serialized as
 
 Enclosed with `[` and `]`. All values are separated with `.`.
 
-```text
+```
 [<value1>.<value2>.<value3>....<valueN>]
 ```
 
@@ -111,7 +111,7 @@ Enclosed with `[` and `]`. All values are separated with `.`.
 
 Null will be represented as an escaped zero.
 
-```text
+```
 \0
 ```
 
@@ -141,7 +141,7 @@ Original JSON request:
 
 Serialized params:
 
-```text
+```
 icx_sendTransaction.from.hxbe258ceb872e08851f1f59694dac2558708ece11.nid.0x1.nonce.0x1.stepLimit.0x12345.timestamp.0x563a6cf330136.to.hx5bfdb090f43a808005ffc27c25b213145e80b7cd.value.0xde0b6b3a7640000.version.0x3
 ```
 
@@ -176,7 +176,7 @@ Original JSON request:
 
 Serialized params:
 
-```text
+```
 icx_sendTransaction.data.{method.transfer.params.{to.hxab2d8215eab14bc6bdd8bfb2c8151257032ecd8b.value.0x1}}.dataType.call.from.hxbe258ceb872e08851f1f59694dac2558708ece11.nid.0x1.nonce.0x1.stepLimit.0x12345.timestamp.0x563a6cf330136.to.cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32.version.0x3
 ```
 
@@ -192,11 +192,11 @@ The private key of the `from` address from which the transaction request was mad
 
 **Transaction hash**
 
-32 bytes \(256-bit\) hash data which is created by hashing the serialized transaction data using SHA3\_256.
+32 bytes (256-bit) hash data which is created by hashing the serialized transaction data using SHA3\_256.
 
 #### Create signature
 
-The first step is making a serialized signature. Using the `secp256k1` library, create a recoverable ECDSA signature of a transaction hash. This ensures that the transaction was originated from the private key owner, and the transaction message received by the recipient is not compromised. The resulting output should be 64 bytes serialized signature \(R, S\) with 1 byte recovery id \(V\).
+The first step is making a serialized signature. Using the `secp256k1` library, create a recoverable ECDSA signature of a transaction hash. This ensures that the transaction was originated from the private key owner, and the transaction message received by the recipient is not compromised. The resulting output should be 64 bytes serialized signature (R, S) with 1 byte recovery id (V).
 
 The final step is to encode the generated signature as a Base64-encoded string.
 
@@ -227,7 +227,7 @@ Here is a sample transaction request message. We will create a signature for the
 
 * step1: Serialize transaction data.
 
-```text
+```
 icx_sendTransaction.from.hxbe258ceb872e08851f1f59694dac2558708ece11.nid.0x1.stepLimit.0x12345.timestamp.0x563a6cf330136.to.cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32.value.0xde0b6b3a7640000.version.0x3
 ```
 
@@ -269,4 +269,3 @@ transaction_signature = base64.b64encode(recoverable_sig)
 ### Summary
 
 So far, we have learned about the rule of serializing transaction data, a process of converting from serialized transaction data to transaction signature and the list of libraries used to generate a signature. Be aware that you can not generate a valid transaction signature if you omit process or break any rule.
-

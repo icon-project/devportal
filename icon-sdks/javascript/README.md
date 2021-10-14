@@ -17,12 +17,12 @@ This document is focused on how to use `icon-sdk-js` properly. If you would like
 
 Get different types of examples as follows. Complete source code is found on Github at [https://github.com/icon-project/icon-sdk-js/tree/master/quickstart](https://github.com/icon-project/icon-sdk-js/tree/master/quickstart)
 
-| Example | Description |
-| :--- | :--- |
-| [Wallet](./#wallet) | An example of creating and loading a keywallet. |
-| [ICX Transfer](./#icx-transfer) | An example of transferring ICX and confirming the result. |
-| [Token Deploy and Transfer](./#token-deploy-and-transfer) | An example of deploying an IRC token, transferring the token and confirming the result. |
-| [Sync Block](./#sync-block) | An example of checking block confirmation and printing the ICX and token transfer information. |
+| Example                                                   | Description                                                                                    |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [Wallet](./#wallet)                                       | An example of creating and loading a keywallet.                                                |
+| [ICX Transfer](./#icx-transfer)                           | An example of transferring ICX and confirming the result.                                      |
+| [Token Deploy and Transfer](./#token-deploy-and-transfer) | An example of deploying an IRC token, transferring the token and confirming the result.        |
+| [Sync Block](./#sync-block)                               | An example of checking block confirmation and printing the ICX and token transfer information. |
 
 ### Installation
 
@@ -233,7 +233,7 @@ const txHash = await iconService.sendTransaction(signedTransaction).execute();
 
 Please go to `quickstart` directory and install dependency to use `icon-sdk-js`.
 
-```text
+```
 npm install   // install dependencies for executing the quickstart project (including icon-sdk-js package)
 ```
 
@@ -241,13 +241,13 @@ npm install   // install dependencies for executing the quickstart project (incl
 
 Run example file.
 
-```text
+```
 npm start   // open http://localhost:3000/ in browser
 ```
 
 If you want to rebuild icon-sdk-js library and run quickstart project, go to icon-sdk-js root directory and run `npm run quickstart:rebuild` command.
 
-```text
+```
 npm run quickstart:rebuild   // open http://localhost:3000/ in browser
 ```
 
@@ -255,13 +255,13 @@ npm run quickstart:rebuild   // open http://localhost:3000/ in browser
 
 If you want to use custom ICON node URL, change the value of `NODE_URL` variable in `./mockData/index.js`. Default value of `NODE_URL` is `https://bicon.net.solidwallet.io/api/v3`
 
-_For more information on the testnet, see_ [_the documentation_](https://github.com/icon-project/icon-project.github.io/blob/master/docs/icon_network.md) _for the ICON network._
+_For more information on the testnet, see _[_the documentation_](https://github.com/icon-project/icon-project.github.io/blob/master/docs/icon_network.md)_ for the ICON network._
 
 ```javascript
 const NODE_URL = 'https://bicon.net.solidwallet.io/api/v3';
 ```
 
-#### 
+####
 
 #### Wallet
 
@@ -460,9 +460,9 @@ console.log("transaction status(1:success, 0:failure): "+transactionResult.statu
 
 You can check the following information using the TransactionResult.
 
-* status : 1 \(success\), 0 \(failure\)
+* status : 1 (success), 0 (failure)
 * to : transaction’s receiving address
-* failure : Only exists if status is 0\(failure\). code\(str\), message\(str\) property included
+* failure : Only exists if status is 0(failure). code(str), message(str) property included
 * txHash : transaction hash
 * txIndex : transaction index in a block
 * blockHeight : Block height of the transaction
@@ -470,7 +470,7 @@ You can check the following information using the TransactionResult.
 * cumulativeStepUsed : Accumulated amount of consumed step’s until the transaction is executed in block
 * stepUsed : Consumed step amount to send the transaction
 * stepPrice : Consumed step price to send the transaction
-* scoreAddress : SCORE address if the transaction generated SCORE \(optional\)
+* scoreAddress : SCORE address if the transaction generated SCORE (optional)
 * eventLogs :  List of EventLogs written during the execution of the transaction.
 * logsBloom : Bloom Filter of the indexed data of the Eventlogs.
 
@@ -809,11 +809,11 @@ You can check the following information using the ConfirmedTransaction:
 * version : json rpc server version
 * to : Receiving address of transaction
 * value: The amount of ICX coins to transfer to the address. If omitted, the value is assumed to be 0
-* timestamp: timestamp of the transmitting transaction \(unit: microseconds\)
+* timestamp: timestamp of the transmitting transaction (unit: microseconds)
 * nid : network ID
 * signature: digital signature data of the transaction
 * txHash : transaction hash
-* dataType: A value indicating the type of the data item \(call, deploy, message\)
+* dataType: A value indicating the type of the data item (call, deploy, message)
 * data: Various types of data are included according to dataType.
 
 **Transaction output**
@@ -901,4 +901,3 @@ async getTokenSymbol(to) {
 ### Licenses
 
 This project follows the Apache 2.0 License. Please refer to [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
-

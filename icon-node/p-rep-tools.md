@@ -1,6 +1,6 @@
 # P-Rep Tools
 
-## P-Rep tools \(preptools\) Tutorial
+## P-Rep tools (preptools) Tutorial
 
 This tutorial is intended to give an introduction to using preptools. This guide will walk through the basics of setting up the development environment and the usage of preptools CLI commands.
 
@@ -25,12 +25,12 @@ This chapter explains how to install P-Rep Tools on your system.
 * OS: MacOS or Linux
 * Windows is not supported.
 * Python
-  * Make a virtualenv for Python 3.6.5+ \(3.7 is also supported\)
-  * Check your Python version
+  * Make a virtualenv for Python 3.6.5+ (3.7 is also supported)
+  *   Check your Python version
 
-    ```bash
-    $ python3 -V
-    ```
+      ```bash
+      $ python3 -V
+      ```
 
 #### Setup
 
@@ -59,7 +59,7 @@ Install the preptools with pypi
 
 ### How to use P-Rep tools
 
-#### Command-line Interfaces \(CLIs\)
+#### Command-line Interfaces (CLIs)
 
 **Overview**
 
@@ -67,7 +67,7 @@ preptools provides several commands. Here is the list of the available commands.
 
 **Usage**
 
-```text
+```
 usage: preptools [-h]
                  ...
 
@@ -98,9 +98,9 @@ subcommands:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | Show this help message and exit |
+| shorthand, Name | default | Description                     |
+| --------------- | ------- | ------------------------------- |
+| -h, --help      |         | Show this help message and exit |
 
 #### Setting PRep commands
 
@@ -110,11 +110,14 @@ There are four commands to set up the P-Rep information: `preptools registerPRep
 
 **Description**
 
-Register P-Rep.  
+Register P-Rep.\
 There are two ways of registering a P-Rep.
 
-* Using command line option Input P-Rep information with --\[OPT\_NAME\] OPT\_VALUE. The order of priority is command line &gt; json
-* Using json file Input P-Rep information with --prep-json JSON\_PATH.
+* Using command line option\
+  Input P-Rep information with --\[OPT_NAME] OPT_VALUE.\
+  The order of priority is command line > json
+* Using json file\
+  Input P-Rep information with --prep-json JSON_PATH.
 
 **Usage**
 
@@ -159,26 +162,26 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| -p, --password |  | keystore password |
-| -k, --keystore |  | keystore file path |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| --name |  | P-Rep name |
-| --country |  | P-Rep's country. This require [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) standard. |
-| --city |  | P-Rep's city. |
-| --email |  | P-Rep's email.                ex\) "example@iconloop.com" |
-| --website |  | P-Rep's homepage url.         ex\) "[https://node.example.com/](https://node.example.com/)" |
-| --details |  | json url including P-Rep detailed information |
-|  |  | ex\) "[https://node.example.com/json](https://node.example.com/json)" |
-| --p2p-endpoint |  | Network info used for connection among P-Rep nodes. |
-|  |  | ex\) “123.45.67.89:7100” or “node.example.com:7100” |
-| --node-address |  | PRep Node Key \(default: Operator Key\) |
-| --prep-json |  | json file having P-Rep information |
+| shorthand, Name  | default                                            | Description                                                                                                      |
+| ---------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| -h, --help       |                                                    | show this help message and exit                                                                                  |
+| -u, --url        | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                                                                                                         |
+| -n, --nid        | 3                                                  | network id                                                                                                       |
+| -c, --config     | ./preptools_config.json                            | preptools config file path                                                                                       |
+| -p, --password   |                                                    | keystore password                                                                                                |
+| -k, --keystore   |                                                    | keystore file path                                                                                               |
+| -s, --step-limit | 0x50000000                                         | step limit to set                                                                                                |
+| --name           |                                                    | P-Rep name                                                                                                       |
+| --country        |                                                    | P-Rep's country. This require [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-3) standard. |
+| --city           |                                                    | P-Rep's city.                                                                                                    |
+| --email          |                                                    | P-Rep's email.                ex) "example@iconloop.com"                                                         |
+| --website        |                                                    | P-Rep's homepage url.         ex) "[https://node.example.com/](https://node.example.com)"                        |
+| --details        |                                                    | json url including P-Rep detailed information                                                                    |
+|                  |                                                    | ex) "[https://node.example.com/json](https://node.example.com/json)"                                             |
+| --p2p-endpoint   |                                                    | Network info used for connection among P-Rep nodes.                                                              |
+|                  |                                                    | ex) “123.45.67.89:7100” or “node.example.com:7100”                                                               |
+| --node-address   |                                                    | PRep Node Key (default: Operator Key)                                                                            |
+| --prep-json      |                                                    | json file having P-Rep information                                                                               |
 
 **Examples**
 
@@ -308,15 +311,15 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| -p, --password |  | keystore password |
-| -k, --keystore |  | keystore file path |
-| -s, --step-limit | 0x50000000 | step limit to set |
+| shorthand, Name  | default                                            | Description                     |
+| ---------------- | -------------------------------------------------- | ------------------------------- |
+| -h, --help       |                                                    | show this help message and exit |
+| -u, --url        | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                        |
+| -n, --nid        | 3                                                  | network id                      |
+| -c, --config     | ./preptools_config.json                            | preptools config file path      |
+| -p, --password   |                                                    | keystore password               |
+| -k, --keystore   |                                                    | keystore file path              |
+| -s, --step-limit | 0x50000000                                         | step limit to set               |
 
 **Examples**
 
@@ -352,12 +355,17 @@ request success.
 
 **Description**
 
-Change enrolled P-Rep information.  
+Change enrolled P-Rep information.\
 There are three way of set P-Rep.
 
-* Using command line option You can input P-Rep information with --\[OPT\_NAME\] OPT\_VALUE. The order of priority is command line &gt; json.
-* Using json file You can input P-Rep information with --prep-json JSON\_PATH.
-* Using interactive mode \[--i\] Activate interactive mode and input P-Rep info what you want. If you don't want to input, just enter.
+* Using command line option\
+  You can input P-Rep information with --\[OPT_NAME] OPT_VALUE.\
+  The order of priority is command line > json.
+* Using json file\
+  You can input P-Rep information with --prep-json JSON_PATH.
+* Using interactive mode \[--i]\
+  Activate interactive mode and input P-Rep info what you want.\
+  If you don't want to input, just enter.
 
 **Usage**
 
@@ -402,27 +410,27 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| -p, --password |  | keystore password |
-| -k, --keystore |  | keystore file path |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| -i, --interactive |  | Activate interactive mode when prep fields are blank. |
-| --name |  | P-Rep name |
-| --country |  | P-Rep's country. This require [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) standard. |
-| --city |  | P-Rep's city. |
-| --email |  | P-Rep's email.                ex\) "example@iconloop.com" |
-| --website |  | P-Rep's homepage url.         ex\) "[https://node.example.com/](https://node.example.com/)" |
-| --details |  | json url including P-Rep detailed information |
-|  |  | ex\) "[https://node.example.com/json](https://node.example.com/json)" |
-| --p2p-endpoint |  | Network info used for connection among P-Rep nodes. |
-|  |  | ex\) “123.45.67.89:7100” or “node.example.com:7100” |
-| --node-address |  | PRep Node Key \(Default: Own Address\) |
-| --prep-json |  | json file having P-Rep information |
+| shorthand, Name   | default                                            | Description                                                                                                      |
+| ----------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| -h, --help        |                                                    | show this help message and exit                                                                                  |
+| -u, --url         | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                                                                                                         |
+| -n, --nid         | 3                                                  | network id                                                                                                       |
+| -c, --config      | ./preptools_config.json                            | preptools config file path                                                                                       |
+| -p, --password    |                                                    | keystore password                                                                                                |
+| -k, --keystore    |                                                    | keystore file path                                                                                               |
+| -s, --step-limit  | 0x50000000                                         | step limit to set                                                                                                |
+| -i, --interactive |                                                    | Activate interactive mode when prep fields are blank.                                                            |
+| --name            |                                                    | P-Rep name                                                                                                       |
+| --country         |                                                    | P-Rep's country. This require [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-3) standard. |
+| --city            |                                                    | P-Rep's city.                                                                                                    |
+| --email           |                                                    | P-Rep's email.                ex) "example@iconloop.com"                                                         |
+| --website         |                                                    | P-Rep's homepage url.         ex) "[https://node.example.com/](https://node.example.com)"                        |
+| --details         |                                                    | json url including P-Rep detailed information                                                                    |
+|                   |                                                    | ex) "[https://node.example.com/json](https://node.example.com/json)"                                             |
+| --p2p-endpoint    |                                                    | Network info used for connection among P-Rep nodes.                                                              |
+|                   |                                                    | ex) “123.45.67.89:7100” or “node.example.com:7100”                                                               |
+| --node-address    |                                                    | PRep Node Key (Default: Own Address)                                                                             |
+| --prep-json       |                                                    | json file having P-Rep information                                                                               |
 
 **Examples**
 
@@ -511,8 +519,8 @@ request success.
 
 **Description**
 
-Change Governance variables used in network operation.  
-You can only change it once per term.  
+Change Governance variables used in network operation.\
+You can only change it once per term.\
 Other items besides irep may be added later.
 
 **Usage**
@@ -544,16 +552,16 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| -p, --password |  | keystore password |
-| -k, --keystore |  | keystore file path |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| --irep |  | amounts of irep in loop |
+| shorthand, Name  | default                                            | Description                     |
+| ---------------- | -------------------------------------------------- | ------------------------------- |
+| -h, --help       |                                                    | show this help message and exit |
+| -u, --url        | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                        |
+| -n, --nid        | 3                                                  | network id                      |
+| -c, --config     | ./preptools_config.json                            | preptools config file path      |
+| -p, --password   |                                                    | keystore password               |
+| -k, --keystore   |                                                    | keystore file path              |
+| -s, --step-limit | 0x50000000                                         | step limit to set               |
+| --irep           |                                                    | amounts of irep in loop         |
 
 **Examples**
 
@@ -616,13 +624,13 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| address |  | Address of P-Rep you are looking for |
+| shorthand, Name | default                                            | Description                          |
+| --------------- | -------------------------------------------------- | ------------------------------------ |
+| -h, --help      |                                                    | show this help message and exit      |
+| -u, --url       | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                             |
+| -n, --nid       | 3                                                  | network id                           |
+| -c, --config    | ./preptools_config.json                            | preptools config file path           |
+| address         |                                                    | Address of P-Rep you are looking for |
 
 **Examples**
 
@@ -695,15 +703,15 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
-| --start-ranking |  | Get P-Rep list which starts from start ranking |
-| --end-ranking |  | Get P-Rep list which ends with end ranking, inclusive |
-| --block-height |  | Block height which ranking formed |
+| shorthand, Name | default                                            | Description                                           |
+| --------------- | -------------------------------------------------- | ----------------------------------------------------- |
+| -h, --help      |                                                    | show this help message and exit                       |
+| -u, --url       | [http://127.0.0.1/api/v3](http://127.0.0.1/api/v3) | node url                                              |
+| -n, --nid       | 3                                                  | network id                                            |
+| -c, --config    | ./preptools_config.json                            | preptools config file path                            |
+| --start-ranking |                                                    | Get P-Rep list which starts from start ranking        |
+| --end-ranking   |                                                    | Get P-Rep list which ends with end ranking, inclusive |
+| --block-height  |                                                    | Block height which ranking formed                     |
 
 **Examples**
 
@@ -851,24 +859,24 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | networkId mainnet\(1\), testnet\(2\) |
-| --config |  | configuration file path. |
-| -y, --yes |  | Do not confirm if you want to send request |
-| -v, --verbose |  | verbose mode flag |
-| -p, --password |  | Keystore file's password |
-| -k, --keystore |  | keystore file path |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| --title |  | title of network-proposal |
-| --desc |  | description of network-proposal |
-| --type |  | type of network-proposal\(0,1,2,3,4\) |
-| --value-value |  | value of value field |
-| --value-code |  | value of code field |
-| --value-address |  | value of address field |
-| --value-type |  | value of type field |
+| shorthand, Name  | default                                                      | Description                                |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| -h, --help       |                                                              | show this help message and exit            |
+| -u, --url        | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                                   |
+| -n, --nid        | 3                                                            | networkId mainnet(1), testnet(2)           |
+| --config         |                                                              | configuration file path.                   |
+| -y, --yes        |                                                              | Do not confirm if you want to send request |
+| -v, --verbose    |                                                              | verbose mode flag                          |
+| -p, --password   |                                                              | Keystore file's password                   |
+| -k, --keystore   |                                                              | keystore file path                         |
+| -s, --step-limit | 0x50000000                                                   | step limit to set                          |
+| --title          |                                                              | title of network-proposal                  |
+| --desc           |                                                              | description of network-proposal            |
+| --type           |                                                              | type of network-proposal(0,1,2,3,4)        |
+| --value-value    |                                                              | value of value field                       |
+| --value-code     |                                                              | value of code field                        |
+| --value-address  |                                                              | value of address field                     |
+| --value-type     |                                                              | value of type field                        |
 
 **Examples**
 
@@ -944,19 +952,19 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | networkId mainnet\(1\), testnet\(2\) |
-| --config |  | configuration file path. |
-| -v, --verbose |  | verbose mode flag |
-| -y, --yes |  | Do not confirm if you want to send request |
-| -p, --password |  | password of keystore file |
-| -k, --keystore |  | path of keystore file |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| --id |  | id of network-proposal to vote |
-| --vote |  | voting value\(0: disagree, 1: agree\) |
+| shorthand, Name  | default                                                      | Description                                |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| -h, --help       |                                                              | show this help message and exit            |
+| -u, --url        | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                                   |
+| -n, --nid        | 3                                                            | networkId mainnet(1), testnet(2)           |
+| --config         |                                                              | configuration file path.                   |
+| -v, --verbose    |                                                              | verbose mode flag                          |
+| -y, --yes        |                                                              | Do not confirm if you want to send request |
+| -p, --password   |                                                              | password of keystore file                  |
+| -k, --keystore   |                                                              | path of keystore file                      |
+| -s, --step-limit | 0x50000000                                                   | step limit to set                          |
+| --id             |                                                              | id of network-proposal to vote             |
+| --vote           |                                                              | voting value(0: disagree, 1: agree)        |
 
 **Examples**
 
@@ -1026,18 +1034,18 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | networkId mainnet\(1\), testnet\(2\) |
-| --config |  | configuration file path. |
-| -y, --yes |  | Do not confirm if you want to send request |
-| -v, --verbose |  | verbose mode flag |
-| -p, --password |  | password of keystore file |
-| -k, --keystore |  | path of keystore file |
-| -s, --step-limit | 0x50000000 | step limit to set |
-| --id |  | id of network-proposal to cancel |
+| shorthand, Name  | default                                                      | Description                                |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| -h, --help       |                                                              | show this help message and exit            |
+| -u, --url        | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                                   |
+| -n, --nid        | 3                                                            | networkId mainnet(1), testnet(2)           |
+| --config         |                                                              | configuration file path.                   |
+| -y, --yes        |                                                              | Do not confirm if you want to send request |
+| -v, --verbose    |                                                              | verbose mode flag                          |
+| -p, --password   |                                                              | password of keystore file                  |
+| -k, --keystore   |                                                              | path of keystore file                      |
+| -s, --step-limit | 0x50000000                                                   | step limit to set                          |
+| --id             |                                                              | id of network-proposal to cancel           |
 
 **Examples**
 
@@ -1105,13 +1113,13 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -c, --config |  | configuration file path. |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | networkId mainnet\(1\), testnet\(2\) |
-| -v, --verbose |  | verbose mode flag |
+| shorthand, Name | default                                                      | Description                      |
+| --------------- | ------------------------------------------------------------ | -------------------------------- |
+| -c, --config    |                                                              | configuration file path.         |
+| -h, --help      |                                                              | show this help message and exit  |
+| -u, --url       | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                         |
+| -n, --nid       | 3                                                            | networkId mainnet(1), testnet(2) |
+| -v, --verbose   |                                                              | verbose mode flag                |
 
 **examples**
 
@@ -1217,15 +1225,15 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -c, --config |  | configuration file path. |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | networkId mainnet\(1\), testnet\(2\) |
-| -v, --verbose |  | verbose mode flag |
-| --type |  | Type of network proposal to filter |
-| --status |  | Status of network proposal to filter |
+| shorthand, Name | default                                                      | Description                          |
+| --------------- | ------------------------------------------------------------ | ------------------------------------ |
+| -c, --config    |                                                              | configuration file path.             |
+| -h, --help      |                                                              | show this help message and exit      |
+| -u, --url       | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                             |
+| -n, --nid       | 3                                                            | networkId mainnet(1), testnet(2)     |
+| -v, --verbose   |                                                              | verbose mode flag                    |
+| --type          |                                                              | Type of network proposal to filter   |
+| --status        |                                                              | Status of network proposal to filter |
 
 **examples**
 
@@ -1337,11 +1345,11 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| path |  | a keystore file path that is to be generated |
-| -h, --help |  | show this help message and exit |
-| -p, --password |  | Keystore file's password |
+| shorthand, Name | default | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| path            |         | a keystore file path that is to be generated |
+| -h, --help      |         | show this help message and exit              |
+| -p, --password  |         | Keystore file's password                     |
 
 **Examples**
 
@@ -1368,10 +1376,10 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| -h, --help |  | show this help message and exit |
-| --path | preptools\_config.json | Path of configue file. |
+| shorthand, Name | default               | Description                     |
+| --------------- | --------------------- | ------------------------------- |
+| -h, --help      |                       | show this help message and exit |
+| --path          | preptools_config.json | Path of configue file.          |
 
 **Examples**
 
@@ -1409,13 +1417,13 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| tx\_hash |  | Hash of the transaction to be queried |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
+| shorthand, Name | default                                                      | Description                           |
+| --------------- | ------------------------------------------------------------ | ------------------------------------- |
+| tx_hash         |                                                              | Hash of the transaction to be queried |
+| -h, --help      |                                                              | show this help message and exit       |
+| -u, --url       | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                              |
+| -n, --nid       | 3                                                            | network id                            |
+| -c, --config    | ./preptools_config.json                                      | preptools config file path            |
 
 **Examples**
 
@@ -1477,13 +1485,13 @@ optional arguments:
 
 **Options**
 
-| shorthand, Name | default | Description |
-| :--- | :--- | :--- |
-| tx\_hash |  | Hash of the transaction to be queried |
-| -h, --help |  | show this help message and exit |
-| -u, --url | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url |
-| -n, --nid | 3 | network id |
-| -c, --config | ./preptools\_config.json | preptools config file path |
+| shorthand, Name | default                                                      | Description                           |
+| --------------- | ------------------------------------------------------------ | ------------------------------------- |
+| tx_hash         |                                                              | Hash of the transaction to be queried |
+| -h, --help      |                                                              | show this help message and exit       |
+| -u, --url       | [http://127.0.0.1:9000/api/v3](http://127.0.0.1:9000/api/v3) | node url                              |
+| -n, --nid       | 3                                                            | network id                            |
+| -c, --config    | ./preptools_config.json                                      | preptools config file path            |
 
 **Examples**
 
@@ -1524,7 +1532,7 @@ request success.
 
 #### Configuration Files
 
-**preptools\_config.json**
+**preptools_config.json**
 
 For every P-Rep tools CLI commands except `genconf` and `keystore`, this file is used to configure the default parameters and initial settings.
 
@@ -1538,11 +1546,11 @@ In this configuration file, you can define default options values for some CLI c
 }
 ```
 
-| Field | Data  type | Description |
-| :--- | :--- | :--- |
-| uri | string | URI to send the request. |
-| nid | int | Network ID. 3 is reserved for P-Rep tools. |
-| keyStore | string | Keystore file path. |
+| Field    | Data  type | Description                                |
+| -------- | ---------- | ------------------------------------------ |
+| uri      | string     | URI to send the request.                   |
+| nid      | int        | Network ID. 3 is reserved for P-Rep tools. |
+| keyStore | string     | Keystore file path.                        |
 
 ### JSON Standard for Public Representative Detailed Information
 
@@ -1583,7 +1591,7 @@ This is the JSON standard for detailed information about the P-Rep. P-Rep can su
   * logo: Logo images of P-Rep
     * logo\_256: image 256x256px
     * logo\_1024: image 1024x1024px
-    * logo\_sgv: image svg
+    * logo_sgv: image svg
   * media: URL and username of social media
     * steemit: Steemit URL
     * twitter: Twitter URL
@@ -1596,10 +1604,10 @@ This is the JSON standard for detailed information about the P-Rep. P-Rep can su
     * wechat: Username
 * server: Server information of Public Representative
   * location: Server location
-    * name: Node location in human readable format \[City, State\]
-    * country: Node country code \[XX\]
-  * server\_type: Type of server ‘cloud, on-premise, hybrid’
-  * api\_endpoint: HTTP endpoint [http://host:port](http://host:port)
+    * name: Node location in human readable format \[City, State]
+    * country: Node country code \[XX]
+  * server_type: Type of server ‘cloud, on-premise, hybrid’
+  * api_endpoint: HTTP endpoint [http://host:port](http://host/:port)
 
 #### How to use
 
@@ -1613,4 +1621,3 @@ Create a JSON file and upload it to your domain server. When you call the `regis
 ### License
 
 This project follows the Apache 2.0 License. Please refer to [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
-

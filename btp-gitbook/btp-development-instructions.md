@@ -2,9 +2,9 @@
 
 ## Setup and Installation
 
-This section guides you through a setup of a Blockchain Transmission Protocol \(BTP\) connecting two networks. ICON and Moonriver networks would be used to demonstrate the scheme in this example. This document is aimed to support various groups of people who might be not developers but requires minimum knowledge of computer skills. As of now, we attempt to make these instructions as simple and detail as possible so everyone can do it manually and can be easy to catch up on. Please follow these instructions and do not skip any steps unless you understand what you are currently doing.
+This section guides you through a setup of a Blockchain Transmission Protocol (BTP) connecting two networks. ICON and Moonriver networks would be used to demonstrate the scheme in this example. This document is aimed to support various groups of people who might be not developers but requires minimum knowledge of computer skills. As of now, we attempt to make these instructions as simple and detail as possible so everyone can do it manually and can be easy to catch up on. Please follow these instructions and do not skip any steps unless you understand what you are currently doing.
 
-We have a script to make this example get easier. Please follow this instruction \[[link](https://github.com/icon-project/btp/blob/icondao/docker-compose/goloop2moonbeam/README.MD)\] if you are interested in running via docker. Otherwise, please continue following instructions below
+We have a script to make this example get easier. Please follow this instruction \[[link](https://github.com/icon-project/btp/blob/icondao/docker-compose/goloop2moonbeam/README.MD)] if you are interested in running via docker. Otherwise, please continue following instructions below
 
 **Supporting Operating Systems:**
 
@@ -13,24 +13,24 @@ We have a script to make this example get easier. Please follow this instruction
 
 **Software Requirements:**
 
-* `Docker`: please click on this link \[[Docker](https://docs.docker.com/engine/)\] and follow the instructions to install Docker on your local machine
-* `Docker Compose`: please click on this \[[Docker Compose](https://docs.docker.com/compose/install/)\] and follow the instructions to install Docker Compose on your local machine
-* `Java (JDK 11)`:  please click on this \[[JDK11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)\] and download a version that matches the operating system of your local machine
+* `Docker`: please click on this link \[[Docker](https://docs.docker.com/engine/)] and follow the instructions to install Docker on your local machine
+* `Docker Compose`: please click on this \[[Docker Compose](https://docs.docker.com/compose/install/)] and follow the instructions to install Docker Compose on your local machine
+* `Java (JDK 11)`:  please click on this \[[JDK11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)] and download a version that matches the operating system of your local machine
 
 After install `JDK11`, please check your version:
 
-```text
+```
 $ java --version
 java 11.0.11 2021-04-20 LTS
 Java(TM) SE Runtime Environment 18.9 (build 11.0.11+9-LTS-194)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.11+9-LTS-194, mixed mode)
 ```
 
-* `NodeJS` \(requires `Node >= 10.x`\): You can use this link \[[NodeJS](https://nodejs.org/en/download/)\] and download a version that matches the operating system of your local machine
+* `NodeJS` (requires `Node >= 10.x`): You can use this link \[[NodeJS](https://nodejs.org/en/download/)] and download a version that matches the operating system of your local machine
 
 Please check your current version:
 
-```text
+```
 $ node -v
 v15.12.0
 $ npm -v
@@ -39,13 +39,13 @@ $ npm -v
 
 * `Yarn` and `Truffle`: run a command as below to install these util libraries:
 
-```text
+```
 $ npm install --global yarn truffle@5.3.0
 ```
 
 Please check your current version:
 
-```text
+```
 $ truffle version
 Truffle v5.3.0 (core: 5.3.0)
 Solidity - 0.7.6 (solc-js)
@@ -55,9 +55,9 @@ $ yarn -v
 1.22.10
 ```
 
-* `Gradle`: please click on this \[[Gradle](https://gradle.org/install/)\] and install the version 6.7.1
+* `Gradle`: please click on this \[[Gradle](https://gradle.org/install/)] and install the version 6.7.1
 
-```text
+```
 $ gradle -v
 ------------------------------------------------------------
 Gradle 6.7.1
@@ -73,16 +73,16 @@ JVM:          11.0.11 (Oracle Corporation 11.0.11+9-LTS-194)
 OS:           Mac OS X 10.16 x86_64
 ```
 
-* `Golang`: requires version GoLang 1.13+. You can use this link \[[Go](https://golang.org/doc/install)\] and download a version that matches the operating system of your local machine
+* `Golang`: requires version GoLang 1.13+. You can use this link \[[Go](https://golang.org/doc/install)] and download a version that matches the operating system of your local machine
 
 Please check your current version:
 
-```text
+```
 $ go version
 go version go1.16 darwin/amd64
 ```
 
-* `jq`: requires version jq 1.6. You can use this link \[[jq](https://stedolan.github.io/jq/download/)\] and download a version that matches the operating system of your local machine
+* `jq`: requires version jq 1.6. You can use this link \[[jq](https://stedolan.github.io/jq/download/)] and download a version that matches the operating system of your local machine
 * Download CLI tools:
 
 ```bash
@@ -102,7 +102,7 @@ go get github.com/ethereum/go-ethereum/cmd/ethkey
 
 ## Deployment Instructions
 
-![](../.gitbook/assets/deployment-module%20%281%29%20%281%29%20%281%29.png)
+![](<../.gitbook/assets/deployment-module (1) (1) (1) (1).png>)
 
 The next following will provide instructions on how to deploy:
 
@@ -110,7 +110,7 @@ The next following will provide instructions on how to deploy:
 * Deploy a node in Moonriver's network
 * Deploy smart contracts on ICON's network
 * Deploy smart contracts on Moonriver's network
-* Deploy the BTP Message Relay \(BMR\)
+* Deploy the BTP Message Relay (BMR)
 
 **Attention:** The deployments and settings might have some dependencies, which mean that one setting/deployment must complete prior another ones. Hence, please follow the below order to completely and safely deploy and set up configurations. If you mess up or skip one step, it might affect your deployment and setting which, in fact, lead to failure consequence
 
@@ -118,7 +118,7 @@ The next following will provide instructions on how to deploy:
 
 #### 1. Deploy ICON Node
 
-![](../.gitbook/assets/deploy-icon-node%20%281%29%20%281%29%20%281%29.png)
+![](<../.gitbook/assets/deploy-icon-node (1) (1) (1).png>)
 
 * Preparation
 
@@ -158,7 +158,7 @@ docker-compose up goloop
 
 #### 2. Deploy Moonriver Node
 
-![](../.gitbook/assets/deploy-moonriver-node.png)
+![](<../.gitbook/assets/deploy-moonriver-node (1).png>)
 
 A node on Moonriver can be easily deployed by running the below command:
 
@@ -167,4 +167,3 @@ cd $PROJECT_DIR/btp/docker-compose/goloop2moonbeam
 
 docker-compose up moonbeam
 ```
-

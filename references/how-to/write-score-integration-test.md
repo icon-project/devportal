@@ -8,8 +8,8 @@ Understand how to write SCORE integration test
 
 ### Prerequisite
 
-* [SCORE Overview]()
-* [T-Bears Overview]() 
+* [SCORE Overview](broken-reference)
+* [T-Bears Overview](broken-reference) 
 * [ICON Python SDK](../../icon-sdks/python-sdk/)
 
 ### How to Write SCORE Integration Test Code
@@ -52,14 +52,14 @@ signed_transaction = SignedTransaction(transaction, self._test)
 Every SCORE integration test class must inherit `IconIntegrateTestBase`. `IconIntegrateTestBase` class provides three functions
 
 1. Support Python unittest 1. You can write and run the test method with prefix 'test\_' 2. You can initialize and finalize the test by override setUp and tearDown method
-2. Emulate ICON service for test 1. Initialize ICON service and confirm genesis block 2. Create accounts for test 1. self.\_test1 : Account with 1,000,000 ICX 2. self.\_wallet\_array\[\] : 10 empty accounts in list
-3. Provide API for SCORE integration test 1. process\_transaction\(\) Invoke transaction and return transaction result 2. process\_call\(\) Calls SCORE's external function which is read-only and returns result
+2. Emulate ICON service for test 1. Initialize ICON service and confirm genesis block 2. Create accounts for test 1. self.\_test1 : Account with 1,000,000 ICX 2. self.\_wallet_array\[] : 10 empty accounts in list
+3. Provide API for SCORE integration test 1. process_transaction() Invoke transaction and return transaction result 2. process_call() Calls SCORE's external function which is read-only and returns result
 
 #### examples
 
 You can get the source code with `tbears init score_test ScoreTest` command.
 
-**score\_test.py**
+**score_test.py**
 
 ```python
 from iconservice import *
@@ -83,7 +83,7 @@ class ScoreTest(IconScoreBase):
         return "Hello"
 ```
 
-**score\_tests/test\_score\_test.py**
+**score_tests/test_score_test.py**
 
 ```python
 import os
@@ -171,5 +171,4 @@ OK
 ### References
 
 * [ICON Python SDK](../../icon-sdks/python-sdk/)
-* [ICON SCORE samples]()
-
+* [ICON SCORE samples](broken-reference)

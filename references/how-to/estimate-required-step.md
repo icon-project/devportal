@@ -182,9 +182,8 @@ Please be aware that the returned value is just an **ESTIMATION**. The block sta
 ### References
 
 * [ICON JSON RPC](../reference-manuals/icon-json-rpc-api-v3-specification.md)
-* [T-Bears]()
+* [T-Bears](broken-reference)
 * [Java SDK](../../icon-sdks/java-sdk/)
 * [JavaScript SDK](../../icon-sdks/javascript/)
 * [Python SDK](../../icon-sdks/python-sdk/)
 * [Swift SDK](../../icon-sdks/swift-sdk/)
-

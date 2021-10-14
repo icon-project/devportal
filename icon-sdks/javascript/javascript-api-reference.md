@@ -6,21 +6,21 @@ ICON supports JavaScript SDK for 3rd party or user services development. You can
 
 `IconService` is a root class of `icon-sdk-js`, which provides APIs to communicate with ICON nodes and contains different type of modules. Details of modules are as below:
 
-| Module | Description |
-| :--- | :--- |
-| [IconService](javascript-api-reference.md#iconservice) | Class which provides APIs to communicate with ICON nodes |
-| [IconService.IconWallet](javascript-api-reference.md#iconservice-iconwallet-wallet) | Class which provides EOA functions. |
-| [IconService.IconBuilder](javascript-api-reference.md#iconservice-iconbuilder) | Builder class for transaction object. |
-| [IconService.SignedTransaction](javascript-api-reference.md#iconservice-signedtransaction) | Class representing the signed transaction object. |
-| [IconService.HttpProvider](javascript-api-reference.md#iconservice-httpprovider) | Class representing HTTP-based provider |
-| [IconService.IconAmount](javascript-api-reference.md#iconservice-iconamount) | Class which provides unit conversion functions. |
-| [IconService.IconConverter](javascript-api-reference.md#iconservice-iconconverter) | Util module contains conversion functions. |
-| [IconService.IconHexadecimal](javascript-api-reference.md#iconservice-iconhexadecimal) | Util module contains hex-prefix functions. |
-| [IconService.IconValidator](javascript-api-reference.md#iconservice-iconvalidator) | Util module contains validator functions. |
+| Module                                                                                     | Description                                              |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
+| [IconService](javascript-api-reference.md#iconservice)                                     | Class which provides APIs to communicate with ICON nodes |
+| [IconService.IconWallet](javascript-api-reference.md#iconservice-iconwallet-wallet)        | Class which provides EOA functions.                      |
+| [IconService.IconBuilder](javascript-api-reference.md#iconservice-iconbuilder)             | Builder class for transaction object.                    |
+| [IconService.SignedTransaction](javascript-api-reference.md#iconservice-signedtransaction) | Class representing the signed transaction object.        |
+| [IconService.HttpProvider](javascript-api-reference.md#iconservice-httpprovider)           | Class representing HTTP-based provider                   |
+| [IconService.IconAmount](javascript-api-reference.md#iconservice-iconamount)               | Class which provides unit conversion functions.          |
+| [IconService.IconConverter](javascript-api-reference.md#iconservice-iconconverter)         | Util module contains conversion functions.               |
+| [IconService.IconHexadecimal](javascript-api-reference.md#iconservice-iconhexadecimal)     | Util module contains hex-prefix functions.               |
+| [IconService.IconValidator](javascript-api-reference.md#iconservice-iconvalidator)         | Util module contains validator functions.                |
 
 ### IconService
 
-`IconService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use [ICON JSON-RPC APIs \(version 3\)](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md). All instance methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available.
+`IconService` is a class which provides APIs to communicate with ICON nodes. It enables you to easily use [ICON JSON-RPC APIs (version 3)](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md). All instance methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available.
 
 #### Constructor
 
@@ -32,9 +32,9 @@ new IconService(provider: HttpProvider)
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| provider | `HttpProvider` | [HttpProvider](javascript-api-reference.md#iconservice-httpprovider) instance. |
+| Parameter | Type           | Description                                                                    |
+| --------- | -------------- | ------------------------------------------------------------------------------ |
+| provider  | `HttpProvider` | [HttpProvider](javascript-api-reference.md#iconservice-httpprovider) instance. |
 
 **Example**
 
@@ -43,7 +43,7 @@ const httpProvider = new HttpProvider('https://ctz.solidwallet.io/api/v3');
 const iconService = new IconService(httpProvider);
 ```
 
-#### getTotalSupply\(\)
+#### getTotalSupply()
 
 Get the total number of issued coins.
 
@@ -66,7 +66,7 @@ None
 const totalSupply = await iconService.getTotalSupply().execute();
 ```
 
-#### getBalance\(\)
+#### getBalance()
 
 Get the balance of the address.
 
@@ -76,9 +76,9 @@ Get the balance of the address.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `string` | an EOA address. |
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
+| address   | `string` | an EOA address. |
 
 **Returns**
 
@@ -91,11 +91,11 @@ Get the balance of the address.
 const balance = await iconService.getBalance('hx9d8a8376e7db9f00478feb9a46f44f0d051aab57').execute();
 ```
 
-#### getBlock\(\)
+#### getBlock()
 
 Get the block information.
 
-> Since this API is an old version, we recommend to use [getBlockByHeight\(\)](javascript-api-reference.md#getblockbyheight), [getBlockByHash\(\)](javascript-api-reference.md#getblockbyhash), [getLastBlock\(\)](javascript-api-reference.md#getlastblock) API.
+> Since this API is an old version, we recommend to use [getBlockByHeight()](javascript-api-reference.md#getblockbyheight), [getBlockByHash()](javascript-api-reference.md#getblockbyhash), [getLastBlock()](javascript-api-reference.md#getlastblock) API.
 
 ```javascript
 .getBlock(value: string|number|BigNumber) => HttpCall // .execute() => object
@@ -103,19 +103,19 @@ Get the block information.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `number`, `BigNumber` | the height or hash value of block. |
+| Parameter | Type                            | Description                        |
+| --------- | ------------------------------- | ---------------------------------- |
+| value     | `string`, `number`, `BigNumber` | the height or hash value of block. |
 
 Depending on the type of input value, there are different ways to get block information.
 
-1. Get block by height - Put integer value of a block height. It will delegate to [icx\_getBlockByHeight](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyheight) RPC method.
-2. Get block by hash - Put block hash value. It will delegate to [icx\_getBlockByHash](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyhash) RPC method.
-3. Get latest block - Put the string `'latest'`. It will delegate to [icx\_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock) RPC method.
+1. Get block by height - Put integer value of a block height. It will delegate to [icx_getBlockByHeight](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyheight) RPC method.
+2. Get block by hash - Put block hash value. It will delegate to [icx_getBlockByHash](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getblockbyhash) RPC method.
+3. Get latest block - Put the string `'latest'`. It will delegate to [icx_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock) RPC method.
 
 **Returns**
 
-`HttpCall` - The HttpCall instance for `icx_getBlockByHeight`, `icx_getBlockByHash` or `icx_getLastBlock` JSON-RPC API request. If `execute()` successfully, it returns a block `object`. For details of returned block object, see _Example_ section of [icx\_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock).
+`HttpCall` - The HttpCall instance for `icx_getBlockByHeight`, `icx_getBlockByHash` or `icx_getLastBlock` JSON-RPC API request. If `execute()` successfully, it returns a block `object`. For details of returned block object, see _Example_ section of [icx_getLastBlock](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_getlastblock).
 
 **Example**
 
@@ -130,7 +130,7 @@ const block2 = await iconService.getBlock("0xdb310dd653b2573fd673ccc7489477a0b69
 const block2 = await iconService.getBlock("latest").execute();
 ```
 
-#### getBlockByHeight\(\)
+#### getBlockByHeight()
 
 Get the block information by block height.
 
@@ -140,9 +140,9 @@ Get the block information by block height.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `number`, `BigNumber` | the height value of block. |
+| Parameter | Type                  | Description                |
+| --------- | --------------------- | -------------------------- |
+| value     | `number`, `BigNumber` | the height value of block. |
 
 **Returns**
 
@@ -155,7 +155,7 @@ Get the block information by block height.
 const block = await iconService.getBlockByHeight(1000).execute();
 ```
 
-#### getBlockByHash\(\)
+#### getBlockByHash()
 
 Get the block information by block hash.
 
@@ -165,9 +165,9 @@ Get the block information by block hash.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string` | a block hash. |
+| Parameter | Type     | Description   |
+| --------- | -------- | ------------- |
+| value     | `string` | a block hash. |
 
 **Returns**
 
@@ -180,7 +180,7 @@ Get the block information by block hash.
 const block = await iconService.getBlockByHash('0xdb310dd653b2573fd673ccc7489477a0b697333f77b3cb34a940db67b994fd95').execute();
 ```
 
-#### getLastBlock\(\)
+#### getLastBlock()
 
 Get the latest block information.
 
@@ -203,7 +203,7 @@ None
 const block = await iconService.getLastBlock().execute();
 ```
 
-#### getScoreApi\(\)
+#### getScoreApi()
 
 Get the SCORE API list.
 
@@ -213,9 +213,9 @@ Get the SCORE API list.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `string` | a SCORE address. |
+| Parameter | Type     | Description      |
+| --------- | -------- | ---------------- |
+| address   | `string` | a SCORE address. |
 
 **Returns**
 
@@ -223,8 +223,8 @@ Get the SCORE API list.
 
 `ScoreApiList` provides two instance methods, `getList()` and `getMethod()`.
 
-* getList\(\) - Returns `array` of API list.
-* getMethod\(_method: `string`_\) - Returns `object` of method information.
+* getList() - Returns `array` of API list.
+* getMethod(_method: `string`_) - Returns `object` of method information.
 
 **Example**
 
@@ -239,7 +239,7 @@ console.log(apiList.getList());
 console.log(apiList.getMethod('getStepCosts'));
 ```
 
-#### getTransaction\(\)
+#### getTransaction()
 
 Get the transaction information.
 
@@ -249,13 +249,13 @@ Get the transaction information.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| hash | `string` | a transaction hash. |
+| Parameter | Type     | Description         |
+| --------- | -------- | ------------------- |
+| hash      | `string` | a transaction hash. |
 
 **Returns**
 
-`HttpCall` - The HttpCall instance for `icx_getTransactionByHash` JSON-RPC API request. If `execute()` successfully, it returns a transaction `object`. For details of returned object, see [here](icon-json-rpc-v3#section-icx_gettransactionbyhash).
+`HttpCall` - The HttpCall instance for `icx_getTransactionByHash` JSON-RPC API request. If `execute()` successfully, it returns a transaction `object`. For details of returned object, see [here](https://app.gitbook.com/s/-McMmuxKCCgDfbGouV8t-887967055/icon-sdks/javascript/icon-json-rpc-v3#section-icx_gettransactionbyhash).
 
 **Example**
 
@@ -264,7 +264,7 @@ Get the transaction information.
 const txObject = await iconService.getTransaction('0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238').execute();
 ```
 
-#### getTransactionResult\(\)
+#### getTransactionResult()
 
 Get the result of transaction by transaction hash.
 
@@ -274,9 +274,9 @@ Get the result of transaction by transaction hash.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| hash | `string` | a transaction hash. |
+| Parameter | Type     | Description         |
+| --------- | -------- | ------------------- |
+| hash      | `string` | a transaction hash. |
 
 **Returns**
 
@@ -289,7 +289,7 @@ Get the result of transaction by transaction hash.
 const txObject = await iconService.getTransactionResult('0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238').execute();
 ```
 
-#### sendTransaction\(\)
+#### sendTransaction()
 
 Send a transaction that changes the states of address.
 
@@ -299,8 +299,8 @@ Send a transaction that changes the states of address.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
+| Parameter         | Type                | Description                                                                                          |
+| ----------------- | ------------------- | ---------------------------------------------------------------------------------------------------- |
 | signedTransaction | `SignedTransaction` | an instance of [SignedTransaction](javascript-api-reference.md#iconservice-signedtransaction) class. |
 
 **Returns**
@@ -314,7 +314,7 @@ Send a transaction that changes the states of address.
 const txHash = await iconService.sendTransaction(signedTransaction).execute();
 ```
 
-#### call\(\)
+#### call()
 
 Calls external function of SCORE.
 
@@ -324,9 +324,9 @@ Calls external function of SCORE.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| call | `Call` | an instance of Call class builded by [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder). |
+| Parameter | Type   | Description                                                                                              |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------- |
+| call      | `Call` | an instance of Call class builded by [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder). |
 
 **Returns**
 
@@ -339,7 +339,7 @@ Calls external function of SCORE.
 const result = await iconService.call(call).execute();
 ```
 
-### IconService.IconWallet \(Wallet\)
+### IconService.IconWallet (Wallet)
 
 `IconWallet` is a class which provides EOA functions. It enables you to create, load, and store `Wallet` object.
 
@@ -353,12 +353,12 @@ new Wallet(privKey: string, pubKey: string)
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| privKey | `string` | a private key. |
-| pubKey | `string` | a public key. |
+| Parameter | Type     | Description    |
+| --------- | -------- | -------------- |
+| privKey   | `string` | a private key. |
+| pubKey    | `string` | a public key.  |
 
-#### static create\(\)
+#### static create()
 
 Creates an instance of `Wallet` class.
 
@@ -381,7 +381,7 @@ None
 const wallet = IconWallet.create();
 ```
 
-#### static loadPrivateKey\(\)
+#### static loadPrivateKey()
 
 Import existing wallet using private key.
 
@@ -391,9 +391,9 @@ IconWallet.loadPrivateKey(privKey: string) => Wallet
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| privKey | `string` | a private key. |
+| Parameter | Type     | Description    |
+| --------- | -------- | -------------- |
+| privKey   | `string` | a private key. |
 
 **Returns**
 
@@ -406,7 +406,7 @@ IconWallet.loadPrivateKey(privKey: string) => Wallet
 const wallet = IconWallet.loadPrivateKey('2ab···e4c');
 ```
 
-#### static loadKeystore\(\)
+#### static loadKeystore()
 
 Import existing wallet using keystore object.
 
@@ -416,11 +416,11 @@ IconWallet.loadKeystore(keystore: object|string, password: string, nonStrict?: b
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| keystore | `object`, `string` | the keystore object \(or stringified object.\) |
-| password | `string` | the password of keystore object. |
-| nonStrict \(optional\) | `boolean` | set whether checking keystore file case-insensitive or not. _\(affects when `keystore` param is string.\)_ |
+| Parameter            | Type               | Description                                                                                              |
+| -------------------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| keystore             | `object`, `string` | the keystore object (or stringified object.)                                                             |
+| password             | `string`           | the password of keystore object.                                                                         |
+| nonStrict (optional) | `boolean`          | set whether checking keystore file case-insensitive or not. _(affects when `keystore` param is string.)_ |
 
 **Returns**
 
@@ -436,7 +436,7 @@ const testPassword = 'qwer1234!'
 const wallet = IconWallet.loadKeystore(testKeystore, testPassword)
 ```
 
-#### store\(\)
+#### store()
 
 Get keystore object of an instance of a `Wallet` class.
 
@@ -446,10 +446,10 @@ Get keystore object of an instance of a `Wallet` class.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| password | `string` | a new password for encryption. |
-| opts \(optional\) | `object` | the custom options for encryption. |
+| Parameter       | Type     | Description                        |
+| --------------- | -------- | ---------------------------------- |
+| password        | `string` | a new password for encryption.     |
+| opts (optional) | `object` | the custom options for encryption. |
 
 **Returns**
 
@@ -463,7 +463,7 @@ const wallet = IconWallet.create()
 const keystore = wallet.store("qwer1234!")
 ```
 
-#### sign\(\)
+#### sign()
 
 Generate signature string by signing transaction object.
 
@@ -473,9 +473,9 @@ Generate signature string by signing transaction object.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| data | `Buffer` | the serialized transaction object. |
+| Parameter | Type     | Description                        |
+| --------- | -------- | ---------------------------------- |
+| data      | `Buffer` | the serialized transaction object. |
 
 **Returns**
 
@@ -489,7 +489,7 @@ const wallet = IconWallet.create()
 const signature = wallet.sign('ba4···f64')
 ```
 
-#### getPrivateKey\(\)
+#### getPrivateKey()
 
 Get a private key of `Wallet` instance.
 
@@ -513,7 +513,7 @@ const wallet = IconWallet.create()
 const pk = wallet.getPrivateKey()
 ```
 
-#### getPublicKey\(\)
+#### getPublicKey()
 
 Get a public key of `Wallet` instance.
 
@@ -537,7 +537,7 @@ const wallet = IconWallet.create()
 const pk = wallet.getPublicKey()
 ```
 
-#### getAddress\(\)
+#### getAddress()
 
 Get an address of `Wallet` instance.
 
@@ -565,28 +565,28 @@ const pk = wallet.getAddress()
 
 `IconBuilder` is an object containing builder class for transaction object. Builder class enables you to make transaction object easily. There are 5 types of builder class as follows:
 
-| Module | Description |
-| :--- | :--- |
-| [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) | Builder class for `IcxTransaction` instance, which is for sending ICX. |
-| [MessageTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-messagetransactionbuilder) | Builder class for `MessageTransaction` instance, which is for sending message data. Extends `IcxTransactionBuilder` class. |
-| [DeployTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-deploytransactionbuilder) | Builder class for `DeployTransaction` instance, which is for deploying SCORE. Extends `IcxTransactionBuilder` class. |
-| [CallTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-calltransactionbuilder) | Builder class for `CallTransaction` instance, which is for invoking a _state-transition_ function of SCORE. Extends `IcxTransactionBuilder` class. |
-| [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder-callbuilder) | Builder class for `Call` instance, which is for invoking a _read-only_ function of SCORE. |
+| Module                                                                                                     | Description                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder)         | Builder class for `IcxTransaction` instance, which is for sending ICX.                                                                             |
+| [MessageTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-messagetransactionbuilder) | Builder class for `MessageTransaction` instance, which is for sending message data. Extends `IcxTransactionBuilder` class.                         |
+| [DeployTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-deploytransactionbuilder)   | Builder class for `DeployTransaction` instance, which is for deploying SCORE. Extends `IcxTransactionBuilder` class.                               |
+| [CallTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-calltransactionbuilder)       | Builder class for `CallTransaction` instance, which is for invoking a _state-transition_ function of SCORE. Extends `IcxTransactionBuilder` class. |
+| [CallBuilder](javascript-api-reference.md#iconservice-iconbuilder-callbuilder)                             | Builder class for `Call` instance, which is for invoking a _read-only_ function of SCORE.                                                          |
 
 ### IconService.IconBuilder.IcxTransactionBuilder
 
 Builder class for `IcxTransaction` instance. `IcxTransaction` is an object representing a transaction object used for sending ICX. The parameter details are as follows:
 
-| Parameter | Description |
-| :--- | :--- |
-| `to` | An EOA address to receive coins, or SCORE address to execute the transaction. |
-| `from` | An EOA address that created the transaction |
-| `value` \(optional\) | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 10 ^ 18 loop\) |
-| `stepLimit` | Maximum step allowance that can be used by the transaction. |
-| `nid` | Network ID \("0x1" for Mainnet, "0x2" for Testnet, etc\) |
-| `nonce` | An arbitrary number used to prevent transaction hash collision. |
-| `version` | Protocol version \("0x3" for V3\) |
-| `timestamp` | Transaction creation time. timestamp is in microsecond. |
+| Parameter          | Description                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| `to`               | An EOA address to receive coins, or SCORE address to execute the transaction.            |
+| `from`             | An EOA address that created the transaction                                              |
+| `value` (optional) | Amount of ICX coins in loop to transfer. When omitted, assumes 0. (1 icx = 10 ^ 18 loop) |
+| `stepLimit`        | Maximum step allowance that can be used by the transaction.                              |
+| `nid`              | Network ID ("0x1" for Mainnet, "0x2" for Testnet, etc)                                   |
+| `nonce`            | An arbitrary number used to prevent transaction hash collision.                          |
+| `version`          | Protocol version ("0x3" for V3)                                                          |
+| `timestamp`        | Transaction creation time. timestamp is in microsecond.                                  |
 
 #### Constructor
 
@@ -600,7 +600,7 @@ new IcxTransactionBuilder()
 
 None
 
-#### to\(\)
+#### to()
 
 Setter method of 'to' property.
 
@@ -610,9 +610,9 @@ Setter method of 'to' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| to | `string` | an EOA or SCORE address. |
+| Parameter | Type     | Description              |
+| --------- | -------- | ------------------------ |
+| to        | `string` | an EOA or SCORE address. |
 
 **Returns**
 
@@ -626,7 +626,7 @@ const txObj = new IcxTransactionBuilder()
     .to('hx87a90bfe8ed49e1a25184ce77fa0d9c4b0484d6a')
 ```
 
-#### from\(\)
+#### from()
 
 Setter method of 'from' property.
 
@@ -636,9 +636,9 @@ Setter method of 'from' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| from | `string` | an EOA address. |
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
+| from      | `string` | an EOA address. |
 
 **Returns**
 
@@ -652,7 +652,7 @@ const txObj = new IcxTransactionBuilder()
     .from('hx46293d558d3bd489c3715e7e3648de0e35086bfd')
 ```
 
-#### value\(\)
+#### value()
 
 Setter method of 'value' property.
 
@@ -662,9 +662,9 @@ Setter method of 'value' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `BigNumber`, `number` | the sending amount of ICX in loop unit. |
+| Parameter | Type                            | Description                             |
+| --------- | ------------------------------- | --------------------------------------- |
+| value     | `string`, `BigNumber`, `number` | the sending amount of ICX in loop unit. |
 
 **Returns**
 
@@ -678,7 +678,7 @@ const txObj = new IcxTransactionBuilder()
     .value(IconAmount.of(1, IconAmount.Unit.ICX).toLoop())
 ```
 
-#### stepLimit\(\)
+#### stepLimit()
 
 Setter method of 'stepLimit' property.
 
@@ -688,8 +688,8 @@ Setter method of 'stepLimit' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
+| Parameter | Type                            | Description               |
+| --------- | ------------------------------- | ------------------------- |
 | stepLimit | `string`, `BigNumber`, `number` | the amount of step limit. |
 
 **Returns**
@@ -704,7 +704,7 @@ const txObj = new IcxTransactionBuilder()
     .stepLimit(IconConverter.toBigNumber(100000))
 ```
 
-#### nid\(\)
+#### nid()
 
 Setter method of 'nid' property.
 
@@ -714,9 +714,9 @@ Setter method of 'nid' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| nid | `string`, `BigNumber`, `number` | a network ID. |
+| Parameter | Type                            | Description   |
+| --------- | ------------------------------- | ------------- |
+| nid       | `string`, `BigNumber`, `number` | a network ID. |
 
 **Returns**
 
@@ -730,7 +730,7 @@ const txObj = new IcxTransactionBuilder()
     .nid(IconConverter.toBigNumber(1))
 ```
 
-#### nonce\(\)
+#### nonce()
 
 Setter method of 'nonce' property.
 
@@ -740,9 +740,9 @@ Setter method of 'nonce' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| nonce | `string`, `BigNumber`, `number` | a nonce value. |
+| Parameter | Type                            | Description    |
+| --------- | ------------------------------- | -------------- |
+| nonce     | `string`, `BigNumber`, `number` | a nonce value. |
 
 **Returns**
 
@@ -756,7 +756,7 @@ const txObj = new IcxTransactionBuilder()
     .nonce(IconConverter.toBigNumber(1))
 ```
 
-#### version\(\)
+#### version()
 
 Setter method of 'version' property.
 
@@ -766,9 +766,9 @@ Setter method of 'version' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| version | `string`, `BigNumber`, `number` | the version value. |
+| Parameter | Type                            | Description        |
+| --------- | ------------------------------- | ------------------ |
+| version   | `string`, `BigNumber`, `number` | the version value. |
 
 **Returns**
 
@@ -782,7 +782,7 @@ const txObj = new IcxTransactionBuilder()
     .version(IconConverter.toBigNumber(3))
 ```
 
-#### timestamp\(\)
+#### timestamp()
 
 Setter method of 'timestamp' property.
 
@@ -792,9 +792,9 @@ Setter method of 'timestamp' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| timestamp | `string`, `BigNumber`, `number` | timestamp value. \(microsecond\) |
+| Parameter | Type                            | Description                    |
+| --------- | ------------------------------- | ------------------------------ |
+| timestamp | `string`, `BigNumber`, `number` | timestamp value. (microsecond) |
 
 **Returns**
 
@@ -808,7 +808,7 @@ const txObj = new IcxTransactionBuilder()
     .timestamp(1544596599371000)
 ```
 
-#### build\(\)
+#### build()
 
 Returns an `IcxTransaction` instance which contains parameter you set.
 
@@ -844,10 +844,10 @@ const txObj = new IcxTransactionBuilder()
 
 Builder class for `MessageTransaction` instance. `MessageTransaction` is an object representing a transaction object used for sending message data. It extends `IcxTransaction` class, so instance parameters and methods of builder class are mostly identical to `IcxTransaction` class, except for the following:
 
-| Parameter | Description |
-| :--- | :--- |
-| `data` | A message data. Data type of the data should be **lowercase hex string prefixed with '0x'.** |
-| `dataType` | Data type of `data`. Fixed string `message` is in value. |
+| Parameter  | Description                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------- |
+| `data`     | A message data. Data type of the data should be **lowercase hex string prefixed with '0x'.** |
+| `dataType` | Data type of `data`. Fixed string `message` is in value.                                     |
 
 For details of extended parameters and methods, see [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) section.
 
@@ -863,7 +863,7 @@ new MessageTransactionBuilder()
 
 None
 
-#### data\(\)
+#### data()
 
 Setter method of 'data' property.
 
@@ -873,9 +873,9 @@ Setter method of 'data' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| data | `string` | the data \(hex string\) to send. |
+| Parameter | Type     | Description                    |
+| --------- | -------- | ------------------------------ |
+| data      | `string` | the data (hex string) to send. |
 
 **Returns**
 
@@ -889,7 +889,7 @@ const txObj = new MessageTransactionBuilder()
     .data(IconConverter.fromUtf8('Hello'))
 ```
 
-#### build\(\)
+#### build()
 
 Returns an `MessageTransaction` instance which contains parameter you set.
 
@@ -925,10 +925,10 @@ const txObj = new MessageTransactionBuilder()
 
 Builder class for `DeployTransaction` instance. `DeployTransaction` is an object representing a transaction object used for deploying SCORE. It extends `IcxTransaction` class, so instance parameters and methods of builder class are mostly identical to `IcxTransaction` class, except for the following:
 
-| Parameter | Description |
-| :--- | :--- |
-| `data` | A deploy object data. It contains 3 parameters: 1\) `contentType` - Mime-type of the content. 2\) `content` - Compressed SCORE data. 3\) `params` \(optional\) - Function parameters delivered to on\_install\(\) or on\_update\(\) |
-| `dataType` | Data type of `data`. Fixed string `deploy` is in value. |
+| Parameter  | Description                                                                                                                                                                                                              |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `data`     | A deploy object data. It contains 3 parameters: 1) `contentType` - Mime-type of the content. 2) `content` - Compressed SCORE data. 3) `params` (optional) - Function parameters delivered to on_install() or on_update() |
+| `dataType` | Data type of `data`. Fixed string `deploy` is in value.                                                                                                                                                                  |
 
 For details of extended parameters and methods, see IcxTransactionBuilder section.
 
@@ -944,7 +944,7 @@ new DeployTransactionBuilder()
 
 None
 
-#### contentType\(\)
+#### contentType()
 
 Setter method of 'contentType' property in 'data'.
 
@@ -954,8 +954,8 @@ Setter method of 'contentType' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
+| Parameter   | Type     | Description                 |
+| ----------- | -------- | --------------------------- |
 | contentType | `string` | the content type of content |
 
 **Returns**
@@ -970,7 +970,7 @@ const txObj = new DeployTransactionBuilder()
     .contentType('application/zip')
 ```
 
-#### content\(\)
+#### content()
 
 Setter method of 'content' property in 'data'.
 
@@ -980,9 +980,9 @@ Setter method of 'content' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| content | `string` | the content to deploy. |
+| Parameter | Type     | Description            |
+| --------- | -------- | ---------------------- |
+| content   | `string` | the content to deploy. |
 
 **Returns**
 
@@ -996,7 +996,7 @@ const txObj = new DeployTransactionBuilder()
     .content('0x504b03040a0000000000d3a68e4d000000000000000...')
 ```
 
-#### params\(\)
+#### params()
 
 Setter method of 'params' property in 'data'.
 
@@ -1006,9 +1006,9 @@ Setter method of 'params' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| params | `object` | Function parameters delivered to on\_install\(\) or on\_update\(\). |
+| Parameter | Type     | Description                                                   |
+| --------- | -------- | ------------------------------------------------------------- |
+| params    | `object` | Function parameters delivered to on_install() or on_update(). |
 
 **Returns**
 
@@ -1027,7 +1027,7 @@ const txObj = new DeployTransactionBuilder()
     })
 ```
 
-#### build\(\)
+#### build()
 
 Returns an `DeployTransaction` instance which contains parameter you set.
 
@@ -1070,10 +1070,10 @@ const txObj = new DeployTransactionBuilder()
 
 Builder class for `CallTransaction` instance. `CallTransaction` is an object representing a transaction object used for invoking a _state-transition_ function of SCORE. It extends `IcxTransaction` class, so instance parameters and methods are mostly identical to `IcxTransaction` class, except for the following:
 
-| Parameter | Description |
-| :--- | :--- |
-| `data` | An object data for calling method. It contains 2 parameters: 1\) `method` - The method name of SCORE API. 2\) `params` \(optional\) - The input params for method |
-| `dataType` | Data type of `data`. Fixed string `call` is in value. |
+| Parameter  | Description                                                                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data`     | An object data for calling method. It contains 2 parameters: 1) `method` - The method name of SCORE API. 2) `params` (optional) - The input params for method |
+| `dataType` | Data type of `data`. Fixed string `call` is in value.                                                                                                         |
 
 For details of extended parameters and methods, see [IcxTransactionBuilder](javascript-api-reference.md#iconservice-iconbuilder-icxtransactionbuilder) section.
 
@@ -1089,7 +1089,7 @@ new CallTransactionBuilder()
 
 None
 
-#### method\(\)
+#### method()
 
 Setter method of 'method' property in 'data'.
 
@@ -1099,9 +1099,9 @@ Setter method of 'method' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| method | `string` | the method name of SCORE API. |
+| Parameter | Type     | Description                   |
+| --------- | -------- | ----------------------------- |
+| method    | `string` | the method name of SCORE API. |
 
 **Returns**
 
@@ -1115,7 +1115,7 @@ const txObj = new CallTransactionBuilder()
     .method('transfer')
 ```
 
-#### params\(\)
+#### params()
 
 Setter method of 'params' property in 'data'.
 
@@ -1125,9 +1125,9 @@ Setter method of 'params' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| params | `object` | the input params for method. |
+| Parameter | Type     | Description                  |
+| --------- | -------- | ---------------------------- |
+| params    | `object` | the input params for method. |
 
 **Returns**
 
@@ -1144,7 +1144,7 @@ const txObj = new CallTransactionBuilder()
     })
 ```
 
-#### build\(\)
+#### build()
 
 Returns an `CallTransaction` instance which contains parameter you set.
 
@@ -1184,11 +1184,11 @@ const txObj = new CallTransactionBuilder()
 
 Builder class for `Call` instance. `Call` is an object representing a transaction object used for invoking a _read-only_ function of SCORE. The parameter details are as follows:
 
-| Parameter | Description |
-| :--- | :--- |
-| `to` | a SCORE address to execute the call. |
-| `data` | an object data for calling method. It contains 2 parameters: 1\) `method` - The method name of SCORE API. 2\) `params` \(optional\) - The input params for method |
-| `dataType` | Data type of `data`. Fixed string `call` is in value. |
+| Parameter  | Description                                                                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `to`       | a SCORE address to execute the call.                                                                                                                          |
+| `data`     | an object data for calling method. It contains 2 parameters: 1) `method` - The method name of SCORE API. 2) `params` (optional) - The input params for method |
+| `dataType` | Data type of `data`. Fixed string `call` is in value.                                                                                                         |
 
 #### Constructor
 
@@ -1202,7 +1202,7 @@ new CallBuilder()
 
 None
 
-#### to\(\)
+#### to()
 
 Setter method of 'to' property.
 
@@ -1212,9 +1212,9 @@ Setter method of 'to' property.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| to | `string` | a SCORE address. |
+| Parameter | Type     | Description      |
+| --------- | -------- | ---------------- |
+| to        | `string` | a SCORE address. |
 
 **Returns**
 
@@ -1228,7 +1228,7 @@ const txObj = new CallBuilder()
     .to('cxc248ee72f58f7ec0e9a382379d67399f45b596c7')
 ```
 
-#### method\(\)
+#### method()
 
 Setter method of 'method' property in 'data'.
 
@@ -1238,9 +1238,9 @@ Setter method of 'method' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| method | `string` | the method name of SCORE API. |
+| Parameter | Type     | Description                   |
+| --------- | -------- | ----------------------------- |
+| method    | `string` | the method name of SCORE API. |
 
 **Returns**
 
@@ -1254,7 +1254,7 @@ const txObj = new CallBuilder()
     .method('balanceOf')
 ```
 
-#### params\(\)
+#### params()
 
 Setter method of 'params' property in 'data'.
 
@@ -1264,9 +1264,9 @@ Setter method of 'params' property in 'data'.
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| params | `object` | the input params for method. |
+| Parameter | Type     | Description                  |
+| --------- | -------- | ---------------------------- |
+| params    | `object` | the input params for method. |
 
 **Returns**
 
@@ -1282,7 +1282,7 @@ const txObj = new CallBuilder()
     })
 ```
 
-#### build\(\)
+#### build()
 
 Returns an `Call` instance which contains parameter you set.
 
@@ -1311,7 +1311,7 @@ const txObj = new CallBuilder()
 
 ### IconService.SignedTransaction
 
-`SignedTransaction` is a class for signing transaction object. It enables you to make signature, and signed transaction object by calling instance methods. Also, by passing `SignedTransaction` instance to [sendTransaction](javascript-api-reference.md#sendtransaction)\(\), it will automatically generate transaction object including signature, and send to ICON node.
+`SignedTransaction` is a class for signing transaction object. It enables you to make signature, and signed transaction object by calling instance methods. Also, by passing `SignedTransaction` instance to [sendTransaction](javascript-api-reference.md#sendtransaction)(), it will automatically generate transaction object including signature, and send to ICON node.
 
 #### Constructor
 
@@ -1323,12 +1323,12 @@ new SignedTransaction(transaction: IcxTransaction|MessageTransaction|CallTransac
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| transaction | `IcxTransaction`, `MessageTransaction`, `CallTransaction`, `DeployTransaction` | a transaction object. |
-| wallet | `Wallet` | wallet instance used for signing. |
+| Parameter   | Type                                                                           | Description                       |
+| ----------- | ------------------------------------------------------------------------------ | --------------------------------- |
+| transaction | `IcxTransaction`, `MessageTransaction`, `CallTransaction`, `DeployTransaction` | a transaction object.             |
+| wallet      | `Wallet`                                                                       | wallet instance used for signing. |
 
-#### getSignature\(\)
+#### getSignature()
 
 Get a signature string.
 
@@ -1352,7 +1352,7 @@ const signature = new SignedTransaction(icxTransaction, wallet).getSignature()
 // 'YV3eNgVjLFwXS65Bk...+lC90KgRBh7FtwE='
 ```
 
-#### getProperties\(\)
+#### getProperties()
 
 Get a raw signed transaction object.
 
@@ -1386,7 +1386,7 @@ const signature = new SignedTransaction(icxTransaction, wallet).getProperties()
 // };
 ```
 
-#### getRawTransaction\(\)
+#### getRawTransaction()
 
 Get a raw transaction object of `transaction` property.
 
@@ -1433,15 +1433,15 @@ new HttpProvider(url: string)
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| url | `string` | ICON node url |
+| Parameter | Type     | Description   |
+| --------- | -------- | ------------- |
+| url       | `string` | ICON node url |
 
 ### IconService.IconAmount
 
 `IconAmount` is a class representing BigNumber value and unit data. It also provides unit conversion static functions. It enables you to manage different types of numeric data easily.
 
-\(`IconAmount` contains static class property called `Unit`, which has constant `number` value of different types of unit digit. `IconAmount.Unit.LOOP` is `0`, and `IconAmount.Unit.ICX` is `18`.\)
+(`IconAmount` contains static class property called `Unit`, which has constant `number` value of different types of unit digit. `IconAmount.Unit.LOOP` is `0`, and `IconAmount.Unit.ICX` is `18`.)
 
 #### Constructor
 
@@ -1453,14 +1453,14 @@ new IconAmount(value: string|BigNumber|number, digit: string|BigNumber|number)
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `BigNumber`, `number` | the value of amount. |
-| digit | `string`, `BigNumber`, `number` | the digit of unit. |
+| Parameter | Type                            | Description          |
+| --------- | ------------------------------- | -------------------- |
+| value     | `string`, `BigNumber`, `number` | the value of amount. |
+| digit     | `string`, `BigNumber`, `number` | the digit of unit.   |
 
 > Note: According to official document of [BigNumber.js](https://mikemcl.github.io/bignumber.js/#bignumber), it is recommended to create BigNumbers from `string` values rather than `number` values to avoid a potential loss of precision.
 
-#### static of\(\)
+#### static of()
 
 Creates an instance of `IconAmount` class.
 
@@ -1470,10 +1470,10 @@ IconAmount.of(value: string|BigNumber|number, digit: string|BigNumber|number) =>
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `BigNumber`, `number` | the value of amount. |
-| digit | `string`, `BigNumber`, `number` | the digit of unit. |
+| Parameter | Type                            | Description          |
+| --------- | ------------------------------- | -------------------- |
+| value     | `string`, `BigNumber`, `number` | the value of amount. |
+| digit     | `string`, `BigNumber`, `number` | the digit of unit.   |
 
 > Note: According to official document of [BigNumber.js](https://mikemcl.github.io/bignumber.js/#bignumber), it is recommended to create BigNumbers from `string` values rather than `number` values to avoid a potential loss of precision.
 
@@ -1488,7 +1488,7 @@ IconAmount.of(value: string|BigNumber|number, digit: string|BigNumber|number) =>
 const iconAmount = IconAmount.of('2', IconAmount.Unit.ICX);
 ```
 
-#### toString\(\)
+#### toString()
 
 Converts value property into string
 
@@ -1511,7 +1511,7 @@ None
 const value = IconAmount.of('2', IconAmount.Unit.ICX).toString();
 ```
 
-#### getDigit\(\)
+#### getDigit()
 
 Get digit property.
 
@@ -1534,7 +1534,7 @@ None
 const digit = IconAmount.of('2', IconAmount.Unit.ICX).getDigit();
 ```
 
-#### toLoop\(\)
+#### toLoop()
 
 Get value property converted into loop unit.
 
@@ -1557,7 +1557,7 @@ None
 const value = IconAmount.of('2', IconAmount.Unit.ICX).toLoop();
 ```
 
-#### convertUnit\(\)
+#### convertUnit()
 
 Converts value property into custom digit
 
@@ -1567,9 +1567,9 @@ Converts value property into custom digit
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| digit | `string`, `BigNumber`, `number` | the digit of unit. |
+| Parameter | Type                            | Description        |
+| --------- | ------------------------------- | ------------------ |
+| digit     | `string`, `BigNumber`, `number` | the digit of unit. |
 
 **Returns**
 
@@ -1586,7 +1586,7 @@ const value = IconAmount.of('2', IconAmount.Unit.ICX).convertUnit(IconAmount.Uni
 
 `IconConverter` is a utility module which contains conversion functions.
 
-#### static fromUtf8\(\)
+#### static fromUtf8()
 
 Converts UTF-8 text to hex string with '0x' prefix.
 
@@ -1596,9 +1596,9 @@ IconConverter.fromUtf8(value: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string` | an UTF-8 text string. |
+| Parameter | Type     | Description           |
+| --------- | -------- | --------------------- |
+| value     | `string` | an UTF-8 text string. |
 
 **Returns**
 
@@ -1611,7 +1611,7 @@ IconConverter.fromUtf8(value: string) => string
 const value = IconConverter.fromUtf8('hello')
 ```
 
-#### static toNumber\(\)
+#### static toNumber()
 
 Converts string, hex string or BigNumber value to number.
 
@@ -1621,9 +1621,9 @@ IconConverter.toNumber(value: string|BigNumber) => number
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `BigNumber` | a string, hex string or BigNumber type value |
+| Parameter | Type                  | Description                                  |
+| --------- | --------------------- | -------------------------------------------- |
+| value     | `string`, `BigNumber` | a string, hex string or BigNumber type value |
 
 **Returns**
 
@@ -1636,7 +1636,7 @@ IconConverter.toNumber(value: string|BigNumber) => number
 const value = IconConverter.toNumber('123')
 ```
 
-#### static toBigNumber\(\)
+#### static toBigNumber()
 
 Converts string, hex string or number value to BigNumber.
 
@@ -1646,9 +1646,9 @@ IconConverter.toBigNumber(value: string|number) => BigNumber
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `number` | a string, hex string or number type value |
+| Parameter | Type               | Description                               |
+| --------- | ------------------ | ----------------------------------------- |
+| value     | `string`, `number` | a string, hex string or number type value |
 
 **Returns**
 
@@ -1661,7 +1661,7 @@ IconConverter.toBigNumber(value: string|number) => BigNumber
 const value = IconConverter.toBigNumber('123')
 ```
 
-#### static toHex\(\)
+#### static toHex()
 
 Converts string, number or BigNumber value to hex string.
 
@@ -1671,9 +1671,9 @@ IconConverter.toHex(value: string|number|BigNumber) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| value | `string`, `number`, `BigNumber` | a string, number or BigNumber type value |
+| Parameter | Type                            | Description                              |
+| --------- | ------------------------------- | ---------------------------------------- |
+| value     | `string`, `number`, `BigNumber` | a string, number or BigNumber type value |
 
 **Returns**
 
@@ -1686,7 +1686,7 @@ IconConverter.toHex(value: string|number|BigNumber) => string
 const value = IconConverter.toHex('123')
 ```
 
-#### static toRawTransaction\(\)
+#### static toRawTransaction()
 
 Converts transaction object to raw transaction object.
 
@@ -1696,8 +1696,8 @@ IconConverter.toRawTransaction(transaction: IcxTransaction|MessageTransaction|Ca
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
+| Parameter   | Type                                                                           | Description          |
+| ----------- | ------------------------------------------------------------------------------ | -------------------- |
 | transaction | `IcxTransaction`, `MessageTransaction`, `CallTransaction`, `DeployTransaction` | a transaction object |
 
 **Returns**
@@ -1725,7 +1725,7 @@ const rawTxObj = IconConverter.toRawTransaction(txObj)
 
 `IconHexadecimal` is a utility module which contains functions related to hex prefix.
 
-#### static is0xPrefix\(\)
+#### static is0xPrefix()
 
 Check whether string starts with '0x' prefix.
 
@@ -1735,9 +1735,9 @@ IconHexadecimal.is0xPrefix(str: string) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1750,7 +1750,7 @@ IconHexadecimal.is0xPrefix(str: string) => boolean
 const value = IconHexadecimal.is0xPrefix('0x61')
 ```
 
-#### static isHxPrefix\(\)
+#### static isHxPrefix()
 
 Check whether string starts with 'hx' prefix.
 
@@ -1760,9 +1760,9 @@ IconHexadecimal.isHxPrefix(str: string) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1775,7 +1775,7 @@ IconHexadecimal.isHxPrefix(str: string) => boolean
 const value = IconHexadecimal.isHxPrefix('hx902ecb51c109183ace539f247b4ea1347fbf23b5')
 ```
 
-#### static isCxPrefix\(\)
+#### static isCxPrefix()
 
 Check whether string starts with 'cx' prefix.
 
@@ -1785,9 +1785,9 @@ IconHexadecimal.isCxPrefix(str: string) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1800,7 +1800,7 @@ IconHexadecimal.isCxPrefix(str: string) => boolean
 const value = IconHexadecimal.isCxPrefix('cxc248ee72f58f7ec0e9a382379d67399f45b596c7')
 ```
 
-#### static add0xPrefix\(\)
+#### static add0xPrefix()
 
 Add '0x' prefix to string.
 
@@ -1810,9 +1810,9 @@ IconHexadecimal.add0xPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1825,7 +1825,7 @@ IconHexadecimal.add0xPrefix(str: string) => string
 const value = IconHexadecimal.add0xPrefix('1234')
 ```
 
-#### static addHxPrefix\(\)
+#### static addHxPrefix()
 
 Add 'hx' prefix to string.
 
@@ -1835,9 +1835,9 @@ IconHexadecimal.addHxPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1850,7 +1850,7 @@ IconHexadecimal.addHxPrefix(str: string) => string
 const value = IconHexadecimal.addHxPrefix('902ecb51c109183ace539f247b4ea1347fbf23b5')
 ```
 
-#### static addCxPrefix\(\)
+#### static addCxPrefix()
 
 Add 'cx' prefix to string.
 
@@ -1860,9 +1860,9 @@ IconHexadecimal.addCxPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1875,7 +1875,7 @@ IconHexadecimal.addCxPrefix(str: string) => string
 const value = IconHexadecimal.addCxPrefix('c248ee72f58f7ec0e9a382379d67399f45b596c7')
 ```
 
-#### static remove0xPrefix\(\)
+#### static remove0xPrefix()
 
 Remove '0x' prefix from string.
 
@@ -1885,9 +1885,9 @@ IconHexadecimal.remove0xPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1900,7 +1900,7 @@ IconHexadecimal.remove0xPrefix(str: string) => string
 const value = IconHexadecimal.remove0xPrefix('0x61')
 ```
 
-#### static removeHxPrefix\(\)
+#### static removeHxPrefix()
 
 Remove 'hx' prefix from string.
 
@@ -1910,9 +1910,9 @@ IconHexadecimal.removeHxPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1925,7 +1925,7 @@ IconHexadecimal.removeHxPrefix(str: string) => string
 const value = IconHexadecimal.removeHxPrefix('hx902ecb51c109183ace539f247b4ea1347fbf23b5')
 ```
 
-#### static removeCxPrefix\(\)
+#### static removeCxPrefix()
 
 Remove 'cx' prefix from string.
 
@@ -1935,9 +1935,9 @@ IconHexadecimal.removeCxPrefix(str: string) => string
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| str | `string` | a string |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| str       | `string` | a string    |
 
 **Returns**
 
@@ -1954,7 +1954,7 @@ const value = IconHexadecimal.removeCxPrefix('cxc248ee72f58f7ec0e9a382379d67399f
 
 `IconValidator` is a utility module which contains validation functions.
 
-#### static isPrivateKey\(\)
+#### static isPrivateKey()
 
 Check if input value is a private key type string.
 
@@ -1964,9 +1964,9 @@ IconValidator.isPrivateKey(privKey: any) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| privKey | `any` | an input value |
+| Parameter | Type  | Description    |
+| --------- | ----- | -------------- |
+| privKey   | `any` | an input value |
 
 **Returns**
 
@@ -1979,7 +1979,7 @@ IconValidator.isPrivateKey(privKey: any) => boolean
 const isPrivateKey = IconValidator.isPrivateKey('7abca1...20a9f1')
 ```
 
-#### static isPublicKey\(\)
+#### static isPublicKey()
 
 Check if input value is a public key type string.
 
@@ -1989,9 +1989,9 @@ IconValidator.isPublicKey(pubKey: any) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| public | `any` | an input value |
+| Parameter | Type  | Description    |
+| --------- | ----- | -------------- |
+| public    | `any` | an input value |
 
 **Returns**
 
@@ -2004,7 +2004,7 @@ IconValidator.isPublicKey(pubKey: any) => boolean
 const isPublicKey = IconValidator.isPublicKey('7abca1...20a9f1')
 ```
 
-#### static isEoaAddress\(\)
+#### static isEoaAddress()
 
 Check if input value is a EOA address type string.
 
@@ -2014,9 +2014,9 @@ IconValidator.isEoaAddress(address: any) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `any` | an input value |
+| Parameter | Type  | Description    |
+| --------- | ----- | -------------- |
+| address   | `any` | an input value |
 
 **Returns**
 
@@ -2029,7 +2029,7 @@ IconValidator.isEoaAddress(address: any) => boolean
 const isEoaAddress = IconValidator.isEoaAddress('hxca12a...209f1')
 ```
 
-#### static isScoreAddress\(\)
+#### static isScoreAddress()
 
 Check if input value is a SCORE address type string.
 
@@ -2039,9 +2039,9 @@ IconValidator.isScoreAddress(address: any) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `any` | a input value |
+| Parameter | Type  | Description   |
+| --------- | ----- | ------------- |
+| address   | `any` | a input value |
 
 **Returns**
 
@@ -2054,7 +2054,7 @@ IconValidator.isScoreAddress(address: any) => boolean
 const isScoreAddress = IconValidator.isScoreAddress('cx1b32a...99f01')
 ```
 
-#### static isAddress\(\)
+#### static isAddress()
 
 Check if input value is a EOA or SCORE address type string.
 
@@ -2064,9 +2064,9 @@ IconValidator.isAddress(address: any) => boolean
 
 **Parameters**
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `any` | an input value |
+| Parameter | Type  | Description    |
+| --------- | ----- | -------------- |
+| address   | `any` | an input value |
 
 **Returns**
 
@@ -2083,19 +2083,18 @@ const isAddress = IconValidator.isAddress('cx1b32a...99f01')
 
 There are 6 types of error cases. Details are as below:
 
-| Error code | Description |
-| :--- | :--- |
-| `DATA ERROR` | Exception class related to data type. |
-| `FORMAT ERROR` | Exception class related to data format. |
-| `WALLET ERROR` | Exception class related to wallet errors. |
-| `RPC ERROR` | Exception class related to network errors. |
-| `SCORE ERROR` | Exception class related to SCORE call error. |
-| `NETWORK ERROR` | Exception class related to network errors. |
+| Error code      | Description                                  |
+| --------------- | -------------------------------------------- |
+| `DATA ERROR`    | Exception class related to data type.        |
+| `FORMAT ERROR`  | Exception class related to data format.      |
+| `WALLET ERROR`  | Exception class related to wallet errors.    |
+| `RPC ERROR`     | Exception class related to network errors.   |
+| `SCORE ERROR`   | Exception class related to SCORE call error. |
+| `NETWORK ERROR` | Exception class related to network errors.   |
 
 ### References
 
 * [ICON JSON-RPC API v3](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md) 
 * [IRC2 Specification](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-2.md)
 
-\[References\]: \#section-references
-
+\[References]: #section-references
