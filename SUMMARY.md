@@ -106,6 +106,7 @@
 
 ## Release notes
 
+* [2021-10-12](release-notes/2021-10-12.md)
 * [2021-03-20](release-notes/2021-03-20.md)
 * [2021-03-04](release-notes/2021-03-04.md)
 * [2021-02-17](release-notes/2021-02-17.md)
