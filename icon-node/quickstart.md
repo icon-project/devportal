@@ -213,8 +213,6 @@ version: "3.7"
 services:
     node:
         image: iconloop/goloop-icon:latest
-        env_file:
-            - ./node.env
         volumes:
             - ./data:/goloop/data
             - ./mainnet:/mainnet
