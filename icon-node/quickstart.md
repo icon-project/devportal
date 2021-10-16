@@ -204,8 +204,6 @@ If you have your own KEYSTORE, store it and the password file in the configurati
 # echo -n "password" > ./config/keysecret
 ```
 
-If you have your own KEYSTORE, store it and the password file in the configuration directory.
-
 #### Create docker-compose config
 
 ```
