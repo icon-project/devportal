@@ -10,7 +10,7 @@
   * [Transactions](introduction/icon-key-concepts/transactions.md)
   * [Transactions Fees](introduction/icon-key-concepts/transactions-fees.md)
   * [ICON Nodes](introduction/icon-key-concepts/icon-nodes.md)
-  * [Governance - Public Representative \(P-Rep\)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
+  * [Governance - Public Representative (P-Rep)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
   * [Governance - IISS](introduction/icon-key-concepts/governance-iiss.md)
 * [The ICON Network](introduction/the-icon-network/README.md)
   * [Testnet](introduction/the-icon-network/testnet.md)
@@ -23,15 +23,15 @@
     * [How to build](icon-node/goloop/get-started/build.md)
     * [Local Network](icon-node/goloop/get-started/local-network.md)
   * [Genesis](icon-node/goloop/genesis/README.md)
-    * [Transaction](icon-node/goloop/genesis/genesis_tx.md)
-    * [Storage](icon-node/goloop/genesis/genesis_storage.md)
+    * [Transaction](icon-node/goloop/genesis/genesis\_tx.md)
+    * [Storage](icon-node/goloop/genesis/genesis\_storage.md)
   * [JSON-RPC](icon-node/goloop/json-rpc/README.md)
-    * [Goloop JSON-RPC API v3](icon-node/goloop/json-rpc/jsonrpc_v3.md)
-    * [BTP Extension](icon-node/goloop/json-rpc/btp_extension.md)
-    * [IISS Extension](icon-node/goloop/json-rpc/iiss_extension.md)
+    * [Goloop JSON-RPC API v3](icon-node/goloop/json-rpc/jsonrpc\_v3.md)
+    * [BTP Extension](icon-node/goloop/json-rpc/btp\_extension.md)
+    * [IISS Extension](icon-node/goloop/json-rpc/iiss\_extension.md)
   * [Node Management](icon-node/goloop/management/README.md)
-    * [API](icon-node/goloop/management/goloop_admin_api.md)
-    * [CLI](icon-node/goloop/management/goloop_cli.md)
+    * [API](icon-node/goloop/management/goloop\_admin\_api.md)
+    * [CLI](icon-node/goloop/management/goloop\_cli.md)
     * [Metrics](icon-node/goloop/management/metric.md)
 * [Overview](icon-node/overview.md)
 * [Quickstart](icon-node/quickstart.md)
@@ -42,7 +42,7 @@
   * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
   * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
 
-## Java SCORE <a id="java-score-1"></a>
+## Java SCORE <a href="java-score-1" id="java-score-1"></a>
 
 * [Examples](https://github.com/icon-project/java-score-examples)
 * [Tutorial](java-score-1/tutorial.md)
@@ -59,14 +59,14 @@
 * [Swift SDK](icon-sdks/swift-sdk/README.md)
   * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)
 
-## BTP <a id="btp-gitbook"></a>
+## BTP <a href="btp-gitbook" id="btp-gitbook"></a>
 
 * [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
 * [Overview](btp-gitbook/overview.md)
 * [BTP Development Resources](btp-gitbook/btp-development-resources.md)
 * [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
-* [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
-* [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
+* [Deploy Smart Contracts (ICON)](btp-gitbook/deploy-smart-contracts-icon.md)
+* [Deploy Smart Contracts (Moonriver)](btp-gitbook/deploy-smart-contracts-moonriver.md)
 * [Relays Setup](btp-gitbook/relays-setup.md)
 * [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
 * [Deploy Relays](btp-gitbook/deploy-relays.md)
@@ -99,14 +99,14 @@
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
 
----
+***
 
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
 
 ## Release notes
 
-* [2021-10-12](release-notes/2021-10-22.md)
+* [2021-10-22](release-notes/2021-10-22.md)
 * [2021-10-12](release-notes/2021-10-12.md)
 * [2021-03-20](release-notes/2021-03-20.md)
 * [2021-03-04](release-notes/2021-03-04.md)
@@ -118,4 +118,3 @@
 * [2020-04-08](release-notes/2020-04-08.md)
 * [2020-01-28](release-notes/2020-01-28.md)
 * [2019-12-19](release-notes/2019-12-19.md)
-
