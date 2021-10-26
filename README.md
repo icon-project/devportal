@@ -38,7 +38,3 @@ ICON Network is a decentralized smart contract protocol based on goloop, a high-
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
