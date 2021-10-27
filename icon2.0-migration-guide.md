@@ -12,15 +12,19 @@
 
 ## Migration Plan
 
-* Top 30 P-Reps participating in Stage2 must fill up this form before starting [https://forms.gle/PvyMVDH98DBzn2op7](https://forms.gle/PvyMVDH98DBzn2op7)&#x20;
-* Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconloop/prep-node:20211012.0).
-  * Other node operators can wait for further instructions to setup ICON2 - goloop node once the network migration is fully completed. Until then please keep your ICON1 node running as before.
+{% hint style="danger" %}
+Top 30 P-Reps participating in Stage2 must fill up this form before starting [https://forms.gle/PvyMVDH98DBzn2op7](https://forms.gle/PvyMVDH98DBzn2op7)
+
+Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconloop/prep-node:20211012.0).
+{% endhint %}
+
+* Other node operators can wait for further instructions to setup ICON2 - goloop node once the network migration is fully completed. Until then please keep your ICON1 node running as before.
 * There are three stages in the migration.
 
 ### Summary of stages
 
-* \[Completed] STAGE1: Migrate data from ICON1.
-* STAGE2: Download the migrated data and Start an ICON2 node. \[Action required - PRep]
+* ~~\[Completed] STAGE1: Migrate data from ICON1.~~
+* **\[In Progress] STAGE2: Download the migrated data and Start an ICON2 node. \[Action required - PRep]**
 * STAGE3: \[Action required - PRep and Exchanges ]
   * Send a Proposal (Foundation) → Vote a Proposal (PReps) → Complete consensus
   * The Foundation announces the changes. ICON1 node will be stopped.\
@@ -30,34 +34,46 @@
 
 ### Timetable of migration
 
-| Date time                                                                                                                               | Target group                    | Stage     | Actions                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| 10/25 10:00                                                                                                                             | Foundation                      | Stage 1-2 | Backup the current snapshot db and upload                                                |
-| 10/26                                                                                                                                   | Foundation                      |           | Test with migrated real ICON2 data                                                       |
-| 10/26                                                                                                                                   | Foundation                      |           | Deploy to guide documents                                                                |
-| 10/27 11:00                                                                                                                             | P-Rep                           | Stage2-1  | Start the stage2                                                                         |
-| <p>Start the Stage3</p><p>- If the operating ICON1 node is in watch state and block synchronization is complete, proceed to Stage3.</p> |                                 |           |                                                                                          |
-| 11/03 22:00                                                                                                                             | Exchange / Citizen              | Stage3-1  | Stop deposits and withdrawals on exchanges.                                              |
-| 11/03 23:00                                                                                                                             | Foundation                      | Stage3-2  | Send a proposal.                                                                         |
-| 11/03 23:30                                                                                                                             | P-Rep                           | Stage3-3  | Wait for consensus proposal to be completed.                                             |
-| 11/04 23:40                                                                                                                             | P-Rep                           | Stage3-4  | ICON2 node is changed to import\_icon xxx finished state.                                |
-| 11/04 00:00                                                                                                                             | P-Rep                           | Stage3-6  | \[Action required] Command to confirm end of migration. see the next section (Stage 3-6) |
-| 11/04 00:50                                                                                                                             | P-Rep                           | Stage3-9  | Monitor whether consensus is reached and blocks are created                              |
-| 11/04 01:00                                                                                                                             | Foundation                      | Finish    | Announce a successful migration.                                                         |
-| 11/04 05:00                                                                                                                             | Foundation                      |           | <p>Upload the latest DB of ICON2.</p><p>Let you know, If we are ready.</p>               |
-| P-Rep who did not participate in stage 3 may proceed to the next stage. (include Citizen, Exchange)                                     |                                 |           |                                                                                          |
-| 11/04 05:00                                                                                                                             | <p>Exchange /</p><p>Citizen</p> |           | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>       |
+| Date time                                                                                           | Target group                    | Stage     | Actions                                                                                  |
+| --------------------------------------------------------------------------------------------------- | ------------------------------- | --------- | ---------------------------------------------------------------------------------------- |
+| 10/25 10:00                                                                                         | Foundation                      | Stage 1-2 | Backup the current snapshot db and upload                                                |
+| 10/26                                                                                               | Foundation                      |           | Test with migrated real ICON2 data                                                       |
+| 10/26                                                                                               | Foundation                      |           | Deploy to guide documents                                                                |
+| 10/27 11:00                                                                                         | P-Rep                           | Stage2-1  | Start the stage2                                                                         |
+| 11/03 22:00                                                                                         | Exchange / Citizen              | Stage3-1  | Stop deposits and withdrawals on exchanges.                                              |
+| 11/03 23:00                                                                                         | Foundation                      | Stage3-2  | Send a proposal.                                                                         |
+| 11/03 23:30                                                                                         | P-Rep                           | Stage3-3  | Wait for consensus proposal to be completed.                                             |
+| 11/04 23:40                                                                                         | P-Rep                           | Stage3-4  | ICON2 node is changed to import\_icon xxx finished state.                                |
+| 11/04 00:00                                                                                         | P-Rep                           | Stage3-6  | \[Action required] Command to confirm end of migration. see the next section (Stage 3-6) |
+| 11/04 00:50                                                                                         | P-Rep                           | Stage3-9  | Monitor whether consensus is reached and blocks are created                              |
+| 11/04 01:00                                                                                         | Foundation                      | Finish    | Announce a successful migration.                                                         |
+| 11/04 05:00                                                                                         | Foundation                      |           | <p>Upload the latest DB of ICON2.</p><p>Let you know, If we are ready.</p>               |
+| P-Rep who did not participate in stage 3 may proceed to the next stage. (include Citizen, Exchange) |                                 |           |                                                                                          |
+| 11/04 05:00                                                                                         | <p>Exchange /</p><p>Citizen</p> |           | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>       |
 
 ## Migration details
 
-The last update for ICON1. Top 30 P-Reps must be updated.
+{% hint style="danger" %}
+Top 30 P-Reps **must** update their loopchain node before starting Stage2. This update will make ICON1 stop creating blocks after Revision 13.
+{% endhint %}
 
-This update will make ICON1 stop creating blocks after Revision 13.
+Please update citizen node following guideline before October 26th. Please try to update your node right after your leader turn if you're Main P-Rep.
 
-| Foundation + P-Reps  Citizen (Exchanges)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Update the Citizen node and P-Rep node.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| <p></p><p>Please update citizen node following guideline before October 26th</p><p>Please try to update your node right after your leader turn if you're Main P-Rep.</p><ul><li>Using docker</li></ul><p>1. Check your docker image tag settings in docker-compose.yml and change the tag to below</p><p>image: iconloop/prep-node:20211012.0</p><p>2. Enter the following commands in order:</p><p>docker-compose pull<br>docker-compose down<br>docker-compose up -d</p><ul><li>Using snap</li><li><a href="https://snapcraft.io/loopchain">https://snapcraft.io/loopchain</a>  </li></ul><ul><li>Using citizen pack or binary</li><li><a href="https://github.com/icon-project/icon-release/releases/tag/20211012.0">https://github.com/icon-project/icon-release/releases/tag/20211012.0</a> </li></ul> |
+* Using docker
+  * Check your docker image tag settings in docker-compose.yml and change the tag to below
+    * `image: iconloop/prep-node:20211012.0`
+  * Enter the following commands in order
+
+```
+docker-compose pull
+docker-compose down
+docker-compose up -d
+```
+
+* Using snap
+  * [https://snapcraft.io/loopchain](https://snapcraft.io/loopchain)
+* Using citizen pack or binary
+  * [https://github.com/icon-project/icon-release/releases/tag/20211012.0](https://github.com/icon-project/icon-release/releases/tag/20211012.0)
 
 ### STAGE1
 
