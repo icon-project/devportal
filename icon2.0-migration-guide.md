@@ -2,9 +2,13 @@
 
 ## Important <a href="docs-internal-guid-8fefb1fa-7fff-cca3-4ba3-bc0c7975719e" id="docs-internal-guid-8fefb1fa-7fff-cca3-4ba3-bc0c7975719e"></a>
 
+{% hint style="warning" %}
 * The ICON1 node server must be maintained after STAGE3 until the migration is completed.
 * It should be turned off when the Foundation announces that the migration is complete.
 * If you are P-Rep, you must use the Keystore file used in ICON1.
+  * _If you’re not using a dual key setup, use your original registration key._
+  * _If you’re using a dual key setup, use the second key (not the registration key)._
+{% endhint %}
 
 ## Migration Plan
 
