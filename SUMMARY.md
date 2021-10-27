@@ -118,3 +118,8 @@
 * [2020-04-08](release-notes/2020-04-08.md)
 * [2020-01-28](release-notes/2020-01-28.md)
 * [2019-12-19](release-notes/2019-12-19.md)
+
+***
+
+* [ICON2.0 Migration Guide](icon2.0-migration-guide.md)
+* [ICON2 Operation and configuration for P-Rep](icon2-operation-and-configuration-for-p-rep.md)
