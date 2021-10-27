@@ -1,6 +1,6 @@
 # ICON2 Operation and configuration for P-Rep
 
-## ckQuick start to running ICON2 node
+## Quick start to running ICON2 node
 
 ### Prerequisites <a href="prerequisites" id="prerequisites"></a>
 
