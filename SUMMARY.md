@@ -123,3 +123,4 @@
 
 * [ICON2.0 Migration Guide](icon2.0-migration-guide.md)
 * [ICON2 Operation and configuration for P-Rep](icon2-operation-and-configuration-for-p-rep.md)
+* [ICON2 Operation and configuration for Exchanges and Citizen](icon2-operation-and-configuration-for-exchanges-and-citizen.md)
