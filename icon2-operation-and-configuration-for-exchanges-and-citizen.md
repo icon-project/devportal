@@ -1,7 +1,3 @@
----
-description: WIP
----
-
 # ICON2 Operation and configuration for Exchanges and Citizen
 
 ## Quick start to running ICON2 node <a href="quick-start-to-running-icon2-node" id="quick-start-to-running-icon2-node"></a>
@@ -137,3 +133,192 @@ services:
       - 9000:9000
 ```
 
+## Docker environments settings <a href="docker-environments-settings" id="docker-environments-settings"></a>
+
+#### How to check the node state <a href="how-to-check-the-node-state" id="how-to-check-the-node-state"></a>
+
+* get state
+
+```
+# docker exec -it icon2-node goloop chain ls 
+[
+  {
+    "cid": "0x1",
+    "nid": "0x1",
+    "channel": "icon_dex",
+    "state": "import_icon 14462097 running",
+    "height": 57940,
+    "lastError": ""
+  }
+]
+```
+
+* get detail state
+
+```
+# docker exec -it icon2-node goloop chain inspect 0x1
+{
+  "cid": "0x1",
+  "nid": "0x1",
+  "channel": "icon_dex",
+  "state": "import_icon 14464527 running",
+  "height": 57944,
+  "lastError": "",
+  "genesisTx": {
+    "accounts": [
+      {
+        "address": "hx54f7853dc6481b670caf69c5a27c7c8fe5be8269",
+        "balance": "0x2961fff8ca4a62327800000",
+        "name": "god"
+      },
+      {
+        "address": "hx1000000000000000000000000000000000000000",
+        "balance": "0x0",
+        "name": "treasury"
+      }
+    ],
+    "message": "A rhizome has no beginning or end; it is always in the middle, between things, interbeing, intermezzo. The tree is filiation, but the rhizome is alliance, uniquely alliance. The tree imposes the verb \"to be\" but the fabric of the rhizome is the conjunction, \"and ... and ...and...\"This conjunction carries enough force to shake and uproot the verb \"to be.\" Where are you going? Where are you coming from? What are you heading for? These are totally useless questions.\n\n - Mille Plateaux, Gilles Deleuze \u0026 Felix Guattari\n\n\"Hyperconnect the world\""
+  },
+  "config": {
+    "dbType": "rocksdb",
+    "platform": "icon",
+    "seedAddress": "20.20.6.87:7100",
+    "role": 3,
+    "concurrencyLevel": 1,
+    "normalTxPool": 10000,
+    "nodeCache": "small",
+    "channel": "icon_dex",
+    "secureSuites": "none,tls,ecdhe",
+    "secureAeads": "chacha,aes128,aes256",
+    "defaultWaitTimeout": 0,
+    "maxWaitTimeout": 0,
+    "txTimeout": 60000,
+    "autoStart": false
+  },
+  "module": {
+    "metrics": {
+      "consensus_height": 57945,
+      "consensus_height_duration": 63234,
+      "consensus_round": 0,
+      "consensus_round_duration": 63234,
+      "network_recv_cnt": 7613146,
+      "network_recv_sum": 5932966367,
+      "network_send_cnt": 7663766,
+      "network_send_sum": 7377659111,
+      "txlatency_commit": null,
+      "txlatency_finalize": null,
+      "txpool_add_cnt": null,
+      "txpool_add_sum": null,
+      "txpool_drop_cnt": null,
+      "txpool_drop_sum": null,
+      "txpool_remove_cnt": null,
+      "txpool_remove_sum": null,
+      "txpool_user_add_cnt": null,
+      "txpool_user_add_sum": null,
+      "txpool_user_drop_cnt": null,
+      "txpool_user_drop_sum": null,
+      "txpool_user_remove_cnt": null,
+      "txpool_user_remove_sum": null
+    },
+    "network": {
+      "p2p": {
+        "children": [],
+        "friends": [
+          {
+            "addr": "20.20.6.84:7100",
+            "id": "hx59fbe7660aac5e1487dfb21024940441fd7d21fc",
+            "in": true,
+            "role": 3
+          },
+          {
+            "addr": "20.20.6.85:7100",
+            "id": "hx51a27fe90ced46309d8d9a0147889c02469c988b",
+            "in": true,
+            "role": 3
+          },
+          {
+            "addr": "20.20.6.87:7100",
+            "id": "hx8c0d92d64087cafb00353209e0736ff382c05e0c",
+            "in": true,
+            "role": 3
+          }
+        ],
+        "nephews": [],
+        "orphanages": [
+          {
+            "addr": "20.20.6.86:7100",
+            "id": "hxa1d93a0cf251af0d4f17863b0b912b6b3a75b606",
+            "in": true,
+            "role": 1
+          }
+        ],
+        "others": [],
+        "parent": {},
+        "roots": {
+          "20.20.6.83:7100": "hx13dae65d3955c87eb671be0659276a0be0fc44a6",
+          "20.20.6.84:7100": "hx59fbe7660aac5e1487dfb21024940441fd7d21fc",
+          "20.20.6.85:7100": "hx51a27fe90ced46309d8d9a0147889c02469c988b",
+          "20.20.6.87:7100": "hx8c0d92d64087cafb00353209e0736ff382c05e0c"
+        },
+        "seeds": {
+          "20.20.6.83:7100": "hx13dae65d3955c87eb671be0659276a0be0fc44a6",
+          "20.20.6.84:7100": "hx59fbe7660aac5e1487dfb21024940441fd7d21fc",
+          "20.20.6.85:7100": "hx51a27fe90ced46309d8d9a0147889c02469c988b",
+          "20.20.6.86:7100": "hxa1d93a0cf251af0d4f17863b0b912b6b3a75b606",
+          "20.20.6.87:7100": "hx8c0d92d64087cafb00353209e0736ff382c05e0c"
+        },
+        "self": {
+          "addr": "20.20.6.83:7100",
+          "id": "hx13dae65d3955c87eb671be0659276a0be0fc44a6",
+          "in": false,
+          "role": 3
+        },
+        "trustSeeds": {
+          "20.20.6.87:7100": ""
+        },
+        "uncles": []
+      }
+    }
+  }
+}
+```
+
+## Network separation using multiple citizens <a href="network-separation-using-multiple-citizens" id="network-separation-using-multiple-citizens"></a>
+
+The port used for network separation has been changed.
+
+In block synchronization, TCP 7100 is synchronized instead of a WebSocket using TCP 9000.
+
+* Before change
+  * External citizen node ← TCP 9000(WebSocket) → Internal citizen node
+* After change
+  * External citizen node ← TCP 7100 → Internal citizen node
+
+For example:
+
+\[ External Citizen Node ]
+
+IPaddr : 20.20.20.199
+
+```
+version: "3"
+services:
+   prep:
+      image: iconloop/icon2-node
+      container_name: "icon2-mainnet"
+      network_mode: host
+      restart: "on-failure"
+      environment:
+         SERVICE: "MainNet"  # MainNet, sejong
+         GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic          
+         IS_AUTOGEN_CERT: "true"   # true, false
+         FASTEST_START: "true"     # true, false  # It will be download the Snapshot DB
+         ROLE: 0 # citizen = 0, preps = 3 
+
+      cap_add:
+         - SYS_TIME
+
+      volumes:         
+         - ./data:/data # mount a data volumes
+         - ./config:/config # mount a data volumes , key file
+```
