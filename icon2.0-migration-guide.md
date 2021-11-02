@@ -34,21 +34,21 @@ Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconl
 
 ### Timetable of migration
 
-| Stage time (KST)                                                                                         | Actions                                                                                  |
-| -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| <p><del>10/25 10:00 | Stage 1-2</del></p><p><del>Who: <em>Foundation</em></del></p>                      | ~~Backup the current snapshot db and upload~~                                            |
-| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                                        | ~~Test with migrated real ICON2 data~~                                                   |
-| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                                        | ~~Deploy to guide documents~~                                                            |
-| <p><strong>10/27 11:00 | Stage2</strong></p><p><strong>Who: </strong><em><strong>P-Rep</strong></em></p> | **Start the stage2**                                                                     |
-| <p>11/03 22:00 | Stage3-1</p><p>Who: <em>Exchange / Citizen</em></p>                                     | Stop deposits and withdrawals on exchanges.                                              |
-| <p>11/03 23:00 | Stage3-2</p><p>Who: <em>Foundation</em></p>                                             | Send a proposal.                                                                         |
-| <p>11/03 23:30 | Stage3-3</p><p>Who: <em>P-Rep</em></p>                                                  | Wait for consensus proposal to be completed.                                             |
-| <p>11/04 23:40 | Stage3-4</p><p>Who: <em>P-Rep</em></p>                                                  | ICON2 node is changed to import\_icon xxx finished state.                                |
-| <p>11/04 00:00 | Stage3-6</p><p>Who: <em>P-Re</em>p</p>                                                  | \[Action required] Command to confirm end of migration. see the next section (Stage 3-6) |
-| <p>11/04 00:50 | Stage3-9</p><p>Who: <em>P-Rep</em></p>                                                  | Monitor whether consensus is reached and blocks are created                              |
-| <p>11/04 01:00 | Finish</p><p>Who: <em>Foundation</em></p>                                               | Announce a successful migration.                                                         |
-| <p>11/04 05:00</p><p>Who: <em>Foundation</em></p>                                                        | <p>Upload the latest DB of ICON2.</p><p>Let you know, If we are ready.</p>               |
-| <p>11/04 05:00</p><p>Who: <em>Exchange / Citizen</em></p>                                                | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>       |
+| Stage time (KST)                                                                                                        | Actions                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| <p><del>10/25 10:00 | Stage 1-2</del></p><p><del>Who: <em>Foundation</em></del></p>                                     | ~~Backup the current snapshot db and upload~~                                            |
+| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                                                       | ~~Test with migrated real ICON2 data~~                                                   |
+| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                                                       | ~~Deploy to guide documents~~                                                            |
+| <p><del>10/27 11:00 | Stage2</del></p><p><del>Who: <em>P-Rep</em></del></p>                                             | ~~Start the stage2~~                                                                     |
+| <p><strong>11/03 22:00 | Stage3-1</strong></p><p><strong>Who: </strong><em><strong>Exchange / Citizen</strong></em></p> | **Stop deposits and withdrawals on exchanges.**                                          |
+| <p>11/03 23:00 | Stage3-2</p><p>Who: <em>Foundation</em></p>                                                            | Send a proposal.                                                                         |
+| <p>11/03 23:30 | Stage3-3</p><p>Who: <em>P-Rep</em></p>                                                                 | Wait for consensus proposal to be completed.                                             |
+| <p>11/04 23:40 | Stage3-4</p><p>Who: <em>P-Rep</em></p>                                                                 | ICON2 node is changed to import\_icon xxx finished state.                                |
+| <p>11/04 00:00 | Stage3-6</p><p>Who: <em>P-Re</em>p</p>                                                                 | \[Action required] Command to confirm end of migration. see the next section (Stage 3-6) |
+| <p>11/04 00:50 | Stage3-9</p><p>Who: <em>P-Rep</em></p>                                                                 | Monitor whether consensus is reached and blocks are created                              |
+| <p>11/04 01:00 | Finish</p><p>Who: <em>Foundation</em></p>                                                              | Announce a successful migration.                                                         |
+| <p>11/04 05:00</p><p>Who: <em>Foundation</em></p>                                                                       | <p>Upload the latest DB of ICON2.</p><p>Let you know, If we are ready.</p>               |
+| <p>11/04 05:00</p><p>Who: <em>Exchange / Citizen</em></p>                                                               | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>       |
 
 ## Migration details
 
