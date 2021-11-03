@@ -5,7 +5,7 @@
 | Name               | ICON Mainnet                                                                       |
 | Node               | [https://ctz.solidwallet.io](https://ctz.solidwallet.io)                           |
 | API endpoint       | [https://ctz.solidwallet.io/api/v3](https://ctz.solidwallet.io/api/v3)             |
-| Debug API endpoint | [https://ctz.solidwallet.io/api/debug/v3](https://ctz.solidwallet.io/api/debug/v3) |
+| Debug API endpoint | [https://ctz.solidwallet.io/api/v3d](https://ctz.solidwallet.io/api/v3d) |
 | Network ID (nid)   | 1                                                                                  |
 | Tracker            | [https://tracker.icon.foundation](https://tracker.icon.foundation)                 |
 | Transaction fee    | on                                                                                 |
