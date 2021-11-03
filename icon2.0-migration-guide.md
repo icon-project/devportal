@@ -24,8 +24,8 @@ Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconl
 ### Summary of stages
 
 * ~~\[Completed] STAGE1: Migrate data from ICON1.~~
-* **\[In Progress] STAGE2: Download the migrated data and Start an ICON2 node. \[Action required - PRep]**
-* STAGE3: \[Action required - PRep and Exchanges ]
+* ~~\[Complete] STAGE2: Download the migrated data and Start an ICON2 node. \[Action required - PRep]~~
+* **\[In Progress] STAGE3: \[Action required - PRep and Exchanges ]**
   * Send a Proposal (Foundation) → Vote a Proposal (PReps) → Complete consensus
   * The Foundation announces the changes. ICON1 node will be stopped.\
     Exchanges should stop deposits and withdrawals. \[Action required - Exchanges ]
