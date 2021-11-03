@@ -76,7 +76,7 @@ In macOS:
     DEBUG_LEVEL=0 make shared_lib install-shared
 
     export LD_LIBRARY_PATH=/usr/local/lib
-  ```
+    ```
   
 
 ## Step 1. Source checkout
