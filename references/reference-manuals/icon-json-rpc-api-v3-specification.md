@@ -162,7 +162,7 @@ API path : `<scheme>://<host>/api/v3`
 
 **Debug API**
 
-API path : `<scheme>://<host>/api/debug/v3`
+API path : `<scheme>://<host>/api/v3d`
 
 * [debug\_estimateStep](icon-json-rpc-api-v3-specification.md#debug_estimatestep)
 * [debug\_getAccount](icon-json-rpc-api-v3-specification.md#debug_getaccount)
