@@ -68,7 +68,7 @@ Steps = DEFAULT + INPUT + CONTRACT_SET + CONTRACT_CREATE
 
 #### Step estimation using the JSON RPC API
 
-[debug_estimateStep](../reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/debug/v3`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
+[debug_estimateStep](../reference-manuals/icon-json-rpc-api-v3-specification.md#debug_estimatestep) API will estimate the required steps of the given transaction. You can create the transaction data without `stepLimit` and `signature`, and pass it to the API endpoint `<scheme>://<host>/api/v3d`. The transaction is not added to the blockchain but simply returns the estimated steps. Sample request messages will look like the bellows.
 
 * SCORE install
 
