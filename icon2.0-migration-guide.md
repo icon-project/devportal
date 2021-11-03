@@ -54,7 +54,7 @@ Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconl
 | <p><del>11/04 01:10 | Stage3-7</del></p><p><del>Who: <em>P-Rep</em></del></p>                           | ~~\[**Action required**] Command to confirm end of migration. see the next section (Stage 3-7)~~ |
 | <p><del>11/04 01:10 | Stage 3-8</del></p><p><del>Who: P-Rep &#x26; Foundation</del></p>                 | ~~Monitor whether consensus is reached and blocks are created~~                                  |
 | <p><del>11/04 01:40</del></p><p><del>Who: Foundation</del></p>                                          | ~~Start Citizen node~~                                                                           |
-| <p>11/04 02:00 | <strong>Announcement</strong></p><p><em>Who: Foundation</em></p>                       | Announce recovery endpoint.                                                                      |
+| <p><del>11/04 02:00 | <strong>Announcement</strong></del></p><p><del><em>Who: Foundation</em></del></p> | ~~Announce recovery endpoint.~~                                                                  |
 | <p>11/04 02:00 |</p><p><em>Who: Foundation</em></p>                                                     | Upload the latest ICON2 DB. We'll let you know, If we ready.                                     |
 | <p>11/04 02:00 | <strong>Announcement</strong></p><p>Who: <em>Foundation</em></p>                       | Announce a successful migration.                                                                 |
 | Migration complete                                                                                      | Migration complete                                                                               |
