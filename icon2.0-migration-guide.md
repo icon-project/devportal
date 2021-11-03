@@ -34,31 +34,31 @@ Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconl
 
 ### Timetable of migration
 
-| Stage time (KST)                                                                    | Actions                                                                                      |
-| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| <p><del>10/25 10:00 | Stage 1-2</del></p><p><del>Who: <em>Foundation</em></del></p> | ~~Backup the current snapshot db and upload~~                                                |
-| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                   | ~~Test with migrated real ICON2 data~~                                                       |
-| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                   | ~~Deploy to guide documents~~                                                                |
-| <p><del>10/27 11:00 | Stage2</del></p><p><del>Who: <em>P-Rep</em></del></p>         | ~~Start the stage2~~                                                                         |
-| <p><del>11/03 22:00 | Stage3-1</del></p><p><del>Who: Exchange / Citizen</del></p>   | ~~Stop deposits and withdrawals on exchanges. Stop all ICON1 citizens~~                      |
-| <p><del>11/03 23:00 | Stage3-2</del></p><p><del>Who: <em>Foundation</em></del></p>  | ~~Send a proposal.~~                                                                         |
-| <p><del>11/03 23:30 | Stage3-3</del></p><p><del>Who: <em>P-Rep</em></del></p>       | ~~Wait for consensus proposal to be completed.~~                                             |
-| <p><del>11/03 23:40 | Stage 3-4</del></p><p><del><em>Who: P-Rep</em></del></p>      | ~~ICON1 node and Citizen node will enter `suspend` state~~                                   |
-| <p><del>11/03 ~23:59 | Stage3-5</del></p><p><del>Who: <em>P-Rep</em></del></p>      | ~~Wait for all ICON2 node reached to `import_icon xxx finished` state~~                      |
-| <p>11/04 00:00 | <strong>Announcement</strong></p><p>Who: Foundation</p>            | The Foundation notifies P-Reps to enter a command: `chain stop`                              |
-| <p>11/04 00:00 | Stage3-6</p><p>Who: <em>P-Re</em>p</p>                             | \[**Action required**] Command to confirm end of migration. see the next section (Stage 3-6) |
-| <p>11/04 00:30</p><p><em>Who: Foundation</em></p>                                   | Wait for all ICON2 nodes reached `stopped` state                                             |
-| <p>11/04 00:30</p><p><em>Who: Foundation</em></p>                                   | Stop Migrators                                                                               |
-| <p>11/04 01:00</p><p><em>Who: Foundation</em></p>                                   | Start Migrators                                                                              |
-| <p>11/04 01:10 | <strong>Announcement</strong></p><p><em>Who: Foundation</em></p>   | The Foundation notifies P-Reps to enter a command: `chain start`                             |
-| <p>11/04 01:10 | Stage3-7</p><p>Who: <em>P-Rep</em></p>                             | \[**Action required**] Command to confirm end of migration. see the next section (Stage 3-7) |
-| <p>11/04 01:10 | Stage 3-8</p><p>Who: P-Rep &#x26; Foundation</p>                   | Monitor whether consensus is reached and blocks are created                                  |
-| <p>11/04 01:40</p><p>Who: Foundation</p>                                            | Start Citizen node                                                                           |
-| <p>11/04 02:00 | <strong>Announcement</strong></p><p><em>Who: Foundation</em></p>   | Announce recovery endpoint.                                                                  |
-| <p>11/04 02:00 |</p><p><em>Who: Foundation</em></p>                                 | Upload the latest ICON2 DB. We'll let you know, If we ready.                                 |
-| <p>11/04 02:00 | <strong>Announcement</strong></p><p>Who: <em>Foundation</em></p>   | Announce a successful migration.                                                             |
-| Migration complete                                                                  | Migration complete                                                                           |
-| <p>11/04 05:00</p><p>Who: <em>Exchange / Citizen</em></p>                           | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>           |
+| Stage time (KST)                                                                               | Actions                                                                                          |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| <p><del>10/25 10:00 | Stage 1-2</del></p><p><del>Who: <em>Foundation</em></del></p>            | ~~Backup the current snapshot db and upload~~                                                    |
+| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                              | ~~Test with migrated real ICON2 data~~                                                           |
+| <p><del>10/26</del></p><p><del>Who: <em>Foundation</em></del></p>                              | ~~Deploy to guide documents~~                                                                    |
+| <p><del>10/27 11:00 | Stage2</del></p><p><del>Who: <em>P-Rep</em></del></p>                    | ~~Start the stage2~~                                                                             |
+| <p><del>11/03 22:00 | Stage3-1</del></p><p><del>Who: Exchange / Citizen</del></p>              | ~~Stop deposits and withdrawals on exchanges. Stop all ICON1 citizens~~                          |
+| <p><del>11/03 23:00 | Stage3-2</del></p><p><del>Who: <em>Foundation</em></del></p>             | ~~Send a proposal.~~                                                                             |
+| <p><del>11/03 23:30 | Stage3-3</del></p><p><del>Who: <em>P-Rep</em></del></p>                  | ~~Wait for consensus proposal to be completed.~~                                                 |
+| <p><del>11/03 23:40 | Stage 3-4</del></p><p><del><em>Who: P-Rep</em></del></p>                 | ~~ICON1 node and Citizen node will enter `suspend` state~~                                       |
+| <p><del>11/03 ~23:59 | Stage3-5</del></p><p><del>Who: <em>P-Rep</em></del></p>                 | ~~Wait for all ICON2 node reached to `import_icon xxx finished` state~~                          |
+| <p><del>11/04 00:00 | <strong>Announcement</strong></del></p><p><del>Who: Foundation</del></p> | ~~The Foundation notifies P-Reps to enter a command: `chain stop`~~                              |
+| <p><del>11/04 00:00 | Stage3-6</del></p><p><del>Who: <em>P-Re</em>p</del></p>                  | ~~\[**Action required**] Command to confirm end of migration. see the next section (Stage 3-6)~~ |
+| <p><del>11/04 00:30</del></p><p><del><em>Who: Foundation</em></del></p>                        | ~~Wait for all ICON2 nodes reached `stopped` state~~                                             |
+| <p><del>11/04 00:30</del></p><p><del><em>Who: Foundation</em></del></p>                        | ~~Stop Migrators~~                                                                               |
+| <p><del>11/04 01:00</del></p><p><del><em>Who: Foundation</em></del></p>                        | ~~Start Migrators~~                                                                              |
+| <p>11/04 01:10 | <strong>Announcement</strong></p><p><em>Who: Foundation</em></p>              | The Foundation notifies P-Reps to enter a command: `chain start`                                 |
+| <p>11/04 01:10 | Stage3-7</p><p>Who: <em>P-Rep</em></p>                                        | \[**Action required**] Command to confirm end of migration. see the next section (Stage 3-7)     |
+| <p>11/04 01:10 | Stage 3-8</p><p>Who: P-Rep &#x26; Foundation</p>                              | Monitor whether consensus is reached and blocks are created                                      |
+| <p>11/04 01:40</p><p>Who: Foundation</p>                                                       | Start Citizen node                                                                               |
+| <p>11/04 02:00 | <strong>Announcement</strong></p><p><em>Who: Foundation</em></p>              | Announce recovery endpoint.                                                                      |
+| <p>11/04 02:00 |</p><p><em>Who: Foundation</em></p>                                            | Upload the latest ICON2 DB. We'll let you know, If we ready.                                     |
+| <p>11/04 02:00 | <strong>Announcement</strong></p><p>Who: <em>Foundation</em></p>              | Announce a successful migration.                                                                 |
+| Migration complete                                                                             | Migration complete                                                                               |
+| <p>11/04 05:00</p><p>Who: <em>Exchange / Citizen</em></p>                                      | <p>If you run a citizen,</p><p>Download a new ICON2 snapshot and run the node.</p>               |
 
 ## Migration details
 
