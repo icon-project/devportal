@@ -44,7 +44,7 @@ Before Stage2, top 30 P-Reps must update to the latest ICON1 node version (iconl
 | <p><del>11/03 23:00 | Stage3-2</del></p><p><del>Who: <em>Foundation</em></del></p>  | ~~Send a proposal.~~                                                                         |
 | <p><del>11/03 23:30 | Stage3-3</del></p><p><del>Who: <em>P-Rep</em></del></p>       | ~~Wait for consensus proposal to be completed.~~                                             |
 | <p><del>11/03 23:40 | Stage 3-4</del></p><p><del><em>Who: P-Rep</em></del></p>      | ~~ICON1 node and Citizen node will enter `suspend` state~~                                   |
-| <p>11/03 ~23:59 | Stage3-5</p><p>Who: <em>P-Rep</em></p>                            | Wait for all ICON2 node reached to `import_icon xxx finished` state                          |
+| <p><del>11/03 ~23:59 | Stage3-5</del></p><p><del>Who: <em>P-Rep</em></del></p>      | ~~Wait for all ICON2 node reached to `import_icon xxx finished` state~~                      |
 | <p>11/04 00:00 | <strong>Announcement</strong></p><p>Who: Foundation</p>            | The Foundation notifies P-Reps to enter a command: `chain stop`                              |
 | <p>11/04 00:00 | Stage3-6</p><p>Who: <em>P-Re</em>p</p>                             | \[**Action required**] Command to confirm end of migration. see the next section (Stage 3-6) |
 | <p>11/04 00:30</p><p><em>Who: Foundation</em></p>                                   | Wait for all ICON2 nodes reached `stopped` state                                             |
