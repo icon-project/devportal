@@ -24,15 +24,15 @@
   $ sudo apt install openjdk-11-jdk
   ```
 
-* [Download and Install GoLang]
+* Download and Install GoLang
 
-In macOS:
+  In macOS:
 
   ```text
   $ brew install go
   ```
 
-In Linux \(Ubuntu 18.04\):
+  In Linux \(Ubuntu 18.04\):
 
   ```text
   $sudo wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
@@ -44,39 +44,40 @@ In Linux \(Ubuntu 18.04\):
   go version
   ```
 
-* [Download and Install Pyhton + VM]
+* Download and Install Pyhton + VM
 
-In macOS:
+  In macOS:
 
   ```text
   brew install python3
   pip3 install virtualenv setuptools wheel
   ```
 
-In Linux \(Ubuntu 18.04\):
+  In Linux \(Ubuntu 18.04\):
 
   ```text
   $ sudo apt install python3
   $ pip3 install virtualenv setuptools wheel
   ```
 
-* [Download and Install rocksdb] (http://rocksdb.org/)
+* Download and Install rocksdb
 
-In macOS:
+  In macOS:
 
   ```text
   $ brew install rocksdb
   ```
 
   In Linux \(Ubuntu 18.04\):
-    ```text
-    git clone https://github.com/facebook/rocksdb.git
-    cd rocksdb
 
-    DEBUG_LEVEL=0 make shared_lib install-shared
+  ```text
+  git clone https://github.com/facebook/rocksdb.git
+  cd rocksdb
 
-    export LD_LIBRARY_PATH=/usr/local/lib
-    ```
+  DEBUG_LEVEL=0 make shared_lib install-shared
+
+  export LD_LIBRARY_PATH=/usr/local/lib
+  ```
   
 
 ## Step 1. Source checkout
