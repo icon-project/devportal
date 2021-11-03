@@ -1,6 +1,6 @@
 # ICON2 Operation and configuration for P-Rep
 
-## ckQuick start to running ICON2 node
+## Quick start to running ICON2 node
 
 ### Prerequisites <a href="prerequisites" id="prerequisites"></a>
 
@@ -109,8 +109,6 @@ services:
          # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
          KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD"
          FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-         # You must enter your ICON1 node address. Recent blocks that are not in the backup DB are synchronized from your ICON1 node.
-         MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"
      
          ROLE: 3 # preps = 3, citizen = 0
 
@@ -126,13 +124,6 @@ services:
          - 9000:9000
          - 7100:7100
 ```
-
-{% hint style="info" %}
-`MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"`
-
-**You must enter your ICON1 node address.**\
-**Recent blocks that are not in the backup DB are synchronized from your ICON1 node.**
-{% endhint %}
 
 Enter the following commands: (These commands includes `docker pull` )
 
