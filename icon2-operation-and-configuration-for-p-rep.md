@@ -95,34 +95,32 @@ The subdirectories(data, config, icon, logs … ) are created by docker engine, 
 Open docker-compose.yml in a text editor and add the following content.
 
 ```
-version: "3"
+version: '3'
 services:
-   prep:
-      image: iconloop/icon2-node
-      container_name: "icon2-mainnet"
-      network_mode: host
-      restart: "on-failure"
-      environment:
-         SERVICE: "MainNet"  # MainNet, SeJong
-         GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic          
-         KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
-         # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
-         KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD"
-         FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-     
-         ROLE: 3 # preps = 3, citizen = 0
+  icon2-node:
+    image: 'iconloop/icon2-node'
+    restart: "on-failure"
+    container_name: "icon2-node"
+    network_mode: "host"
+    stdin_open: true
+    environment:
+      SERVICE: "MainNet"  # MainNet, SeJong
+      #IS_AUTOGEN_CERT: "true"
+      GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic
+      KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
+      KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD" # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
+      FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
+      # You must enter your ICON1 node address. Recent blocks that are not in the backup DB are synchronized from your ICON1 node.
+      MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"
+      ROLE: 3 # preps = 3, citizen = 0
 
-      cap_add:
-         - SYS_TIME
+    cap_add:
+      - SYS_TIME
 
-      volumes:         
-         - ./data:/goloop/data # mount a data volumes
-         - ./config:/goloop/config # mount a config volumes ,Put your used keystore file here.     
-         - ./logs:/goloop/logs
-  
-      ports:
-         - 9000:9000
-         - 7100:7100
+    volumes:
+      - ./config:/goloop/config
+      - ./data:/goloop/data
+      - ./logs:/goloop/logs
 ```
 
 Enter the following commands: (These commands includes `docker pull` )

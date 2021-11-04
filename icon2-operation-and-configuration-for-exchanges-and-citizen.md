@@ -127,10 +127,6 @@ services:
       - ./config:/goloop/config
       - ./data:/goloop/data
       - ./logs:/goloop/logs
-
-    ports:
-      - 7100:7100
-      - 9000:9000
 ```
 
 ## Docker environments settings <a href="docker-environments-settings" id="docker-environments-settings"></a>
