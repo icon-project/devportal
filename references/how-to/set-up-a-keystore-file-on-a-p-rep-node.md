@@ -8,7 +8,7 @@ Export your Keystore file whitch you registered in. You can see how to get the K
 
 The keystore file needs to be exported and stored in the cert directory. Below is a directory structure under the `docker-compose.yml`
 
-```text
+```
 |-- docker-compose.yml   
 |-- data  → data directory            
     |-- mainnet  → block DB directory 
@@ -21,7 +21,7 @@ Important - you should put your keystore file under the `/cert` folder.
 
 ### 3. Rename Keystore file simply
 
-Enter a short name for the keystore file \(recommended\).
+Enter a short name for the keystore file (recommended).
 
 ### 4. Import your keystore file into `docker-compose.yml`
 
@@ -30,36 +30,35 @@ If your keystore file name is `textKeystore` then the `docker-compose.yml` file 
 `$ cat docker-compose.yml`
 
 ```yaml
-version: "3"
+version: '3'
 services:
-prep-node:
-    image: "iconloop/prep-node:1910211829xc2286d"
-    container_name: "prep-mainnet"
-    network_mode: host     
-    restart: "always"
+  icon2-node:
+    image: 'iconloop/icon2-node'
+    restart: "on-failure"
+    container_name: "icon2-node"
+    network_mode: "host"
+    stdin_open: true
     environment:
-        NETWORK_ENV: "mainnet"
-        LOG_OUTPUT_TYPE: "file"
-        SWITCH_BH_VERSION3: "10324749"
-        CERT_PATH: "/cert"
-        LOOPCHAIN_LOG_LEVEL: "DEBUG"
-        ICON_LOG_LEVEL: "DEBUG"       
-        FASTEST_START: "yes" # Restore from lastest snapshot DB
-        PRIVATE_KEY_FILENAME: "testKeystore" # only file name
-        PRIVATE_PASSWORD: "testKeystorepassword"
+      SERVICE: "MainNet"  # MainNet, SeJong
+      #IS_AUTOGEN_CERT: "true"
+      GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic
+      KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
+      KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD" # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
+      FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
+      ROLE: 3 # preps = 3, citizen = 0
+
     cap_add:
-        - SYS_TIME      
+      - SYS_TIME
+
     volumes:
-        - ./data:/data # mount a data volumes
-        - ./cert:/cert # Automatically generate cert key files here
-    ports:
-        - 9000:9000
-        - 7100:7100
+      - ./config:/goloop/config
+      - ./data:/goloop/data
+      - ./logs:/goloop/logs
 ```
 
 Also, you can see the directory path as below:
 
-```text
+```
 |-- docker-compose.yml   
 |-- data  → data directory            
     |-- mainnet  → block DB directory 
@@ -74,7 +73,7 @@ Also, you can see the directory path as below:
 
 The `docker ps` command shows the list of running docker containers.
 
-```text
+```
 $ docker ps
 CONTAINER ID   IMAGE                                                          COMMAND                CREATED              STATUS                          PORTS                                                                 NAMES
 0de99e33cdc9     iconloop/prep-node:1910211829xc2286d    "/src/entrypoint.sh"      2 minutes ago        Up 2 minutes(healthy)    0.0.0.0:7100->7100/tcp, 0.0.0.0:9000->9000/tcp prep_prep_1
@@ -85,11 +84,11 @@ You should look at the `STATUS` field to see if the container is running up and 
 Inside the container, there is a `healthcheck` script running with the following configuration. It will return `unhealthy` when it fails.
 
 | Healthcheck option | value |
-| :--- | :--- |
-| retries | 4 |
-| interval | 30s |
-| timeout | 20s |
-| start-period | 60s |
+| ------------------ | ----- |
+| retries            | 4     |
+| interval           | 30s   |
+| timeout            | 20s   |
+| start-period       | 60s   |
 
 The container can have three states:
 
@@ -99,7 +98,7 @@ The container can have three states:
 
 If the container does not start properly or went down unexpectedly, please check the `booting.log`. Below is the log messages on **success**.
 
-```text
+```
 $ cat data/PREP-MainNet/log/booting_${DATE}.log 
 
 [2019-10-23 17:47:05.204] Your IP: xxx.xxx.xxx.xxx
@@ -124,7 +123,7 @@ loopchain               2.4.15
 
 Grep the `ERROR` messages from the log files to find the possible cause of the failure.
 
-```text
+```
 $ cat data/PREP-MainNet/log/booting_${DATE}.log | grep ERROR
 
 [2019-08-12 02:08:48.746] [ERROR] Download Failed - http://20.20.1.149:5000/cert/20.20.1.195_public.der status_code=000
@@ -137,7 +136,7 @@ $ cat data/PREP-MainNet/log/booting_${DATE}.log | grep ERROR
 * booting.log
   * The log file contains the errors that occurred when the docker container starts up.
 * iconrpcserver.log
-  * The log file contains information about the request/response message handling going through the iconrpcserver. 
+  * The log file contains information about the request/response message handling going through the iconrpcserver.&#x20;
 * iconservice.log
   * The log file contains the internals of ICON Service
 * loopchain.channel-txcreator-icon\_dex\_broadcast.icon\_dex.log
@@ -157,4 +156,3 @@ We recommend the following tools for resource monitoring
 2. CPU/Memory monitoring - top, htop
 3. Disk I/O monitoring - iostat, iotop
 4. Docker monitoring - docker stats, ctop
-
