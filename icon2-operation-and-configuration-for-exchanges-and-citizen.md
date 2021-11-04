@@ -129,9 +129,7 @@ services:
       - ./logs:/goloop/logs
 ```
 
-## Docker environments settings <a href="docker-environments-settings" id="docker-environments-settings"></a>
-
-#### How to check the node state <a href="how-to-check-the-node-state" id="how-to-check-the-node-state"></a>
+## How to check the node state <a href="how-to-check-the-node-state" id="how-to-check-the-node-state"></a>
 
 * get state
 

@@ -110,8 +110,6 @@ services:
       KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
       KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD" # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
       FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-      # You must enter your ICON1 node address. Recent blocks that are not in the backup DB are synchronized from your ICON1 node.
-      MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"
       ROLE: 3 # preps = 3, citizen = 0
 
     cap_add:
