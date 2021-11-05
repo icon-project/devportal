@@ -258,7 +258,7 @@ I|20211022-12:06:21.935812|ab2e|1|service|transition.go:687 finalizeResult() tot
 I|20211022-12:06:22.205569|ab2e|1|lcimporter|blockconverter.go:546 [⠦] Executing Block[      3,796 ] 2018-04-23 11:14:51 RPS[  99.92 ] TPS[   0.00 ]
 ```
 
-#### If `FASTEST_START: "true` is used
+#### If `FASTEST_START: "true"` is used
 
 This environment variable automatically receives the latest snapshot DB and checks the checksum. Validation of the file is checked for the values below.
 
@@ -330,90 +330,6 @@ $ tail -f logs/download_error.log
 Exception: [AbstractCommand.cc:351] errorCode=3 URI=http://20.20.6.86:8080/data/1/tmp/1/NONE_EXIST_FILE
   -> [HttpSkipResponseCommand.cc:218] errorCode=3 Resource not found
 ```
-
-#### If Stage2 is migrating normally, you can see logs such as "import\_icon 3729 running".(`import count` will continue to grow.)
-
-```
-tail -f health.log
-I|20211022-12:06:20.000284|-|HEALTH.LOG|node_checker.py:85| Node API response={'cid': '0x1', 'nid': '0x1', 'height': 112, 'channel': 'icon_dex', 'state': 'import_icon 3729 running'}
-I|20211022-12:06:20.000286|-|HEALTH.LOG|ntp.py:40| NTP_SYNC Start
-I|20211022-12:06:20.000288|-|HEALTH.LOG|ntp.py:42| Local Time : 2021-10-22 12:06:20.287
-I|20211022-12:06:20.000289|-|HEALTH.LOG|ntp.py:43| UTC Time   : 2021-10-22 12:06:20.289
-I|20211022-12:21:59.000149|-|HEALTH.LOG|main.py:25| Start NodeChecker()
-I|20211022-12:21:59.000152|-|HEALTH.LOG|main.py:27| Start NTPDaemon()
-I|20211022-12:21:59.000160|-|HEALTH.LOG|node_checker.py:85| Node API response={'cid': '0x1', 'nid': '0x1', 'height': 112, 'channel': 'icon_dex', 'state': 'import_icon 3729 running'}
-```
-
-Or you can check it with the command below.
-
-```
-$ curl localhost:9000/admin/chain
-
-[{"cid":"0x1","nid":"0x1","channel":"icon_dex","state":"import_icon 3729 running","height":112 ,"lastError":""}]
-```
-
-## Stage3 <a href="stage3" id="stage3"></a>
-
-The Foundation announces the end of `Stage2` when ICON2 node operated by PRep reaches the height of ICON1.
-
-When the Foundation announces the start of Stage3, the following command should be executed. Stage3 proceeds in the following order.
-
-* \[Foundation] Announces the start of Stage3
-* \[Foundation] Send a proposal.
-* \[P-Rep] Vote for a proposal.
-
-{% hint style="info" %}
-**In Stage3, the foundation's endpoint is not available, so an `IP address option` for the operating ICON1 node must be added:**
-
-`--url http://YOUR_ICON1_NODE_ADDRESS:9000/api/v3 --nid 1`
-{% endhint %}
-
-* If the `Proposal ID` is registered, it will be notified.
-
-```
-$ preptools voteProposal --url http://{ENTER_YOUR_ICON1_NODE_IP}/api/v3 \
---nid 1 --id {ENTER_PROPOSAL_ID} --vote 1 --keystore {ENTER_YOUR_KEYSTORE}
-```
-
-* A quorum vote was confirmed.
-* After complete consensus, the state of ICON2 will become "import finished".
-
-```
-$ curl localhost:9000/admin/chain
-[
-  {
-    "cid": "0x1",
-    "nid": "0x1",
-    "channel": "icon_dex",
-    "state": "import_icon 479 finished",
-    "height": 589,
-    "lastError": ""
-  }
-]
-```
-
-* \[Foundation] The foundation will ask you to input the "import\_finish" command.
-
-{% hint style="info" %}
-**If PRep runs arbitrarily, the migration of Stage2 will fail.**
-
-The Foundation will announce an appropriate time through monitoring and execute the following command at that time. We have to wait 2 weeks in the worst case.
-{% endhint %}
-
-```
-$ docker exec -it icon2-node control_chain import_finish
-
-	 version : 0.1.32
-
-✔ [DONE] 	['import_stop'] count=0, func=view_chain, args=[], wait_state='import_icon finished', check_state='import_icon finished'
-✔ [DONE] 	['stop'] count=0, func=view_chain, args=[], wait_state='stopped', check_state='stopped'
-✔ [DONE] 	['start'] count=0, func=view_chain, args=[], wait_state='started', check_state='started'
-[2021-10-23 11:20:01.189] Congrats! Successfully imported
-[2021-10-23 11:20:01.190] {'cid': '0xca97ec', 'nid': '0x50', 'channel': 'icon_dex', 'state': 'started', 'height': 57434, 'lastError': ''}
-[2021-10-23 11:20:01.190] OK
-```
-
-When the above command is entered, ICON2 nodes finish the migration and wait for consensus.
 
 ## How to download ICON2 data (migrated backup data) <a href="how-to-download-icon2-data-migrated-backup-data" id="how-to-download-icon2-data-migrated-backup-data"></a>
 
