@@ -11,10 +11,6 @@ We recommend running nodes using Docker.
 * Official Docker Image: `iconloop/icon2-node`
 
 {% hint style="info" %}
-In **STAGE3-1** step, **deposits and withdrawals must be stopped**. In **STAGE3-9** step, the **new ICON2 node is launched**. Sejongnet can be tested immediately, and the MainNet upgrade time will be announced by the Foundation.
-
-
-
 **System Requirements**
 
 * CPU: minimum 2core, recommend 4core +
