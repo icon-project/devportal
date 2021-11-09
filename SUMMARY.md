@@ -33,6 +33,7 @@
     * [API](icon-node/goloop/management/goloop\_admin\_api.md)
     * [CLI](https://github.com/icon-project/devportal/blob/master/icon-2.0/goloop/management/goloop\_cli.md)
     * [Metrics](icon-node/goloop/management/metric.md)
+  * [Bond management](icon-node/goloop/bond-management.md)
 * [Overview](icon-node/overview.md)
 * [Quickstart](icon-node/quickstart.md)
 * [P-Rep Tools](icon-node/p-rep-tools.md)
