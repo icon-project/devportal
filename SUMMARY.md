@@ -31,7 +31,7 @@
     * [IISS Extension](icon-node/goloop/json-rpc/iiss\_extension.md)
   * [Node Management](icon-node/goloop/management/README.md)
     * [API](icon-node/goloop/management/goloop\_admin\_api.md)
-    * [CLI](icon-node/goloop/management/goloop\_cli.md)
+    * [CLI](https://github.com/icon-project/devportal/blob/master/icon-2.0/goloop/management/goloop\_cli.md)
     * [Metrics](icon-node/goloop/management/metric.md)
 * [Overview](icon-node/overview.md)
 * [Quickstart](icon-node/quickstart.md)
