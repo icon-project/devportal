@@ -4,9 +4,9 @@
 
 Posting a bond is done in 3 steps:
 
-1. P-Rep whitelist up to 10 addresses which can post the bond. This is done using the following RPC command [#setbonderlist](json-rpc/iiss\_extension.md#setbonderlist "mention")
-2. Whitelisted bonder then must stake ICX to the P-Rep using [#setstake](json-rpc/iiss\_extension.md#setstake "mention")
-3. Whitelisted bonder then must post the bond to the P-Rep using [#setbond](json-rpc/iiss\_extension.md#setbond "mention")
+1. P-Rep whitelist up to 10 addresses which can post the bond. This is done using the following RPC command (howto [#setbonderlist](json-rpc/iiss\_extension.md#setbonderlist "mention"))
+2. Whitelisted bonder then must stake ICX to the P-Rep using (howto [#setstake](json-rpc/iiss\_extension.md#setstake "mention"))
+3. Whitelisted bonder then must post the bond to the P-Rep using (howto [#setbond](json-rpc/iiss\_extension.md#setbond "mention"))
 
 {% hint style="info" %}
 ICONists can post a bond to up to 100 P-reps, if they are whitelisted by them
