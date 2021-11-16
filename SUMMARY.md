@@ -47,6 +47,8 @@
 
 * [Examples](https://github.com/icon-project/java-score-examples)
 * [Tutorial](java-score-1/tutorial.md)
+* [Allowed methods](https://github.com/icon-project/devportal/blob/master/java-score-1/allowed-methods)
+* [API Reference](https://www.javadoc.io/doc/foundation.icon/javaee-api/latest/index.html)
 
 ## ICON SDKs
 
