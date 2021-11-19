@@ -75,9 +75,9 @@ services:
          - SYS_TIME
 
       volumes:         
-         - ./data:/data # mount a data volumes
-         - ./config:/config # mount a data volumes , key file
-
+         - ./data:/goloop/data # mount a data volumes
+         - ./config:/goloop/config # mount a data volumes , key file
+         - ./logs:/goloop/logs # mount a log volumes
 ```
 
 To start an ICON2 node, enter the following commands: (These commands includes docker pull )
