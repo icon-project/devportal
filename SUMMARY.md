@@ -101,6 +101,7 @@
   * [ICON JSON-RPC API v3 Specification](references/reference-manuals/icon-json-rpc-api-v3-specification.md)
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
+  * [ICON Improvement Proposals](https://github.com/icon-project/IIPs)
 
 ***
 
