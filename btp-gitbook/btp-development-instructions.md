@@ -158,7 +158,7 @@ docker-compose up goloop
 
 #### 2. Deploy Moonriver Node
 
-![](<../.gitbook/assets/deploy-moonriver-node (1).png>)
+![](../.gitbook/assets/Deploy-MOONRIVER-Node.png)
 
 A node on Moonriver can be easily deployed by running the below command:
 

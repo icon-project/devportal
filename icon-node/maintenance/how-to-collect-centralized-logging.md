@@ -23,15 +23,15 @@ We assume that you have previous knowledge and experience in:
 
 **Description of log files in prep-node**
 
-| service name             | log file name                                               |
-| ------------------------ | ----------------------------------------------------------- |
-| docker container booting | booting.log                                                 |
-| iconrpcserver            | iconrpcserver.log                                           |
-| iconservice              | iconservice.log                                             |
-| loopchain                | loopchain.channel-txcreator-icon_dex_broadcast.icon_dex.log |
-|                          | loopchain.channel-txcreator.icon_dex.log                    |
-|                          | loopchain.channel-txreceiver.icon_dex.log                   |
-|                          | loopchain.channel.icon_dex.log                              |
+| service name             | log file name                                                  |
+| ------------------------ | -------------------------------------------------------------- |
+| docker container booting | booting.log                                                    |
+| iconrpcserver            | iconrpcserver.log                                              |
+| iconservice              | iconservice.log                                                |
+| loopchain                | loopchain.channel-txcreator-icon\_dex\_broadcast.icon\_dex.log |
+|                          | loopchain.channel-txcreator.icon\_dex.log                      |
+|                          | loopchain.channel-txreceiver.icon\_dex.log                     |
+|                          | loopchain.channel.icon\_dex.log                                |
 
 The logs can be managed on the local disk. However, in order to manage the old log files and the large log files, the log should be kept in a separate space. In addition, multiple nodes may be operated depending on network modeling. It is recommended to collect and analyze logs from the central server rather than accessing the server each time to check the logs of multiple nodes.
 
@@ -51,13 +51,13 @@ Fluentd is an open-source data collection software licensed under Apache 2.0. It
 
 * Fluentd architecture (Source: [https://www.fluentd.org](https://www.fluentd.org))
 
-![](../../.gitbook/assets/1d8bb80-what_is_fluentd\_\_\_\_fluentd.jpg)
+![](../../.gitbook/assets/1d8bb80-What\_is\_Fluentd\_\_\_\_Fluentd.jpg)
 
 *   How to Collect Fluentd Agent Logs in Docker
 
-    There are two ways of collecting logs. The first one is to set the docker logging driver to Fluentd. The second way is to collect the logs using the tail of fluentd input plugin. We recommend using the second method, using the input plugin, rather than using the docker logging driver. If you use the docker logging driver, you may experience delays in fluentd containers, or container problems that will affect P-Rep container performance. In the case of using input plugin, there is no connection point between Fluentd container and P-Rep container. So there will be no effect on the performance even if the fluentd problem occurs. 
+    There are two ways of collecting logs. The first one is to set the docker logging driver to Fluentd. The second way is to collect the logs using the tail of fluentd input plugin. We recommend using the second method, using the input plugin, rather than using the docker logging driver. If you use the docker logging driver, you may experience delays in fluentd containers, or container problems that will affect P-Rep container performance. In the case of using input plugin, there is no connection point between Fluentd container and P-Rep container. So there will be no effect on the performance even if the fluentd problem occurs.&#x20;
 
-![](../../.gitbook/assets/ef7401f-flunted_using_docker.jpg)
+![](../../.gitbook/assets/ef7401f-flunted\_using\_docker.jpg)
 
 **Installation**
 
@@ -67,9 +67,9 @@ Fluentd is an open-source data collection software licensed under Apache 2.0. It
 
 You need to check the value of the ICON log setting in the Docker Container Environment Variable. If you use the default setting, you can use it without any modification. In case of changing the setting value of console to use, change the setting value to either file or console\file and then proceed.
 
-| Environment Name | Value                                                                                                                                                                                               |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| LOG_OUTPUT_TYPE  | <p><code>file</code> or <code>console</code> - Check the Firewall <br> The following port open is required from the agent to the server.  Udp port open is also required for syslog collection.</p> |
+| Environment Name  | Value                                                                                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LOG\_OUTPUT\_TYPE | <p><code>file</code> or <code>console</code> - Check the Firewall <br> The following port open is required from the agent to the server.  Udp port open is also required for syslog collection.</p> |
 
 | Source               | Destination           | Port        | Description                       |
 | -------------------- | --------------------- | ----------- | --------------------------------- |
@@ -78,9 +78,9 @@ You need to check the value of the ICON log setting in the Docker Container Envi
 
 *   Installation
 
-    To configure the collection server, Fluentd with Agent role and server role is required. Each node requires Agent role of Fluentd distributed and log file will be delivered to Fluentd server through the agent. Although it is possible to install RPM / DEB package on the server for agent installation, it is difficult to maintain such a plugin management/deployment/installation. 
+    To configure the collection server, Fluentd with Agent role and server role is required. Each node requires Agent role of Fluentd distributed and log file will be delivered to Fluentd server through the agent. Although it is possible to install RPM / DEB package on the server for agent installation, it is difficult to maintain such a plugin management/deployment/installation.&#x20;
 
-![](../../.gitbook/assets/ab55157-flunted_using_prep.jpg)
+![](../../.gitbook/assets/ab55157-flunted\_using\_prep.jpg)
 
 * `docker-compose-fluent.yml` for Agent Docker-Compose information is same as below when setting agent, and some modifications are required when creating a file.
   1. P-Rep node path needed (line number 9)     :   `./data/:/loopchain/log`
@@ -124,12 +124,12 @@ services:
 
 * Environment variable options
 
-| Environment variable   | default                      | Description                                                                                                                                                                                           |
-| ---------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| FLUENTD_MATCH_ELA_HOST | Elasticsearch IP Information |                                                                                                                                                                                                       |
-| FLUENTD_MATCH_ELA_PORT | 9200                         | Elasticsearch Port Information                                                                                                                                                                        |
-| FLUENTD_MODE           | agent                        | <p>Change Fluent Active Mode depending on setting variable (agent / server / manual ) <br> Fluent.conf volume mount is required for manual configuration (Docker path : /fluentd/etc/fluent.conf)</p> |
-| FLUENTD_SYSTEM_WORKERS | 4                            | system worker variable in server mode                                                                                                                                                                 |
-| LOG_SERVER_IP          |                              | Fluentd Central Collection Server IP Information                                                                                                                                                      |
-| LOG_SERVER_PORT        | 24224                        | Fluentd Central Collection Server Port Information                                                                                                                                                    |
-| SYSLOG_SERVER_PORT     | 5140                         | UDP Port information used for Syslog Collection                                                                                                                                                       |
+| Environment variable      | default                      | Description                                                                                                                                                                                           |
+| ------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FLUENTD\_MATCH\_ELA\_HOST | Elasticsearch IP Information |                                                                                                                                                                                                       |
+| FLUENTD\_MATCH\_ELA\_PORT | 9200                         | Elasticsearch Port Information                                                                                                                                                                        |
+| FLUENTD\_MODE             | agent                        | <p>Change Fluent Active Mode depending on setting variable (agent / server / manual ) <br> Fluent.conf volume mount is required for manual configuration (Docker path : /fluentd/etc/fluent.conf)</p> |
+| FLUENTD\_SYSTEM\_WORKERS  | 4                            | system worker variable in server mode                                                                                                                                                                 |
+| LOG\_SERVER\_IP           |                              | Fluentd Central Collection Server IP Information                                                                                                                                                      |
+| LOG\_SERVER\_PORT         | 24224                        | Fluentd Central Collection Server Port Information                                                                                                                                                    |
+| SYSLOG\_SERVER\_PORT      | 5140                         | UDP Port information used for Syslog Collection                                                                                                                                                       |

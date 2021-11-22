@@ -20,4 +20,4 @@ Besides, there are couple of community driven tools.
 * [PHP SDK](https://github.com/iconation/icon-sdk-php)
 * [C++ SDK](https://github.com/iconation/icon-sdk-cpp)
 
-![](../.gitbook/assets/d4d39ac-screen_shot\_2019-05-30\_at\_6.58.49\_pm.png)
+![](../.gitbook/assets/d4d39ac-Screen\_Shot\_2019-05-30\_at\_6.58.49\_PM.png)
