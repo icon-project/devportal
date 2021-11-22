@@ -2,22 +2,21 @@
 
 ## Platform preparation
 
-* GoLang 1.14+
+*   GoLang 1.14+
 
-  **Mac OSX**
+    **Mac OSX**
 
-  ```text
-    brew install go
-  ```
+    ```
+      brew install go
+    ```
+*   Python 3.7+ Virtual Environment
 
-* Python 3.7+ Virtual Environment
+    **Mac OSX**
 
-  **Mac OSX**
-
-  ```text
-    brew install python
-    pip install virtualenv setuptools wheel
-  ```
+    ```
+      brew install python
+      pip install virtualenv setuptools wheel
+    ```
 
 ## Environment
 
@@ -53,6 +52,14 @@ make
 
 Output binaries are placed under `bin/` directory.
 
+### Mac M1 (Apple silicon)
+
+```
+export ROCKSDB_PATH="$(echo) $(brew --prefix rocksdb)"
+export SNAPPY_PATH="$(echo) $(brew --prefix snappy)"
+CGO_CFLAGS=-I$ROCKSDB_PATH/include CGO_LDFLAGS="-L$ROCKSDB_PATH/lib -L$SNAPPY_PATH/lib" make
+```
+
 ### Build python package
 
 ```bash
@@ -80,4 +87,3 @@ Now, you may start the server with it.
 You may send transactions with the wallet, `wallet.json`, for the initial balance of other wallets.
 
 Note that this is a single node configuration. If you want to make a network with multiple nodes, you need to make your own genesis and node configurations.
-
