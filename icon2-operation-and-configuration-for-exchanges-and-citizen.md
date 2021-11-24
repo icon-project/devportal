@@ -70,13 +70,14 @@ services:
          IS_AUTOGEN_CERT: "true"   # true, false
          FASTEST_START: "true"     # true, false  # It will be download the Snapshot DB
          ROLE: 0 # citizen = 0, preps = 3 
+         SEEDS: "seed-ctz.solidwallet.io:7100" 
 
       cap_add:
          - SYS_TIME
 
       volumes:         
-         - ./data:/goloop/data # mount a data volumes
          - ./config:/goloop/config # mount a data volumes , key file
+         - ./data:/goloop/data # mount a data volumes
          - ./logs:/goloop/logs # mount a log volumes
 ```
 
@@ -113,9 +114,8 @@ services:
       SERVICE: "SejongNet"  # MainNet, SejongNet(TestNet) 
       IS_AUTOGEN_CERT: "true"   # true, false
       FASTEST_START: "true"     # true, false  # It will be download the Snapshot DB
-      ###################################################
-      ROLE: 0                   # citizen = 0, preps = 3 
-      ###################################################
+      ROLE: 0                   # citizen = 0, preps = 3
+      SEEDS: "seed-sejong.solidwallet.io:7100" 
     cap_add:
       - SYS_TIME
 
