@@ -94,8 +94,6 @@
   * [Change network in ICONex](references/how-to/change-network-in-iconex.md)
   * [Deploy a SCORE](references/how-to/deploy-a-score.md)
   * [Estimate required step](references/how-to/estimate-required-step.md)
-  * [Write SCORE unit test](references/how-to/write-score-unit-test.md)
-  * [Write SCORE integration test](references/how-to/write-score-integration-test.md)
   * [Generate a transaction signature](references/how-to/generate-a-transaction-signature.md)
 * [Reference Manuals](references/reference-manuals/README.md)
   * [ICON JSON-RPC API v3 Specification](references/reference-manuals/icon-json-rpc-api-v3-specification.md)
