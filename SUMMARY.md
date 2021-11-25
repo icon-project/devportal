@@ -92,7 +92,6 @@
   * [Set up a Keystore file on a P-Rep Node](references/how-to/set-up-a-keystore-file-on-a-p-rep-node.md)
   * [Create an account](references/how-to/create-an-account.md)
   * [Change network in ICONex](references/how-to/change-network-in-iconex.md)
-  * [Deploy a SCORE](references/how-to/deploy-a-score.md)
   * [Estimate required step](references/how-to/estimate-required-step.md)
   * [Generate a transaction signature](references/how-to/generate-a-transaction-signature.md)
 * [Reference Manuals](references/reference-manuals/README.md)
