@@ -2,6 +2,7 @@
 
 ## Sejong
 
+| | |
 | :--- | :--- |
 | Name | Sejong |
 | Node | [https://sejong.net.solidwallet.io](https://sejong.net.solidwallet.io) |
@@ -22,6 +23,7 @@
 
 ## BTP
 
+| | |
 | :--- | :--- |
 | Name | BTP |
 | Node | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io) |
@@ -36,6 +38,7 @@
 
 ## Berlin
 
+| | |
 | :--- | :--- |
 | Name | Berlin |
 | Node | [https://berlin.net.solidwallet.io](https://berlin.net.solidwallet.io) |
