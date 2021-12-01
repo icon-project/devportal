@@ -1,6 +1,7 @@
 # Testnet
 
-|  |  |
+## Sejong
+
 | :--- | :--- |
 | Name | Sejong |
 | Node | [https://sejong.net.solidwallet.io](https://sejong.net.solidwallet.io) |
@@ -19,9 +20,8 @@
   * [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
   * [https://faucet.reliantnode.com/](https://faucet.reliantnode.com/)
 
-### BTP
+## BTP
 
-|  |  |
 | :--- | :--- |
 | Name | BTP |
 | Node | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io) |
@@ -34,7 +34,19 @@
 
 * To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel \([https://t.me/icondevs](https://t.me/icondevs)\)
 
-### Want to use the ICONex chrome wallet to send ICX on the testnet?
+## Berlin
+
+| :--- | :--- |
+| Name | Berlin |
+| Node | [https://berlin.net.solidwallet.io](https://berlin.net.solidwallet.io) |
+| API endpoint | [https://berlin.net.solidwallet.io/api/v3](https://berlin.net.solidwallet.io/api/v3) |
+| Debug API endpoint | [https://berlin.net.solidwallet.io/api/v3d](https://berlin.net.solidwallet.io/api/v3d) |
+| Network ID \(nid\) | 0x7 |
+| Tracker | [https://berlin.tracker.solidwallet.io](https://berlin.tracker.solidwallet.io) |
+| Transaction fee | on |
+| SCORE audit | off |
+
+## Want to use the ICONex chrome wallet to send ICX on the testnet?
 
 To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](../../references/how-to/change-network-in-iconex.md)
 
