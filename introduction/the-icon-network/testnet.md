@@ -10,6 +10,8 @@ You can get test ICX for testnets using the following faucets. If you need a lar
 
 ## Sejong
 
+You can use this network for testing your application without going through an audit and therefore may be unstable. Similar to ex-Yeouido.
+
 |                    |                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------- |
 | Name               | Sejong                                                                                 |
@@ -21,22 +23,9 @@ You can get test ICX for testnets using the following faucets. If you need a lar
 | Transaction fee    | on                                                                                     |
 | SCORE audit        | off                                                                                    |
 
-## BTP
-
-|                    |                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------- |
-| Name               | BTP                                                                              |
-| Node               | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io)                 |
-| API endpoint       | [https://btp.net.solidwallet.io/api/v3](https://btp.net.solidwallet.io/api/v3)   |
-| Debug API endpoint | [https://btp.net.solidwallet.io/api/v3d](https://btp.net.solidwallet.io/api/v3d) |
-| Network ID (nid)   | 0x42                                                                             |
-| Tracker            | [https://btp.tracker.solidwallet.io](https://btp.tracker.solidwallet.io)         |
-| Transaction fee    | on                                                                               |
-| SCORE audit        | off                                                                              |
-
-* To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel ([https://t.me/icondevs](https://t.me/icondevs))
-
 ## Berlin
+
+This network offers the latest features and may be unstable. Reset will happen frequently and without notice. Use this network for purely experimental purpose.
 
 |                    |                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------- |
@@ -51,6 +40,8 @@ You can get test ICX for testnets using the following faucets. If you need a lar
 
 ## Lisbon
 
+This is the long term support testnet. Use this network to test your applications in an environment close to mainnet. Recommended for offering beta version of your application. Reset will be avoided as much as possible. Similar to ex-Euljiro.
+
 |                    |                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------- |
 | Name               | Lisbon                                                                                 |
@@ -61,6 +52,21 @@ You can get test ICX for testnets using the following faucets. If you need a lar
 | Tracker            | [https://lisbon.tracker.solidwallet.io](https://lisbon.tracker.solidwallet.io)         |
 | Transaction fee    | on                                                                                     |
 | SCORE audit        | on                                                                                     |
+
+## BTP
+
+* To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel ([https://t.me/icondevs](https://t.me/icondevs))
+
+|                    |                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------- |
+| Name               | BTP                                                                              |
+| Node               | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io)                 |
+| API endpoint       | [https://btp.net.solidwallet.io/api/v3](https://btp.net.solidwallet.io/api/v3)   |
+| Debug API endpoint | [https://btp.net.solidwallet.io/api/v3d](https://btp.net.solidwallet.io/api/v3d) |
+| Network ID (nid)   | 0x42                                                                             |
+| Tracker            | [https://btp.tracker.solidwallet.io](https://btp.tracker.solidwallet.io)         |
+| Transaction fee    | on                                                                               |
+| SCORE audit        | off                                                                              |
 
 ## Want to use the ICONex chrome wallet to send ICX on the testnet?
 
