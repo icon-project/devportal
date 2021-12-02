@@ -49,6 +49,21 @@
 | Transaction fee | on |
 | SCORE audit | off |
 
+
+## Lisbon
+
+| | |
+| :--- | :--- |
+| Name | Lisbon |
+| Node | [https://lisbon.net.solidwallet.io](https://lisbon.net.solidwallet.io) |
+| API endpoint | [https://lisbon.net.solidwallet.io/api/v3](https://lisbon.net.solidwallet.io/api/v3) |
+| Debug API endpoint | [https://lisbon.net.solidwallet.io/api/v3d](https://lisbon.net.solidwallet.io/api/v3d) |
+| Network ID \(nid\) | 0x2 |
+| Tracker | [https://lisbon.tracker.solidwallet.io](https://lisbon.tracker.solidwallet.io) |
+| Transaction fee | on |
+| SCORE audit | on |
+
+
 ## Want to use the ICONex chrome wallet to send ICX on the testnet?
 
 To connect the ICONex chrome wallet to the testnet you are using, please follow this guideline - [Change network in ICONex Chrome extension](../../references/how-to/change-network-in-iconex.md)
