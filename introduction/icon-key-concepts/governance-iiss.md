@@ -27,7 +27,7 @@ description: 'Yellow paper: https://icon.foundation/download/IISS_Paper_v2.0_EN.
 
 ## Bond requirement
 
-The bond requirement is a new concepts that was introduced with IISS 3.0, and [approved by P-Rep through a network proposal](https://tracker.icon.foundation/proposal/0x16dbc932b601821b08450ad6f228a6a8e1bfd9cf5a361f0bf42ccf4b0b29be7b).
+The bond requirement is a new concept that was introduced with IISS 3.0, and [approved by P-Rep through a network proposal](https://tracker.icon.foundation/proposal/0x16dbc932b601821b08450ad6f228a6a8e1bfd9cf5a361f0bf42ccf4b0b29be7b).
 
 Before IISS 3.0, P-Reps were ranked by the amount of delegation they receive from ICONists. The more vote they get (the more ICX people are delegating to them), the better their rank and the bigger their reward was.
 
@@ -35,7 +35,7 @@ The problem with this approach is that P-Reps actually don't have any stake in t
 
 With the introduction of the bond requirements, P-Rep rank will now be determined by the _bonded delegation_. It is calculated using the following formula: `bondedDelegation = min(bonded * 20, bonded + delegated)`.
 
-What this means in practice is that in order for a P-Rep to keep their previous rank, they must post a bond representing 5% of their total votes. So for example is a P-Rep receive 1,000,000 votes from  other users, they must post a bond of 50,000 ICX in order to keep their rank and receive the same reward as before (this example is simplified to illustrate the main idea).
+What this means in practice is that in order for a P-Rep to maximize their rewards, they must post a bond representing 5% of their total votes. So for example is a P-Rep receive 1,000,000 votes from  other users, they must post a bond of 50,000 ICX in order to keep their rank and receive the same reward as before (this example is simplified to illustrate the main idea).
 
 In IISS 3.1, if a P-Rep does not behave properly, the bond will be _slashed,_ meaning that part of the P-Rep bond will be burned and lost forever. It is similar to a fine in real life, with the main difference is that the slashed bond is burned (it reduces ICX supply). This is a very strong incentive for P-Reps to work hard to provide a stable node operation and participate in governance actively.
 
