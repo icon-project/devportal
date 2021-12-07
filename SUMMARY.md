@@ -43,7 +43,7 @@
   * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
   * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
 
-## Java SCORE <a href="java-score-1" id="java-score-1"></a>
+## Java SCORE <a href="#java-score-1" id="java-score-1"></a>
 
 * [Examples](https://github.com/icon-project/java-score-examples)
 * [Tutorial](java-score-1/tutorial.md)
@@ -62,7 +62,7 @@
 * [Swift SDK](icon-sdks/swift-sdk/README.md)
   * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)
 
-## BTP <a href="btp-gitbook" id="btp-gitbook"></a>
+## BTP <a href="#btp-gitbook" id="btp-gitbook"></a>
 
 * [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
 * [Overview](btp-gitbook/overview.md)
@@ -107,6 +107,7 @@
 
 ## Release notes
 
+* [2021-12-07](release-notes/2021-12-07.md)
 * [2021-10-22](release-notes/2021-10-22.md)
 * [2021-10-12](release-notes/2021-10-12.md)
 * [2021-03-20](release-notes/2021-03-20.md)
