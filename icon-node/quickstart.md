@@ -22,7 +22,7 @@ $ source venv/bin/activate        # Enter the virtual environment.
 
 ### **Manual Install**
 
-For manual installation and P-Rep tool commands, see [full documentation](p-rep-tools.md)
+For manual installation and P-Rep tool commands, see [full documentation](https://github.com/icon-project/preptools/blob/master/README.md#how-to-use-p-rep-tools)
 
 ### **2. Register via P-Rep Tools**
 
@@ -189,7 +189,7 @@ $ docker-compose version
 
 ### **3.3 Running a P-Rep Node Container using docker-compose**
 
-#### Pull ICON2 image <a href="docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303" id="docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303"></a>
+#### Pull ICON2 image <a href="#docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303" id="docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303"></a>
 
 ```
 # docker pull <goloop package image>
@@ -254,8 +254,8 @@ Citizen nodes are non-producing nodes on the ICON network. A non-producing node 
 
 ICON node software is identical for P-Rep nodes and Citizen nodes, one can follow the same procedures to set up a P-Rep node, without registration, to operate a Citizen node.
 
-### ****[**Experiment on TestNet**](../introduction/the-icon-network/testnet.md#testnet)****
+### [**Experiment on TestNet**](../introduction/the-icon-network/testnet.md#testnet)
 
 ## **Having Trouble?**
 
-For troubleshoots and other questions, please join ICON P-Rep MainNet or ICON P-Rep TestNet Telegram Channels. You can ask for an invite in the [main telegram channel](https://t.me/hello_iconworld).
+For troubleshoots and other questions, please join ICON P-Rep MainNet or ICON P-Rep TestNet Telegram Channels. You can ask for an invite in the [main telegram channel](https://t.me/hello\_iconworld).
