@@ -78,7 +78,7 @@ There are three ways supply P-Rep registration info to P-Rep Tools; using a json
 }
 ```
 
-See [registerPRep command details](https://github.com/icon-project/preptools/blob/master/README.md#registerprep)
+See [registerPRep command details](p-rep-tools.md#command-line-interfaces-clis)
 
 The "details" parameter is an external json file that holds additional information about the P-Rep. We strongly recommend that you register this information. Example,
 
