@@ -22,7 +22,7 @@ ICONists can post a bond to up to 100 P-reps, if they are whitelisted by them
 A P-Rep can only receive a bond from 10 different ICONists
 {% endhint %}
 
-You can do this using [p-rep-tools.md](p-rep-tools.md "mention"), the [python-sdk](../icon-sdks/python-sdk/ "mention")`CallTransactionBuilder` or directly using goloop RPC command[iiss\_extension.md](goloop/json-rpc/iiss\_extension.md "mention").
+You can do this using [https://github.com/icon-project/preptools](https://github.com/icon-project/preptools), the [python-sdk](../icon-sdks/python-sdk/ "mention")`CallTransactionBuilder` or directly using goloop RPC command[iiss\_extension.md](goloop/json-rpc/iiss\_extension.md "mention").
 
 ### Using Ledger
 
