@@ -35,6 +35,7 @@
     * [Metrics](icon-node/goloop/management/metric.md)
 * [Overview](icon-node/overview.md)
 * [Quickstart](icon-node/quickstart.md)
+* [P-Rep Tools](https://github.com/icon-project/preptools/blob/master/README.md#how-to-use-p-rep-tools)
 * [P-Rep Tools](icon-node/p-rep-tools.md)
 * [Maintenance](icon-node/maintenance/README.md)
   * [Node operation and configuration](icon-node/maintenance/node-operation-and-configuration.md)
