@@ -4,6 +4,8 @@
 
 [You can find an explanation of the bond requirement purpose here](../introduction/icon-key-concepts/governance-iiss.md#bond-requirement).
 
+For an in depth technical specification of the bond [heads over here](https://docs.google.com/document/d/1WZzbiuMbT7XNKwuGXata20G6B0gnzW7qcGTfCXEpZ1w/edit#heading=h.44sinio).
+
 ## How to post a bond
 
 ### Using Keystore
