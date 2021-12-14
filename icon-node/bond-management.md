@@ -6,6 +6,10 @@
 
 For an in depth technical specification of the bond [heads over here](https://docs.google.com/document/d/1WZzbiuMbT7XNKwuGXata20G6B0gnzW7qcGTfCXEpZ1w/edit#heading=h.44sinio).
 
+### Initial settings
+
+When IISS 3.1 will be activated, the **bond requirement will be set to 5%**. The **slashing penalty will be set to 0%** until the network and goloop is stable enough.
+
 ## How to post a bond
 
 ### Using Keystore
