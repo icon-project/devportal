@@ -36,10 +36,6 @@ You can do this using [https://github.com/icon-project/preptools](https://github
 
 You can manage your bond through ICONex and Ledger hardware. Here is a quick video to demonstrate the process.
 
-{% hint style="warning" %}
-Due to some issue with the UI, the available amounts of ICX you can use to vote or post a bond may be incorrect. **For this reason, we recommend for the time being that you use one ledger device for voting, and one ledger device for posting bonds (with different seed).**
-{% endhint %}
-
 {% embed url="https://drive.google.com/file/d/1_GLURPIsVI3q1PsIw2vomhNanOvuholi/view?usp=sharing" %}
 
 ## Penalty/Slashing
