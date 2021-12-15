@@ -44,6 +44,16 @@ When a P-Rep does not behave as expected, this bond will be slashed (ICX will be
 
 {% hint style="info" %}
 An **opportunity** is defined as **one term** as Main P-Rep. Therefore, 30 opportunities means the last 30 terms as main P-Rep _(**which can be consecutive or not**)_
+
+__\
+_For example:_
+
+* You are main prep for term1 to term100, you receive one penalty at term 100
+* You are sub prep from term101 to term199
+* You become main prep again from term200, **you still have the previous penalty recorded**
+
+\
+To get rid of all your previous penalties, make sure your node behave properly for 30 opportunities (30 terms as main prep).
 {% endhint %}
 
 ![](../.gitbook/assets/f8d977c64b14a38161633f22f3b027b90c35366b.jpeg)
