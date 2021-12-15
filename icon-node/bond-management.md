@@ -73,7 +73,7 @@ You can use public endpoints instead of a local node `url/uri`
 #### setBonderList
 
 ```
-preptools setBonderList -c config.json --bonder-list hx5be1c0b343698ab2370524b598d48603d7c44a12 -p YOUR_PASSWORD -y
+preptools setBonderList -c config.json --bonder-list hx5be1c0b343698ab2370524b598d48603d7c44a12 hxfbc0a8b4e5e8df8a2e93e8a9cd5325e37289bcd0 -p YOUR_PASSWORD -y
 ```
 
 #### setBond
