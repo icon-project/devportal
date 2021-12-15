@@ -12,6 +12,10 @@ When IISS 3.1 will be activated, the **bond requirement will be set to 5%**. The
 
 ## How to post a bond
 
+{% hint style="info" %}
+You can find command line example further down this page
+{% endhint %}
+
 ### Using Keystore
 
 Posting a bond is done in 3 steps:
@@ -47,3 +51,70 @@ An **opportunity** is defined as **one term** as Main P-Rep. Therefore, 30 oppor
 {% endhint %}
 
 ![](../.gitbook/assets/f8d977c64b14a38161633f22f3b027b90c35366b.jpeg)
+
+## Command line example to post a bond
+
+{% hint style="info" %}
+You can use public endpoints instead of a local node `url/uri`
+{% endhint %}
+
+### preptools
+
+#### config.json file (used in below commands)
+
+```
+{
+  "url": "http://localhost:9080/api/v3",
+  "nid": 7,
+  "keystore": "wallet.json"
+}
+```
+
+#### setBonderList
+
+```
+preptools setBonderList -c config.json --bonder-list hx5be1c0b343698ab2370524b598d48603d7c44a12 -p YOUR_PASSWORD -y
+```
+
+#### setBond
+
+```
+$ preptools setBond -c config.json hxa8df82e93e8a9cd5325e37289bcd0fbc0a8b4e5e,100 hx047e7de3d2623c008fdf3120180f95919c85bd95,200 -p YOUR_PASSWORD -y
+```
+
+### goloop CLI
+
+#### setBond
+
+```
+$ cat bond.json
+{
+  "params": {
+    "bonds": [
+      {
+        "address": "hx047e7de3d2623c008fdf3120180f95919c85bd95",
+        "value": "0x64"
+      },
+      {
+        "address": "hxa8df82e93e8a9cd5325e37289bcd0fbc0a8b4e5e",
+        "value": "0x123"
+      }
+    ]
+  }
+}
+
+$ ./bin/goloop rpc sendtx call --to cx0000000000000000000000000000000000000000 --value 0x0 --key_store wallet.json --nid 1 --uri http://localhost:9080/api/v3 --key_password YOUR_PASSWORD --step_limit 0x1234123 --method setBond --raw bond.json
+```
+
+#### setBonderList
+
+```
+$ cat bonderList.json
+{
+  "params": {
+    "bonderList": ["hx047e7de3d2623c008fdf3120180f95919c85bd95", "hx5be1c0b343698ab2370524b598d48603d7c44a12"]
+  }
+}
+
+$ ./bin/goloop rpc sendtx call --to cx0000000000000000000000000000000000000000 --value 0x0 --key_store wallet.json --nid 1 --uri http://localhost:9080/api/v3 --key_password YOUR_PASSWORD --step_limit 0x1234123 --method setBonderList --raw bonderList.json
+```
