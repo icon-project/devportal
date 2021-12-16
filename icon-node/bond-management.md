@@ -16,6 +16,10 @@ When IISS 3.1 will be activated, the **bond requirement will be set to 5%**. The
 You can find command line example further down this page
 {% endhint %}
 
+{% hint style="danger" %}
+If you want to remove your bond, there is an unbonding period of 7 terms, during which your bond can still be slashed
+{% endhint %}
+
 ### Using Keystore
 
 Posting a bond is done in 3 steps:
