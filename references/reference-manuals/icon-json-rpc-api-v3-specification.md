@@ -8,7 +8,7 @@ ICON JSON-RPC APIs \(version 3\) are interfaces to interact with ICON nodes. Thi
 
 Follows [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification).
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -86,7 +86,7 @@ Below table shows the default error messages for the error code. Actual message 
 
 **JSON-RPC Error Response**
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -151,6 +151,10 @@ API path : `<scheme>://<host>/api/v3`
 * [getStake](icon-json-rpc-api-v3-specification.md#getstake)
 * [setDelegation](icon-json-rpc-api-v3-specification.md#setdelegation)
 * [getDelegation](icon-json-rpc-api-v3-specification.md#getdelegation)
+* [setBonderList](icon-json-rpc-api-v3-specification.md#setbonderlist)
+* [getBonderList](icon-json-rpc-api-v3-specification.md#getbonderlist)
+* [setBond](icon-json-rpc-api-v3-specification.md#setbond)
+* [getBond](icon-json-rpc-api-v3-specification.md#getbond)
 * [claimIScore](icon-json-rpc-api-v3-specification.md#claimiscore)
 * [queryIScore](icon-json-rpc-api-v3-specification.md#queryiscore)
 * [registerPRep](icon-json-rpc-api-v3-specification.md#registerprep)
@@ -190,7 +194,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -253,7 +257,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -329,7 +333,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -411,7 +415,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -474,7 +478,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -528,7 +532,7 @@ Fields containing information about the function
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -610,7 +614,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -656,7 +660,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -772,7 +776,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -907,7 +911,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **Coin transfer**
 
-  ```javascript
+  ```json
   // Request
   {
     "jsonrpc": "2.0",
@@ -929,7 +933,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **SCORE function call**
 
-  ```javascript
+  ```json
   // Request
   {
     "jsonrpc": "2.0",
@@ -958,7 +962,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **SCORE install**
 
-  ```javascript
+  ```json
   // Request
   {
     "jsonrpc": "2.0",
@@ -989,7 +993,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **SCORE update**
 
-  ```javascript
+  ```json
   // Request
   {
     "jsonrpc": "2.0",
@@ -1018,7 +1022,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **Message transfer**
 
-  ```javascript
+  ```json
   // Request
   {
     "jsonrpc": "2.0",
@@ -1041,7 +1045,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 * **Responses**
 
-```javascript
+```json
 // Response - success
 {
     "jsonrpc": "2.0",
@@ -1096,7 +1100,7 @@ It is used when transferring a message, and `data` has a HEX string.
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -1148,7 +1152,7 @@ Information of Account
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -1219,7 +1223,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc" : "2.0",
@@ -1269,7 +1273,7 @@ None
 
 **Example**
 
-```javascript
+```json
 // Request
 {
     "jsonrpc": "2.0",
@@ -1310,7 +1314,7 @@ None
 * Target SCORE Address for IISS APIs: `cx0000000000000000000000000000000000000000`
 * Each IISS API method section explains the content of `data` field in `icx_sendTransaction`
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1359,7 +1363,7 @@ N/A
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1400,7 +1404,7 @@ Request
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1420,7 +1424,7 @@ Request
 
 Response on success
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1439,7 +1443,7 @@ Response on success
 
 Response on success when there is no unstake
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1477,7 +1481,7 @@ N/A
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1505,7 +1509,7 @@ Request
 
 Request to revoke all delegations
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1547,7 +1551,7 @@ Request to revoke all delegations
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1567,7 +1571,7 @@ Request
 
 Response on success
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1585,6 +1589,224 @@ Response on success
             }
         ]
     }
+}
+```
+
+### setBonderList
+
+Set allowed bonder list to P-Rep
+
+- Maximum number of allowed ICONists to bond is 10
+- This transaction overwrites the previous bonder list information
+
+**Parameters**
+
+| Key        | VALUE Type                      | Required | Description                        |
+| :--------- | :------------------------------ | :------- | :--------------------------------- |
+| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 100 entries) |
+
+**Example**
+
+Request
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_sendTransaction",
+  "params": {
+    "data": {
+      "method": "setBonderList",
+      "params": {
+        "bonderList": [
+          "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+          "cxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826"
+        ]
+      }
+    },
+    ...
+  }
+}
+```
+
+### getBonderList
+
+* Returns the allowed bonder list
+* Maximum 10 entries are allowed
+
+**Parameters**
+
+| Key     | VALUE Type | Required | Description      |
+| :------ | :--------- | :------- | :--------------- |
+| address | T_ADDR_EOA | true     | Address to query |
+
+**Returns**
+
+| Key        | VALUE Type                      | Required | Description                        |
+| :--------- | :------------------------------ | :------- | :--------------------------------- |
+| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 10 entries) |
+
+**Example**
+
+Request
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_call",
+  "params": {
+    "to": "cx0000000000000000000000000000000000000000",
+    "dataType": "call",
+    "data": {
+      "method": "getBonderList",
+      "params": {
+        "address": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+      }
+    }
+  }
+}
+```
+
+Response on success
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "result": {
+    "bonderList": [
+      "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+      "cxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826"
+    ]
+  }
+}
+```
+
+### setBond
+
+Bond some ICX amount of stake to P-Reps
+
+- Maximum number of P-Reps to bond is 100
+- The transaction which has duplicated P-Rep addresses will be failed
+- This transaction overwrites the previous bond information
+
+**Parameters**
+
+| Key                 | VALUE Type     | Required | Description                              |
+| :------------------ | :------------- | :------- | :--------------------------------------- |
+| bonds         | T_LIST(T_DICT) | true     | List of bond dict (MAX: 100 entries) |
+| bonds.address | T_ADDR_EOA     | true     | Address of P-Rep to bond |
+| bonds.value   | T_INT          | true     | Bond amount in loop |
+
+**Example**
+
+Request
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_sendTransaction",
+  "params": {
+    "data": {
+      "method": "setBond",
+      "params": {
+        "bonds": [
+          {
+            "address": "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+            "value": "0x3200000000"
+          },
+          {
+            "address": "hxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826",
+            "value": "0x1000000000"
+          }
+        ]
+      }
+    },
+    ...
+  }
+}
+```
+
+### getBond
+
+Returns the bond status of a given address
+
+**Parameters**
+
+| Key     | VALUE Type | Required | Description      |
+| :------ | :--------- | :------- | :--------------- |
+| address | T_ADDR_EOA | true     | Address to query |
+
+**Returns**
+
+| Key                       | VALUE Type | Required | Description                                                                  |
+|:--------------------------| :--------- | :------- |:-----------------------------------------------------------------------------|
+| totalBonded               | T_INT      | true     | The sum of bond amount                                                     |
+| votingPower               | T_INT      | true     | Remaining amount of stake that ICONist can delegate and bond to other P-Reps |
+| bonds                     | T_LIST(T_DICT) | true     | List of bond dict                                                            |
+| bonds.address             | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate                                                 |
+| bonds.value               | T_INT          | true     | Bond amount in loop                                                          |
+| unbonds                   | T_LIST(T_DICT) | true     | List of unbond dict                                                          |
+| unbonds.address           | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate                                                 |
+| unbonds.value             | T_INT          | true     | Unbonding amount in loop                                                     |
+| unbonds.expireBlockHeight | T_INT          | true     | BlockHeight when unBonding will be done                                      |
+
+**Example**
+
+Request
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_call",
+  "params": {
+    "to": "cx0000000000000000000000000000000000000000",
+    "dataType": "call",
+    "data": {
+      "method": "getBond",
+      "params": {
+        "address": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+      }
+    }
+  }
+}
+```
+
+Response on success
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "result": {
+    "totalBonded": "0xa688906bd8b0000",
+    "votingPower": "0x3782dace9d90000",
+    "bonds": [
+      {
+        "address": "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+        "value": "0x3782dace9d90000"
+      },
+      {
+        "address": "hxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826",
+        "value": "0x6f05b59d3b20000"
+      }
+    ],
+    "unbonds": [
+      {
+        "address": "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+        "value": "0x3782dace9d90000",
+        "expireBlockHeight": "0xa"
+      },
+      {
+        "address": "hxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826",
+        "value": "0x6f05b59d3b20000",
+        "expireBlockHeight": "0xa"
+      }
+    ]
+  }
 }
 ```
 
@@ -1613,7 +1835,7 @@ N/A
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1629,7 +1851,7 @@ Request
 
 The result of `claimIScore` transaction
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1682,7 +1904,7 @@ The result of `claimIScore` transaction
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1702,7 +1924,7 @@ Request
 
 Response on success
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1751,7 +1973,7 @@ Response on success
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1800,7 +2022,7 @@ N/A
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1849,7 +2071,7 @@ Request
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1892,7 +2114,7 @@ N/A
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1932,21 +2154,23 @@ Request
 | city | String | O | "Seoul", "New York", "Paris" |
 | website | String | O | P-Rep homepage url "[https://abc.example.com/](https://abc.example.com/)" |
 | details | String | O | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
-| p2pEndpoint | String | O | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
 | nodeAddress | String | O | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
-| irep | T\_INT | O | Incentive rep used to calculate the reward for P-Rep Limit: +- 20% of the previous value Unit: loop |
-| irepUpdateBlockHeight | T\_INT | O | Block height when a P-Rep changed I-Rep value |
-| lastGenerateBlockHeight | T\_INT | O | Height of the last block which a P-Rep generated |
 | stake | T\_INT | O | Amount of stake that a P-Rep has |
+| bonded | T\_INT | O | Bond amount that a P-Rep receives from ICONists |
 | delegated | T\_INT | O | Delegation amount that a P-Rep receives from ICONists |
+| power | T\_INT | O | P-Rep ranking score. `power = min(bonded * 20, bonded + delegated)` See this(https://icondev.io/introduction/icon-key-concepts/governance-iiss#bond-requirement) for more details. |
 | totalBlocks | T\_INT | O | The number of blocks that a P-Rep received when running as a Main P-Rep |
 | validatedBlocks | T\_INT | O | The number of blocks that a P-Rep validated when running as a Main P-Rep |
+| lastHeight | T\_HASH | O | The last height of the block which this P-Rep validated as a validator |
+| irep | T\_INT | X | (deprecated) Incentive rep used to calculate the reward for P-Rep Limit: +- 20% of the previous value Unit: loop |
+| irepUpdateBlockHeight | T\_INT | X | (deprecated) Block height when a P-Rep changed I-Rep value |
+| p2pEndpoint | String | X | (deprecated) Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
 
 **Example**
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1966,7 +2190,7 @@ Request
 
 Response on success
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -1993,7 +2217,7 @@ Response on success
 
 Response on failure
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -2024,25 +2248,13 @@ Response on failure
 | startRanking | T\_INT | O | Start ranking of P-Rep list |
 | totalDelegated | T\_INT | O | Total delegation amount that all P-Reps receive |
 | totalStake | T\_INT | O | The sum of ICX that all ICONists stake |
-| preps | T\_LIST\(T\_DICT\) | O | P-Rep list |
-| preps.address | String | O | P-Rep address |
-| preps.grade | T\_INT | O | Refer to getPRep |
-| preps.name | String | O | Refer to getPRep |
-| preps.country | String | O | Refer to getPRep |
-| preps.city | String | O | Refer to getPRep |
-| preps.stake | T\_INT | O | Refer to getPRep |
-| preps.delegated | T\_INT | O | Refer to getPRep |
-| preps.irep | T\_INT | O | Refer to getPRep |
-| preps.irepUpdateBlockHeight | T\_INT | O | Refer to getPRep |
-| preps.lastGenerateBlockHeight | T\_INT | O | Refer to getPRep |
-| preps.totalBlocks | T\_INT | O | Refer to getPRep |
-| preps.validatedBlocks | T\_INT | O | Refer to getPRep |
+| preps | T\_LIST\(T\_DICT\) | O | P-Rep list. See [getPRep](icon-json-rpc-api-v3-specification.md#getprep) for P-Rep attributes. |
 
 **Example**
 
 Request
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -2063,7 +2275,7 @@ Request
 
 Response
 
-```javascript
+```json
 {
     "jsonrpc": "2.0",
     "id": 1234,
@@ -2074,32 +2286,48 @@ Response
         "totalStake": "0x193e5939a08ce9dbd480000000",
         "preps": [
             {
+                "grade": "0x0",
+                "status": "0x0",
+                "penalty": "0x0",
+                "bonded": "0x0",
+                "stake": "0x28a857425466f800000",
+                "delegated": "0xb390f6390fef898000",
+                "power": "0xb390f6390fef898000",
                 "name": "Banana node",
                 "country": "KOR",
                 "city": "Seoul",
-                "grade": "0x0",
+                "details": "https://banana.com/detail.json",
+                "website": "https://banana.com/index.html",
                 "address": "hx8f21e5c54f006b6a5d5fe65486908592151a7c57",
+                "nodeAddress": "hx8f21e5c54f006b6a5d5fe65486908592151a7c57",
                 "irep": "0xc350",
                 "irepUpdateBlockHeight": "0x1200",
-                "lastGenerateBlockHeight": "-0x1",
-                "stake": "0x21e19e0c9bab2400000",
-                "delegated": "0x204fce5e3e25026110000000",
+                "lastHeight": "0x1",
                 "totalBlocks": "0x2710",
                 "validatedBlocks": "0x2328"
+                "p2pEndpoint": "1.2.3.4:7100",
             },
             {
+                "grade": "0x0",
+                "status": "0x0",
+                "penalty": "0x0",
+                "bonded": "0x0",
+                "stake": "0x28a857425466f800000",
+                "delegated": "0xb390f6390fef898000",
+                "power": "0xb390f6390fef898000",
                 "name": "ABC Node",
                 "country": "USA",
                 "city": "New York",
-                "grade": "0x0",
-                "address": "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
+                "details": "https://comcom.ai/detail.json",
+                "email": "abc@example.com",
+                "address": "hx12abcdef628ee52a7f751e9d500a79222a7f4567",
+                "nodeAddress": "hx37ff490d628ee52a7f751e9d500a79222a7fe568",
                 "irep": "0xc350",
                 "irepUpdateBlockHeight": "0x1100",
-                "lastGenerateBlockHeight": "0x1200",
-                "stake": "0x28a857425466f800000",
-                "delegated": "0x9ed194db19b238c000000",
+                "lastHeight": "0x1200",
                 "totalBlocks": "0x2720",
-                "validatedBlocks": "0x2348"
+                "validatedBlocks": "0x2348",
+                "p2pEndpoint": "1.2.3.4:7100",
             },
             ...
         ]
