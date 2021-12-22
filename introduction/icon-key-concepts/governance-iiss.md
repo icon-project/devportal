@@ -33,9 +33,16 @@ Before IISS 3.0, P-Reps were ranked by the amount of delegation they receive fro
 
 The problem with this approach is that P-Reps actually don't have any stake in the network. If a P-Rep did not behave properly according to the network rules (the node is not working properly, or they do not participate in network governance, etc...), they did not get directly penalized. Sure, their reward was not distributed, but their funds were never at risk.
 
-With the introduction of the bond requirements, P-Rep rank will now be determined by the _bonded delegation_. It is calculated using the following formula: `bondedDelegation = min(bonded * 20, bonded + delegated)`.
+With the introduction of the bond requirements, P-Rep rank will now be determined by the _bonded delegation_. It is calculated as following (they are all identical, they're just a different way to present the calculation for better understanding).
+
+* `P-Rep bonded delegation` is the `minimum` between the `P-Rep bond / 5%` and the `P-Rep total delegation`
+* `bondedDelegation` = `min(bonded * 20, bonded + delegated)`
 
 What this means in practice is that in order for a P-Rep to maximize their rewards, they must post a bond representing 5% of their total votes. So for example is a P-Rep receive 1,000,000 votes from  other users, they must post a bond of 50,000 ICX in order to keep their rank and receive the same reward as before (this example is simplified to illustrate the main idea).
+
+To calculate a P-Rep monthly reward, the following formula can be used:
+
+* `Monthly Rewards` = `Bonded delegation` / `Total bonded delegation from all P-Reps` \* `Monthly rewards for P-Reps`
 
 In IISS 3.1, if a P-Rep does not behave properly, the bond will be _slashed,_ meaning that part of the P-Rep bond will be burned and lost forever. It is similar to a fine in real life, with the main difference is that the slashed bond is burned (it reduces ICX supply). This is a very strong incentive for P-Reps to work hard to provide a stable node operation and participate in governance actively.
 
