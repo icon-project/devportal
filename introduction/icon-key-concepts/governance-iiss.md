@@ -35,7 +35,7 @@ The problem with this approach is that P-Reps actually don't have any stake in t
 
 With the introduction of the bond requirements, P-Rep rank will now be determined by the _bonded delegation_. It is calculated as following (they are all identical, they're just a different way to present the calculation for better understanding).
 
-* `P-Rep bonded delegation` is the `minimum` between the `P-Rep bond / 5%` and the `P-Rep total delegation`
+* `P-Rep bonded delegation` is the `minimum` between the `P-Rep bond / 5%` and the `P-Rep total delegation + P-Rep received bond`
 * `bondedDelegation` = `min(bonded * 20, bonded + delegated)`
 
 What this means in practice is that in order for a P-Rep to maximize their rewards, they must post a bond representing 5% of their total votes. So for example is a P-Rep receive 1,000,000 votes from  other users, they must post a bond of 50,000 ICX in order to keep their rank and receive the same reward as before (this example is simplified to illustrate the main idea).
