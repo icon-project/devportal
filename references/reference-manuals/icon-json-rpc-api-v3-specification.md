@@ -141,11 +141,9 @@ API path : `<scheme>://<host>/api/v3`
 * [icx\_getTransactionByHash](icon-json-rpc-api-v3-specification.md#icx_gettransactionbyhash)
 * [icx\_sendTransaction](icon-json-rpc-api-v3-specification.md#icx_sendtransaction)
 
-**Sub API**
+**IISS API**
 
 API path : `<scheme>://<host>/api/v3`
-
-**IISS API**
 
 * [setStake](icon-json-rpc-api-v3-specification.md#setstake)
 * [getStake](icon-json-rpc-api-v3-specification.md#getstake)
@@ -169,7 +167,6 @@ API path : `<scheme>://<host>/api/v3`
 API path : `<scheme>://<host>/api/v3d`
 
 * [debug\_estimateStep](icon-json-rpc-api-v3-specification.md#debug_estimatestep)
-* [debug\_getAccount](icon-json-rpc-api-v3-specification.md#debug_getaccount)
 
 **Other API**
 
@@ -863,17 +860,17 @@ This function causes state transitions.
 
 | KEY | VALUE type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| version | T\_INT | required | Protocol version \(`0x3` for V3\) |
-| from | T\_ADDR\_EOA | required | EOA address that created the transaction |
-| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | required | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value | T\_INT | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
-| stepLimit | T\_INT | required | Maximum step allowance that can be used by the transaction. |
-| timestamp | T\_INT | required | Transaction creation time. timestamp is in microsecond. |
-| nid | T\_INT | required | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
-| nonce | T\_INT | optional | An arbitrary number used to prevent transaction hash collision. |
-| signature | T\_SIG | required | Signature of the transaction. |
-| dataType | T\_DATA\_TYPE | optional | Type of data. \(call, deploy, or message\) |
-| data | T\_DICT or String | optional | The content of data varies depending on the dataType. See Parameters - data. The maximum size of data is 512 KB. |
+| version | T\_INT | O | Protocol version \(`0x3` for V3\) |
+| from | T\_ADDR\_EOA | O | EOA address that created the transaction |
+| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | O | EOA address to receive coins, or SCORE address to execute the transaction. |
+| value | T\_INT | X | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
+| stepLimit | T\_INT | O | Maximum step allowance that can be used by the transaction. |
+| timestamp | T\_INT | O | Transaction creation time. timestamp is in microsecond. |
+| nid | T\_INT | O | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
+| nonce | T\_INT | X | An arbitrary number used to prevent transaction hash collision. |
+| signature | T\_SIG | O | Signature of the transaction. |
+| dataType | T\_DATA\_TYPE | X | Type of data. \(call, deploy, or message\) |
+| data | T\_DICT or String | X | The content of data varies depending on the dataType. See Parameters - data. The maximum size of data is 512 KB. |
 
 **Parameters - data**
 
@@ -885,8 +882,8 @@ It is used when calling a function in SCORE, and `data` has dictionary value as 
 
 | KEY | VALUE type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| method | String | required | Name of the function to invoke in SCORE |
-| params | T\_DICT | optional | Function parameters |
+| method | String | O | Name of the function to invoke in SCORE |
+| params | T\_DICT | X | Function parameters |
 
 **2. dataType == deploy**
 
@@ -894,9 +891,9 @@ It is used when installing or updating a SCORE, and `data` has dictionary value 
 
 | KEY | VALUE type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| contentType | String | required | Mime-type of the content |
-| content | T\_BIN\_DATA | required | Compressed SCORE data |
-| params | T\_DICT | optional | Function parameters will be delivered to on\_install\(\) or on\_update\(\) |
+| contentType | String | O | Mime-type of the content |
+| content | T\_BIN\_DATA | O | Compressed SCORE data |
+| params | T\_DICT | X | Function parameters will be delivered to on\_install\(\) or on\_update\(\) |
 
 **3. dataType == message**
 
@@ -1084,15 +1081,15 @@ It is used when transferring a message, and `data` has a HEX string.
 
 | KEY | VALUE type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| version | T\_INT | required | Protocol version \(`0x3` for V3\) |
-| from | T\_ADDR\_EOA | required | EOA address that created the transaction |
-| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | required | EOA address to receive coins, or SCORE address to execute the transaction. |
-| value | T\_INT | optional | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
-| timestamp | T\_INT | required | Transaction creation time. timestamp is in microsecond. |
-| nid | T\_INT | required | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
-| nonce | T\_INT | optional | An arbitrary number used to prevent transaction hash collision. |
-| dataType | T\_DATA\_TYPE | optional | Type of data. \(call, deploy, or message\) |
-| data | T\_DICT or String | optional | The content of data varies depending on the dataType. See Parameters - data. |
+| version | T\_INT | O | Protocol version \(`0x3` for V3\) |
+| from | T\_ADDR\_EOA | O | EOA address that created the transaction |
+| to | T\_ADDR\_EOA or T\_ADDR\_SCORE | O | EOA address to receive coins, or SCORE address to execute the transaction. |
+| value | T\_INT | X | Amount of ICX coins in loop to transfer. When omitted, assumes 0. \(1 icx = 1 ^ 18 loop\) |
+| timestamp | T\_INT | O | Transaction creation time. timestamp is in microsecond. |
+| nid | T\_INT | O | Network ID \(`0x1` for Mainnet, `0x2` for Testnet, etc\) |
+| nonce | T\_INT | X | An arbitrary number used to prevent transaction hash collision. |
+| dataType | T\_DATA\_TYPE | X | Type of data. \(call, deploy, or message\) |
+| data | T\_DICT or String | X | The content of data varies depending on the dataType. See Parameters - data. |
 
 **Returns**
 
@@ -1131,80 +1128,6 @@ It is used when transferring a message, and `data` has a HEX string.
     "error": {
         "code": -32602,
         "message": "JSON schema validation error: 'version' is a required property"
-    }
-}
-```
-
-### debug\_getAccount
-
-* Returns the Account information including stake, delegation of the given EOA or SCORE.
-
-**Parameters**
-
-| KEY | VALUE type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_EOA or T\_ADDR\_SCORE | Address of EOA or SCORE |
-| filter | T\_INT | flag value to what information will be included\(coin : 1, stake: 2, delegation: 4\) |
-
-**Returns**
-
-Information of Account
-
-**Example**
-
-```json
-// Request
-{
-    "jsonrpc": "2.0",
-    "id": 1234,
-    "method": "debug_getAccount",
-    "params": {
-        "address": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb",
-        "filter": "0x7"
-    }
-}
-
-// Response - success
-{
-  "coin": {
-    "type": "0x1",
-    "typeStr": "CoinPartType.GENERAL",
-    "flag": "0x0",
-    "flagStr": "CoinPartFlag.None"
-  },
-  "stake": {
-    "stake": "0x100",
-    "unstake": "0x100",
-    "unstakeBlockHeight": "0x200",
-    "unstakesInfo": [
-      [
-        "0x100",
-        "0x200"
-      ]
-    ]
-  },
-  "delegation": {
-    "totalDelegated": "0xa688906bd8b0000",
-    "delegations": [
-      {
-        "address": "hx1d6463e4628ee52a7f751e9d500a79222a7f3935",
-        "value": "0x3782dace9d90000"
-      },
-      {
-        "address": "hxb6bc0bf95d90cb3cd5b3abafd9682a62f36cc826",
-        "value": "0x6f05b59d3b20000"
-      }
-    ]
-  }
-}
-
-// Response - error
-{
-    "jsonrpc": "2.0",
-    "id": 1234,
-    "error": {
-        "code": -32602,
-        "message": "Invalid address"
     }
 }
 ```
@@ -1603,7 +1526,7 @@ Set allowed bonder list to P-Rep
 
 | Key        | VALUE Type                      | Required | Description                        |
 | :--------- | :------------------------------ | :------- | :--------------------------------- |
-| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 100 entries) |
+| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | O        | List of address (MAX: 100 entries) |
 
 **Example**
 
@@ -1638,13 +1561,13 @@ Request
 
 | Key     | VALUE Type | Required | Description      |
 | :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| address | T_ADDR_EOA | O        | Address to query |
 
 **Returns**
 
 | Key        | VALUE Type                      | Required | Description                        |
 | :--------- | :------------------------------ | :------- | :--------------------------------- |
-| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | true     | List of address (MAX: 10 entries) |
+| bonderList | T_LIST(T_ADDR_EOA,T_ADDR_SCORE) | O        | List of address (MAX: 10 entries) |
 
 **Example**
 
@@ -1695,13 +1618,13 @@ Bond some ICX amount of stake to P-Reps
 
 | Key                 | VALUE Type     | Required | Description                              |
 | :------------------ | :------------- | :------- | :--------------------------------------- |
-| bonds         | T_LIST(T_DICT) | true     | List of bond dict (MAX: 100 entries) |
-| bonds.address | T_ADDR_EOA     | true     | Address of P-Rep to bond |
-| bonds.value   | T_INT          | true     | Bond amount in loop |
+| bonds               | T_LIST(T_DICT) | O        | List of bond dict (MAX: 100 entries) |
+| bonds.address       | T_ADDR_EOA     | O        | Address of P-Rep to bond |
+| bonds.value         | T_INT          | O        | Bond amount in loop |
 
 **Example**
 
-Request
+Request: Posts bonds to 2 P-Reps
 
 ```json
 {
@@ -1729,6 +1652,25 @@ Request
 }
 ```
 
+Request: Reset bonds
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_sendTransaction",
+  "params": {
+    "data": {
+      "method": "setBond",
+      "params": {
+        "bonds": []
+      }
+    },
+    ...
+  }
+}
+```
+
 ### getBond
 
 Returns the bond status of a given address
@@ -1737,21 +1679,21 @@ Returns the bond status of a given address
 
 | Key     | VALUE Type | Required | Description      |
 | :------ | :--------- | :------- | :--------------- |
-| address | T_ADDR_EOA | true     | Address to query |
+| address | T_ADDR_EOA | O        | Address to query |
 
 **Returns**
 
 | Key                       | VALUE Type | Required | Description                                                                  |
 |:--------------------------| :--------- | :------- |:-----------------------------------------------------------------------------|
-| totalBonded               | T_INT      | true     | The sum of bond amount                                                     |
-| votingPower               | T_INT      | true     | Remaining amount of stake that ICONist can delegate and bond to other P-Reps |
-| bonds                     | T_LIST(T_DICT) | true     | List of bond dict                                                            |
-| bonds.address             | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate                                                 |
-| bonds.value               | T_INT          | true     | Bond amount in loop                                                          |
-| unbonds                   | T_LIST(T_DICT) | true     | List of unbond dict                                                          |
-| unbonds.address           | T_ADDR_EOA,T_ADDR_SCORE | true     | Address of P-Rep to delegate                                                 |
-| unbonds.value             | T_INT          | true     | Unbonding amount in loop                                                     |
-| unbonds.expireBlockHeight | T_INT          | true     | BlockHeight when unBonding will be done                                      |
+| totalBonded               | T_INT      | O     | The sum of bond amount                                                     |
+| votingPower               | T_INT      | O     | Remaining amount of stake that ICONist can delegate and bond to other P-Reps |
+| bonds                     | T_LIST(T_DICT) | O     | List of bond dict                                                            |
+| bonds.address             | T_ADDR_EOA,T_ADDR_SCORE | X     | Address of P-Rep to delegate                                                 |
+| bonds.value               | T_INT          | X     | Bond amount in loop                                                          |
+| unbonds                   | T_LIST(T_DICT) | X     | List of unbond dict                                                          |
+| unbonds.address           | T_ADDR_EOA,T_ADDR_SCORE | X     | Address of P-Rep to delegate                                                 |
+| unbonds.value             | T_INT          | X     | Unbonding amount in loop                                                     |
+| unbonds.expireBlockHeight | T_INT          | X     | BlockHeight when unBonding will be done                                      |
 
 **Example**
 
@@ -1990,7 +1932,7 @@ Request
                 "website": "https://abc.example.com/",
                 "details": "https://abc.example.com/details/",
                 "p2pEndpoint": "abc.example.com:7100",
-                  "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+                "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
             }
         },
         ...
@@ -2039,6 +1981,7 @@ Request
 ### setPRep
 
 * Update P-Rep register information
+* Add the only fields which you want to change
 
 **Parameters**
 
@@ -2050,7 +1993,6 @@ Request
 | city | String | X | "Seoul", "New York", "Paris" |
 | website | String | X | P-Rep homepage url "[https://abc.example.com/](https://abc.example.com/)" |
 | details | String | X | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
-| p2pEndpoint | String | X | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
 | nodeAddress | String | X | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
 
 \*details : See [JSON Standard for P-Rep detailed information](json-standard-for-p-rep-detailed-information.md)
@@ -2069,7 +2011,7 @@ Request
 
 **Example**
 
-Request
+Request in case when you want to change name, email and nodeAddress
 
 ```json
 {
@@ -2082,7 +2024,7 @@ Request
             "params": {
                 "name": "Banana Node",
                 "email": "banana@email.com",
-                  "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+                "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
             }
         },
         ...
@@ -2342,6 +2284,5 @@ Response
 ## References
 
 * [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification)
-* [ICON JSON RPC API v2](https://github.com/icon-project/icx_JSON_RPC)
 * [JSON Standard for P-Rep detailed information](json-standard-for-p-rep-detailed-information.md)
 
