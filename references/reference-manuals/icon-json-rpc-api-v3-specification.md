@@ -161,6 +161,8 @@ API path : `<scheme>://<host>/api/v3`
 * [setGovernanceVariables](icon-json-rpc-api-v3-specification.md#setgovernancevariables)
 * [getPRep](icon-json-rpc-api-v3-specification.md#getprep)
 * [getPReps](icon-json-rpc-api-v3-specification.md#getpreps)
+* [getScoreOwner](icon-json-rpc-api-v3-specification.md#getscoreowner)
+* [setScoreOwner](icon-json-rpc-api-v3-specification.md#setscoreowner)
 
 **Debug API**
 
@@ -2277,6 +2279,109 @@ Response
             },
             ...
         ]
+    }
+}
+```
+
+### getScoreOwner
+
+* Returns the owner of the score indicated by a given address
+
+**Parameters**
+
+| KEY | VALUE type | Required | Description |
+| :--- | :--- | :---: | :--- |
+| score | T\_ADDRESS | O | score address to query |
+
+**Returns**
+
+* owner address of a given score
+
+**Example**
+
+Request
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "method": "icx_call",
+    "params": {
+        "to": "cx0000000000000000000000000000000000000000",
+        "dataType": "call",
+        "data": {
+            "method": "getScoreOwner",
+            "params": {
+                "score": "cx8d3ef83a63d8bbd3f08c4a8b8a18fbae13368b40"
+            }
+        },
+    }
+}
+```
+
+Response on success
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "result": "hx3ece50aaa01f7c4d128c029d569dd86950c34215"
+}
+```
+
+Response on failure
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "error": {
+        "code": -30006,
+        "message": "SystemError(-30006): E0006:Invalid score address"
+    }
+}
+```
+
+### setScoreOwner
+
+* Changes the owner of the score indicated by a given address
+* Only the score owner can change its owner.
+* If a score owner changes its owner to `hx0000000000000000000000000000000000000000`, it means that the score is frozen and no one can update or modify it anymore.
+* score address can also be used as a score owner.
+* A score itself can be set to its owner.
+
+**Parameters**
+
+| KEY | VALUE type | Required | Description |
+| :--- | :--- | :---: | :--- |
+| score | T\_ADDRESS | O | score address to change its owner |
+| owner | T\_ADDRESS | O | new owner address of a given score |
+
+**Returns**
+
+* Transaction hash\(T\_HASH\) on success
+* Error code and message on failure
+
+**Example**
+
+Request
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1234,
+    "method": "icx_sendTransaction",
+    "params": {
+        ...
+        "to": "cx0000000000000000000000000000000000000000",
+        "dataType": "call",
+        "data": {
+            "method": "setScoreOwner",
+            "params": {
+                "score": "cx8d3ef83a63d8bbd3f08c4a8b8a18fbae13368b40",
+                "owner": "hx3ece50aaa01f7c4d128c029d569dd86950c34215"
+            }
+        }
     }
 }
 ```
