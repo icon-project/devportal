@@ -809,7 +809,7 @@ Set allowed bonder list to P-Rep
 
 ### getBonderList
 
-Returns the allowed bonder list
+* Returns the allowed bonder list
 
 > Request
 
@@ -866,6 +866,7 @@ Changes the owner of the score indicated by a given address
 * If a score owner changes its owner to `hx0000000000000000000000000000000000000000`, it means that the score is frozen and no one can update it anymore.
 * score address can also be used as a score owner.
 * A score itself can be set to its owner.
+* Available from revision 17
 
 > Request
 
@@ -898,6 +899,10 @@ Changes the owner of the score indicated by a given address
 ### getScoreOwner
 
 Returns the owner of the score indicated by a given address
+
+* Every score except for system score has an owner.
+* The owner of system score (`cx0000000000000000000000000000000000000000`) is null.
+* Available from revision 17
 
 > Request
 
