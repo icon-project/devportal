@@ -52,20 +52,6 @@ This network offers the latest features and may be unstable. Reset will happen f
 | Transaction fee    | on                                                                                     |
 | SCORE audit        | off                                                                                    |
 
-## BTP
-
-Testnet only for BTP integration. Will be deprecated soon.
-* To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel ([https://t.me/icondevs](https://t.me/icondevs))
-
-| Name               | BTP                                                                              |
-| ------------------ | -------------------------------------------------------------------------------- |
-| Node               | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io)                 |
-| API endpoint       | [https://btp.net.solidwallet.io/api/v3](https://btp.net.solidwallet.io/api/v3)   |
-| Debug API endpoint | [https://btp.net.solidwallet.io/api/v3d](https://btp.net.solidwallet.io/api/v3d) |
-| Network ID (nid)   | 0x42                                                                             |
-| Tracker            | [https://btp.tracker.solidwallet.io](https://btp.tracker.solidwallet.io)         |
-| Transaction fee    | on                                                                               |
-| SCORE audit        | off                                                                              |
 
 ## Want to use the ICONex chrome wallet to send ICX on the testnet?
 
