@@ -32,9 +32,11 @@ _Data in detail field:_
 ### Dispatch Event for Request
 
 ```javascript
-const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
-    type: '...',
-    payload: {...}
+const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', { 
+    detail: { 
+        type: '...',
+        payload: {...}
+    }
 });
 window.dispatchEvent(customEvent);
 ```
@@ -58,8 +60,10 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 `RESPONSE_HAS_ACCOUNT` Returns boolean-typed result.
 
 ```javascript
-const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
-    type: 'REQUEST_HAS_ACCOUNT'
+const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', {
+    detail: { 
+        type: 'REQUEST_HAS_ACCOUNT'
+    }
 });
 window.dispatchEvent(customEvent);
 
@@ -86,7 +90,7 @@ const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: {
 window.dispatchEvent(customEvent);
 
 const eventHandler = event => {
-    const { type, payload } = detail
+    const { type, payload } = event.detail
     if (type === 'RESPONSE_HAS_ADDRESS') {
         console.log(payload); // true or false
     }
@@ -101,13 +105,15 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 `RESPONSE_ADDRESS` Returns the icx address selected by user.
 
 ```javascript
-const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
+const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', { 
+    detail: { 
      type: 'REQUEST_ADDRESS' 
+    }
 });
 window.dispatchEvent(customEvent);
 
 const eventHandler = event => {
-    const { type, payload } = detail;
+    const { type, payload } = event.detail;
     if (type === 'RESPONSE_ADDRESS') {
         console.log(payload); // e.g., hx19870922...
     }    
@@ -122,22 +128,24 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 `RESPONSE_JSON-RPC` Returns the JSON-RPC response.
 
 ```javascript
-const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
-     type: 'REQUEST_JSON-RPC',
-     payload: {
-        jsonrpc: "2.0",
-        method: "icx_method",
-        id: 6339,
-        params: { 
-            from: "hx19870922...",
-            ...
+const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', { 
+    detail: { 
+        type: 'REQUEST_JSON-RPC',
+        payload: {
+            jsonrpc: "2.0",
+            method: "icx_method",
+            id: 6339,
+            params: { 
+                from: "hx19870922...",
+                ...
+            }
         }
-     }
+    }
 });
 window.dispatchEvent(customEvent);
 
 const eventHandler = event => {
-    const { type, payload } = detail;
+    const { type, payload } = event.detail;
     if (type === 'RESPONSE_JSON-RPC') {
         console.log(payload); // e.g., {"jsonrpc": "2.0", "id": 6339, "result": { ... }}
     }
@@ -152,17 +160,19 @@ window.addEventListener('ICONEX_RELAY_RESPONSE', eventHandler);
 `RESPONSE_SIGNING` Returns signature.
 
 ```javascript
-const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', detail: { 
-    type: 'REQUEST_SIGNING',
-    payload: {
-        from: 'hx19870922...',
-        hash: '0x13979...'
+const customEvent = new CustomEvent('ICONEX_RELAY_REQUEST', { 
+    detail: { 
+        type: 'REQUEST_SIGNING',
+        payload: {
+            from: 'hx19870922...',
+            hash: '0x13979...'
+        }
     }
 });
 window.dispatchEvent(customEvent);
 
 const eventHandler = event => {
-    const { type, payload } = detail
+    const { type, payload } = event.detail
     if (type === 'RESPONSE_SIGNING') {
         console.log(payload) // e.g., 'q/dVc3qj4En0GN+...'
     }
