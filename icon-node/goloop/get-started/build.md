@@ -2,20 +2,27 @@
 
 ## Platform preparation
 
-*   GoLang 1.14+
+* GoLang 1.17+
 
     **Mac OSX**
 
     ```
-      brew install go
+    brew install go
     ```
-*   Python 3.7+ Virtual Environment
+* Python 3.7+ Virtual Environment
 
     **Mac OSX**
 
     ```
-      brew install python
-      pip install virtualenv setuptools wheel
+    brew install python
+    pip install virtualenv setuptools wheel
+    ```
+
+* Rocksdb 6.22+
+
+    **Mac OSX**
+    ```
+    brew install rocksdb
     ```
 
 ## Environment
