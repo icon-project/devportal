@@ -4,9 +4,9 @@ The Python execution engine is the former execution environment for smart contra
 
 ### Features
 
-#### Multi-threading
+#### Multi-threading & multi-processing
 
-Because this execution environment runs on C-Python, it supports multi-threading. This means that multiple transactions can be executed in parallel on a single node.
+Because this execution environment runs on C-Python, it supports multi-threading. This means that multiple transactions can be executed in parallel on a single node. As in the typical C-Python environment, multi-threading provides few computational bandwidth benefits. This is because of the limitations in place from the [Python Global Interpreter Lock](https://towardsdatascience.com/python-gil-e63f18a08c65). In order to make use of multiple CPU cores, you can use multi-processing, which starts multiple interpreters.
 
 #### Data  storage
 
