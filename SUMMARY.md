@@ -1,109 +1,97 @@
 # Table of contents
 
-* [Get Started](README.md)
+* [What is ICON?](README.md)
 
-## Introduction
+## Getting Started
 
-* [What Is ICON Network?](introduction/what-is-icon-network.md)
-* [ICON Key Concepts](introduction/icon-key-concepts/README.md)
-  * [Accounts](introduction/icon-key-concepts/accounts.md)
-  * [Transactions](introduction/icon-key-concepts/transactions.md)
-  * [Transactions Fees](introduction/icon-key-concepts/transactions-fees.md)
-  * [ICON Nodes](introduction/icon-key-concepts/icon-nodes.md)
-  * [Governance - Public Representative (P-Rep)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
-  * [Governance - IISS](introduction/icon-key-concepts/governance-iiss.md)
-* [The ICON Network](introduction/the-icon-network/README.md)
-  * [Testnet](introduction/the-icon-network/testnet.md)
-  * [Mainnet](introduction/the-icon-network/mainnet.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network.md)
+* [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
+* [How to run an API Endpoint](getting-started/how-to-run-an-api-endpoint.md)
+* [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)
+* [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
+  * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
+* [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
 
-## ICON Node
+## Concepts
 
-* [Goloop](icon-node/goloop/README.md)
-  * [Get Started](icon-node/goloop/get-started/README.md)
-    * [How to build](icon-node/goloop/get-started/build.md)
-    * [Local Network](icon-node/goloop/get-started/local-network.md)
-  * [Genesis](icon-node/goloop/genesis/README.md)
-    * [Transaction](icon-node/goloop/genesis/genesis\_tx.md)
-    * [Storage](icon-node/goloop/genesis/genesis\_storage.md)
-  * [JSON-RPC](icon-node/goloop/json-rpc/README.md)
-    * [Goloop JSON-RPC API v3](icon-node/goloop/json-rpc/jsonrpc\_v3.md)
-    * [BTP Extension](icon-node/goloop/json-rpc/btp\_extension.md)
-    * [IISS Extension](icon-node/goloop/json-rpc/iiss\_extension.md)
-  * [Node Management](icon-node/goloop/management/README.md)
-    * [API](icon-node/goloop/management/goloop\_admin\_api.md)
-    * [CLI](https://github.com/icon-project/devportal/blob/master/icon-2.0/goloop/management/goloop\_cli.md)
-    * [Metrics](icon-node/goloop/management/metric.md)
-* [Overview](icon-node/overview.md)
-* [Quickstart](icon-node/quickstart.md)
-* [P-Rep Tools](https://github.com/icon-project/preptools/blob/master/README.md#how-to-use-p-rep-tools)
-* [Maintenance](icon-node/maintenance/README.md)
-  * [Node operation and configuration](icon-node/maintenance/node-operation-and-configuration.md)
-  * [Understanding log files](icon-node/maintenance/understanding-log-files.md)
-  * [How to collect centralized logging](icon-node/maintenance/how-to-collect-centralized-logging.md)
-  * [Backup and restore DB guide](icon-node/maintenance/backup-and-restore-db-guide.md)
-* [Bond Guide](icon-node/bond-management.md)
+* [Economics](concepts/economics/README.md)
+  * [ICX](concepts/economics/icx.md)
+  * [STEP](concepts/economics/step.md)
+  * [Staking](concepts/economics/staking.md)
+  * [Rewards & Penalties](concepts/economics/rewards-and-penalties.md)
+* [Governance](concepts/governance/README.md)
+  * [Delegates](concepts/governance/delegates.md)
+  * [Network proposals](concepts/governance/network-proposals.md)
+* [Network](concepts/network/README.md)
+  * [Clients](concepts/network/clients.md)
+  * [API Endpoints](concepts/network/api-endpoints.md)
+  * [Validator nodes](concepts/network/validator-nodes.md)
+* [Computational utilities](concepts/computational-utilities/README.md)
+  * [Accounts](concepts/computational-utilities/accounts.md)
+  * [Transactions](concepts/computational-utilities/transactions.md)
+  * [Blocks](concepts/computational-utilities/blocks.md)
+  * [Consensus mechanism](concepts/computational-utilities/consensus-mechanism.md)
+  * [Goloop](concepts/computational-utilities/goloop/README.md)
+    * [Setup](concepts/computational-utilities/goloop/setup.md)
+    * [CLI](concepts/computational-utilities/goloop/cli.md)
+    * [Maintenance API](concepts/computational-utilities/goloop/maintenance-api.md)
+    * [Maintenance metrics API](concepts/computational-utilities/goloop/maintenance-metrics-api.md)
 
-## Java SCORE <a href="#java-score-1" id="java-score-1"></a>
+## ICON Stack
 
-* [Examples](https://github.com/icon-project/java-score-examples)
-* [Tutorial](java-score-1/tutorial.md)
-* [Allowed methods](https://github.com/icon-project/devportal/blob/master/java-score-1/allowed-methods)
-* [API Reference](https://www.javadoc.io/doc/foundation.icon/javaee-api/latest/index.html)
+* [Intro to the stack](icon-stack/intro-to-the-stack.md)
+* [ICON execution environments](icon-stack/icon-execution-environments/README.md)
+  * [Java](icon-stack/icon-execution-environments/java.md)
+  * [Python (deprecated)](icon-stack/icon-execution-environments/python-deprecated.md)
+* [Smart contracts](icon-stack/smart-contracts/README.md)
+  * [Smart contract languages](icon-stack/smart-contracts/smart-contract-languages.md)
+  * [Smart contract anatomy](icon-stack/smart-contracts/smart-contract-anatomy.md)
+  * [Smart contract libraries](icon-stack/smart-contracts/smart-contract-libraries.md)
+  * [Building smart contracts](icon-stack/smart-contracts/building-smart-contracts.md)
+  * [Testing smart contracts](icon-stack/smart-contracts/testing-smart-contracts.md)
+  * [Deploying smart contracts](icon-stack/smart-contracts/deploying-smart-contracts.md)
+  * [Composability](icon-stack/smart-contracts/composability.md)
+  * [Smart contract security](icon-stack/smart-contracts/smart-contract-security.md)
+* [ICON networks](icon-stack/icon-networks/README.md)
+  * [Main network](icon-stack/icon-networks/main-network.md)
+  * [ICE network](icon-stack/icon-networks/ice-network.md)
+* [Client APIs](icon-stack/client-apis/README.md)
+  * [JSON-RPC API](icon-stack/client-apis/json-rpc-api/README.md)
+    * [v3](icon-stack/client-apis/json-rpc-api/v3.md)
+    * [Economics Extension](icon-stack/client-apis/json-rpc-api/economics-extension.md)
+  * [Javascript SDK](icon-stack/client-apis/javascript-sdk/README.md)
+    * [Examples](icon-stack/client-apis/javascript-sdk/examples.md)
+  * [Python SDK](icon-stack/client-apis/python-sdk/README.md)
+    * [Examples](icon-stack/client-apis/python-sdk/examples.md)
+  * [Java SDK](icon-stack/client-apis/java-sdk.md)
+  * [Swift SDK](icon-stack/client-apis/swift-sdk/README.md)
+    * [Examples](icon-stack/client-apis/swift-sdk/examples.md)
+* [Storage](icon-stack/storage.md)
+* [IDEs](icon-stack/ides.md)
 
-## ICON SDKs
+## Projects
 
-* [Overview](icon-sdks/overview.md)
-* [Java SDK](icon-sdks/java-sdk/README.md)
-  * [javadoc](http://www.javadoc.io/doc/foundation.icon/icon-sdk)
-* [Python SDK](icon-sdks/python-sdk/README.md)
-  * [Python API Reference](icon-sdks/python-sdk/python-api-reference.md)
-* [Javascript SDK](icon-sdks/javascript/README.md)
-  * [Javascript API Reference](icon-sdks/javascript/javascript-api-reference.md)
-* [Swift SDK](icon-sdks/swift-sdk/README.md)
-  * [Swift API Reference](icon-sdks/swift-sdk/swift-api-reference.md)
+* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
+* [Decentralized applications (dApps)](projects/decentralized-applications-dapps.md)
+* [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
 
-## BTP <a href="#btp-gitbook" id="btp-gitbook"></a>
+## Support
 
-* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
-* [Overview](btp-gitbook/overview.md)
-* [BTP Development Resources](btp-gitbook/btp-development-resources.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
-* [Deploy Smart Contracts (ICON)](btp-gitbook/deploy-smart-contracts-icon.md)
-* [Deploy Smart Contracts (Moonriver)](btp-gitbook/deploy-smart-contracts-moonriver.md)
-* [Relays Setup](btp-gitbook/relays-setup.md)
-* [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
-* [Deploy Relays](btp-gitbook/deploy-relays.md)
-* [Transfer Example](btp-gitbook/transfer-example.md)
-* [Appendix](btp-gitbook/appendix.md)
-
-## ICONex Connect
-
-* [Chrome Extension](iconex-connect/chrome-extension.md)
-* [iOS](iconex-connect/ios.md)
-* [Android](iconex-connect/android.md)
-
-## Oracles
-
-* [Band Protocol](oracles/band-protocol.md)
-
-## References
-
-* [How-to](references/how-to/README.md)
-  * [Set up a Keystore file on a P-Rep Node](references/how-to/set-up-a-keystore-file-on-a-p-rep-node.md)
-  * [Create an account](references/how-to/create-an-account.md)
-  * [Change network in ICONex](references/how-to/change-network-in-iconex.md)
-  * [Estimate required step](references/how-to/estimate-required-step.md)
-  * [Generate a transaction signature](references/how-to/generate-a-transaction-signature.md)
-* [Reference Manuals](references/reference-manuals/README.md)
-  * [ICON JSON-RPC API v3 Specification](references/reference-manuals/icon-json-rpc-api-v3-specification.md)
-  * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
-  * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
-  * [ICON Improvement Proposals](https://github.com/icon-project/IIPs)
-
-***
-
-* [Support](support.md)
-* [Developer Forum](https://forum.icon.community/c/d/33)
+* [Support](support/support.md)
+* [Advanced topics](support/advanced-topics/README.md)
+  * [Validator nodes](support/advanced-topics/validator-nodes/README.md)
+    * [Common operation and debug steps](support/advanced-topics/validator-nodes/common-operation-and-debug-steps.md)
+    * [More on node operation and configuration](support/advanced-topics/validator-nodes/node-operation-and-configuration.md)
+    * [Understanding log files](support/advanced-topics/validator-nodes/understanding-log-files.md)
+    * [How to collect centralized logging](support/advanced-topics/validator-nodes/how-to-collect-centralized-logging.md)
+    * [Backup and restore DB guide](support/advanced-topics/validator-nodes/backup-and-restore-db-guide.md)
+    * [How to setup a 'keystore' on a Validator node](support/advanced-topics/validator-nodes/how-to-setup-a-keystore-on-a-validator-node.md)
+    * [How to bond](support/advanced-topics/validator-nodes/how-to-bond.md)
+  * [API Endpoints](support/advanced-topics/api-endpoints/README.md)
+    * [Common operation and debug steps](support/advanced-topics/api-endpoints/common-operation-and-debug-steps.md)
+  * [Goloop](support/advanced-topics/goloop/README.md)
+    * [Genesis transaction file format](support/advanced-topics/goloop/genesis\_tx.md)
+    * [Genesis transaction storage](support/advanced-topics/goloop/genesis\_storage.md)
 
 ## Release notes
 
@@ -124,9 +112,3 @@
 * [2020-04-08](release-notes/2020-04-08.md)
 * [2020-01-28](release-notes/2020-01-28.md)
 * [2019-12-19](release-notes/2019-12-19.md)
-
-***
-
-* [ICON2.0 Migration Guide](icon2.0-migration-guide.md)
-* [ICON2 Operation and configuration for P-Rep](icon2-operation-and-configuration-for-p-rep.md)
-* [ICON2 Operation and configuration for Exchanges and Citizen](icon2-operation-and-configuration-for-exchanges-and-citizen.md)
