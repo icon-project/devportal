@@ -1,12 +1,12 @@
 # Python (deprecated)
 
-The Python execution engine is the former execution environment for smart contracts on ICON. It is deprecated as of ICON 2. It is useful to document this information, as it includes design decisions that form the basis of the current architecture of ICON. This execution environment is based off of the standard [C-Python](https://cython.org), which is the standard version for most operating systems.
+The Python execution engine is the former execution environment for smart contracts on ICON. It is deprecated as of ICON 2. It is useful to document this information, as it includes design decisions that form the basis of the current architecture of ICON. This execution environment is based off of the standard [CPython](https://en.wikipedia.org/wiki/CPython), which is the standard version for most operating systems.
 
 ### Features
 
 #### Multi-threading & multi-processing
 
-Because this execution environment runs on C-Python, it supports multi-threading. This means that multiple transactions can be executed in parallel on a single node. As in the typical C-Python environment, multi-threading provides few computational bandwidth benefits. This is because of the limitations in place from the [Python Global Interpreter Lock](https://towardsdatascience.com/python-gil-e63f18a08c65). In order to make use of multiple CPU cores, you can use multi-processing, which starts multiple interpreters.
+Because this execution environment runs on CPython, it supports multi-threading. This means that multiple transactions can be executed in parallel on a single node. As in the typical CPython environment, multi-threading provides few computational bandwidth benefits. This is because of the limitations in place from the [Python Global Interpreter Lock](https://towardsdatascience.com/python-gil-e63f18a08c65). In order to make use of multiple CPU cores, you can use multi-processing, which starts multiple interpreters.
 
 #### Data  storage
 
