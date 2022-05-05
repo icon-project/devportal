@@ -19,7 +19,7 @@ $ goloop ks gen --out keystore.json --password <your_password>
 hxd8fefc57e0d358e0cf338d684c3e438190d64145 ==> keystore.json
 ```
 
-Then get test ICX in Lisbon using the [faucets](https://icondev.io/introduction/the-icon-network/testnet#faucets).
+Then get test ICX in Lisbon using the [faucets](https://icondev.io/icon-stack/icon-networks/main-network#test-network-faucets).
 
 ### Further resources
 
