@@ -51,3 +51,4 @@ You can get an ICON smart contract's ABI by using the [`icx_getScoreApi`](../cli
 
 * [Smart contract API document](https://www.javadoc.io/doc/foundation.icon/javaee-api)
 * [Gradle plugin for JavaEE](https://github.com/icon-project/gradle-javaee-plugin)
+* [ICON Smart contract examples](https://github.com/icon-project/java-score-examples)

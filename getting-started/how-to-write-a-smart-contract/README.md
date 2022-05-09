@@ -211,3 +211,7 @@ $ ${GOLOOP_ROOT}/bin/goloop rpc call --to cxd1f5d12e92459a4fcdf2678a14b572687471
     --method getGreeting
 "Hello Bob!"
 ```
+
+### Further Resources
+
+[ICON Smart contract examples](https://github.com/icon-project/java-score-examples)
