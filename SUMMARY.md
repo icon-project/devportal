@@ -78,6 +78,7 @@
 ## Support
 
 * [Support](support/support.md)
+* [Security](support/security.md)
 * [Advanced topics](support/advanced-topics/README.md)
   * [Validator nodes](support/advanced-topics/validator-nodes/README.md)
     * [Common operation and debug steps](support/advanced-topics/validator-nodes/common-operation-and-debug-steps.md)

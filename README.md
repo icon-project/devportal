@@ -83,6 +83,7 @@ This is an open-source community effort, so feel free to suggest new topics, add
 #### Support
 
 * [Support](broken-reference)
+* [Security](support/security.md)
 * [Advanced topics](support/advanced-topics/)
   * [Validator nodes](concepts/network/validator-nodes.md)
     * [Common operation and debug steps](support/advanced-topics/validator-nodes/common-operation-and-debug-steps.md)
