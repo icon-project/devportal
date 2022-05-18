@@ -1,0 +1,1593 @@
+# Allowed methods
+
+```
+java/io/Serializable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/AbstractMethodError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Appendable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - append(C)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/ArithmeticException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ArrayIndexOutOfBoundsException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ArrayStoreException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/AssertionError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - <init>(C)V 
+  - <init>(D)V 
+  - <init>(F)V 
+  - <init>(I)V 
+  - <init>(J)V 
+  - <init>(Ljava/lang/Object;)V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Z)V 
+java/lang/Boolean
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - booleanValue()Z 
+  - compareTo(Ljava/lang/Boolean;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - valueOf(Ljava/lang/String;)Ljava/lang/Boolean; (static)
+  - parseBoolean(Ljava/lang/String;)Z (static)
+  - hashCode(Z)I (static)
+  - valueOf(Z)Ljava/lang/Boolean; (static)
+  - toString(Z)Ljava/lang/String; (static)
+  - compare(ZZ)I (static)
+  - logicalAnd(ZZ)Z (static)
+  - logicalOr(ZZ)Z (static)
+  - logicalXor(ZZ)Z (static)
+java/lang/BootstrapMethodError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Byte
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - toUnsignedInt(B)I (static)
+  - hashCode(B)I (static)
+  - toUnsignedLong(B)J (static)
+  - valueOf(B)Ljava/lang/Byte; (static)
+  - toString(B)Ljava/lang/String; (static)
+  - compareUnsigned(BB)I (static)
+  - compare(BB)I (static)
+  - compareTo(Ljava/lang/Byte;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - parseByte(Ljava/lang/String;)B (static)
+  - decode(Ljava/lang/String;)Ljava/lang/Byte; (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Byte; (static)
+  - parseByte(Ljava/lang/String;I)B (static)
+  - valueOf(Ljava/lang/String;I)Ljava/lang/Byte; (static)
+java/lang/CharSequence
+  - length()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - charAt(I)C 
+  - subSequence(II)Ljava/lang/CharSequence; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/Character
+  - charValue()C 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - toLowerCase(C)C (static)
+  - toUpperCase(C)C (static)
+  - getNumericValue(C)I (static)
+  - hashCode(C)I (static)
+  - valueOf(C)Ljava/lang/Character; (static)
+  - toString(C)Ljava/lang/String; (static)
+  - isLowerCase(C)Z (static)
+  - isUpperCase(C)Z (static)
+  - isDigit(C)Z (static)
+  - isLetter(C)Z (static)
+  - isLetterOrDigit(C)Z (static)
+  - isSpaceChar(C)Z (static)
+  - isWhitespace(C)Z (static)
+  - compare(CC)I (static)
+  - digit(CI)I (static)
+  - forDigit(II)C (static)
+  - compareTo(Ljava/lang/Character;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/Class
+  - hashCode()I 
+  - getSuperclass()Ljava/lang/Class; 
+  - getClass()Ljava/lang/Class; 
+  - getName()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - desiredAssertionStatus()Z 
+  - cast(Ljava/lang/Object;)Ljava/lang/Object; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/ClassCastException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ClassCircularityError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ClassFormatError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ClassNotFoundException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getException()Ljava/lang/Throwable; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/CloneNotSupportedException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Cloneable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/Comparable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/Double
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - isNaN()Z 
+  - isInfinite()Z 
+  - hashCode(D)I (static)
+  - doubleToLongBits(D)J (static)
+  - valueOf(D)Ljava/lang/Double; (static)
+  - toHexString(D)Ljava/lang/String; (static)
+  - toString(D)Ljava/lang/String; (static)
+  - isNaN(D)Z (static)
+  - isInfinite(D)Z (static)
+  - isFinite(D)Z (static)
+  - sum(DD)D (static)
+  - max(DD)D (static)
+  - min(DD)D (static)
+  - compare(DD)I (static)
+  - longBitsToDouble(J)D (static)
+  - compareTo(Ljava/lang/Double;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - parseDouble(Ljava/lang/String;)D (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Double; (static)
+java/lang/Enum
+  - ordinal()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - clone()Ljava/lang/Object; 
+  - clone()Ljava/lang/Object; 
+  - name()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum; (static)
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;I)V 
+java/lang/EnumConstantNotPresentException
+  - hashCode()I 
+  - enumType()Ljava/lang/Class; 
+  - getClass()Ljava/lang/Class; 
+  - constantName()Ljava/lang/String; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>(Ljava/lang/Class;Ljava/lang/String;)V 
+  - equals(Ljava/lang/Object;)Z 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+java/lang/Error
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Exception
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/ExceptionInInitializerError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getException()Ljava/lang/Throwable; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Float
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - isNaN()Z 
+  - isInfinite()Z 
+  - floatToIntBits(F)I (static)
+  - hashCode(F)I (static)
+  - valueOf(F)Ljava/lang/Float; (static)
+  - toHexString(F)Ljava/lang/String; (static)
+  - toString(F)Ljava/lang/String; (static)
+  - isNaN(F)Z (static)
+  - isInfinite(F)Z (static)
+  - isFinite(F)Z (static)
+  - sum(FF)F (static)
+  - max(FF)F (static)
+  - min(FF)F (static)
+  - compare(FF)I (static)
+  - intBitsToFloat(I)F (static)
+  - compareTo(Ljava/lang/Float;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - parseFloat(Ljava/lang/String;)F (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Float; (static)
+java/lang/IllegalAccessError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalAccessException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalArgumentException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalCallerException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalMonitorStateException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalStateException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IllegalThreadStateException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IncompatibleClassChangeError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/IndexOutOfBoundsException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/InstantiationError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/InstantiationException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Integer
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - highestOneBit(I)I (static)
+  - lowestOneBit(I)I (static)
+  - numberOfLeadingZeros(I)I (static)
+  - numberOfTrailingZeros(I)I (static)
+  - bitCount(I)I (static)
+  - reverse(I)I (static)
+  - signum(I)I (static)
+  - reverseBytes(I)I (static)
+  - hashCode(I)I (static)
+  - toUnsignedLong(I)J (static)
+  - valueOf(I)Ljava/lang/Integer; (static)
+  - toHexString(I)Ljava/lang/String; (static)
+  - toUnsignedString(I)Ljava/lang/String; (static)
+  - toOctalString(I)Ljava/lang/String; (static)
+  - toBinaryString(I)Ljava/lang/String; (static)
+  - toString(I)Ljava/lang/String; (static)
+  - compareUnsigned(II)I (static)
+  - compare(II)I (static)
+  - sum(II)I (static)
+  - max(II)I (static)
+  - min(II)I (static)
+  - divideUnsigned(II)I (static)
+  - remainderUnsigned(II)I (static)
+  - toUnsignedString(II)Ljava/lang/String; (static)
+  - toString(II)Ljava/lang/String; (static)
+  - parseInt(Ljava/lang/CharSequence;III)I (static)
+  - parseUnsignedInt(Ljava/lang/CharSequence;III)I (static)
+  - compareTo(Ljava/lang/Integer;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - parseInt(Ljava/lang/String;)I (static)
+  - parseUnsignedInt(Ljava/lang/String;)I (static)
+  - decode(Ljava/lang/String;)Ljava/lang/Integer; (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Integer; (static)
+  - parseInt(Ljava/lang/String;I)I (static)
+  - parseUnsignedInt(Ljava/lang/String;I)I (static)
+  - valueOf(Ljava/lang/String;I)Ljava/lang/Integer; (static)
+java/lang/InterruptedException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Iterable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - iterator()Ljava/util/Iterator; 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/LayerInstantiationException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/LinkageError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Long
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - numberOfLeadingZeros(J)I (static)
+  - numberOfTrailingZeros(J)I (static)
+  - bitCount(J)I (static)
+  - signum(J)I (static)
+  - hashCode(J)I (static)
+  - highestOneBit(J)J (static)
+  - lowestOneBit(J)J (static)
+  - reverse(J)J (static)
+  - reverseBytes(J)J (static)
+  - valueOf(J)Ljava/lang/Long; (static)
+  - toHexString(J)Ljava/lang/String; (static)
+  - toUnsignedString(J)Ljava/lang/String; (static)
+  - toOctalString(J)Ljava/lang/String; (static)
+  - toBinaryString(J)Ljava/lang/String; (static)
+  - toString(J)Ljava/lang/String; (static)
+  - rotateLeft(JI)J (static)
+  - rotateRight(JI)J (static)
+  - toUnsignedString(JI)Ljava/lang/String; (static)
+  - toString(JI)Ljava/lang/String; (static)
+  - compareUnsigned(JJ)I (static)
+  - compare(JJ)I (static)
+  - sum(JJ)J (static)
+  - max(JJ)J (static)
+  - min(JJ)J (static)
+  - divideUnsigned(JJ)J (static)
+  - remainderUnsigned(JJ)J (static)
+  - parseLong(Ljava/lang/CharSequence;III)J (static)
+  - parseUnsignedLong(Ljava/lang/CharSequence;III)J (static)
+  - compareTo(Ljava/lang/Long;)I 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - parseLong(Ljava/lang/String;)J (static)
+  - parseUnsignedLong(Ljava/lang/String;)J (static)
+  - decode(Ljava/lang/String;)Ljava/lang/Long; (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Long; (static)
+  - parseLong(Ljava/lang/String;I)J (static)
+  - parseUnsignedLong(Ljava/lang/String;I)J (static)
+  - valueOf(Ljava/lang/String;I)Ljava/lang/Long; (static)
+java/lang/Math
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - abs(D)D (static)
+  - max(DD)D (static)
+  - min(DD)D (static)
+  - abs(F)F (static)
+  - max(FF)F (static)
+  - min(FF)F (static)
+  - abs(I)I (static)
+  - max(II)I (static)
+  - min(II)I (static)
+  - abs(J)J (static)
+  - max(JJ)J (static)
+  - min(JJ)J (static)
+  - equals(Ljava/lang/Object;)Z 
+java/lang/NegativeArraySizeException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NoClassDefFoundError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NoSuchFieldError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NoSuchFieldException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NoSuchMethodError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NoSuchMethodException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/NullPointerException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Number
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/NumberFormatException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Object
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/ReflectiveOperationException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Runnable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - run()V 
+  - equals(Ljava/lang/Object;)Z 
+java/lang/RuntimeException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/SecurityException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Short
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - longValue()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - shortValue()S 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - compareTo(Ljava/lang/Short;)I 
+  - decode(Ljava/lang/String;)Ljava/lang/Short; (static)
+  - valueOf(Ljava/lang/String;)Ljava/lang/Short; (static)
+  - parseShort(Ljava/lang/String;)S (static)
+  - valueOf(Ljava/lang/String;I)Ljava/lang/Short; (static)
+  - parseShort(Ljava/lang/String;I)S (static)
+  - toUnsignedInt(S)I (static)
+  - hashCode(S)I (static)
+  - toUnsignedLong(S)J (static)
+  - valueOf(S)Ljava/lang/Short; (static)
+  - toString(S)Ljava/lang/String; (static)
+  - reverseBytes(S)S (static)
+  - compareUnsigned(SS)I (static)
+  - compare(SS)I (static)
+java/lang/StrictMath
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - signum(D)D (static)
+  - abs(D)D (static)
+  - sin(D)D (static)
+  - cos(D)D (static)
+  - tan(D)D (static)
+  - asin(D)D (static)
+  - acos(D)D (static)
+  - atan(D)D (static)
+  - toRadians(D)D (static)
+  - toDegrees(D)D (static)
+  - exp(D)D (static)
+  - log(D)D (static)
+  - log10(D)D (static)
+  - sqrt(D)D (static)
+  - cbrt(D)D (static)
+  - ceil(D)D (static)
+  - floor(D)D (static)
+  - rint(D)D (static)
+  - ulp(D)D (static)
+  - sinh(D)D (static)
+  - cosh(D)D (static)
+  - tanh(D)D (static)
+  - expm1(D)D (static)
+  - log1p(D)D (static)
+  - nextUp(D)D (static)
+  - nextDown(D)D (static)
+  - getExponent(D)I (static)
+  - round(D)J (static)
+  - max(DD)D (static)
+  - min(DD)D (static)
+  - IEEEremainder(DD)D (static)
+  - atan2(DD)D (static)
+  - pow(DD)D (static)
+  - hypot(DD)D (static)
+  - copySign(DD)D (static)
+  - nextAfter(DD)D (static)
+  - fma(DDD)D (static)
+  - scalb(DI)D (static)
+  - signum(F)F (static)
+  - abs(F)F (static)
+  - ulp(F)F (static)
+  - nextUp(F)F (static)
+  - nextDown(F)F (static)
+  - round(F)I (static)
+  - getExponent(F)I (static)
+  - nextAfter(FD)F (static)
+  - max(FF)F (static)
+  - min(FF)F (static)
+  - copySign(FF)F (static)
+  - fma(FFF)F (static)
+  - scalb(FI)F (static)
+  - abs(I)I (static)
+  - max(II)I (static)
+  - min(II)I (static)
+  - addExact(II)I (static)
+  - subtractExact(II)I (static)
+  - multiplyExact(II)I (static)
+  - floorDiv(II)I (static)
+  - floorMod(II)I (static)
+  - multiplyFull(II)J (static)
+  - toIntExact(J)I (static)
+  - abs(J)J (static)
+  - floorMod(JI)I (static)
+  - multiplyExact(JI)J (static)
+  - floorDiv(JI)J (static)
+  - max(JJ)J (static)
+  - min(JJ)J (static)
+  - addExact(JJ)J (static)
+  - subtractExact(JJ)J (static)
+  - multiplyExact(JJ)J (static)
+  - multiplyHigh(JJ)J (static)
+  - floorDiv(JJ)J (static)
+  - floorMod(JJ)J (static)
+  - equals(Ljava/lang/Object;)Z 
+java/lang/String
+  - length()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toLowerCase()Ljava/lang/String; 
+  - toUpperCase()Ljava/lang/String; 
+  - trim()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - <init>()V 
+  - isEmpty()Z 
+  - getBytes()[B 
+  - toCharArray()[C 
+  - valueOf(C)Ljava/lang/String; (static)
+  - replace(CC)Ljava/lang/String; 
+  - valueOf(D)Ljava/lang/String; (static)
+  - valueOf(F)Ljava/lang/String; (static)
+  - charAt(I)C 
+  - indexOf(I)I 
+  - lastIndexOf(I)I 
+  - valueOf(I)Ljava/lang/String; (static)
+  - substring(I)Ljava/lang/String; 
+  - indexOf(II)I 
+  - lastIndexOf(II)I 
+  - subSequence(II)Ljava/lang/CharSequence; 
+  - substring(II)Ljava/lang/String; 
+  - getChars(II[CI)V 
+  - regionMatches(ILjava/lang/String;II)Z 
+  - valueOf(J)Ljava/lang/String; (static)
+  - contentEquals(Ljava/lang/CharSequence;)Z 
+  - contains(Ljava/lang/CharSequence;)Z 
+  - replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String; 
+  - compareTo(Ljava/lang/Object;)I 
+  - valueOf(Ljava/lang/Object;)Ljava/lang/String; (static)
+  - equals(Ljava/lang/Object;)Z 
+  - compareTo(Ljava/lang/String;)I 
+  - compareToIgnoreCase(Ljava/lang/String;)I 
+  - indexOf(Ljava/lang/String;)I 
+  - lastIndexOf(Ljava/lang/String;)I 
+  - concat(Ljava/lang/String;)Ljava/lang/String; 
+  - <init>(Ljava/lang/String;)V 
+  - equalsIgnoreCase(Ljava/lang/String;)Z 
+  - startsWith(Ljava/lang/String;)Z 
+  - endsWith(Ljava/lang/String;)Z 
+  - lastIndexOf(Ljava/lang/String;I)I 
+  - startsWith(Ljava/lang/String;I)Z 
+  - <init>(Ljava/lang/StringBuffer;)V 
+  - contentEquals(Ljava/lang/StringBuffer;)Z 
+  - <init>(Ljava/lang/StringBuilder;)V 
+  - valueOf(Z)Ljava/lang/String; (static)
+  - regionMatches(ZILjava/lang/String;II)Z 
+  - <init>([B)V 
+  - <init>([BII)V 
+  - valueOf([C)Ljava/lang/String; (static)
+  - copyValueOf([C)Ljava/lang/String; (static)
+  - <init>([C)V 
+  - valueOf([CII)Ljava/lang/String; (static)
+  - copyValueOf([CII)Ljava/lang/String; (static)
+  - <init>([CII)V 
+java/lang/StringBuffer
+  - length()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - reverse()Ljava/lang/StringBuffer; 
+  - trimToSize()V 
+  - <init>()V 
+  - append(C)Ljava/lang/Appendable; 
+  - append(C)Ljava/lang/StringBuffer; 
+  - append(D)Ljava/lang/StringBuffer; 
+  - append(F)Ljava/lang/StringBuffer; 
+  - charAt(I)C 
+  - substring(I)Ljava/lang/String; 
+  - append(I)Ljava/lang/StringBuffer; 
+  - deleteCharAt(I)Ljava/lang/StringBuffer; 
+  - setLength(I)V 
+  - insert(IC)Ljava/lang/StringBuffer; 
+  - setCharAt(IC)V 
+  - insert(ID)Ljava/lang/StringBuffer; 
+  - insert(IF)Ljava/lang/StringBuffer; 
+  - subSequence(II)Ljava/lang/CharSequence; 
+  - substring(II)Ljava/lang/String; 
+  - insert(II)Ljava/lang/StringBuffer; 
+  - delete(II)Ljava/lang/StringBuffer; 
+  - replace(IILjava/lang/String;)Ljava/lang/StringBuffer; 
+  - getChars(II[CI)V 
+  - insert(IJ)Ljava/lang/StringBuffer; 
+  - insert(ILjava/lang/CharSequence;)Ljava/lang/StringBuffer; 
+  - insert(ILjava/lang/CharSequence;II)Ljava/lang/StringBuffer; 
+  - insert(ILjava/lang/Object;)Ljava/lang/StringBuffer; 
+  - insert(ILjava/lang/String;)Ljava/lang/StringBuffer; 
+  - insert(IZ)Ljava/lang/StringBuffer; 
+  - insert(I[C)Ljava/lang/StringBuffer; 
+  - insert(I[CII)Ljava/lang/StringBuffer; 
+  - append(J)Ljava/lang/StringBuffer; 
+  - append(Ljava/lang/CharSequence;)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;)Ljava/lang/StringBuffer; 
+  - <init>(Ljava/lang/CharSequence;)V 
+  - append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuffer; 
+  - append(Ljava/lang/Object;)Ljava/lang/StringBuffer; 
+  - equals(Ljava/lang/Object;)Z 
+  - indexOf(Ljava/lang/String;)I 
+  - lastIndexOf(Ljava/lang/String;)I 
+  - append(Ljava/lang/String;)Ljava/lang/StringBuffer; 
+  - <init>(Ljava/lang/String;)V 
+  - indexOf(Ljava/lang/String;I)I 
+  - lastIndexOf(Ljava/lang/String;I)I 
+  - append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer; 
+  - append(Z)Ljava/lang/StringBuffer; 
+  - append([C)Ljava/lang/StringBuffer; 
+  - append([CII)Ljava/lang/StringBuffer; 
+java/lang/StringBuilder
+  - length()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - reverse()Ljava/lang/StringBuilder; 
+  - <init>()V 
+  - append(C)Ljava/lang/Appendable; 
+  - append(C)Ljava/lang/StringBuilder; 
+  - append(D)Ljava/lang/StringBuilder; 
+  - append(F)Ljava/lang/StringBuilder; 
+  - charAt(I)C 
+  - append(I)Ljava/lang/StringBuilder; 
+  - deleteCharAt(I)Ljava/lang/StringBuilder; 
+  - setLength(I)V 
+  - <init>(I)V 
+  - insert(IC)Ljava/lang/StringBuilder; 
+  - insert(ID)Ljava/lang/StringBuilder; 
+  - insert(IF)Ljava/lang/StringBuilder; 
+  - subSequence(II)Ljava/lang/CharSequence; 
+  - insert(II)Ljava/lang/StringBuilder; 
+  - delete(II)Ljava/lang/StringBuilder; 
+  - replace(IILjava/lang/String;)Ljava/lang/StringBuilder; 
+  - insert(IJ)Ljava/lang/StringBuilder; 
+  - insert(ILjava/lang/CharSequence;)Ljava/lang/StringBuilder; 
+  - insert(ILjava/lang/CharSequence;II)Ljava/lang/StringBuilder; 
+  - insert(ILjava/lang/Object;)Ljava/lang/StringBuilder; 
+  - insert(ILjava/lang/String;)Ljava/lang/StringBuilder; 
+  - insert(IZ)Ljava/lang/StringBuilder; 
+  - insert(I[C)Ljava/lang/StringBuilder; 
+  - insert(I[CII)Ljava/lang/StringBuilder; 
+  - append(J)Ljava/lang/StringBuilder; 
+  - append(Ljava/lang/CharSequence;)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder; 
+  - <init>(Ljava/lang/CharSequence;)V 
+  - append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable; 
+  - append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder; 
+  - append(Ljava/lang/Object;)Ljava/lang/StringBuilder; 
+  - equals(Ljava/lang/Object;)Z 
+  - indexOf(Ljava/lang/String;)I 
+  - lastIndexOf(Ljava/lang/String;)I 
+  - append(Ljava/lang/String;)Ljava/lang/StringBuilder; 
+  - <init>(Ljava/lang/String;)V 
+  - indexOf(Ljava/lang/String;I)I 
+  - lastIndexOf(Ljava/lang/String;I)I 
+  - append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuilder; 
+  - append(Z)Ljava/lang/StringBuilder; 
+  - append([C)Ljava/lang/StringBuilder; 
+  - append([CII)Ljava/lang/StringBuilder; 
+java/lang/StringIndexOutOfBoundsException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/System
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - equals(Ljava/lang/Object;)Z 
+  - arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V (static)
+java/lang/ThreadDeath
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Throwable
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/TypeNotPresentException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+java/lang/UnsatisfiedLinkError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/UnsupportedClassVersionError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/UnsupportedOperationException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/VerifyError
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/lang/Void
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - equals(Ljava/lang/Object;)Z 
+java/math/BigDecimal
+  - byteValueExact()B 
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - hashCode()I 
+  - intValueExact()I 
+  - longValue()J 
+  - longValueExact()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - toPlainString()Ljava/lang/String; 
+  - toBigInteger()Ljava/math/BigInteger; 
+  - toBigIntegerExact()Ljava/math/BigInteger; 
+  - shortValueExact()S 
+  - shortValue()S 
+  - valueOf(D)Ljava/math/BigDecimal; (static)
+  - <init>(D)V 
+  - <init>(DLjava/math/MathContext;)V 
+  - <init>(I)V 
+  - <init>(ILjava/math/MathContext;)V 
+  - valueOf(J)Ljava/math/BigDecimal; (static)
+  - <init>(J)V 
+  - <init>(JLjava/math/MathContext;)V 
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/math/MathContext;)V 
+  - compareTo(Ljava/math/BigDecimal;)I 
+java/math/BigInteger
+  - byteValueExact()B 
+  - byteValue()B 
+  - doubleValue()D 
+  - floatValue()F 
+  - intValue()I 
+  - bitCount()I 
+  - signum()I 
+  - hashCode()I 
+  - intValueExact()I 
+  - getLowestSetBit()I 
+  - bitLength()I 
+  - longValue()J 
+  - longValueExact()J 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - abs()Ljava/math/BigInteger; 
+  - sqrt()Ljava/math/BigInteger; 
+  - negate()Ljava/math/BigInteger; 
+  - not()Ljava/math/BigInteger; 
+  - shortValueExact()S 
+  - shortValue()S 
+  - toByteArray()[B 
+  - toString(I)Ljava/lang/String; 
+  - shiftLeft(I)Ljava/math/BigInteger; 
+  - shiftRight(I)Ljava/math/BigInteger; 
+  - setBit(I)Ljava/math/BigInteger; 
+  - clearBit(I)Ljava/math/BigInteger; 
+  - flipBit(I)Ljava/math/BigInteger; 
+  - testBit(I)Z 
+  - <init>(I[B)V 
+  - <init>(I[BII)V 
+  - valueOf(J)Ljava/math/BigInteger; (static)
+  - compareTo(Ljava/lang/Object;)I 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;I)V 
+  - compareTo(Ljava/math/BigInteger;)I 
+  - max(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - min(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - add(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - divide(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - remainder(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - gcd(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - mod(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - modInverse(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - and(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - or(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - xor(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - andNot(Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - modPow(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger; 
+  - <init>([B)V 
+  - <init>([BII)V 
+java/math/MathContext
+  - hashCode()I 
+  - getPrecision()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - getRoundingMode()Ljava/math/RoundingMode; 
+  - <init>(I)V 
+  - <init>(ILjava/math/RoundingMode;)V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+java/math/RoundingMode
+  - ordinal()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - clone()Ljava/lang/Object; 
+  - clone()Ljava/lang/Object; 
+  - name()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - values()[Ljava/lang/Object; (static)
+  - valueOf(I)Ljava/math/RoundingMode; (static)
+  - valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum; (static)
+  - equals(Ljava/lang/Object;)Z 
+  - valueOf(Ljava/lang/String;)Ljava/math/RoundingMode; (static)
+java/nio/BufferOverflowException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/nio/BufferUnderflowException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - <init>(Ljava/lang/String;Ljava/lang/Throwable;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+  - <init>(Ljava/lang/Throwable;)V 
+java/util/Arrays
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - equals(Ljava/lang/Object;)Z 
+  - hashCode([B)I (static)
+  - fill([BB)V (static)
+  - copyOfRange([BII)[B (static)
+  - fill([BIIB)V (static)
+  - equals([B[B)Z (static)
+  - fill([CC)V (static)
+  - copyOfRange([CII)[C (static)
+  - fill([CIIC)V (static)
+java/util/Collection
+  - hashCode()I 
+  - size()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - iterator()Ljava/util/Iterator; 
+  - clear()V 
+  - isEmpty()Z 
+  - toArray()[Ljava/lang/Object; 
+  - contains(Ljava/lang/Object;)Z 
+  - equals(Ljava/lang/Object;)Z 
+  - remove(Ljava/lang/Object;)Z 
+  - add(Ljava/lang/Object;)Z 
+  - containsAll(Ljava/util/Collection;)Z 
+  - addAll(Ljava/util/Collection;)Z 
+  - removeAll(Ljava/util/Collection;)Z 
+  - retainAll(Ljava/util/Collection;)Z 
+java/util/Iterator
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - next()Ljava/lang/Object; 
+  - toString()Ljava/lang/String; 
+  - remove()V 
+  - hasNext()Z 
+  - equals(Ljava/lang/Object;)Z 
+java/util/List
+  - hashCode()I 
+  - size()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - iterator()Ljava/util/Iterator; 
+  - of()Ljava/util/List; (static)
+  - listIterator()Ljava/util/ListIterator; 
+  - clear()V 
+  - isEmpty()Z 
+  - toArray()[Ljava/lang/Object; 
+  - remove(I)Ljava/lang/Object; 
+  - get(I)Ljava/lang/Object; 
+  - listIterator(I)Ljava/util/ListIterator; 
+  - subList(II)Ljava/util/List; 
+  - set(ILjava/lang/Object;)Ljava/lang/Object; 
+  - add(ILjava/lang/Object;)V 
+  - indexOf(Ljava/lang/Object;)I 
+  - lastIndexOf(Ljava/lang/Object;)I 
+  - of(Ljava/lang/Object;)Ljava/util/List; (static)
+  - contains(Ljava/lang/Object;)Z 
+  - equals(Ljava/lang/Object;)Z 
+  - remove(Ljava/lang/Object;)Z 
+  - add(Ljava/lang/Object;)Z 
+  - of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; (static)
+  - containsAll(Ljava/util/Collection;)Z 
+  - addAll(Ljava/util/Collection;)Z 
+  - removeAll(Ljava/util/Collection;)Z 
+  - retainAll(Ljava/util/Collection;)Z 
+  - of([Ljava/lang/Object;)Ljava/util/List; (static)
+java/util/ListIterator
+  - nextIndex()I 
+  - previousIndex()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - next()Ljava/lang/Object; 
+  - previous()Ljava/lang/Object; 
+  - toString()Ljava/lang/String; 
+  - remove()V 
+  - hasNext()Z 
+  - hasPrevious()Z 
+  - set(Ljava/lang/Object;)V 
+  - add(Ljava/lang/Object;)V 
+  - equals(Ljava/lang/Object;)Z 
+java/util/Map
+  - hashCode()I 
+  - size()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - values()Ljava/util/Collection; 
+  - of()Ljava/util/Map; (static)
+  - keySet()Ljava/util/Set; 
+  - entrySet()Ljava/util/Set; 
+  - clear()V 
+  - isEmpty()Z 
+  - remove(Ljava/lang/Object;)Ljava/lang/Object; 
+  - get(Ljava/lang/Object;)Ljava/lang/Object; 
+  - equals(Ljava/lang/Object;)Z 
+  - containsKey(Ljava/lang/Object;)Z 
+  - containsValue(Ljava/lang/Object;)Z 
+  - put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 
+  - entry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map; (static)
+  - putAll(Ljava/util/Map;)V 
+  - ofEntries([Ljava/util/Map$Entry;)Ljava/util/Map; (static)
+java/util/Map$Entry
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getValue()Ljava/lang/Object; 
+  - getKey()Ljava/lang/Object; 
+  - toString()Ljava/lang/String; 
+  - setValue(Ljava/lang/Object;)Ljava/lang/Object; 
+  - equals(Ljava/lang/Object;)Z 
+java/util/NoSuchElementException
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - getMessage()Ljava/lang/String; 
+  - getLocalizedMessage()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - getCause()Ljava/lang/Throwable; 
+  - printStackTrace()V 
+  - <init>()V 
+  - equals(Ljava/lang/Object;)Z 
+  - <init>(Ljava/lang/String;)V 
+  - initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; 
+java/util/Set
+  - hashCode()I 
+  - size()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - iterator()Ljava/util/Iterator; 
+  - clear()V 
+  - isEmpty()Z 
+  - toArray()[Ljava/lang/Object; 
+  - contains(Ljava/lang/Object;)Z 
+  - equals(Ljava/lang/Object;)Z 
+  - remove(Ljava/lang/Object;)Z 
+  - add(Ljava/lang/Object;)Z 
+  - containsAll(Ljava/util/Collection;)Z 
+  - addAll(Ljava/util/Collection;)Z 
+  - removeAll(Ljava/util/Collection;)Z 
+  - retainAll(Ljava/util/Collection;)Z 
+java/util/concurrent/TimeUnit
+  - ordinal()I 
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - clone()Ljava/lang/Object; 
+  - clone()Ljava/lang/Object; 
+  - name()Ljava/lang/String; 
+  - toString()Ljava/lang/String; 
+  - values()[Ljava/lang/Object; (static)
+  - toDays(J)J 
+  - toHours(J)J 
+  - toMinutes(J)J 
+  - toSeconds(J)J 
+  - toMillis(J)J 
+  - toMicros(J)J 
+  - toNanos(J)J 
+  - convert(JLjava/util/concurrent/TimeUnit;)J 
+  - valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum; (static)
+  - equals(Ljava/lang/Object;)Z 
+  - valueOf(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit; (static)
+java/util/function/Function
+  - hashCode()I 
+  - getClass()Ljava/lang/Class; 
+  - toString()Ljava/lang/String; 
+  - apply(Ljava/lang/Object;)Ljava/lang/Object; 
+  - equals(Ljava/lang/Object;)Z 
+```

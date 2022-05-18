@@ -93,6 +93,8 @@
   * [Goloop](support/advanced-topics/goloop/README.md)
     * [Genesis transaction file format](support/advanced-topics/goloop/genesis\_tx.md)
     * [Genesis transaction storage](support/advanced-topics/goloop/genesis\_storage.md)
+  * [Java smart contracts](support/advanced-topics/java-smart-contracts/README.md)
+    * [Allowed methods](support/advanced-topics/java-smart-contracts/allowed-methods.md)
 
 ## Release notes
 
