@@ -1,6 +1,6 @@
 # Java
 
-The Java execution engine is the main execution environment for smart contracts on ICON. This environment is equivalent to the [Java Virtual Machine](https://en.wikipedia.org/wiki/Java\_virtual\_machine) developed by the [OpenJDK](http://openjdk.java.net) project with a translation and auditing layer wrapped around it to provide features supporting a cryptocurrency distributed computing network. The translation and auditing layer is based off of the [Aion](https://aion.theoan.com) Virtual Machine. The purpose of this layer is to provide cryptocurrency-specific features and address specific security concerns. A short overview of the features and security considerations in the overall Java execution environment for Java are described below.
+The Java execution engine is the main execution environment for smart contracts on ICON. This environment is equivalent to the [Java Virtual Machine](https://en.wikipedia.org/wiki/Java\_virtual\_machine) developed by the [OpenJDK](http://openjdk.java.net/) project with a translation and auditing layer wrapped around it to provide features supporting a cryptocurrency distributed computing network. The translation and auditing layer is based off of the [Aion](https://aion.theoan.com/) Virtual Machine. The purpose of this layer is to provide cryptocurrency-specific features and address specific security concerns. A short overview of the features and security considerations in the overall Java execution environment for Java are described below.
 
 ### Features
 
@@ -38,7 +38,7 @@ Here are some articles where you can learn more about the Aion Virtual Machine:
 
 #### Language Support
 
-As the smart contract code ultimately runs on the Java Virtual Machine, theoretically there is support for development using the other JVM languages, such as [Scala](https://scala-lang.org), [Kotlin](https://kotlinlang.org), or [Groovy](https://groovy-lang.org). However, this is highly untested, and is probably an area that deserves more attention. If you have interest, feel free to experiment and organize a working group through the [ICON Technical Forum](https://forum.icon.community) or [ICON Community Development Organization](https://github.com/icon-community).
+As the smart contract code ultimately runs on the Java Virtual Machine, theoretically there is support for development using the other JVM languages, such as [Scala](https://scala-lang.org/), [Kotlin](https://kotlinlang.org), or [Groovy](https://groovy-lang.org/). However, this is highly untested, and is probably an area that deserves more attention. If you have interest, feel free to experiment and organize a working group through the [ICON Technical Forum](https://forum.icon.community/) or [ICON Community Development Organization](https://github.com/icon-community).
 
 ### Security
 

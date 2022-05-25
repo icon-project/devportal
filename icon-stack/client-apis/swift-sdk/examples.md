@@ -22,7 +22,7 @@ This SDK works on the following platforms:
 
 ### Installation
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Swift Cocoa projects.
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Swift Cocoa projects.
 
 ```
 $ sudo gem install cocoapods

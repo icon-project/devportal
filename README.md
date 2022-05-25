@@ -77,7 +77,8 @@ This is an open-source community effort, so feel free to suggest new topics, add
 #### Projects
 
 * [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Decentralized applications (dApps](projects/decentralized-applications-dapps.md))
+* [Decentralized applications (dApps](projects/decentralized-applications-dapps/))
+  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
 * [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
 
 #### Support

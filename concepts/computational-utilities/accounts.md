@@ -20,4 +20,4 @@ Smart contract accounts are 20 bytes long, consist of [hexadecimal characters](h
 
 ### Creating an account
 
-The simplest way to create an account is through the officially supported [Hana wallet](https://chrome.google.com/webstore/detail/hana/jfdlamikmbghhapbgfoogdffldioobgl/related). Install the wallet as an extension to the [Google Chrome](https://www.google.com/chrome/), [Chromium](https://www.chromium.org/Home), [Brave](https://brave.com) or other Blink-based browsers. Click on the extension to open it in a new tab, and the user interface will guide you through the process of setting up an account.
+The simplest way to create an account is through the officially supported [Hana wallet](https://chrome.google.com/webstore/detail/hana/jfdlamikmbghhapbgfoogdffldioobgl/related). Install the wallet as an extension to the [Google Chrome](https://www.google.com/chrome/), [Chromium](https://www.chromium.org/Home), [Brave](https://brave.com/) or other Blink-based browsers. Click on the extension to open it in a new tab, and the user interface will guide you through the process of setting up an account.

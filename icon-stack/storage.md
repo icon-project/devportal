@@ -17,15 +17,15 @@ Contract-based data storage is persistent, but does not necessarily contain the 
 Here are some platforms that do contract-based persistence:
 
 * [Filecoin](https://docs.filecoin.io/about-filecoin/what-is-filecoin/)
-* [Skynet](https://siasky.net)
-* [Storj](https://storj.io)
-* [0Chain](https://0chain.net)
+* [Skynet](https://siasky.net/)
+* [Storj](https://storj.io/)
+* [0Chain](https://0chain.net/)
 
 #### Additional decentralized options
 
 Sometimes it is not necessary to use the blockchain directly or at all in order to utilize decentralized data storage tools. Consider using one of these services directly if you would like to have an interface layer between you and the blockchain for decentralized data storage or if you would like to create your own storage service with a set of guarantees that you decide upon:
 
 * [IPFS](https://docs.ipfs.io/concepts/what-is-ipfs/)
-* [Pinata](https://www.pinata.cloud) _(IPFS pinning service)_
-* [web3.storage](https://web3.storage) _(IPFS/Filecoin pinning service)_
+* [Pinata](https://www.pinata.cloud/) _(IPFS pinning service)_
+* [web3.storage](https://web3.storage/) _(IPFS/Filecoin pinning service)_
 * [Infura](https://infura.io/product/ipfs) _(IPFS pinning service)_

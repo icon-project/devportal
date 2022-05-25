@@ -6,7 +6,7 @@ As a programmer, it is extremely important to understand of the security of your
 
 ### Limitations of an audit
 
-Many developers may be tempted to write some code, test it a little bit, then give it to an auditor with the hope that they will magically be able to identify and solve all of your security issues. While the process of auditing code is successful to discover [common software weaknesses and exploits](https://cwe.mitre.org), it does not protect against everything and is highly dependent on both the auditor to find everything and the developer to correctly fix all of the discovered problems.
+Many developers may be tempted to write some code, test it a little bit, then give it to an auditor with the hope that they will magically be able to identify and solve all of your security issues. While the process of auditing code is successful to discover [common software weaknesses and exploits](https://cwe.mitre.org/), it does not protect against everything and is highly dependent on both the auditor to find everything and the developer to correctly fix all of the discovered problems.
 
 ### Smart contract development process <a href="#smart-contract-development-process" id="smart-contract-development-process"></a>
 
@@ -30,6 +30,6 @@ Here are some common attacks and vulnerabilities:
 
 ### Further reading
 
-[Smart Contract Weakness Classification and Test Cases](https://swcregistry.io)
+[Smart Contract Weakness Classification and Test Cases](https://swcregistry.io/)
 
 [Java code analysis tools](https://github.com/akullpp/awesome-java#code-analysis)

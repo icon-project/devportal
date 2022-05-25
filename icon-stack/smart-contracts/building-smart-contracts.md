@@ -4,7 +4,7 @@
 
 ICON can only run your smart contract after it has been compiled down into bytecode.
 
-You need to install JDK 11 or later version. Visit [OpenJDK.net](http://openjdk.java.net) for prebuilt binaries. Or you can install a proper OpenJDK package from your OS vendors.
+You need to install JDK 11 or later version. Visit [OpenJDK.net](http://openjdk.java.net/) for prebuilt binaries. Or you can install a proper OpenJDK package from your OS vendors.
 
 In macOS:
 

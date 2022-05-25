@@ -12,7 +12,7 @@ On ICON, a transaction has an associated identity value, also referred to as a _
 
 ### Performing a transaction
 
-The three main categories of ways to perform a transaction are as follows: through the [Hana wallet](https://chrome.google.com/webstore/detail/hana/jfdlamikmbghhapbgfoogdffldioobgl/related), through a [decentralized application (dApp)](../../projects/decentralized-applications-dapps.md), or via the [ICON JSON-RPC API](../../icon-stack/client-apis/).
+The three main categories of ways to perform a transaction are as follows: through the [Hana wallet](https://chrome.google.com/webstore/detail/hana/jfdlamikmbghhapbgfoogdffldioobgl/related), through a [decentralized application (dApp)](../../projects/decentralized-applications-dapps/), or via the [ICON JSON-RPC API](../../icon-stack/client-apis/).
 
 To use Hana wallet, you must first [create an account](accounts.md#creating-an-account). Then, open the wallet via web browser and perform a transaction.
 

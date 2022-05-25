@@ -12,9 +12,9 @@ It may be useful to take some time to learn about [software licenses](https://en
 
 ### Further resources
 
-[ICON community site](https://icon.community)
+[ICON community site](https://icon.community/)
 
-[ICON community forum](https://forum.icon.community)
+[ICON community forum](https://forum.icon.community/)
 
 [ICON Discord](https://discord.com/invite/7a75Hf3cFm)
 

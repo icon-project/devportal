@@ -47,8 +47,8 @@ The centralized version assumes that the relays are run in a responsible and rob
 
 ### Further resources
 
-[Cosmos Inter-blockchain Communication](https://ibcprotocol.org)
+[Cosmos Inter-blockchain Communication](https://ibcprotocol.org/)
 
 [Polkadot Network](https://polkadot.network/technology/)
 
-[Avalanche Network](https://www.avax.network)
+[Avalanche Network](https://www.avax.network/)
