@@ -8,6 +8,8 @@ This is the core ICON network. Refer to this set of documentations for informati
 
 #### Main network
 
+_Main network. Most recent, stable and tested blockchain version_&#x20;
+
 [API Endpoint](https://ctz.solidwallet.io/api/v3) (network ID: 0x1)
 
 [Debug API Endpoint](https://ctz.solidwallet.io/api/v3d)
@@ -16,6 +18,8 @@ This is the core ICON network. Refer to this set of documentations for informati
 
 #### Lisbon test network
 
+_Test network. Second round of testing. Just before Main network_
+
 [API Endpoint](https://lisbon.net.solidwallet.io/api/v3) (network ID: 0x2)
 
 [Debug API Endpoint](https://lisbon.net.solidwallet.io/api/v3d)
@@ -23,6 +27,8 @@ This is the core ICON network. Refer to this set of documentations for informati
 [Tracker](https://tracker.lisbon.icon.community)
 
 #### Berlin test network
+
+_Test network. First round of testing_
 
 [API Endpoint](https://berlin.net.solidwallet.io/api/v3) (network ID: 0x7)
 

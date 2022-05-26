@@ -72,7 +72,7 @@
 ## Projects
 
 * [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Decentralized applications (dApps)](projects/decentralized-applications-dapps/README.md)
+* [Decentralized applications (dApps)](projects/decentralized-applications-dapps.md)
   * [Oracles](projects/decentralized-applications-dapps/oracles.md)
 * [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
 
