@@ -2,4 +2,4 @@
 
 The following are advanced topics on Java smart contracts:
 
-* Allowed methods
+* [Allowed methods](allowed-methods.md)
