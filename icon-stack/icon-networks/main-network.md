@@ -12,7 +12,11 @@ _Main network. Most recent, stable and tested blockchain version_&#x20;
 
 [API Endpoint](https://ctz.solidwallet.io/api/v3) (network ID: 0x1)
 
+[Community API Endpoint](https://api.icon.community/api/v3)
+
 [Debug API Endpoint](https://ctz.solidwallet.io/api/v3d)
+
+[Debug Community API Endpoint](https://api.icon.community/api/v3d)
 
 [Tracker](https://tracker.icon.community)
 
@@ -22,7 +26,11 @@ _Test network. Second round of testing. Just before Main network_
 
 [API Endpoint](https://lisbon.net.solidwallet.io/api/v3) (network ID: 0x2)
 
+[Community API Endpoint](https://api.lisbon.icon.community/api/v3)
+
 [Debug API Endpoint](https://lisbon.net.solidwallet.io/api/v3d)
+
+[Debug Community API Endpoint](https://api.lisbon.icon.community/api/v3d)
 
 [Tracker](https://tracker.lisbon.icon.community)
 
@@ -32,7 +40,11 @@ _Test network. First round of testing_
 
 [API Endpoint](https://berlin.net.solidwallet.io/api/v3) (network ID: 0x7)
 
+[Community API Endpoint](https://api.berlin.icon.community/api/v3)
+
 [Debug API Endpoint](https://berlin.net.solidwallet.io/api/v3d)
+
+[Debug Community API Endpoint](https://api.berlin.icon.community/api/v3d)
 
 [Tracker](https://tracker.berlin.icon.community)
 
@@ -40,7 +52,11 @@ _Test network. First round of testing_
 
 [API Endpoint](https://sejong.net.solidwallet.io/api/v3) (network ID: 0x53)
 
+[Community API Endpoint](https://api.sejong.icon.community/api/v3)
+
 [Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
+
+[Debug Community API Endpoint](https://api.sejong.icon.community/api/v3d)
 
 [Tracker](https://sejong.tracker.solidwallet.io)
 
