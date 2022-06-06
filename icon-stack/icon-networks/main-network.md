@@ -42,7 +42,7 @@ _Test network. First round of testing_
 
 [Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
 
-[Tracker](https://sejong.tracker.solidwallet.io)
+[Tracker](https://tracker.sejong.icon.community)
 
 ### How to deploy
 
