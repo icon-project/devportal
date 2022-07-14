@@ -12,7 +12,7 @@ API Endpoints only read from the blockchain, they do not write to it. If a user 
 
 ### Why run an API Endpoint?
 
-API Endpoints increase the bandwidth of the ICON network. This allows users to more easily access information from the blockchain. There are many [_decentralized applications (dApps)_](../../projects/decentralized-applications-dapps.md) built on ICON, and they all need to access an API Endpoint in some way.
+API Endpoints increase the bandwidth of the ICON network. This allows users to more easily access information from the blockchain. There are many [_decentralized applications (dApps)_](../decentralized-applications-dapps/) built on ICON, and they all need to access an API Endpoint in some way.
 
 A public API Endpoint allows anyone to access the ICON network. When and API Endpoint is public, it lowers the barrier to entry for people to engage with the network. This functions like a public utility and can also be used as the basis for a [_software-as-a-service_](https://en.wikipedia.org/wiki/Software\_as\_a\_service) business.
 

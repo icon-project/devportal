@@ -43,6 +43,9 @@ This is an open-source community effort, so feel free to suggest new topics, add
     * [CLI](concepts/computational-utilities/goloop/cli.md)
     * [Maintenance API](concepts/computational-utilities/goloop/maintenance-api.md)
     * [Maintenance metrics API](concepts/computational-utilities/goloop/maintenance-metrics-api.md)
+* [Decentralized applications (dApps](concepts/decentralized-applications-dapps/))
+  * [Oracles](concepts/decentralized-applications-dapps/oracles.md)
+* [Standards](concepts/standards.md)
 
 #### ICON Stack
 
@@ -74,12 +77,9 @@ This is an open-source community effort, so feel free to suggest new topics, add
 * [Storage](icon-stack/storage.md)
 * [IDEs](icon-stack/ides.md)
 
-#### Projects
+#### Interoperability
 
-* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Decentralized applications (dApps](projects/decentralized-applications-dapps.md))
-  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
-* [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
+* [BTP & ICON Bridge](interoperability/btp-and-icon-bridge.md)
 
 #### Support
 
