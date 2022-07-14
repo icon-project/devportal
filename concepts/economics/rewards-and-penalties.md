@@ -20,7 +20,7 @@ As mentioned above, the four reward types are: block producer, delegator / voter
 * Block producer rewards are split between the block producers [pro-rata](https://www.investopedia.com/terms/p/pro-rata.asp) based on the percent of bonded delegation
 * Delegator / voter rewards are split between delegators / voters pro-rata based on votes given versus total votes
 * [Contribution Proposal System / Ecosystem Expansion](https://cps.icon.community) rewards are sent to the singular contract for the Contribution Proposal System / Ecosystem Expansion Fund
-* Cross-chain message relay rewards are not currently set (May 26, 2022), as the [ICON Interoperability](../../interoperability/btp-and-icon-bridge.md) products are not yet launched
+* Cross-chain message relay rewards are not currently set (May 26, 2022), as the [ICON Interoperability](../../projects/btp-and-icon-bridge.md) products are not yet launched
 
 | Reward destination                                 | Percentage (%) | Amount (ICX) |
 | -------------------------------------------------- | -------------- | ------------ |

@@ -1,4 +1,4 @@
-# ICON Improvement Proposals (IIPs)
+# Standards
 
 ## What is an ICON Improvement Proposal?
 

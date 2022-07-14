@@ -52,3 +52,9 @@ The centralized version assumes that the relays are run in a responsible and rob
 [Polkadot Network](https://polkadot.network/technology/)
 
 [Avalanche Network](https://www.avax.network/)
+
+[Axelar Network](https://docs.axelar.dev/dev/gmp/overview)
+
+[Solana Wormhole Network](https://docs.wormholenetwork.com/wormhole/)
+
+[Layer0](https://layerzero.gitbook.io/docs)
