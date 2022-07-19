@@ -55,3 +55,11 @@ You can get test [ICX](../../concepts/economics/icx.md) for testnets using the f
 * [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
 * [https://faucet.sharpn.tech](https://faucet.sharpn.tech)
 * [https://faucet.reliantnode.com](https://faucet.reliantnode.com)
+
+### Tracker API docs
+
+To access indexed network data for each network, there are [OpenAPI / Swagger docs](https://swagger.io/specification/) for each network that feed the tracker but can also assist with building dapps and other network analytics tools. To use testnets, replace the subdomain for the tracker for the appropriate testnet. 
+
+* [Main API Docs](https://tracker.icon.community/api/v1/docs/index.html)
+* [Contracts API Docs](https://tracker.icon.community/api/v1/contracts/docs)
+* [Governance API Docs](https://tracker.icon.community/api/v1/governance/docs)
