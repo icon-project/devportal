@@ -52,6 +52,6 @@ See [the instructions on deployment](../smart-contracts/deploying-smart-contract
 
 You can get test [ICX](../../concepts/economics/icx.md) for testnets using the following faucets. If you need a large amount of ICX, please get in touch with [hello@icon.foundation](mailto:hello@icon.foundation), or ask in [ICON Dev telegram channel](https://t.me/icondevs) or [ICON discord server](https://discord.com/invite/7a75Hf3cFm).
 
-* [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
+* [https://faucet.iconosphere.io/](https://faucet.iconosphere.io/)
 * [https://faucet.sharpn.tech](https://faucet.sharpn.tech)
 * [https://faucet.reliantnode.com](https://faucet.reliantnode.com)
