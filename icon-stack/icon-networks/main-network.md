@@ -8,11 +8,17 @@ This is the core ICON network. Refer to this set of documentations for informati
 
 #### Main network
 
-_Main network. Most recent, stable and tested blockchain version_&#x20;
+_Main network. Most recent, stable and tested blockchain version_
 
-[API Endpoint](https://ctz.solidwallet.io/api/v3) (network ID: 0x1)
+Network ID: 0x1
 
-[Debug API Endpoint](https://ctz.solidwallet.io/api/v3d)
+[API Endpoint 1](https://ctz.solidwallet.io/api/v3)
+
+[Debug API Endpoint 1](https://ctz.solidwallet.io/api/v3d)
+
+[API Endpoint 2](https://api.icon.community/api/v3)
+
+[Debug API Endpoint 2](https://api.icon.community/api/v3d)
 
 [Tracker](https://tracker.icon.community)
 
@@ -20,7 +26,9 @@ _Main network. Most recent, stable and tested blockchain version_&#x20;
 
 _Test network. Second round of testing. Just before Main network_
 
-[API Endpoint](https://lisbon.net.solidwallet.io/api/v3) (network ID: 0x2)
+Network ID: 0x2
+
+[API Endpoint](https://lisbon.net.solidwallet.io/api/v3)
 
 [Debug API Endpoint](https://lisbon.net.solidwallet.io/api/v3d)
 
@@ -30,7 +38,9 @@ _Test network. Second round of testing. Just before Main network_
 
 _Test network. First round of testing_
 
-[API Endpoint](https://berlin.net.solidwallet.io/api/v3) (network ID: 0x7)
+Network ID: 0x7
+
+[API Endpoint](https://berlin.net.solidwallet.io/api/v3)
 
 [Debug API Endpoint](https://berlin.net.solidwallet.io/api/v3d)
 
@@ -38,7 +48,9 @@ _Test network. First round of testing_
 
 #### Sejong test network
 
-[API Endpoint](https://sejong.net.solidwallet.io/api/v3) (network ID: 0x53)
+Network ID: 0x53
+
+[API Endpoint](https://sejong.net.solidwallet.io/api/v3)
 
 [Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
 
