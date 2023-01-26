@@ -16,6 +16,8 @@ A description of _cryptocurrency_ is summarized nicely by the [Ethereum Develope
 
 The price of ICX is correlated with the value of computational power on the ICON Network. The actual _cost to use_ the computational power on the ICON Network is called [_STEP_](https://app.gitbook.com/o/-McMmnDTovEDTOOjq4sG/s/-McMmuxKCCgDfbGouV8t-887967055/\~/changes/jerz7SXXKg0b6WUC1rjf/concepts/economics/step), and is described in its own section of the documentation.
 
+The smallest denomination of ICX is loop. 1 ICX = 1,000,000,000,000,000,000 loop (10^18).
+
 ### Minting ICX <a href="#minting-ether" id="minting-ether"></a>
 
 Minting is the process in which by which new ICX is added to the ICON ledger. ICX is minted with every block produced. The current inflation rate is set to 36 million new ICX every year. Newly minted ICX is sent to the public treasury, where it can be claimed by the following users and public funds:
