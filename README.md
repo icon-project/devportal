@@ -12,7 +12,7 @@ This is an open-source community effort, so feel free to suggest new topics, add
 
 #### Getting Started
 
-* [How to run a local network](getting-started/how-to-run-a-local-network.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network/)
 * [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
 * [How to run an API endpoint](getting-started/how-to-run-an-api-endpoint.md)
 * [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)

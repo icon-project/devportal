@@ -4,7 +4,9 @@
 
 ## Getting Started
 
-* [How to run a local network](getting-started/how-to-run-a-local-network.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network/README.md)
+  * [Setting up a local network](getting-started/how-to-run-a-local-network/setting-up-a-local-network.md)
+  * [Decentralizing a local network](getting-started/how-to-run-a-local-network/decentralizing-a-local-network.md)
 * [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
 * [How to run an API Endpoint](getting-started/how-to-run-an-api-endpoint.md)
 * [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)
