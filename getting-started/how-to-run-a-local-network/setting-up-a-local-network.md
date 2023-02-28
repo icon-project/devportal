@@ -15,6 +15,7 @@ $ git clone https://github.com/icon-project/goloop.git
 $ cd goloop
 $ make gochain-icon-image
 ```
+> A prebuilt image is also available at [iconcommunity/goloop](https://hub.docker.com/r/iconcommunity/gochain). But a couple things to consider, this image might not be the latest version of `goloop` and if you use it it will be necessary to edit the docker compose files (`.yml` files) to point to `iconcommunity/gochain` instead of `goloop/gochain-icon`.
 
 * Verify generated image
 
