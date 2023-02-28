@@ -6,6 +6,43 @@ If your goal is to have a local network that closely resembles the public ICON c
 2. The last main validator's (pRep's) power should be more than `totalSupply * 0.2%` in power descending order.
 3. Revision >= 6
 
+The amount of registered validators and `totalSupply` can be obtained with the following RPC JSON calls.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "icx_call",
+  "id": 369,
+  "params": {
+    "to": "cx0000000000000000000000000000000000000000",
+    "dataType": "call",
+    "data": { "method": "getPReps" }
+  }
+}
+```
+
+```json
+{ 
+  "jsonrpc": "2.0", 
+  "method": "icx_getTotalSupply", 
+  "id": 0 
+}
+```
+
+To get the revision for the IISS the following RPC JSON call can be used:
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "icx_call",
+  "id": 783,
+  "params": {
+    "to": "cx0000000000000000000000000000000000000001",
+    "dataType": "call",
+    "data": { "method": "getRevision" }
+  }
+}
+```
+
 The [gochain-local](https://github.com/icon-project/gochain-local) repository has a set of predefined wallets and configurations that you can use for this and will make this process more easier.&#x20;
 
 > _NOTE:_ The purpose of this repository is to quickly create an environment for testing, this repository has 5 wallets with their corresponding keystore and passwords openly available on the internet, DO NOT reuse these wallets in any other place.
