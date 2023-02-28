@@ -14,8 +14,6 @@ description: Steps to setup a local network
 $ git clone https://github.com/icon-project/goloop.git
 $ cd goloop
 $ make gochain-icon-image
-# You can also use the prebuild image https://hub.docker.com/r/iconcommunity/gochain
-# if you can't get the image to build locally
 ```
 
 * Verify generated image
