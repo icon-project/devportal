@@ -2,22 +2,23 @@
 
 ### Introduction
 
-ICON is a general purpose blockchain ecosystem with a focus on linking different blockchains together.
+ICON is a general purpose blockchain ecosystem with a focus on linking different blockchains together
 
-The purpose of this documentation is to inform technical users, including developers, power-users, and enthusiasts, of how the ICON network is setup and how to utilize the various components of it.
+The purpose of this documentation is to inform technical users, including developers, power-users, and enthusiasts, of how the ICON network is setup and how to utilize the various components of it
 
-This is an open-source community effort, so feel free to suggest new topics, add new content, and provide examples wherever you think it might be helpful. Please open a merge request on the [Github repository](https://github.com/icon-project/devportal), or if you want to be more heavily involved, open an issue to have access to edit via the Gitbook app.
+This is an open-source community effort, so feel free to suggest new topics, add new content, and provide examples wherever you think it might be helpful. Please open a merge request on the [Github repository](https://github.com/icon-project/devportal), or if you want to be more heavily involved, open an issue to have access to edit via the Gitbook app
 
 ### Topics
 
 #### Getting Started
 
-* [How to run a local network](getting-started/how-to-run-a-local-network.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network/)
 * [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
 * [How to run an API endpoint](getting-started/how-to-run-an-api-endpoint.md)
 * [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
+* [How to use the Nexus Portal](getting-started/how-to-use-the-nexus-portal.md)
 
 #### Concepts
 
@@ -80,6 +81,7 @@ This is an open-source community effort, so feel free to suggest new topics, add
 #### Interoperability
 
 * [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
+* [Nexus](interoperability/nexus.md)
 
 #### Support
 

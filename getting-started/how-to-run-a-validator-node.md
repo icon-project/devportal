@@ -123,6 +123,18 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 | GOLOOP\_LOG\_LEVEL   | debug                   | str  | false    | Log Level - (trace,debug,info,warn,error,fatal,panic                             |
 | LOG\_OUTPUT\_TYPE    | file                    | str  | false    | sec - check interval for monitoring                                              |
 
+### Node Grades
+
+Node grades are another term for node levels.\
+\
+After successfully registering as a validator node using [`registerPrep`](../icon-stack/client-apis/json-rpc-api/v3.md#registerprep) the grade of the node will be set to "0x2". **** There are 3 node grades, detailed below. You can also check the `grade` return parameter from [`getPrep`](../icon-stack/client-apis/json-rpc-api/v3.md#getprep) function from the JSON-RPC API for more info
+
+| Grade number | Usage               | Description                                                                                               |
+| ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0x2          | Validator Candidate | Register your node as a candidate to become a block validator and network governance delegate             |
+| 0x1          | Sub-Validator       | Register your node as a sub-validator for block production and validation and network governance delegate |
+| 0x0          | Main Validator      | Register your node as a validator for block production and validation and network governance delegate     |
+
 ### Further Resources
 
 [Delegate tools](https://github.com/icon-project/preptools/)
