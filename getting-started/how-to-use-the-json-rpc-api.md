@@ -13,12 +13,12 @@ Generating a valid transaction signature in ICON network.
 ### Prerequisite
 
 * [Elliptic Curve Digital Signature Algorithm](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)
-* [Transaction](broken-reference)
-* [ICON JSON-RPC API v3](broken-reference)
+* [Transaction](https://docs.icon.community/concepts/computational-utilities/transactions)
+* [ICON JSON-RPC API v3](https://docs.icon.community/icon-stack/client-apis/json-rpc-api/v3)
 
 ### How to Serialize Transaction Data
 
-Before signing the data, the data needs to be serialized as bytes. This section describes how to serialize the transaction data. This document does not describe how to make the transaction data itself. Transaction message specification is defined in [JSON-RPC API v3](broken-reference).
+Before signing the data, the data needs to be serialized as bytes. This section describes how to serialize the transaction data. This document does not describe how to make the transaction data itself. Transaction message specification is defined in [JSON-RPC API v3](https://docs.icon.community/icon-stack/client-apis/json-rpc-api/v3).
 
 #### Precondition
 
