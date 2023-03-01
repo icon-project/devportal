@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-install OpenJDK version 11. Visit [OpenJDK.net](http://openjdk.java.net) for prebuilt binaries. Or you can install a proper OpenJDK package from your OS vendors.
+Install OpenJDK version 11. Visit [OpenJDK.net](http://openjdk.java.net) for prebuilt binaries. Or you can install a proper OpenJDK package from your OS vendors.
 
 * In macOS:
 
