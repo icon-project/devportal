@@ -26,7 +26,7 @@ $ go version
 Clone the `goloop` repository in a folder in your machine.
 
 ```
-$ git clone git@github.com:icon-project/goloop.git
+$ git clone https://github.com/icon-project/goloop.git
 $ GOLOOP_ROOT=/path/to/goloop
 ```
 
