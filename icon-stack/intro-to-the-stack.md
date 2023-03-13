@@ -2,7 +2,7 @@
 
 ### Level 1: ICON execution environments <a href="#ethereum-virtual-machine" id="ethereum-virtual-machine"></a>
 
-ICON execution environments manage the runtime of contracts on the ICON network. These environments are responsible for handling the execution of [transactions](../concepts/blockchain-components/transactions.md), which are the basic functions of ICON to change the state of the blockchain.
+ICON execution environments manage the runtime of contracts on the ICON network. These environments are responsible for handling the execution of [transactions](../concepts/computational-utilities/transactions.md), which are the basic functions of ICON to change the state of the blockchain.
 
 The execution environments create an abstraction layer between the three types of operators on ICON: [_smart contracts_](smart-contracts/), [_nodes (i.e. machines)_](../concepts/network/), and [_users_](broken-reference).
 

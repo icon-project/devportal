@@ -4,7 +4,7 @@
 
 ### 1. Export your keystore file first
 
-Export your Keystore file which you registered in. You can see how to get the Keystore file from this [documentation page](../../../icon-stack/accounts-and-authentication/).
+Export your Keystore file which you registered in. You can see how to get the Keystore file from this [documentation page](../../../getting-started/how-to-create-an-icon-account.md).
 
 ### 2. Place your keystore file in the proper path
 

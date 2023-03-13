@@ -97,4 +97,4 @@ npm install --save-dev secp256k1 js-sha3 icon-sdk-js
 
 ### Next steps
 
-[Accounts and authentication using goloop CLI](using-goloop-cli.md)
+[Accounts and authentication using goloop CLI](../icon-stack/accounts-and-authentication/using-goloop-cli.md)

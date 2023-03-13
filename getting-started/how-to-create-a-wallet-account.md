@@ -2,11 +2,11 @@
 
 ### Prerequisites
 
-[Setting up the project folder](../icon-stack/accounts-and-authentication/#setting-up-the-project-folder.)
+[Setting up the project folder](how-to-create-an-icon-account.md#setting-up-the-project-folder.)
 
 ### Using goloop CLI
 
-[Goloop CLI](../concepts/blockchain-components/goloop/) is a terminal utility that you can use to generate accounts and make RPC JSON requests easily from the command line.
+[Goloop CLI](../concepts/computational-utilities/goloop/) is a terminal utility that you can use to generate accounts and make RPC JSON requests easily from the command line.
 
 For a list of all the commands that you can use please visit the [following link](https://github.com/icon-project/goloop/blob/master/doc/goloop\_cli.md#goloop).
 
@@ -208,9 +208,9 @@ runAsync()
 
 ### Further Resources
 
-[Accounts](../concepts/blockchain-components/accounts.md)
+[Accounts](../concepts/computational-utilities/accounts.md)
 
-[Accounts and authentication](../icon-stack/accounts-and-authentication/)
+[Accounts and authentication](how-to-create-an-icon-account.md)
 
 [Create account using goloop CLI](../icon-stack/accounts-and-authentication/using-goloop-cli.md)
 
