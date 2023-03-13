@@ -2,7 +2,7 @@
 
 ### Network characteristics
 
-This is the core ICON network. Refer to this set of documentations for information about [economics](../../concepts/economics/), [computational utilities](../../concepts/computational-utilities/), [smart contracts](../smart-contracts/), etc.
+This is the core ICON network. Refer to this set of documentations for information about [economics](../../concepts/economics/), [computational utilities](../../concepts/blockchain-components/), [smart contracts](../smart-contracts/), etc.
 
 ### How to access
 

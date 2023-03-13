@@ -10,7 +10,7 @@ State in ICON is split into two parts. The first part is the [_Merkle Patricia T
 
 ### Transactions
 
-[Transactions](../../concepts/computational-utilities/transactions.md) are defined by the ICON glossary as follows:
+[Transactions](../../concepts/blockchain-components/transactions.md) are defined by the ICON glossary as follows:
 
 > Cryptographically signed instructions from accounts.
 

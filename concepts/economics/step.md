@@ -4,7 +4,7 @@
 
 STEP refers to the unit that measures the amount of computational effort required to execute specific operations on the ICON network.
 
-Each ICON [transaction](../computational-utilities/transactions.md) requires computational resources to execute. Because this is a financial system, each transaction thus requires a fee. In the [ICON network](../../), these fees are referred to as STEP.
+Each ICON [transaction](../blockchain-components/transactions.md) requires computational resources to execute. Because this is a financial system, each transaction thus requires a fee. In the [ICON network](../../), these fees are referred to as STEP.
 
 STEP fees are paid in [ICX](icx.md), the ICON network's native currency. The initial STEP price is approximately as follows:
 

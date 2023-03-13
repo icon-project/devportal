@@ -6,7 +6,7 @@ The [Ethereum documentation](https://ethereum.org/en/developers/docs/nodes-and-c
 
 > Computational service running in support of the ICON network that can either be an API Endpoint or a Delegate / Validator
 
-__[_Goloop_](../computational-utilities/goloop/) is the officially supported client for the ICON blockchain. You can learn more about it in the linked documentation subsection under the [_computational utilities_](../computational-utilities/) section.
+__[_Goloop_](../blockchain-components/goloop/) is the officially supported client for the ICON blockchain. You can learn more about it in the linked documentation subsection under the [_computational utilities_](../blockchain-components/) section.
 
 ### Node types <a href="#node-types" id="node-types"></a>
 

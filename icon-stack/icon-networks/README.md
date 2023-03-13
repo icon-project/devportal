@@ -7,7 +7,7 @@ At current, there are two main classes of ICON networks:
 * ICON execution environment-based
 * EVM-based
 
-For each type, it is possible to have many different actual networks running. Both types are based on publicly available protocols, the first on [goloop](../../concepts/computational-utilities/goloop/) and the second on [Ethereum](https://ethereum.org/en/).
+For each type, it is possible to have many different actual networks running. Both types are based on publicly available protocols, the first on [goloop](../../concepts/blockchain-components/goloop/) and the second on [Ethereum](https://ethereum.org/en/).
 
 ### Which network should I choose?
 

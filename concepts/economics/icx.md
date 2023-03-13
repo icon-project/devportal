@@ -44,8 +44,8 @@ Transactions on ICON Network are denominated in ICX, and they send from the "sen
 
 The recipient address can also be a [smart contract](../../icon-stack/smart-contracts/).
 
-[More on transactions](../computational-utilities/transactions.md)
+[More on transactions](../blockchain-components/transactions.md)
 
 ### Querying ICX <a href="#querying-ether" id="querying-ether"></a>
 
-Users can query the ICX balance of any [account](../computational-utilities/accounts.md) by inspecting the "balances" database at the address of the account.
+Users can query the ICX balance of any [account](../blockchain-components/accounts.md) by inspecting the "balances" database at the address of the account.
