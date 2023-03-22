@@ -34,7 +34,7 @@ services:
       image: iconloop/icon2-node
       container_name: "icon2-node"
       network_mode: host
-      restart: "on-failure"
+      restart: "always"
       environment:
          SERVICE: "MainNet"  # MainNet, SejongNet  ## network type 
          GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic          
