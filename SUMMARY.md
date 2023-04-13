@@ -58,6 +58,7 @@
   * [Deploying smart contracts](icon-stack/smart-contracts/deploying-smart-contracts.md)
   * [Composability](icon-stack/smart-contracts/composability.md)
   * [Smart contract security](icon-stack/smart-contracts/smart-contract-security.md)
+  * [Allowed methods](icon-stack/smart-contracts/allowed-methods.md)
 * [ICON networks](icon-stack/icon-networks/README.md)
   * [Main network](icon-stack/icon-networks/main-network.md)
   * [ICE network](icon-stack/icon-networks/ice-network.md)
@@ -103,8 +104,6 @@
   * [Goloop](support/advanced-topics/goloop/README.md)
     * [Genesis transaction file format](support/advanced-topics/goloop/genesis\_tx.md)
     * [Genesis transaction storage](support/advanced-topics/goloop/genesis\_storage.md)
-  * [Java smart contracts](support/advanced-topics/java-smart-contracts/README.md)
-    * [Allowed methods](support/advanced-topics/java-smart-contracts/allowed-methods.md)
 
 ## Release notes
 

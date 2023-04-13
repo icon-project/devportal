@@ -15,7 +15,7 @@ There are four different types of Network Proposals that greatly affect the syst
 
 ### Examples
 
-See the [community forum section on __ Governance](https://forum.icon.community/c/governance/22) for examples of Network Proposals. Three examples are briefly highlighted below. Note that some of the highlighted proposals use the deprecated term _P-Rep_ instead of _Delegate_:
+See the [community forum section on Governance](https://forum.icon.community/c/governance/22) for examples of Network Proposals. Three examples are briefly highlighted below. Note that some of the highlighted proposals use the deprecated term _P-Rep_ instead of _Delegate_:
 
 #### Example 1: Cap P-Reps’ ICX delegation share to 2.5% of the total delegated ICX
 

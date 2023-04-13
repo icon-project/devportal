@@ -76,7 +76,7 @@ Once the transaction has been broadcasted, it will be visible in the transfer de
 
 At this point, the transferred ICX should be viewable in your MetaMask wallet as well.
 
-<figure><img src="../.gitbook/assets/icx-in-metamask.jpg" alt=""><figcaption><p>Bridged ICX (ICON to BSC) in MetaMask.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/bridged-icx-to-metamask.jpg" alt=""><figcaption><p>Bridged ICX (ICON to BSC) in MetaMask.</p></figcaption></figure>
 
 ### How to Transfer BNB from BSC to ICON
 
