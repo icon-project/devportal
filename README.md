@@ -31,7 +31,7 @@ This is an open-source community effort, so feel free to suggest new topics, add
   * [Rewards & Penalties](concepts/economics/rewards-and-penalties.md)
 * [Governance](concepts/governance/)
   * [Delegates](concepts/governance/delegates.md)
-  * [Network proposals](concepts/governance/network-proposals.md)
+  * [Network proposals](concepts/governance/network-proposals/)
 * [Network](concepts/network/)
   * [Clients](concepts/network/clients.md)
   * [API Endpoints](concepts/network/api-endpoints.md)
