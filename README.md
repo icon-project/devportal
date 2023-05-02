@@ -20,7 +20,6 @@ This is an open-source community effort, so feel free to suggest new topics, add
 * [How to create a wallet account](getting-started/how-to-create-a-wallet-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
-* [How to use the Nexus Portal](getting-started/how-to-use-the-nexus-portal.md)
 
 #### Concepts
 
@@ -87,8 +86,10 @@ This is an open-source community effort, so feel free to suggest new topics, add
 
 #### Interoperability
 
-* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Nexus](interoperability/nexus.md)
+* [Overview](broken-reference)
+* [BTP](cross-chain-communication/blockchain-transmission-protocol-btp.md)
+* [xCall](cross-chain-communication/xcall.md)
+* [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 #### Support
 

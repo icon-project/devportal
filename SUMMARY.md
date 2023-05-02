@@ -13,7 +13,6 @@
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
   * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
-* [How to Use the Nexus Portal](getting-started/how-to-use-the-nexus-portal.md)
 
 ## Concepts
 
@@ -84,10 +83,11 @@
 * [Storage](icon-stack/storage.md)
 * [IDEs](icon-stack/ides.md)
 
-## Interoperability
+## Cross-Chain Communication
 
-* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Nexus](interoperability/nexus.md)
+* [xCall](cross-chain-communication/xcall.md)
+* [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp.md)
+* [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
 
