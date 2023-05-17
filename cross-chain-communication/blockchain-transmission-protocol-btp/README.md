@@ -2,7 +2,7 @@
 
 The blockchain transmission protocol (BTP) is the ICON project's bespoke cross-chain communication protocol for heterogenous blockchains.
 
-dApps interact with BTP through the xCall contract. Testnet xCall contract addresses are listed below. For more information on xCall, see the [xCall section](xcall.md) and [standard](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
+dApps interact with BTP through the xCall contract. Testnet xCall contract addresses are listed below. For more information on xCall, see the [xCall section](../xcall/) and [standard](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
 
 A sample dApp is provided for demonstration purposes.
 

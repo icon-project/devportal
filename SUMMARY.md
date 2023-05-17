@@ -85,8 +85,10 @@
 
 ## Cross-Chain Communication
 
-* [xCall](cross-chain-communication/xcall.md)
-* [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp.md)
+* [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp/README.md)
+  * [BTP Address](cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md)
+* [xCall](cross-chain-communication/xcall/README.md)
+  * [Sending a message with xCall](cross-chain-communication/xcall/sending-a-message-with-xcall.md)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
