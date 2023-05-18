@@ -410,7 +410,7 @@ async function main() {
 
 When the event gets triggered we will have a response like in the following:
 
-```json
+```js
 [
   {
     blockNumber: 213912,
@@ -671,7 +671,7 @@ For this DApp a `MessageReceived` event method has been implemented to verify th
 
 This event method implemented on the DApp smart contract on the destination chain returns to us the encoded message in the `_data` param:
 
-```
+```js
 [
   'btp://0x3.icon/hxb6b5791be0b5ef67063b3c10b840fb81514db2fd',
   '0x48656c6c6f2074686973206973207843616c6c206c69766521',
@@ -688,3 +688,8 @@ The `_data` param of the result in the previous step is a hex encoded string, on
 ## Decoded message sent via xcall
 Hello this is xCall live!
 ```
+### References
+* End-to-end demonstration of BTP containing xCall: [https://github.com/icon-project/btp2/tree/main/e2edemo](https://github.com/icon-project/btp2/tree/main/e2edemo)
+* xCall Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
+* IBC on ICON: [https://github.com/icon-project/IBC-Integration](https://github.com/icon-project/IBC-Integration)
+* [xCall testnet contracts](../blockchain-transmission-protocol-btp/)
