@@ -87,7 +87,7 @@ const iconService = new IconService(provider);
 
 #### Queries
 
-All query methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available. For more information, check the [API reference documentation](broken-reference).
+All query methods of `IconService` returns a `HttpCall` instance. To execute the request and get the result value, you need to run `execute()` function of `HttpCall` instance. All requests will be executed **asynchronously**. Synchronous request is not available. For more information, check the [API reference documentation](../README.md).
 
 ```javascript
 const { CallBuilder } = IconService.IconBuilder;
@@ -888,9 +888,9 @@ async getTokenSymbol(to) {
 
 ### References
 
-* [API Reference](broken-reference)
-* [ICON JSON-RPC API v3](broken-reference)
-* [ICON Network](broken-reference)
+* [API Reference](./README.md)
+* [ICON JSON-RPC API v3](../json-rpc-api/README.md)
+* [ICON Network](../../../README.md)
 
 ### Licenses
 
