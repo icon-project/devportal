@@ -12,7 +12,7 @@ We are going to interact with 2 local blockchains, one representing the ICON Net
 
 As a prerequisite to follow this tutorial first you have to setup the local environment, which can be done following the steps detailed in this tutorial:
 
-* [BTP Tutorial: Setting up BTP Locally for Testing](https://icon.community/tutorials/btp-tutorial-setting-up-btp-locally-for-testing/).&#x20;
+* [BTP Tutorial: Setting up BTP Locally for Testing](https://icon.community/tutorials/btp-tutorial-setting-up-btp-locally-for-testing/).
 
 In order to run the example being shown in here it is necessary that both local networks from the BTP tutorial are up and running and you also need to have the relayer running (the steps for doing this are detailed in the tutorial).
 
@@ -48,7 +48,7 @@ Once your local BTP environment is running a file named `deployments.json` will 
 }
 ```
 
-Copy the `xcall` contract address on both ICON and hardhat networks and the `dapp` contract address in the hardhat network to the `index.js` file of the `xcall-sample-dapp`
+Copy the `xcall` contract address on both ICON and hardhat networks and the `dapp` contract address in the hardhat network to the `config.js` file of the `xcall-sample-dapp`
 
 ```javascript
 // IMPORTS
@@ -85,9 +85,9 @@ const ICON_CHAIN_LABEL = "0x3.icon";
 
 ### Smart contract on the destination chain
 
-Using xCall is an straightforward process, you send message from a source chain by calling the `sendCallMessage` method of the xCall contract and you receive that message on the destination chain, but in order to properly receive that message is necessary  to have a smart contract implemented in the destination chain with a method named `handleCallMessage`.
+Using xCall is an straightforward process, you send message from a source chain by calling the `sendCallMessage` method of the xCall contract and you receive that message on the destination chain, but in order to properly receive that message is necessary to have a smart contract implemented in the destination chain with a method named `handleCallMessage`.
 
-> #### `@External void handleCallMessage(String _from, byte[] _data)`
+> **`@External void handleCallMessage(String _from, byte[] _data)`**
 >
 > Handles the call message received from the source chain. Only called from the Call Message Service.
 >
@@ -103,7 +103,7 @@ For the purpose of this explanation, a contract as already being deployed on bot
 
 To send a message using xCall you sign a transaction calling the `sendCallMessage` method of the xCall contract on the source chain.
 
-> #### `@Payable @External BigInteger sendCallMessage(String _to, byte[] _data, @Optional byte[] _rollback)`
+> **`@Payable @External BigInteger sendCallMessage(String _to, byte[] _data, @Optional byte[] _rollback)`**
 >
 > Sends a call message to the contract on the destination chain.
 >
@@ -250,7 +250,7 @@ This method returns the serial number of the request. The serial number is the u
 
 This method is payable, and dApps need to call this method with proper fees. dApps that want to make a call to `sendCallMessage` can query the total fee amount for the destination network via the `getFee` method, and then enclose the appropriate fees in the method call. For more information on fees, see [Fees Handling](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#fees-handling).
 
-> #### `@External(readonly=true) BigInteger getFee(String _net, boolean _rollback)`
+> **`@External(readonly=true) BigInteger getFee(String _net, boolean _rollback)`**
 >
 > Gets the fee for delivering a message to the \_net. If the sender is going to provide rollback data, the \_rollback param should set as true. The returned fee is the sum of the protocol fee and the relay fee.
 >
@@ -263,9 +263,9 @@ The `_net` parameter is the [network address](https://github.com/icon-project/II
 
 ### Fetching event in source chain
 
-After sending the message you have to now listen to the `CallMessageSent` event on the source chain.&#x20;
+After sending the message you have to now listen to the `CallMessageSent` event on the source chain.
 
-> #### `@EventLog(indexed=3) void CallMessageSent(Address _from, String _to, BigInteger _sn, BigInteger _nsn)`
+> **`@EventLog(indexed=3) void CallMessageSent(Address _from, String _to, BigInteger _sn, BigInteger _nsn)`**
 >
 > Notifies that the requested call message has been sent.
 >
@@ -336,7 +336,7 @@ The call will respond with an error status of `Pending` or `Executing` until the
 
 The `CallMessage` event on the destination chain can be fetched to verify that the xcall interface on the destination chain has a new message that needs to be fetched.
 
-> #### `@EventLog(indexed=3) void CallMessage(String _from, String _to, BigInteger _sn, BigInteger _reqId)`
+> **`@EventLog(indexed=3) void CallMessage(String _from, String _to, BigInteger _sn, BigInteger _reqId)`**
 >
 > Notifies the user that a new call message has arrived.
 >
@@ -456,7 +456,7 @@ Once you have verified that the event has been raised in the destination chain, 
 
 This transaction is being done by calling the `executeCall` method in the xCall contract on the destination chain:
 
-> #### `@External void executeCall(BigInteger _reqId)`
+> **`@External void executeCall(BigInteger _reqId)`**
 >
 > Executes the requested call message.
 >
@@ -489,7 +489,7 @@ Like previously stated the DApp on the destination chain must implement `handleC
 
 To notify the execution result of DApp `handleCallMessage` method, the following event is emitted after its execution.
 
-> #### `@EventLog(indexed=1) void CallExecuted(BigInteger _reqId, int _code, String _msg)`
+> **`@EventLog(indexed=1) void CallExecuted(BigInteger _reqId, int _code, String _msg)`**
 >
 > Notifies that the call message has been executed.
 >
@@ -661,7 +661,7 @@ Decoding the eventlog will give us the following output in which we can see the 
 
 For this DApp a `MessageReceived` event method has been implemented to verify the message has been received, this is not a requirement but is a recommended step.
 
-> #### `@EventLog void MessageReceived( String _from, Bytes _data)`
+> **`@EventLog void MessageReceived( String _from, Bytes _data)`**
 >
 > Verifies the message has been received.
 >
@@ -688,7 +688,9 @@ The `_data` param of the result in the previous step is a hex encoded string, on
 ## Decoded message sent via xcall
 Hello this is xCall live!
 ```
+
 ### References
+
 * End-to-end demonstration of BTP containing xCall: [https://github.com/icon-project/btp2/tree/main/e2edemo](https://github.com/icon-project/btp2/tree/main/e2edemo)
 * xCall Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
 * IBC on ICON: [https://github.com/icon-project/IBC-Integration](https://github.com/icon-project/IBC-Integration)

@@ -90,6 +90,7 @@
   * [BTP Address](cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md)
 * [xCall](cross-chain-communication/xcall/README.md)
   * [Sending a message with xCall](cross-chain-communication/xcall/sending-a-message-with-xcall.md)
+  * [Sending a message with xCall (using rollback)](cross-chain-communication/xcall/sending-a-message-with-xcall-using-rollback.md)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
