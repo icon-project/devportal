@@ -91,6 +91,7 @@
 * [xCall](cross-chain-communication/xcall/README.md)
   * [Sending a message with xCall](cross-chain-communication/xcall/sending-a-message-with-xcall.md)
   * [Sending a message with xCall (using rollback)](cross-chain-communication/xcall/sending-a-message-with-xcall-using-rollback.md)
+  * [Local Testing](cross-chain-communication/xcall/local-testing.md)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
