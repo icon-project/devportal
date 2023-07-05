@@ -1,14 +1,14 @@
-# Sending a message with xCall (using rollback)
+# Sending a message with xCall (with rollback)
 
 ### Prerequisites
 
 For the case of showcasing sending a message with rollback please follow the prerequisites and instructions on the [previous tutorial](sending-a-message-with-xcall.md).
 
-### Using rollback
+### Rollback
 
 The rollback functionality of xCall allows the developer to design specific situations in their smart contract DApp on which the process can fail, examples of this can be not having enough balance of a certain token locked in the destination chain to be able to mint some other token in the case of doing a cross chain transaction. \
 \
-The developer is free to setup their own  fail conditions, and once they are trigger is necessary to call the native 'revert' handle of the execution environment to initiate the rollback process.\
+The developer is free to setup their own fail conditions, and once they are trigger is necessary to call the native 'revert' handle of the execution environment to initiate the rollback process.\
 \
 For the case of the example shown in the [e2edemo of the btp2 repo](https://github.com/icon-project/btp2/tree/main/e2edemo), we can see that the [smart contract calls the `Context.revert()`](https://github.com/icon-project/btp2-java/blob/9acff597162ec66aef343e2c06cc607e0aa10dfa/dapp-sample/src/main/java/foundation/icon/btp/xcall/sample/DAppProxySample.java#L103) handler when the data in the message is equal to the string literal "revertMessage"\
 

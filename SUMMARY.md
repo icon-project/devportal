@@ -14,6 +14,10 @@
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
   * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
+* [How to send a cross-chain message](getting-started/how-to-send-a-cross-chain-message/README.md)
+  * [Setting up a local environment](getting-started/how-to-send-a-cross-chain-message/setting-up-a-local-environment.md)
+  * [Sending a message with xCall](getting-started/how-to-send-a-cross-chain-message/sending-a-message-with-xcall.md)
+  * [Sending a message with xCall (with rollback)](getting-started/how-to-send-a-cross-chain-message/sending-a-message-with-xcall-with-rollback.md)
 
 ## Concepts
 
@@ -88,10 +92,7 @@
 
 * [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp/README.md)
   * [BTP Address](cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md)
-  * [Local Testing](cross-chain-communication/blockchain-transmission-protocol-btp/local-testing.md)
-* [xCall](cross-chain-communication/xcall/README.md)
-  * [Sending a message with xCall](cross-chain-communication/xcall/sending-a-message-with-xcall.md)
-  * [Sending a message with xCall (using rollback)](cross-chain-communication/xcall/sending-a-message-with-xcall-using-rollback.md)
+* [xCall](cross-chain-communication/xcall.md)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support

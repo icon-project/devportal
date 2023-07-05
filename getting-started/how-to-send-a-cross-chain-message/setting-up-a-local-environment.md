@@ -1,8 +1,4 @@
-# Local Testing
-
-Blockchain Transmission Protocol (BTP) is ICON’s chain-agnostic, scalable, and secure interoperability protocol. BTP’s chain-agnostic design allows it to be integrated with any smart contract-enabled blockchain. Unlike traditional bridging solutions that rely on handpicked validators to relay cross-chain messages and custody funds, BTP uses a more secure model with fully-decentralized incentivized relays and on-chain verification of messages.
-
-In this tutorial, you’ll learn how to setup a local environment for testing BTP and creating dapps that can interact with BTP in this local setup.
+# Setting up a local environment
 
 ### Installation
 
@@ -153,13 +149,3 @@ On the second terminal run the following command to execute the demo dapp script
 ```bash
 $ make run-demo
 ```
-
-### Resources <a href="#resources" id="resources"></a>
-
-* BTP Github repository: [https://github.com/icon-project/btp2](https://github.com/icon-project/btp2)
-* BTP documentation: [https://docs.icon.community/cross-chain-communication/blockchain-transmission-protocol-btp](https://docs.icon.community/cross-chain-communication/blockchain-transmission-protocol-btp)
-* BTP Litepaper: [https://icon.community/assets/btp-litepaper.pdf](https://icon.community/assets/btp-litepaper.pdf)
-* ICON BTP Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-25.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-25.md)
-* ICON BTP Fee Gathering Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-35.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-35.md)
-* ICON BTP Message Fragmentation Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-40.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-40.md)
-* ICON BTP Arbitrary Call Service Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)

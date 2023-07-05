@@ -2,7 +2,7 @@
 
 The blockchain transmission protocol (BTP) is the ICON project's bespoke cross-chain communication protocol for heterogenous blockchains.
 
-dApps interact with BTP through the xCall contract. Testnet xCall contract addresses are listed below. For more information on xCall, see the [xCall section](../xcall/) and [standard](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
+dApps interact with BTP through the xCall contract. Testnet xCall contract addresses are listed below. For more information on xCall, see the [xCall section](../../getting-started/how-to-send-a-cross-chain-message/#resources-2) and [standard](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
 
 A sample dApp is provided for demonstration purposes.
 
@@ -67,14 +67,14 @@ Domain
 
 Contracts
 
-| Contract  | Address                                    | Note      |
-| --------- | ------------------------------------------ | --------- |
-| BMCM      | 0x39FBbE3AeCbe6ED08baf16e13eFE4aA31550CaA2 |           |
-| BMCS      | 0xd6298BBB8b8B8EA273C3CB470B273A1cef552Ef3 |           |
-| BMC       | 0x50DD9479c45085dC64c6F0a0796040C7768f25CE |           |
-| BMV       | 0x684ba8F34f9481f7F02aCd4F143506E11AC19E3E |           |
-| XCALL     | 0x9B68bd3a04Ff138CaFfFe6D96Bc330c699F34901 |           |
-| Demo DAPP | 0x0FcBB34A8468CaA65d3f81CAef8C42E43043687c |           |
+| Contract  | Address                                    | Note |
+| --------- | ------------------------------------------ | ---- |
+| BMCM      | 0x39FBbE3AeCbe6ED08baf16e13eFE4aA31550CaA2 |      |
+| BMCS      | 0xd6298BBB8b8B8EA273C3CB470B273A1cef552Ef3 |      |
+| BMC       | 0x50DD9479c45085dC64c6F0a0796040C7768f25CE |      |
+| BMV       | 0x684ba8F34f9481f7F02aCd4F143506E11AC19E3E |      |
+| XCALL     | 0x9B68bd3a04Ff138CaFfFe6D96Bc330c699F34901 |      |
+| Demo DAPP | 0x0FcBB34A8468CaA65d3f81CAef8C42E43043687c |      |
 
 #### Havah Testnet
 
@@ -84,18 +84,17 @@ Domain
 * Network: `0x111.icon`
 * BTP NetworkId:
   * Berlin: `0x3`
-* Start Height (Block): 
+* Start Height (Block):
   * Berlin: `3185472`
 
 Contracts
 
-| Contract  | Address                                    | Note           |
-| ----------| ------------------------------------------ | -------------- |
-| BMC       | cx683a92f72cc2fe9a7a617019a8d6fcba6b6c06b7 |                |
-| Berlin BMV| cx8737236f65ef6d41ac33b328bc758e8663366caa | Trustless Mode |
-| XCALL     | cx05b5f4e2cb80827d4b53d13549041c66442f327d |                |
-| Demo DAPP | cxd1531ebfc81cb890810bc0e5603c1e27046174e3 |                |
-
+| Contract   | Address                                    | Note           |
+| ---------- | ------------------------------------------ | -------------- |
+| BMC        | cx683a92f72cc2fe9a7a617019a8d6fcba6b6c06b7 |                |
+| Berlin BMV | cx8737236f65ef6d41ac33b328bc758e8663366caa | Trustless Mode |
+| XCALL      | cx05b5f4e2cb80827d4b53d13549041c66442f327d |                |
+| Demo DAPP  | cxd1531ebfc81cb890810bc0e5603c1e27046174e3 |                |
 
 Reference link: [https://github.com/iconloop/btp2-testnet](https://github.com/iconloop/btp2-testnet)
 

@@ -113,10 +113,10 @@ To send a message using xCall you sign a transaction calling the `sendCallMessag
 >   * `_rollback` — (Optional) The data for restoring the caller state when an error occurred
 > * **Returns:** The serial number of the request
 
-When the `xcall` contract on the source chain receives the call request message, it sends the `_data` to the [BTP address](../blockchain-transmission-protocol-btp/btp-address.md) `_to` on the destination chain.
+When the `xcall` contract on the source chain receives the call request message, it sends the `_data` to the [BTP address](../../cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md) `_to` on the destination chain.
 
 * The `_data` param is an arbitrary payload, the xCall interface doesn't care about what you are sending, it leaves the encoding and decoding of this data to the Dapp that you are developing, for example it can be a hex encoded string, or a hex encoded number, etc.
-* The `_to` param is a [BTP formatted address](../blockchain-transmission-protocol-btp/btp-address.md) of the callee contract which receives the `_data` payload on the destination chain.
+* The `_to` param is a [BTP formatted address](../../cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md) of the callee contract which receives the `_data` payload on the destination chain.
 * The `_rollback` parameter is for handling error cases. If the `_rollback` parameter is not null, then the source chain will receive a response message back regardless of whether the destination chain execution of the message request fails. For more information, see [Error Handling](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#error-handling).
 
 Using the `icon-sdk-js` we can send the signed transaction invoking the `sendCallMessage` method of the xcall contract as shown in the following example from the `index.js` file of the sample repository given at the intro of this tutorial.
@@ -694,4 +694,4 @@ Hello this is xCall live!
 * End-to-end demonstration of BTP containing xCall: [https://github.com/icon-project/btp2/tree/main/e2edemo](https://github.com/icon-project/btp2/tree/main/e2edemo)
 * xCall Standard: [https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md)
 * IBC on ICON: [https://github.com/icon-project/IBC-Integration](https://github.com/icon-project/IBC-Integration)
-* [xCall testnet contracts](../blockchain-transmission-protocol-btp/)
+* [xCall testnet contracts](../../cross-chain-communication/blockchain-transmission-protocol-btp/)

@@ -89,7 +89,6 @@ This is an open-source community effort, so feel free to suggest new topics, add
 
 * [Overview](broken-reference)
 * [BTP](cross-chain-communication/blockchain-transmission-protocol-btp/)
-* [xCall](cross-chain-communication/xcall/)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 #### Support
