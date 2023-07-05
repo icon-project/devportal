@@ -1,5 +1,5 @@
 ---
-description: ICON's interface for arbitrary cross-chain contract calls
+description: A standard interface for arbitrary cross-chain contract calls
 ---
 
 # xCall
