@@ -2,8 +2,9 @@
 description: Here are articles to help you learn more about xCall.
 ---
 
-# Resources
+# Explanations
 
 #### Articles
 
 * [Message Lifecycle](message-lifecycle.md)
+* [Fees](fees.md)

@@ -2,7 +2,7 @@
 
 Sending a call message requires your Smart Contract to call the **pre-deployed** xCall Smart Contract's `sendCallMessage` method.
 
-More detailed explanation can be found [here](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#sendcallmessage). Rollback is covered in the [Troubleshooting ](../troubleshooting.md)section.
+More detailed explanation can be found [here](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#sendcallmessage). Rollback is covered in the [Troubleshooting ](error-handling.md)section.
 
 #### JVM
 

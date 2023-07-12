@@ -20,4 +20,4 @@ If you run into issues, join the [ICON Discord](https://discord.gg/8ZG7hCsWND) t
 
 ### Learn More
 
-For general information and concepts, proceed to [Message lifecycle](../build-with-xcall/resources/message-lifecycle.md).
+For general information and concepts, proceed to [Explanations](../build-with-xcall/explanations/).
