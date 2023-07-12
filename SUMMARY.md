@@ -14,10 +14,20 @@
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
   * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
-* [How to send a cross-chain message](getting-started/how-to-send-a-cross-chain-message/README.md)
-  * [Setting up a local environment](getting-started/how-to-send-a-cross-chain-message/setting-up-a-local-environment.md)
-  * [Sending a message with xCall](getting-started/how-to-send-a-cross-chain-message/sending-a-message-with-xcall.md)
-  * [Sending a message with xCall (with rollback)](getting-started/how-to-send-a-cross-chain-message/sending-a-message-with-xcall-with-rollback.md)
+
+## xCall
+
+* [What is xCall](xcall/what-is-xcall.md)
+* [Getting started](xcall/getting-started.md)
+* [Quickstart](xcall/quickstart/README.md)
+  * [Setting up a local environment](xcall/quickstart/setting-up-a-local-environment.md)
+  * [Sending a message](xcall/quickstart/sending-a-message-with-xcall.md)
+  * [Sending a message with rollback](xcall/quickstart/sending-a-message-with-rollback.md)
+* [Message lifecycle](xcall/message-lifecycle.md)
+* [Sending a message](xcall/sending-a-message.md)
+* [Receiving a message](xcall/receiving-a-message.md)
+* [Error handling](xcall/error-handling.md)
+* [Fees](xcall/fees.md)
 
 ## Concepts
 
@@ -92,7 +102,6 @@
 
 * [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp/README.md)
   * [BTP Address](cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md)
-* [xCall](cross-chain-communication/xcall.md)
 * [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
