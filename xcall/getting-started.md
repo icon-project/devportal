@@ -1,15 +1,23 @@
 ---
-description: Welcome to xCall!
+description: Welcome to xCall! Here are some quick guides to get you started.
 ---
 
 # Getting started
 
-To get started with xCall, see [how to send a cross-chain message](quickstart/).
+### Build a Cross-Chain DApp &#x20;
 
-You can also check out this simple code example [here](https://github.com/icon-community/crosschain-voting-dapp).
+Start by learning [how to send a cross-chain message](../build-with-xcall/quickstart/sending-a-message-with-xcall.md).
 
-For general information and concepts, proceed to [Message lifecycle](message-lifecycle.md).
+### Examples
 
+Take a look some example dApps that were created using xCall for inspiration.&#x20;
 
+* A [cross-chain voting dApp](https://github.com/icon-community/crosschain-voting-dapp)
 
-To learn more about xCall and what problems xCall aims to solve, go visit our [What is xCall](what-is-xcall.md) page.&#x20;
+### Help and Support
+
+If you run into issues, join the [ICON Discord](https://discord.gg/8ZG7hCsWND) to get support from builders on ICON.
+
+### Learn More
+
+For general information and concepts, proceed to [Message lifecycle](../build-with-xcall/resources/message-lifecycle.md).

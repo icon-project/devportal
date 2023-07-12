@@ -15,19 +15,24 @@
   * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
 
-## xCall
+## 🔀 xCall
 
-* [What is xCall](xcall/what-is-xcall.md)
+* [What is xCall?](xcall/what-is-xcall.md)
 * [Getting started](xcall/getting-started.md)
-* [Quickstart](xcall/quickstart/README.md)
-  * [Setting up a local environment](xcall/quickstart/setting-up-a-local-environment.md)
-  * [Sending a message](xcall/quickstart/sending-a-message-with-xcall.md)
-  * [Sending a message with rollback](xcall/quickstart/sending-a-message-with-rollback.md)
-* [Message lifecycle](xcall/message-lifecycle.md)
-* [Sending a message](xcall/sending-a-message.md)
-* [Receiving a message](xcall/receiving-a-message.md)
-* [Error handling](xcall/error-handling.md)
-* [Fees](xcall/fees.md)
+
+## Build with xCALL
+
+* [Quickstart](build-with-xcall/quickstart/README.md)
+  * [Setting up a local environment](build-with-xcall/quickstart/setting-up-a-local-environment.md)
+  * [Sending a message](build-with-xcall/quickstart/sending-a-message-with-xcall.md)
+  * [Sending a message with rollback](build-with-xcall/quickstart/sending-a-message-with-rollback.md)
+* [Guides](build-with-xcall/guides/README.md)
+  * [Sending a message](build-with-xcall/guides/sending-a-message.md)
+  * [Receiving a message](build-with-xcall/guides/receiving-a-message.md)
+  * [Handling Fees](build-with-xcall/guides/handling-fees.md)
+* [Troubleshooting](build-with-xcall/troubleshooting.md)
+* [Resources](build-with-xcall/resources/README.md)
+  * [Message lifecycle](build-with-xcall/resources/message-lifecycle.md)
 
 ## Concepts
 

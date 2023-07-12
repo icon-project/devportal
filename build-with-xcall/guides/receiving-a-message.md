@@ -54,7 +54,7 @@ When the EOA calls `executeCall` method, the `xCall` contract invokes the follow
 void handleCallMessage(String _from, byte[] _data);
 ```
 
-**I**f execution fails on the destination chain, `handleCallMessage` may also need to be defined in the source chain Smart Contract A in order to handle the [executeRollback](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#executerollback) invocation properly. For more information, see [Error handling](error-handling.md).
+**I**f execution fails on the destination chain, `handleCallMessage` may also need to be defined in the source chain Smart Contract A in order to handle the [executeRollback](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#executerollback) invocation properly. For more information, see [Troubleshooting](../troubleshooting.md).
 
 #### CallExecuted Event
 

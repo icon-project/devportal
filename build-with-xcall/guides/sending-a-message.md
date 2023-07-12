@@ -2,7 +2,7 @@
 
 Sending a call message requires your Smart Contract to call the **pre-deployed** xCall Smart Contract's `sendCallMessage` method.
 
-More detailed explanation can be found [here](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#sendcallmessage). Rollback is covered in the [error handling](error-handling.md) section.
+More detailed explanation can be found [here](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-52.md#sendcallmessage). Rollback is covered in the [Troubleshooting ](../troubleshooting.md)section.
 
 #### JVM
 
@@ -199,7 +199,3 @@ async function main() {
 main();
 ```
 
-#### Contributors
-
-* [R0bi7](https://github.com/R0bi7)
-* [Cyrus Vorwald](https://github.com/CyrusVorwald)
