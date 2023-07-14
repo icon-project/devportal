@@ -29,10 +29,10 @@
 * [Guides](build-with-xcall/guides/README.md)
   * [Sending a message](build-with-xcall/guides/sending-a-message.md)
   * [Receiving a message](build-with-xcall/guides/receiving-a-message.md)
-  * [Error Handling](build-with-xcall/guides/error-handling.md)
-* [Explanations](build-with-xcall/explanations/README.md)
-  * [Message lifecycle](build-with-xcall/explanations/message-lifecycle.md)
-  * [Fees](build-with-xcall/explanations/fees.md)
+  * [Error Handling](build-with-xcall/troubleshooting.md)
+* [Explanations](build-with-xcall/resources/README.md)
+  * [Message lifecycle](build-with-xcall/resources/message-lifecycle.md)
+  * [Fees](build-with-xcall/guides/handling-fees.md)
 
 ## Concepts
 

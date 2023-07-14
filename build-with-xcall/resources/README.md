@@ -7,4 +7,4 @@ description: Here are articles to help you learn more about xCall.
 #### Articles
 
 * [Message Lifecycle](message-lifecycle.md)
-* [Fees](fees.md)
+* [Fees](../guides/handling-fees.md)
