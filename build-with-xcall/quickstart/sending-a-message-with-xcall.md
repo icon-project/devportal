@@ -336,7 +336,7 @@ The call will respond with an error status of `Pending` or `Executing` until the
 
 The `CallMessage` event on the destination chain can be fetched to verify that the xcall interface on the destination chain has a new message that needs to be fetched.
 
-> **`@EventLog(indexed=3) void CallMessage(String _from, String _to, BigInteger _sn, BigInteger _reqId)`**
+> **`@EventLog(indexed=3) void CallMessage(String _from, String _to, BigInteger _sn, BigInteger _reqId, byte[] _data)`**
 >
 > Notifies the user that a new call message has arrived.
 >
@@ -345,6 +345,7 @@ The `CallMessage` event on the destination chain can be fetched to verify that t
 >   * `_to` — A string representation of the callee address
 >   * `_sn` — The serial number of the request from the source
 >   * `_reqId` — The request id of the destination chain
+>   * `_data` — The calldata
 
 Similar as the process of listening to the `CallMessageSent` event on the origin chain, we now wait for the `CallMessage` event on the destination chain.
 
@@ -393,10 +394,11 @@ async function main() {
     const xcallEvmContract = getXcallContractEVM();
     // console.log("xcall contract on evm chain:", xcallEvmContract);
 
-    // get callMessageSent event on evm chain
+    // get callMessage event on evm chain
     const callMessageFilters = xcallEvmContract.filters.CallMessage(
       btpAddressSource,
-      EVM_DAPP_ADDRESS
+      EVM_DAPP_ADDRESS,
+      parsedCallMessageSentEvent["_sn"]
     );
     console.log("callMessageFilters:", callMessageFilters);
 
@@ -405,7 +407,7 @@ async function main() {
     console.log("events:", events);
     console.log("# ReqId:", events[0].args._reqId);
 }
- 
+
 ```
 
 When the event gets triggered we will have a response like in the following:
@@ -456,19 +458,21 @@ Once you have verified that the event has been raised in the destination chain, 
 
 This transaction is being done by calling the `executeCall` method in the xCall contract on the destination chain:
 
-> **`@External void executeCall(BigInteger _reqId)`**
+> **`@External void executeCall(BigInteger _reqId, byte[] _data)`**
 >
 > Executes the requested call message.
 >
-> * **Parameters:** `_reqId` — The request id
+> * **Parameters:**
+>   * `_reqId` — The request id
+>   * `_data` — The calldata
 
 The `_reqId` is the unique identifier of the message request on the destination chain, we get this value in the `callMessage` event on the destination chain (the previous step).
 
 ```javascript
-async function executeCall(reqId) {
+async function executeCall(reqId, data) {
   try {
     const contract = getXcallContractEVM();
-    return await sendSignedTxEVM(contract, "executeCall", reqId);
+    return await sendSignedTxEVM(contract, "executeCall", reqId, data);
   } catch (e) {
     console.log("error running executeCall");
     console.log(e);
@@ -558,7 +562,7 @@ async function main() {
     console.log("callExecutedEvent:", callExecutedEvent);
 }
 
-    
+
 ```
 
 The result in this case is the following:
