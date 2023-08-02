@@ -4,7 +4,7 @@ In the following document we are going to go in detail about the process of send
 
 The following example uses a program written in JavaScript (nodejs) and the repository for it can be found in the following link:
 
-* [https://github.com/icon-community/xcall-sample-dapp](https://github.com/icon-community/xcall-sample-dapp)
+* [https://github.com/icon-community/DAppProxySampleUtilityFunctions](https://github.com/icon-community/DAppProxySampleUtilityFunctions)
 
 We are going to interact with 2 local blockchains, one representing the ICON Network and the other representing any EVM blockchain (Ethereum, BSC, etc) and send a hex encoded string as a message from the ICON chain to the EVM chain.
 
