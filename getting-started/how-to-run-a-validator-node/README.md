@@ -125,7 +125,7 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 
 Node grades are another term for node levels.\
 \
-After successfully registering as a validator node using [`registerPrep`](../icon-stack/client-apis/json-rpc-api/v3.md#registerprep) the grade of the node will be set to "0x2". **** There are 3 node grades, detailed below. You can also check the `grade` return parameter from [`getPrep`](../icon-stack/client-apis/json-rpc-api/v3.md#getprep) function from the JSON-RPC API for more info
+After successfully registering as a validator node using [`registerPrep`](../../icon-stack/client-apis/json-rpc-api/v3.md#registerprep) the grade of the node will be set to "0x2". \*\*\*\* There are 3 node grades, detailed below. You can also check the `grade` return parameter from [`getPrep`](../../icon-stack/client-apis/json-rpc-api/v3.md#getprep) function from the JSON-RPC API for more info
 
 | Grade number | Usage               | Description                                                                                               |
 | ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- |
