@@ -1,6 +1,6 @@
 # Register PRep Node Public Key
 
-The process of registering a PRep Node Public Key requires you to first generate a public key from the node wallet and then invoke the `setPRepNodePublicKey` method of the chain contract (`cx000..00`).
+The process of registering a PRep Node Public Key requires you to first generate a public key from the node wallet and then invoke the [`setPRepNodePublicKey`](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#registerprepnodepublickey) method of the chain contract (`cx000..00`).
 
 The following is an example of the RPC JSON Call required to call `setPRepNodePublicKey`.
 
@@ -32,9 +32,9 @@ The following is an example of the RPC JSON Call required to call `setPRepNodePu
 
 ### Checking if a Public Key has already been registered.
 
-You can verify if your PRep node has already registered a Public Key by calling the `getPRep` method of the chain contract.
+You can verify if your PRep node has already registered a Public Key by calling the [`getPRep`](https://docs.icon.community/icon-stack/client-apis/json-rpc-api/v3#getprep) method of the chain contract.
 
-The response object will have a param called `hasPublicKey` showing if a Public Key has already been registered or not.
+The response object will have a param called [`hasPublicKey`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#getpublickey) showing if a Public Key has already been registered or not.
 
 The following curl command showcase how to call the `getPRep` readonly method of the chain contract.
 
@@ -76,7 +76,7 @@ The following example shows the response of the call.
 
 ### Generating a Public Key with the icon-sdk-js
 
-To generate the public key of your node wallet you can use the [`icon-sdk-js`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk) and call the `.getPublicKey(bool)` method of the `IconWallet` object.
+To generate the public key of your node wallet you can use the [`icon-sdk-js`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk) and call the `.getPublicKey(bool)` method of the [`IconWallet` object](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#iconservice-iconwallet-wallet).
 
 ```
 /**
@@ -87,7 +87,7 @@ To generate the public key of your node wallet you can use the [`icon-sdk-js`](h
 */
 ```
 
-Instantiate a wallet object from the IconWallet object class using your private key and call the `.getPublicKey(true)` method to get your wallet private key.
+Instantiate a wallet object from the [IconWallet object class](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#iconservice-iconwallet-wallet) using your private key and call the `.getPublicKey(true)` method to get your wallet private key.
 
 ```js
 // Load wallet object
