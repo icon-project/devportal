@@ -9,6 +9,7 @@
   * [Decentralizing a local network](getting-started/how-to-run-a-local-network/decentralizing-a-local-network.md)
   * [Debugging a local network](getting-started/how-to-run-a-local-network/debugging-a-local-network.md)
 * [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
+* [Register PRep Node Public Key](getting-started/register-prep-node-public-key.md)
 * [How to run an API Endpoint](getting-started/how-to-run-an-api-endpoint.md)
 * [How to create a wallet account](getting-started/how-to-create-a-wallet-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
