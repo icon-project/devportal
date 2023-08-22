@@ -76,7 +76,7 @@ The following example shows the response of the call.
 
 ### Generating a Public Key with the goloop CLI
 
-You can also generate a public key with the [goloop CLI](https://docs.icon.community/concepts/computational-utilities/goloop). If you dont have the goloop CLI installed in your computer please follow [these instructions](https://docs.icon.community/concepts/computational-utilities/goloop/setup).
+To generate the Public Key you can use the [goloop CLI](https://docs.icon.community/concepts/computational-utilities/goloop). If you dont have the goloop CLI installed in your computer please follow [these instructions](https://docs.icon.community/concepts/computational-utilities/goloop/setup).
 
 Once you have the goloop CLI installed you can use `goloop ks pubkey` [command](https://github.com/icon-project/goloop/blob/master/doc/goloop_cli.md#goloop-ks-pubkey) command to generate the public key of your wallet
 
@@ -86,7 +86,7 @@ goloop ks pubkey -k KEYSTORE_FILE.json -p KEYSTORE_PASSWORD
 
 ### Generating a Public Key with the icon-sdk-js
 
-To generate the public key of your node wallet you can use the [`icon-sdk-js`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk) and call the `.getPublicKey(bool)` method of the [`IconWallet` object](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#iconservice-iconwallet-wallet).
+You can also use the [`icon-sdk-js`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk) and call the `.getPublicKey(bool)` method of the [`IconWallet` object](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#iconservice-iconwallet-wallet) to generate a Public key.
 
 ```
 
