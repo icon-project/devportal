@@ -30,7 +30,20 @@ The following is an example of the RPC JSON Call required to call `registerPRepN
 }
 ```
 
-### Checking if a Public Key has already been registered.
+## Checking if a Public Key has already been registered using goloop
+
+To verify if a PRep address has already registered a Public Key you can use the goloop CLI as shown in the following example:
+
+```bash
+goloop rpc call --to cx0000000000000000000000000000000000000000 \
+ --method getPRepNodePublicKey \
+ --param address=hxe45ef7de9eef0200a4090e57d6b92f40377eaea1 \
+ --uri https://lisbon.net.solidwallet.io/api/v3
+```
+
+If the response emits `“null”`, you need to register the public key.  If it emits a hex string value, thats the Public Key and no further action is required.
+
+## Checking if a Public Key has already been registered using curl
 
 You can verify if your PRep node has already registered a Public Key by calling the [`getPRep`](https://docs.icon.community/icon-stack/client-apis/json-rpc-api/v3#getprep) method of the chain contract.
 
@@ -74,7 +87,7 @@ The following example shows the response of the call.
 }
 ```
 
-### Generating a Public Key with the goloop CLI
+## Generating a Public Key with the goloop CLI
 
 To generate the Public Key you can use the [goloop CLI](https://docs.icon.community/concepts/computational-utilities/goloop). If you dont have the goloop CLI installed in your computer please follow [these instructions](https://docs.icon.community/concepts/computational-utilities/goloop/setup).
 
@@ -84,7 +97,7 @@ Once you have the goloop CLI installed you can use `goloop ks pubkey` [command](
 goloop ks pubkey -k KEYSTORE_FILE.json -p KEYSTORE_PASSWORD
 ```
 
-### Generating a Public Key with the icon-sdk-js
+## Generating a Public Key with the icon-sdk-js
 
 You can also use the [`icon-sdk-js`](https://docs.icon.community/icon-stack/client-apis/javascript-sdk) and call the `.getPublicKey(bool)` method of the [`IconWallet` object](https://docs.icon.community/icon-stack/client-apis/javascript-sdk#iconservice-iconwallet-wallet) to generate a Public key.
 
@@ -105,4 +118,20 @@ Instantiate a wallet object from the [IconWallet object class](https://docs.icon
 const wallet = IconWallet.loadPrivateKey('2ab···e4c');
 // Get public key of `Wallet` instance.
 const publicKey = wallet.getPublicKey(true)
+```
+
+## Registering a Public Key using goloop CLI
+
+To register a public key we can use the goloop CLI to send a transaction calling the `registerPRepNodePublicKey` method of the chain contract as shown in the following example:
+
+```bash
+goloop rpc sendtx call --to cx0000000000000000000000000000000000000000 \
+ --method registerPRepNodePublicKey \
+ --param address=hxe45ef7de9eef0200a4090e57d6b92f40377eaea1 \
+ --param pubKey=0x02b5f48123b05497c1e39d532b8de987c4d87e0156a03539fc9880d886422506c6 \
+ --key_store KEYSTORE_FILE.json \
+ --key_password KEYSTORE_PASSWORD \
+ --uri https://lisbon.net.solidwallet.io/api/v3 \
+ --nid 2 \
+ --step_limit 0x30000
 ```
