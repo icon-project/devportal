@@ -68,7 +68,7 @@ docker compose pull
 docker compose up -d
 ```
 
-Now we need to check the node periodically until is fully sync before doing the migration:
+Now we need to check the node periodically until is fully sync before doing the migration.
 
 The following commands can be used to monitor the synchronization process and to troubleshoot any issues:
 
@@ -110,7 +110,7 @@ To verify the current height of the node you can run the following curl command:
 curl localhost:9000/admin/chain/0x1
 ```
 
-The respond will be a JSON object like the following:
+The response will be a JSON object like the following:
 ```json
 {
  "cid":"0x1",
@@ -127,7 +127,7 @@ The respond will be a JSON object like the following:
 
 ## Step 3: Prepare for Migration
 
-Before proceeding further, ensure that your new API node is fully synchronized with the blockchain. Once you've confirmed this, you can proceed with the migration.
+Before proceeding further, ensure that your new API node is fully synchronized with the blockchain.
 
 In the meantime while the new node is synchronizing, copy the following files from your old server to your new server, put these file in a temp folder while the sync process is ongoing:
 
@@ -145,16 +145,16 @@ docker compose down
 
 ## Step 5: Copy Configuration Files
 
-Copy the configuration files that you already saved in a temporary file into the respective folder paths in your new server:
+Copy the configuration files that you already saved in a temporary folder into the respective folder paths in your new server:
 
 * `~/icon-node/docker-compose.yml`
 * `~/icon-node/config/keystore.json`
 
 ## Step 6: Start the New Node
 
-With the configuration files successfully copied to the new server, start the new node on the new server. This will bring your node online on the new server.
+With the configuration files successfully copied to the new server, start the new node on the new server.
 
-Run the following commands to restart the new node as a validator running with your validator wallet:
+Run the following commands to start the new node as a validator running with your validator wallet:
 
 ```bash
 docker compose up -d
