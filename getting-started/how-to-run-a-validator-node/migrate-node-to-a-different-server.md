@@ -31,8 +31,17 @@ Client: Docker Engine - Community
    API version:       1.42
    <...>
 ```
+After finishing the installation of Docker, move into the working folder for the node (`~/icon-node`) and create a new wallet for the API node, you can easily do this with a software wallet like Hana or you can follow the instructions in the following tutorial.
 
-After finishing the installation of Docker, move into the working folder for the node (`~/icon-node`) and create a `docker-compose.yml` file with the following content:
+https://docs.icon.community/getting-started/how-to-create-a-wallet-account
+
+Once you have the keystore file for the wallet create a new folder called `config` inside the root folder of your new API node (`~/icon-node/`)
+
+```
+mkdir config
+```
+
+Inside the root folder of the node create a `docker-compose.yml` file with the following content:
 
 ```yaml
 version: "3"
@@ -61,6 +70,9 @@ services:
       - 9000:9000
       - 7100:7100
 ```
+
+Remember to add the correct values for the name of the keystore file and the password in the `KEY_STORE_FILENAME` and `KEY_PASSWORD` params inside the `docker-compose.yml` file.
+
 Inside this folder now run the following commands to start the node:
 
 ```bash
@@ -104,7 +116,7 @@ The steps to setup a node are also detailed in the following guide:
 
 Allow your new API node to sync up with the blockchain. This process may take some time, but it's essential to ensure that your new node is up to date with the latest data.
 
-To verify the current height of the node you can run the following curl command:
+To verify the current height of the node you can run the following curl command inside the server:
 
 ```bash
 curl localhost:9000/admin/chain/0x1
@@ -145,7 +157,14 @@ docker compose down
 
 ## Step 5: Copy Configuration Files
 
-Copy the configuration files that you already saved in a temporary folder into the respective folder paths in your new server:
+Stop the new API node the same way you stopped your main node by running `docker compose down` inside the working folder of the new server.
+
+Before copying the configuration files of your node make a copy of the configuration files of the API node you have in the new server, you can find them in these locations:
+
+* `~/icon-node/docker-compose.yml`
+* `~/icon-node/config/keystore.json`
+
+Now you can copy the configuration files that you already saved in a temporary folder into the respective folder paths in your new server (the same path described previosly):
 
 * `~/icon-node/docker-compose.yml`
 * `~/icon-node/config/keystore.json`
@@ -165,3 +184,24 @@ docker compose up -d
 Monitor the newly migrated node to ensure that it operates smoothly without any issues. Keep a close eye on its performance and connectivity.
 
 By following these steps carefully, you can migrate your node to a different server while minimizing downtime and ensuring a seamless transition.
+
+## Troubleshooting
+
+If you've followed the steps outlined in this tutorial, you should encounter no major issues during the server migration process. It is crucial to ensure that you proceed with the final steps (starting at step #4) only after the new server node, initially configured as an API node, has fully synchronized with the blockchain. This guarantees that your node on the new server will have the fewest blocks to catch up with during the brief downtime window while migrating.
+
+In the event that the new server fails to validate blocks or synchronize with the blockchain for any reason, we recommend the following steps:
+
+1. Return to the original server and restore it to its previous configuration.
+2. Resume troubleshooting or seek assistance in the [Discord channels](https://icon.community/icondiscord/).
+
+Additionally, you can utilize the following resources to aid in troubleshooting and monitoring the migration process:
+
+- **Validator Block Check:** You can refer to this tutorial to check if a validator is missing blocks, which can be helpful during the migration process: [Validator Block Check Tutorial](https://docs.icon.community/support/advanced-topics/validator-nodes/how-to-check-if-a-validator-is-missing-blocks).
+
+- **Monitoring Tool:** To monitor the state of your node and ensure the migration is completed correctly, you can request access to the monitoring tool via the Discord channels: [Monitoring Tool](https://icon2.mon.solidwallet.io/).
+
+- For further guidance on troubleshooting the migration process and executing the tasks described in this tutorial, the following documentation can be of assistance:
+
+- [How to Set Up a Keystore on a Validator Node](https://docs.icon.community/support/advanced-topics/validator-nodes/how-to-setup-a-keystore-on-a-validator-node).
+
+- [Node Operation and Configuration](https://docs.icon.community/support/advanced-topics/validator-nodes/node-operation-and-configuration).
