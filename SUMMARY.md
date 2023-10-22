@@ -11,6 +11,7 @@
 * [How to run a Validator node](getting-started/how-to-run-a-validator-node/README.md)
   * [How to register a validator node public key](getting-started/how-to-run-a-validator-node/register-prep-node-public-key.md)
   * [Migrating node to a different server](getting-started/how-to-run-a-validator-node/migrate-node-to-a-different-server.md)
+  * [JSON Standard for Validator Detailed Information](getting-started/how-to-run-a-validator-node/json-standard-for-validator-detailed-information.md)
 * [How to run an API Endpoint](getting-started/how-to-run-an-api-endpoint.md)
 * [How to create a wallet account](getting-started/how-to-create-a-wallet-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
