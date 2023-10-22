@@ -13,11 +13,16 @@ To verify if a PRep address has already registered a Public Key using the [goloo
 ```bash
 goloop rpc call --to cx0000000000000000000000000000000000000000 \
  --method getPRepNodePublicKey \
- --param address=hxe45ef7de9eef0200a4090e57d6b92f40377eaea1 \
- --uri https://lisbon.net.solidwallet.io/api/v3
+ --param address=hxfc56203484921c3b7a4dee9579d8614d8c8daaf5 \
+ --uri https://ctz.solidwallet.io/api/v3
 ```
+Replace the address with your prep address.
 
 If the response emits `“null”`, you need to register the public key.  If it emits a hex string value, thats the Public Key and no further action is required.
+
+Alternatively you can use the tracker, click on the "Contract" tab, and find the `getPRepNodePublicKey` method. You should then enter your P-Rep's address. 
+
+Link: https://tracker.icon.community/contract/cx0000000000000000000000000000000000000000
 
 ### Generate Public Key
 
@@ -26,6 +31,8 @@ To generate the Public Key using the [goloop CLI](https://docs.icon.community/co
 ```bash
 goloop ks pubkey -k KEYSTORE_FILE.json -p KEYSTORE_PASSWORD
 ```
+> Note: If you are using a node address, use that keystore and password to generate the public address. 
+
 ### Register Public Key
 
 To register a public key we can use the goloop CLI to send a transaction calling the `registerPRepNodePublicKey` method of the chain contract as shown in the following example:
@@ -41,6 +48,8 @@ goloop rpc sendtx call --to cx0000000000000000000000000000000000000000 \
  --nid 2 \
  --step_limit 0x30000
 ```
+
+Alternatively you can use the tracker. Use your prep address and the public key as the inputs to the transaction for the `registerPRepNodePublicKey` method. 
 
 ## Using Javascript and curl
 
