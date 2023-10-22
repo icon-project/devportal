@@ -57,18 +57,6 @@ Network ID: 0x7
   - [Community](https://api.berlin.icon.community/api/v3d)
   - [Solidwallet](https://berlin.net.solidwallet.io/api/v3d)
 
-#### Sejong test network
-
-Network ID: 0x53
-
-[API Endpoint](https://sejong.net.solidwallet.io/api/v3)
-
-[Community API Endpoint](https://api.sejong.icon.community/api/v3)
-
-[Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
-
-[Tracker](https://tracker.sejong.icon.community)
-
 ### How to deploy
 
 See [the instructions on deployment](../smart-contracts/deploying-smart-contracts.md), with the `uri` argument set to the appropriate API Endpoint from above.
