@@ -2,20 +2,23 @@
 
 ### Introduction
 
-ICON is a general purpose blockchain ecosystem with a focus on linking different blockchains together.
+ICON is a general purpose blockchain ecosystem with a focus on linking different blockchains together
 
-The purpose of this documentation is to inform technical users, including developers, power-users, and enthusiasts, of how the ICON network is setup and how to utilize the various components of it.
+The purpose of this documentation is to inform technical users, including developers, power-users, and enthusiasts, of how the ICON network is setup and how to utilize the various components of it
 
-This is an open-source community effort, so feel free to suggest new topics, add new content, and provide examples wherever you think it might be helpful. Please open a merge request on the [Github repository](https://github.com/icon-project/devportal), or if you want to be more heavily involved, open an issue to have access to edit via the Gitbook app.
+This is an open-source community effort, so feel free to suggest new topics, add new content, and provide examples wherever you think it might be helpful. Please open a merge request on the [Github repository](https://github.com/icon-project/devportal), or if you want to be more heavily involved, open an issue to have access to edit via the Gitbook app
 
 ### Topics
 
 #### Getting Started
 
-* [How to run a local network](getting-started/how-to-run-a-local-network.md)
-* [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network/)
+  * [Setting up a local network](getting-started/how-to-run-a-local-network/setting-up-a-local-network.md)
+  * [Decentralizing a local network](getting-started/how-to-run-a-local-network/decentralizing-a-local-network.md)
+  * [Configuring local network](getting-started/how-to-run-a-local-network/debugging-a-local-network.md)
+* [How to run a Validator node](getting-started/how-to-run-a-validator-node/)
 * [How to run an API endpoint](getting-started/how-to-run-an-api-endpoint.md)
-* [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)
+* [How to create a wallet account](getting-started/how-to-create-a-wallet-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
 
@@ -28,12 +31,12 @@ This is an open-source community effort, so feel free to suggest new topics, add
   * [Rewards & Penalties](concepts/economics/rewards-and-penalties.md)
 * [Governance](concepts/governance/)
   * [Delegates](concepts/governance/delegates.md)
-  * [Network proposals](concepts/governance/network-proposals.md)
+  * [Network proposals](concepts/governance/network-proposals/)
 * [Network](concepts/network/)
   * [Clients](concepts/network/clients.md)
   * [API Endpoints](concepts/network/api-endpoints.md)
   * [Validator nodes](concepts/network/validator-nodes.md)
-* [Computation utilities](concepts/computational-utilities/)
+* [Blockchain components](concepts/computational-utilities/)
   * [Accounts](concepts/computational-utilities/accounts.md)
   * [Transactions](concepts/computational-utilities/transactions.md)
   * [Blocks](concepts/computational-utilities/blocks.md)
@@ -43,6 +46,9 @@ This is an open-source community effort, so feel free to suggest new topics, add
     * [CLI](concepts/computational-utilities/goloop/cli.md)
     * [Maintenance API](concepts/computational-utilities/goloop/maintenance-api.md)
     * [Maintenance metrics API](concepts/computational-utilities/goloop/maintenance-metrics-api.md)
+* [Decentralized applications (dApps](projects/decentralized-applications-dapps.md))
+  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
+* [Standards](projects/icon-improvement-proposals-iips.md)
 
 #### ICON Stack
 
@@ -56,8 +62,9 @@ This is an open-source community effort, so feel free to suggest new topics, add
   * [Building smart contracts](broken-reference)
   * [Testing smart contracts](broken-reference)
   * [Deploying smart contracts](icon-stack/smart-contracts/deploying-smart-contracts.md)
-  * [Composability](broken-reference)
+  * [Composability](icon-stack/smart-contracts/composability.md)
   * [Smart contract security](icon-stack/smart-contracts/smart-contract-security.md)
+  * [Allowed Methods](icon-stack/smart-contracts/allowed-methods.md)
 * [ICON networks](icon-stack/icon-networks/)
   * [Main network](icon-stack/icon-networks/main-network.md)
   * [ICE network](icon-stack/icon-networks/ice-network.md)
@@ -71,15 +78,18 @@ This is an open-source community effort, so feel free to suggest new topics, add
   * [Java SDK](icon-stack/client-apis/java-sdk.md)
   * [Swift SDK](icon-stack/client-apis/swift-sdk/)
     * [Examples](icon-stack/client-apis/swift-sdk/examples.md)
+* [Accounts and authentication](getting-started/how-to-create-an-icon-account.md)
+  * [Using goloop CLI](icon-stack/accounts-and-authentication/using-goloop-cli.md)
+  * [Using nodejs](icon-stack/accounts-and-authentication/using-nodejs.md)
+  * [Using icon-sdk-js](icon-stack/accounts-and-authentication/using-icon-sdk-js.md)
 * [Storage](icon-stack/storage.md)
 * [IDEs](icon-stack/ides.md)
 
-#### Projects
+#### Interoperability
 
-* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Decentralized applications (dApps](projects/decentralized-applications-dapps.md))
-  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
-* [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
+* [Overview](broken-reference)
+* [BTP](cross-chain-communication/blockchain-transmission-protocol-btp/)
+* [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 #### Support
 
@@ -94,13 +104,12 @@ This is an open-source community effort, so feel free to suggest new topics, add
     * [Backup and restore DB guide](support/advanced-topics/validator-nodes/backup-and-restore-db-guide.md)
     * [How to setup a 'keystore' on a Validator node'](support/advanced-topics/validator-nodes/how-to-setup-a-keystore-on-a-validator-node.md)
     * [How to bond](support/advanced-topics/validator-nodes/how-to-bond.md)
+    * [How to check if a validator node is missing blocks](support/advanced-topics/validator-nodes/how-to-check-if-a-validator-is-missing-blocks.md)
   * [API Endpoints](support/advanced-topics/api-endpoints/)
     * [Common operation and debug steps](support/advanced-topics/api-endpoints/common-operation-and-debug-steps.md)
   * [Goloop](support/advanced-topics/goloop/)
     * [Genesis transaction file format](support/advanced-topics/goloop/genesis\_tx.md)
     * [Genesis transaction storage](support/advanced-topics/goloop/genesis\_storage.md)
-  * [Java smart contracts](support/advanced-topics/java-smart-contracts/)
-    * [Allowed methods](support/advanced-topics/java-smart-contracts/allowed-methods.md)
 
 #### Release Notes
 

@@ -8,57 +8,66 @@ This is the core ICON network. Refer to this set of documentations for informati
 
 #### Main network
 
-_Main network. Most recent, stable and tested blockchain version_&#x20;
+_Main network. Most recent, stable and tested blockchain version_
 
-[API Endpoint](https://ctz.solidwallet.io/api/v3) (network ID: 0x1)
-
-[Community API Endpoint](https://api.icon.community/api/v3)
-
-[Debug API Endpoint](https://ctz.solidwallet.io/api/v3d)
-
-[Debug Community API Endpoint](https://api.icon.community/api/v3d)
+Network ID: 0x1
 
 [Tracker](https://tracker.icon.community)
+
+**API Endpoints**
+
+- RPC Endpoints 
+  - [Community](https://api.icon.community/api/v3) 
+  - [Solidwallet](https://ctz.solidwallet.io/api/v3)
+
+- Debug RPC Endpoints
+  - [Community](https://api.icon.community/api/v3d)
+  - [Solidwallet](https://ctz.solidwallet.io/api/v3d)
+
 
 #### Lisbon test network
 
 _Test network. Second round of testing. Just before Main network_
 
-[API Endpoint](https://lisbon.net.solidwallet.io/api/v3) (network ID: 0x2)
-
-[Community API Endpoint](https://api.lisbon.icon.community/api/v3)
-
-[Debug API Endpoint](https://lisbon.net.solidwallet.io/api/v3d)
-
-[Debug Community API Endpoint](https://api.lisbon.icon.community/api/v3d)
+Network ID: 0x2
 
 [Tracker](https://tracker.lisbon.icon.community)
+
+- RPC Endpoints 
+  - [Community](https://api.lisbon.icon.community/api/v3) 
+  - [Solidwallet](https://lisbon.net.solidwallet.io/api/v3)
+
+- Debug RPC Endpoints
+  - [Community](https://api.lisbon.icon.community/api/v3d)
+  - [Solidwallet](https://lisbon.net.solidwallet.io/api/v3d)
 
 #### Berlin test network
 
 _Test network. First round of testing_
 
-[API Endpoint](https://berlin.net.solidwallet.io/api/v3) (network ID: 0x7)
-
-[Community API Endpoint](https://api.berlin.icon.community/api/v3)
-
-[Debug API Endpoint](https://berlin.net.solidwallet.io/api/v3d)
-
-[Debug Community API Endpoint](https://api.berlin.icon.community/api/v3d)
+Network ID: 0x7
 
 [Tracker](https://tracker.berlin.icon.community)
 
+- RPC Endpoints 
+  - [Community](https://api.berlin.icon.community/api/v3) 
+  - [Solidwallet](https://berlin.net.solidwallet.io/api/v3)
+
+- Debug RPC Endpoints
+  - [Community](https://api.berlin.icon.community/api/v3d)
+  - [Solidwallet](https://berlin.net.solidwallet.io/api/v3d)
+
 #### Sejong test network
 
-[API Endpoint](https://sejong.net.solidwallet.io/api/v3) (network ID: 0x53)
+Network ID: 0x53
+
+[API Endpoint](https://sejong.net.solidwallet.io/api/v3)
 
 [Community API Endpoint](https://api.sejong.icon.community/api/v3)
 
 [Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
 
-[Debug Community API Endpoint](https://api.sejong.icon.community/api/v3d)
-
-[Tracker](https://sejong.tracker.solidwallet.io)
+[Tracker](https://tracker.sejong.icon.community)
 
 ### How to deploy
 
@@ -68,6 +77,6 @@ See [the instructions on deployment](../smart-contracts/deploying-smart-contract
 
 You can get test [ICX](../../concepts/economics/icx.md) for testnets using the following faucets. If you need a large amount of ICX, please get in touch with [hello@icon.foundation](mailto:hello@icon.foundation), or ask in [ICON Dev telegram channel](https://t.me/icondevs) or [ICON discord server](https://discord.com/invite/7a75Hf3cFm).
 
-* [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
+* [https://faucet.iconosphere.io/](https://faucet.iconosphere.io/)
 * [https://faucet.sharpn.tech](https://faucet.sharpn.tech)
 * [https://faucet.reliantnode.com](https://faucet.reliantnode.com)

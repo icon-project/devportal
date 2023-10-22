@@ -4,13 +4,37 @@
 
 ## Getting Started
 
-* [How to run a local network](getting-started/how-to-run-a-local-network.md)
-* [How to run a Validator node](getting-started/how-to-run-a-validator-node.md)
+* [How to run a local network](getting-started/how-to-run-a-local-network/README.md)
+  * [Setting up a local network](getting-started/how-to-run-a-local-network/setting-up-a-local-network.md)
+  * [Decentralizing a local network](getting-started/how-to-run-a-local-network/decentralizing-a-local-network.md)
+  * [Debugging a local network](getting-started/how-to-run-a-local-network/debugging-a-local-network.md)
+* [How to run a Validator node](getting-started/how-to-run-a-validator-node/README.md)
+  * [How to register a validator node public key](getting-started/how-to-run-a-validator-node/register-prep-node-public-key.md)
+  * [Migrating node to a different server](getting-started/how-to-run-a-validator-node/migrate-node-to-a-different-server.md)
 * [How to run an API Endpoint](getting-started/how-to-run-an-api-endpoint.md)
-* [How to create an ICON account](getting-started/how-to-create-an-icon-account.md)
+* [How to create a wallet account](getting-started/how-to-create-a-wallet-account.md)
 * [How to write a smart contract](getting-started/how-to-write-a-smart-contract/README.md)
   * [How to estimate required STEP](getting-started/how-to-write-a-smart-contract/how-to-estimate-required-step.md)
 * [How to use the JSON-RPC API](getting-started/how-to-use-the-json-rpc-api.md)
+
+## 🔀 xCall
+
+* [What is xCall?](xcall/what-is-xcall.md)
+* [Getting started](xcall/getting-started.md)
+
+## Build with xCALL
+
+* [Quickstart](build-with-xcall/quickstart/README.md)
+  * [Setting up a local environment](build-with-xcall/quickstart/setting-up-a-local-environment.md)
+  * [Sending a message](build-with-xcall/quickstart/sending-a-message-with-xcall.md)
+  * [Sending a message with rollback](build-with-xcall/quickstart/sending-a-message-with-rollback.md)
+* [Guides](build-with-xcall/guides/README.md)
+  * [Sending a message](build-with-xcall/guides/sending-a-message.md)
+  * [Receiving a message](build-with-xcall/guides/receiving-a-message.md)
+  * [Error Handling](build-with-xcall/troubleshooting.md)
+* [Explanations](build-with-xcall/resources/README.md)
+  * [Message lifecycle](build-with-xcall/resources/message-lifecycle.md)
+  * [Fees](build-with-xcall/guides/handling-fees.md)
 
 ## Concepts
 
@@ -21,12 +45,16 @@
   * [Rewards & Penalties](concepts/economics/rewards-and-penalties.md)
 * [Governance](concepts/governance/README.md)
   * [Delegates](concepts/governance/delegates.md)
-  * [Network proposals](concepts/governance/network-proposals.md)
+  * [Network proposals](concepts/governance/network-proposals/README.md)
+    * [Overview on Network Proposals](concepts/governance/network-proposals/overview-on-network-proposals.md)
+    * [Types of Proposals](concepts/governance/network-proposals/types-of-proposals.md)
+    * [Registering and voting network proposals](concepts/governance/network-proposals/registering-and-voting-network-proposals.md)
+    * [Submit Network Proposal using the icon-sdk-js](concepts/governance/network-proposals/submit-network-proposal-using-the-icon-sdk-js.md)
 * [Network](concepts/network/README.md)
   * [Clients](concepts/network/clients.md)
   * [API Endpoints](concepts/network/api-endpoints.md)
   * [Validator nodes](concepts/network/validator-nodes.md)
-* [Computational utilities](concepts/computational-utilities/README.md)
+* [Blockchain components](concepts/computational-utilities/README.md)
   * [Accounts](concepts/computational-utilities/accounts.md)
   * [Transactions](concepts/computational-utilities/transactions.md)
   * [Blocks](concepts/computational-utilities/blocks.md)
@@ -36,6 +64,9 @@
     * [CLI](concepts/computational-utilities/goloop/cli.md)
     * [Maintenance API](concepts/computational-utilities/goloop/maintenance-api.md)
     * [Maintenance metrics API](concepts/computational-utilities/goloop/maintenance-metrics-api.md)
+* [Decentralized applications (dApps)](projects/decentralized-applications-dapps.md)
+  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
+* [Standards](projects/icon-improvement-proposals-iips.md)
 
 ## ICON Stack
 
@@ -52,6 +83,7 @@
   * [Deploying smart contracts](icon-stack/smart-contracts/deploying-smart-contracts.md)
   * [Composability](icon-stack/smart-contracts/composability.md)
   * [Smart contract security](icon-stack/smart-contracts/smart-contract-security.md)
+  * [Allowed methods](icon-stack/smart-contracts/allowed-methods.md)
 * [ICON networks](icon-stack/icon-networks/README.md)
   * [Main network](icon-stack/icon-networks/main-network.md)
   * [ICE network](icon-stack/icon-networks/ice-network.md)
@@ -66,15 +98,18 @@
   * [Java SDK](icon-stack/client-apis/java-sdk.md)
   * [Swift SDK](icon-stack/client-apis/swift-sdk/README.md)
     * [Examples](icon-stack/client-apis/swift-sdk/examples.md)
+* [Accounts and authentication](getting-started/how-to-create-an-icon-account.md)
+  * [Using goloop CLI](icon-stack/accounts-and-authentication/using-goloop-cli.md)
+  * [Using nodejs](icon-stack/accounts-and-authentication/using-nodejs.md)
+  * [Using icon-sdk-js](icon-stack/accounts-and-authentication/using-icon-sdk-js.md)
 * [Storage](icon-stack/storage.md)
 * [IDEs](icon-stack/ides.md)
 
-## Projects
+## Cross-Chain Communication
 
-* [BTP & ICON Bridge](projects/btp-and-icon-bridge.md)
-* [Decentralized applications (dApps)](projects/decentralized-applications-dapps.md)
-  * [Oracles](projects/decentralized-applications-dapps/oracles.md)
-* [ICON Improvement Proposals (IIPs)](projects/icon-improvement-proposals-iips.md)
+* [Blockchain Transmission Protocol (BTP)](cross-chain-communication/blockchain-transmission-protocol-btp/README.md)
+  * [BTP Address](cross-chain-communication/blockchain-transmission-protocol-btp/btp-address.md)
+* [ICON Bridge](cross-chain-communication/icon-bridge.md)
 
 ## Support
 
@@ -89,13 +124,12 @@
     * [Backup and restore DB guide](support/advanced-topics/validator-nodes/backup-and-restore-db-guide.md)
     * [How to setup a 'keystore' on a Validator node](support/advanced-topics/validator-nodes/how-to-setup-a-keystore-on-a-validator-node.md)
     * [How to bond](support/advanced-topics/validator-nodes/how-to-bond.md)
+    * [How to check if a validator is missing blocks](support/advanced-topics/validator-nodes/how-to-check-if-a-validator-is-missing-blocks.md)
   * [API Endpoints](support/advanced-topics/api-endpoints/README.md)
     * [Common operation and debug steps](support/advanced-topics/api-endpoints/common-operation-and-debug-steps.md)
   * [Goloop](support/advanced-topics/goloop/README.md)
     * [Genesis transaction file format](support/advanced-topics/goloop/genesis\_tx.md)
     * [Genesis transaction storage](support/advanced-topics/goloop/genesis\_storage.md)
-  * [Java smart contracts](support/advanced-topics/java-smart-contracts/README.md)
-    * [Allowed methods](support/advanced-topics/java-smart-contracts/allowed-methods.md)
 
 ## Release notes
 

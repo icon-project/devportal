@@ -34,7 +34,7 @@ services:
       image: iconloop/icon2-node
       container_name: "icon2-node"
       network_mode: host
-      restart: "on-failure"
+      restart: "always"
       environment:
          SERVICE: "MainNet"  # MainNet, SejongNet  ## network type 
          GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic          
@@ -42,9 +42,7 @@ services:
          # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
          KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD"
          FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-         # You must enter your ICON1 node address. Recent blocks that are not in the backup DB are synchronized from your ICON1 node.
-         MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"
-     
+         
          ROLE: 3 # Validator = 3, API Endpoint = 0
 
       cap_add:
@@ -122,6 +120,18 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 | CHECK\_STACK\_LIMIT  | 360                     | int  | false    | count - count- Restart container when stack value is reached                     |
 | GOLOOP\_LOG\_LEVEL   | debug                   | str  | false    | Log Level - (trace,debug,info,warn,error,fatal,panic                             |
 | LOG\_OUTPUT\_TYPE    | file                    | str  | false    | sec - check interval for monitoring                                              |
+
+### Node Grades
+
+Node grades are another term for node levels.\
+\
+After successfully registering as a validator node using [`registerPrep`](../../icon-stack/client-apis/json-rpc-api/v3.md#registerprep) the grade of the node will be set to "0x2". \*\*\*\* There are 3 node grades, detailed below. You can also check the `grade` return parameter from [`getPrep`](../../icon-stack/client-apis/json-rpc-api/v3.md#getprep) function from the JSON-RPC API for more info
+
+| Grade number | Usage               | Description                                                                                               |
+| ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0x2          | Validator Candidate | Register your node as a candidate to become a block validator and network governance delegate             |
+| 0x1          | Sub-Validator       | Register your node as a sub-validator for block production and validation and network governance delegate |
+| 0x0          | Main Validator      | Register your node as a validator for block production and validation and network governance delegate     |
 
 ### Further Resources
 

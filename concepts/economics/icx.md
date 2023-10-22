@@ -10,11 +10,13 @@ A description of _cryptocurrency_ is summarized nicely by the [Ethereum Develope
 >
 > The first cryptocurrency was Bitcoin, created by Satoshi Nakamoto. Since Bitcoin's release in 2009, people have made thousands of cryptocurrencies across many different blockchains
 
-### What is ICX? <a href="#what-is-ether" id="what-is-ether"></a>
+### What is ICX? <a href="#what-is-icx" id="what-is-icx"></a>
 
 **ICX** is the basic currency unit of the ICON Network. The fundamental economic activities that take place on the ICON Network are based on the functionality of ICX. To use the language from the description of cryptocurrency above, ICX is a medium of exchange for users on the ICON Network. The three ways that ICX is exchanged are "Minting", "Staking", and "Transferring".
 
 The price of ICX is correlated with the value of computational power on the ICON Network. The actual _cost to use_ the computational power on the ICON Network is called [_STEP_](https://app.gitbook.com/o/-McMmnDTovEDTOOjq4sG/s/-McMmuxKCCgDfbGouV8t-887967055/\~/changes/jerz7SXXKg0b6WUC1rjf/concepts/economics/step), and is described in its own section of the documentation.
+
+The smallest denomination of ICX is loop. 1 ICX = 1,000,000,000,000,000,000 loop (10^18).
 
 ### Minting ICX <a href="#minting-ether" id="minting-ether"></a>
 

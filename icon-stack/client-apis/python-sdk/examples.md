@@ -4,16 +4,14 @@ This document describes how to interact with `ICON Network` using Python SDK. Th
 
 Get different types of examples as follows. Complete source code is found on Github at [https://github.com/icon-project/icon-sdk-python/tree/master/quickstart](https://github.com/icon-project/icon-sdk-python/tree/master/quickstart)
 
-| Example                                       | Description                                                                                    |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [Wallet](examples.md#wallet)                  | An example of creating and loading a keywallet.                                                |
-| [ICX Transfer](broken-reference)              | An example of transferring ICX and confirming the result.                                      |
-| [Token Deploy and Transfer](broken-reference) | An example of deploying an IRC token, transferring the token and confirming the result.        |
-| [Sync Block](broken-reference)                | An example of checking block confirmation and printing the ICX and token transfer information. |
+| Example                                                                  | Description                                                                                    |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| [Wallet](examples.md#wallet)                                             | An example of creating and loading a keywallet.                                                |
+| [ICX Transfer](examples.md#icx-transfer)                                 | An example of transferring ICX and confirming the result.                                      |
+| [Token Deploy and Transfer](examples.md#token-deploy-and-transfer)       | An example of deploying an IRC token, transferring the token and confirming the result.        |
+| [Sync Block](examples.md#sync-block)                                     | An example of checking block confirmation and printing the ICX and token transfer information. |
 
 ### Prerequisite
-
-Enumerate any required knowledge, configuration, or resources to complete this tutorial. Provide links to other useful resources. Helping your readers to prepare increases the likelihood that they will continue reading.
 
 ICON SDK for Python development and execution requires the following environments.
 
@@ -701,9 +699,9 @@ def get_token_symbol(token_address: str):
 
 ### References
 
-* [API Reference](broken-reference)
-* [ICON JSON-RPC API v3](broken-reference)
-* [ICON Network](broken-reference)
+* [API Reference](./README.md)
+* [ICON JSON-RPC API v3](../json-rpc-api/README.md)
+* [ICON Network](../../../README.md)
 
 ### Licenses
 

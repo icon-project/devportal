@@ -11,7 +11,7 @@ Some key points about Java:
 * Statically-typed
 * Supports inheritance, libraries, user-defined types, etc
 
-There is a tremendous amount of learning material available for Java. See the [_Further Resources_](https://www.codecademy.com/resources/docs/java) section for more information.
+There is a tremendous amount of learning material available for Java. See the [_Further Resources_](smart-contract-languages.md#further-resources) section for more information.
 
 #### Example contract
 

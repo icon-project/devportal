@@ -16,4 +16,4 @@ Running a Validator node increases diversity within the ICON network. Diversity 
 
 ### Running a Validator node
 
-See the [Getting Started](../../getting-started/how-to-run-a-validator-node.md) guide
+See the [Getting Started](../../getting-started/how-to-run-a-validator-node/) guide
