@@ -12,15 +12,18 @@ _Main network. Most recent, stable and tested blockchain version_
 
 Network ID: 0x1
 
-[API Endpoint 1](https://ctz.solidwallet.io/api/v3)
-
-[Debug API Endpoint 1](https://ctz.solidwallet.io/api/v3d)
-
-[API Endpoint 2](https://api.icon.community/api/v3)
-
-[Debug API Endpoint 2](https://api.icon.community/api/v3d)
-
 [Tracker](https://tracker.icon.community)
+
+**API Endpoints**
+
+- RPC Endpoints 
+  - [Community](https://api.icon.community/api/v3) 
+  - [Solidwallet](https://ctz.solidwallet.io/api/v3)
+
+- Debug RPC Endpoints
+  - [Community](https://api.icon.community/api/v3d)
+  - [Solidwallet](https://ctz.solidwallet.io/api/v3d)
+
 
 #### Lisbon test network
 
@@ -28,11 +31,15 @@ _Test network. Second round of testing. Just before Main network_
 
 Network ID: 0x2
 
-[API Endpoint](https://lisbon.net.solidwallet.io/api/v3)
-
-[Debug API Endpoint](https://lisbon.net.solidwallet.io/api/v3d)
-
 [Tracker](https://tracker.lisbon.icon.community)
+
+- RPC Endpoints 
+  - [Community](https://api.lisbon.icon.community/api/v3) 
+  - [Solidwallet](https://lisbon.net.solidwallet.io/api/v3)
+
+- Debug RPC Endpoints
+  - [Community](https://api.lisbon.icon.community/api/v3d)
+  - [Solidwallet](https://lisbon.net.solidwallet.io/api/v3d)
 
 #### Berlin test network
 
@@ -40,21 +47,15 @@ _Test network. First round of testing_
 
 Network ID: 0x7
 
-[API Endpoint](https://berlin.net.solidwallet.io/api/v3)
-
-[Debug API Endpoint](https://berlin.net.solidwallet.io/api/v3d)
-
 [Tracker](https://tracker.berlin.icon.community)
 
-#### Sejong test network
+- RPC Endpoints 
+  - [Community](https://api.berlin.icon.community/api/v3) 
+  - [Solidwallet](https://berlin.net.solidwallet.io/api/v3)
 
-Network ID: 0x53
-
-[API Endpoint](https://sejong.net.solidwallet.io/api/v3)
-
-[Debug API Endpoint](https://sejong.net.solidwallet.io/api/v3d)
-
-[Tracker](https://tracker.sejong.icon.community)
+- Debug RPC Endpoints
+  - [Community](https://api.berlin.icon.community/api/v3d)
+  - [Solidwallet](https://berlin.net.solidwallet.io/api/v3d)
 
 ### How to deploy
 
