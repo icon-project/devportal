@@ -11,14 +11,14 @@ Install [docker-compose](https://github.com/docker/compose) as well if it is not
 Get the official Docker Image: `iconloop/icon2-node`
 
 ```
-System Requirements 
+System Requirements
 
 CPU:  minimum 4core, recommend 8core +
-RAM:  minimum 16GB, recommend 32GB + 
-DISK : minimum SSD 1.5TB, recommend SSD 2TB + 
+RAM:  minimum 16GB, recommend 32GB +
+DISK : minimum SSD 1.5TB, recommend SSD 2TB +
 Network: minimum 1Gbps, recommend 2Gbps +
 
-External Communications 
+External Communications
 TCP 7100: TCP port used for peer-to-peer connection between peer nodes.
 TCP 9000: JSON-RPC or RESTful API port serving application requests.P-Rep must allow TCP connections to port 7100 and 9000 of an external host. ( Use 0.0.0.0/0 for a source from any network )
 ```
@@ -36,22 +36,25 @@ services:
       network_mode: host
       restart: "always"
       environment:
-         SERVICE: "MainNet"  # MainNet, SejongNet  ## network type 
-         GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic          
+         SERVICE: "MainNet"  # MainNet, SejongNet  ## network type
+         GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic
          KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
          # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
          KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD"
          FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-         
+
          ROLE: 3 # Validator = 3, API Endpoint = 0
 
       cap_add:
          - SYS_TIME
 
-      volumes:         
+      volumes:
          - ./data:/goloop/data # mount a data volumes
-         - ./config:/goloop/config # mount a config volumes ,Put your used keystore file here.     
+         - ./config:/goloop/config # mount a config volumes ,Put your used keystore file here.
          - ./logs:/goloop/logs
+      ports:
+         - 9000:9000
+         - 7100:7100
 ```
 
 Start up
@@ -73,8 +76,8 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 
 ```
 .
-├── docker-compose.yml 
-├── config               # configuration files                         
+├── docker-compose.yml
+├── config               # configuration files
 │   └── keystore.json   # Import the your keystore file
 
 ├── data                # block data
@@ -87,11 +90,11 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 ├── icon   # icon1 data for migrate. If a migration is completed, it will be auto-remove
 │   └── migrator_bm
 └── logs   # log files
-    ├── booting.log   
+    ├── booting.log
     ├── health.log    # health state log
     ├── chain.log     # goloop chain action logs
     ├── download.log
-    ├── download_error.log # download  
+    ├── download_error.log # download
     └── goloop.log   # goloop's log file
 ```
 
