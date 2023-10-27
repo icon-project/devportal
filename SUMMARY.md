@@ -87,7 +87,6 @@
   * [Allowed methods](icon-stack/smart-contracts/allowed-methods.md)
 * [ICON networks](icon-stack/icon-networks/README.md)
   * [Main network](icon-stack/icon-networks/main-network.md)
-  * [ICE network](icon-stack/icon-networks/ice-network.md)
 * [Client APIs](icon-stack/client-apis/README.md)
   * [JSON-RPC API](icon-stack/client-apis/json-rpc-api/README.md)
     * [v3](icon-stack/client-apis/json-rpc-api/v3.md)
