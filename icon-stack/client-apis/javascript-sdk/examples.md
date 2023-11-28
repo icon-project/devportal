@@ -77,9 +77,9 @@ Generate `IconService` to communicate with the nodes.
 The `IconService` class contains a set of API methods. It allows you to send transaction, check the result and get block information, etc. It accepts the `HttpProvider` which serves the purpose of connecting to HTTP and HTTPS based JSON-RPC servers. The `HttpProvider` takes the full URI where the server can be found. Here is a simple example how to initialize `IconService` class.
 
 ```javascript
-/*  HttpProvider is used to communicate with http. 
-    In this example, we use Yeouido node as provider. */
-const provider = new HttpProvider('https://bicon.net.solidwallet.io/api/v3');
+/*  HttpProvider is used to communicate with http.
+    In this example, we use Lisbon node as provider. */
+const provider = new HttpProvider('https://lisbon.net.solidwallet.io/api/v3');
 
 /* Create IconService instance */
 const iconService = new IconService(provider);
@@ -123,7 +123,7 @@ const callObj = new CallBuilder()
     .params({ _owner: 'hx87a···d6a' })
     .build()
 
-/* Executes a call method to call a read-only API method on the SCORE immediately without creating a transaction on Loopchain */
+/* Executes a call method to call a read-only API method on the SCORE immediately without creating a transaction on chain*/
 const result = await iconService.call(callObj).execute();
 ```
 
@@ -182,7 +182,7 @@ const txObj = new DeployTransactionBuilder()
     .nonce(IconConverter.toBigNumber(1))
     .version(IconConverter.toBigNumber(3))
     .timestamp((new Date()).getTime() * 1000)
-    .contentType('application/zip')
+    .contentType('application/java')
     .content('0x504···000')
     .params({
         initialSupply: IconConverter.toHex('100000000000'),
@@ -247,12 +247,12 @@ npm run quickstart:rebuild   // open http://localhost:3000/ in browser
 
 #### Set Node URL
 
-If you want to use custom ICON node URL, change the value of `NODE_URL` variable in `./mockData/index.js`. Default value of `NODE_URL` is `https://bicon.net.solidwallet.io/api/v3`
+If you want to use custom ICON node URL, change the value of `NODE_URL` variable in `./mockData/index.js`. Default value of `NODE_URL` is `https://lisbon.net.solidwallet.io/api/v3`
 
 _For more information on the testnet, see_ [_the documentation_](https://github.com/icon-project/icon-project.github.io/blob/master/docs/icon\_network.md) _for the ICON network._
 
 ```javascript
-const NODE_URL = 'https://bicon.net.solidwallet.io/api/v3';
+const NODE_URL = 'https://lisbon.net.solidwallet.io/api/v3';
 ```
 
 ####
@@ -309,7 +309,7 @@ After calling `store`, Keystore JSON object can be looked up with the returned v
 const privateKey = '38f792b95a5202ab431bfc799f7e1e5c74ec0b9ede5c6142ee7364f2c84d72f6'
 const wallet = IconWallet.loadPrivateKey(privateKey);
 console.log(wallet.store('qwer1234!'));
-// Output: 
+// Output:
 // {
 //     "version": 3,
 //     "id": "e00e113c-1e45-47e4-b732-10f3d1903d75",
@@ -413,7 +413,7 @@ Generate SignedTransaction to add the signature of the transaction.
 const signedTransaction = new SignedTransaction(transaction, wallet);
 // Read params to transfer to nodes
 console.log(signedTransaction.getProperties());
-// Output: 
+// Output:
 // {
 //     from: "hx902ecb51c109183ace539f247b4ea1347fbf23b5",
 //     nid: "0x3",
@@ -481,7 +481,7 @@ const wallet = IconWallet.loadPrivateKey(MockData.PRIVATE_KEY_2);
 const balance = await iconService.getBalance(wallet.getAddress()).execute();
 console.log(balance);
 
-// Output: 
+// Output:
 // 100432143214321432143
 ```
 
@@ -495,18 +495,18 @@ _For the Wallet and IconService generation, please refer to the information abov
 
 You need the SCORE Project to deploy token.
 
-In this example, you will use ‘test.zi’ from the ‘resources’ folder.
+In this example, you will use ‘irc2-token.jar’ from the ‘resources’ folder.
 
-\*test.zi : SampleToken SCORE Project Zip file.
+* irc2-token.jar : SampleToken SCORE contract.
 
-Generate a wallet using `MockData.PRIVATE_KEY_1`, then read the binary data from ‘test.zi’
+Generate a wallet using `MockData.PRIVATE_KEY_1`, then read the binary data from ‘irc2-token.jar’
 
 ```javascript
 const { Wallet } = this.iconService;
 this.wallet = IconWallet.loadPrivateKey(MockData.PRIVATE_KEY_1);
 
 this.content = '';
-// Read test.zi from ‘resources’ folder.
+// Read irc2-token.jar from ‘resources’ folder.
 ```
 
 Enter the basic information of the token you want to deploy.
@@ -557,15 +557,15 @@ async buildDeployTransaction() {
     const decimals = IconConverter.toBigNumber("18");
     const tokenName = "StandardToken";
     const tokenSymbol = "ST";
-    const contentType = "application/zip";
+    const contentType = "application/java";
     // Enter token information
-    // key name ("initialSupply", "decimals", "name", "symbol")
+    // key name ("_initialSupply", "_decimals", "_name", "_symbol")
     // You must enter the given values. Otherwise, your transaction will be rejected.
     const params = {
-        initialSupply: IconConverter.toHex(initialSupply),
-        decimals: IconConverter.toHex(decimals),
-        name: tokenName,
-        symbol: tokenSymbol
+        _initialSupply: IconConverter.toHex(initialSupply),
+        _decimals: IconConverter.toHex(decimals),
+        _name: tokenName,
+        _symbol: tokenSymbol
     }
     const installScore = MockData.SCORE_INSTALL_ADDRESS;
     const stepLimit = await this.getMaxStepLimit();
@@ -589,8 +589,8 @@ async buildDeployTransaction() {
         .content(`0x${this.content}`)
         .params(params)
         .version(version)
-        .build();        
-    return transaction; 
+        .build();
+    return transaction;
 }
 ```
 
@@ -706,7 +706,7 @@ async buildTokenTransaction() {
         .method(methodName)
         .params(params)
         .version(version)
-        .build();        
+        .build();
     return transaction;
 }
 ```
