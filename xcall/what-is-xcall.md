@@ -4,7 +4,7 @@ description: A cross-chain messaging interface deployable on any protocol
 
 # What is xCall?
 
-xCall is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols.&#x20;
+[xCall](https://www.xcall.dev/) is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols.&#x20;
 
 ## Why Use xCall?&#x20;
 
