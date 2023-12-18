@@ -67,7 +67,7 @@ This is an open-source community effort, so feel free to suggest new topics, add
   * [Allowed Methods](icon-stack/smart-contracts/allowed-methods.md)
 * [ICON networks](icon-stack/icon-networks/)
   * [Main network](icon-stack/icon-networks/main-network.md)
-  * [ICE network](icon-stack/icon-networks/ice-network.md)
+  * [ICE network](broken-reference)
 * [Client APIs](icon-stack/client-apis/)
   * [JSON-RPC API](icon-stack/client-apis/json-rpc-api/)
     * [v3](icon-stack/client-apis/json-rpc-api/v3.md)

@@ -2,7 +2,7 @@
 description: A cross-chain messaging interface deployable on any protocol
 ---
 
-# What is xCall
+# What is xCall?
 
 xCall is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols.&#x20;
 
@@ -17,12 +17,6 @@ Here are some key features that make xCall a powerful tool for building cross-ch
 * **Growing Utility**: xCall integrates all the latest advancements in cross-chain messaging solutions, increasing the versatility and utility of xCall for developers
 * **Composable Verification:** xCall adds an extra layer of security through multiple protocol-verification&#x20;
 
-## Which Chains are Connected to xCall?
-
-Currently, the [Blockchain Transmission Protocol (BTP)](../cross-chain-communication/blockchain-transmission-protocol-btp/) is the only cross-chain message protocol supported by xCall. Chains supported by BTP are JVM (ICON, Havah) and EVM (Ethereum, Binance Smart Chain) chains.&#x20;
-
-As additional cross-chain message protocols come online, developers will be able to access them with the same entry point, the xCall interface.
-
 ## Ready to Get Started?
 
-Here's the [Getting started](getting-started.md) guide that will kickstart your journey building with xCall.&#x20;
+Head on over to [xcall.dev](https://www.xcall.dev/) for more information on how to get started with xCall.

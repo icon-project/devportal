@@ -21,21 +21,6 @@
 ## 🔀 xCall
 
 * [What is xCall?](xcall/what-is-xcall.md)
-* [Getting started](xcall/getting-started.md)
-
-## Build with xCALL
-
-* [Quickstart](build-with-xcall/quickstart/README.md)
-  * [Setting up a local environment](build-with-xcall/quickstart/setting-up-a-local-environment.md)
-  * [Sending a message](build-with-xcall/quickstart/sending-a-message-with-xcall.md)
-  * [Sending a message with rollback](build-with-xcall/quickstart/sending-a-message-with-rollback.md)
-* [Guides](build-with-xcall/guides/README.md)
-  * [Sending a message](build-with-xcall/guides/sending-a-message.md)
-  * [Receiving a message](build-with-xcall/guides/receiving-a-message.md)
-  * [Error Handling](build-with-xcall/troubleshooting.md)
-* [Explanations](build-with-xcall/resources/README.md)
-  * [Message lifecycle](build-with-xcall/resources/message-lifecycle.md)
-  * [Fees](build-with-xcall/guides/handling-fees.md)
 
 ## Concepts
 
